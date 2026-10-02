@@ -1,0 +1,13 @@
+{
+  "name": "simulador-cca",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simulador de evaluaciones de opción múltiple para Computación Científica Actuarial",
+  "type": "module",
+  "scripts": {
+    "start": "python servidor.py",
+    "test": "node --test tests/",
+    "validar": "python tools/validar.py",
+    "construir": "python tools/construir_evaluaciones.py"
+  }
+}

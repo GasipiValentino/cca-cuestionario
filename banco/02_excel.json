@@ -1,0 +1,604 @@
+[
+ {
+  "id": "EXC-01",
+  "tema": "EXC",
+  "subtema": "Funciones de texto",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "La celda B3 contiene el código de póliza «SAL-2024-00001-M», cuyas tres primeras letras indican el ramo. ¿Qué fórmula devuelve «SAL»?",
+  "opciones": [
+   "=IZQUIERDA(B3;3)",
+   "=DERECHA(B3;3)",
+   "=EXTRAE(B3;3;1)",
+   "=LARGO(B3;3)"
+  ],
+  "correcta": 0,
+  "explicacion": "IZQUIERDA(texto; n) devuelve los n primeros caracteres desde la izquierda. Con n = 3 se obtiene «SAL».",
+  "por_que_no": [
+   "",
+   "DERECHA toma caracteres desde el final: devolvería «1-M».",
+   "EXTRAE(B3;3;1) devuelve un solo carácter desde la posición 3, es decir «L».",
+   "LARGO recibe un único argumento y devuelve la cantidad de caracteres, no un fragmento."
+  ],
+  "referencia": "Apuntes C2 – Excel (clase con G. Levinis), «Ramo (extraído)»"
+ },
+ {
+  "id": "EXC-02",
+  "tema": "EXC",
+  "subtema": "Funciones de texto",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál de estas fórmulas devuelve exactamente lo mismo que =IZQUIERDA(B3;3)?",
+  "opciones": [
+   "=EXTRAE(B3;3;3)",
+   "=EXTRAE(B3;1;3)",
+   "=DERECHA(B3;LARGO(B3)-3)",
+   "=EXTRAE(B3;0;3)"
+  ],
+  "correcta": 1,
+  "explicacion": "EXTRAE(texto; posición_inicial; núm_caracteres) con posición 1 y 3 caracteres toma los tres primeros, igual que IZQUIERDA(B3;3). Los apuntes muestran ambas alternativas para extraer el ramo.",
+  "por_que_no": [
+   "Empieza en la posición 3: con «SAL-2024…» devolvería «L-2».",
+   "",
+   "Devuelve todo el texto salvo los tres primeros caracteres, que es lo contrario.",
+   "En Excel las posiciones empiezan en 1; la posición 0 genera error."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Ramo (extraído)»"
+ },
+ {
+  "id": "EXC-03",
+  "tema": "EXC",
+  "subtema": "Funciones de texto",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con B3 = «SAL-2024-00001-M», ¿qué fórmula extrae el año de emisión «2024»?",
+  "opciones": [
+   "=EXTRAE(B3;4;4)",
+   "=EXTRAE(B3;5;4)",
+   "=IZQUIERDA(B3;8)",
+   "=EXTRAE(B3;5;8)"
+  ],
+  "correcta": 1,
+  "explicacion": "El año empieza en la posición 5 (3 letras del ramo y un guion) y ocupa 4 caracteres, así que EXTRAE(B3;5;4) devuelve «2024». Esto funciona porque todos los ramos tienen 3 letras.",
+  "por_que_no": [
+   "Empieza en el guion (posición 4) y devolvería «-202».",
+   "",
+   "Devuelve «SAL-2024», que incluye el ramo.",
+   "Toma 8 caracteres desde la posición 5 y devolvería «2024-000». Atención: así figura en los apuntes, probablemente por un error de transcripción."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Año emisión (extraído)»"
+ },
+ {
+  "id": "EXC-04",
+  "tema": "EXC",
+  "subtema": "Funciones de texto",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "El último carácter del código «SAL-2024-00001-M» indica el género. ¿Qué fórmula lo obtiene?",
+  "opciones": [
+   "=IZQUIERDA(B3;1)",
+   "=DERECHA(B3;1)",
+   "=EXTRAE(B3;1;1)",
+   "=LARGO(B3)"
+  ],
+  "correcta": 1,
+  "explicacion": "DERECHA(B3;1) devuelve el último carácter del texto, «M».",
+  "por_que_no": [
+   "Devuelve el primer carácter, «S».",
+   "",
+   "Devuelve el primer carácter, «S».",
+   "Devuelve la cantidad de caracteres (16), no un texto."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Género (extraído)»"
+ },
+ {
+  "id": "EXC-05",
+  "tema": "EXC",
+  "subtema": "Fechas y edad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Para calcular la edad actual se usa =TRUNCAR((HOY()-FechaNac)/365,25). ¿Por qué se divide por 365,25?",
+  "opciones": [
+   "Para expresar la diferencia en meses",
+   "Para contemplar en promedio los años bisiestos al convertir días en años",
+   "Porque HOY() devuelve horas",
+   "Para redondear la edad hacia arriba"
+  ],
+  "correcta": 1,
+  "explicacion": "La resta de fechas da días. Dividir por 365,25 los convierte en años considerando que, en promedio, uno de cada cuatro años tiene 366 días.",
+  "por_que_no": [
+   "Para obtener meses habría que dividir por unos 30,4, no por 365,25.",
+   "",
+   "HOY() devuelve la fecha actual; la resta de dos fechas da días.",
+   "El redondeo no lo determina el divisor sino la función TRUNCAR, que además corta hacia abajo."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Edad actual»"
+ },
+ {
+  "id": "EXC-06",
+  "tema": "EXC",
+  "subtema": "Fechas y edad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En =TRUNCAR((HOY()-FechaNac)/365,25), ¿por qué se usa TRUNCAR y no un redondeo común?",
+  "opciones": [
+   "Porque la edad cumplida se cuenta en años completos: alguien de 34,8 años tiene 34",
+   "Porque TRUNCAR redondea al entero más cercano",
+   "Porque TRUNCAR convierte la fecha en texto",
+   "Porque así la edad se actualiza solo una vez por año"
+  ],
+  "correcta": 0,
+  "explicacion": "TRUNCAR elimina la parte decimal sin redondear. Una persona de 34,8 años tiene 34 años cumplidos; redondear daría 35.",
+  "por_que_no": [
+   "",
+   "TRUNCAR no redondea al más cercano: descarta los decimales.",
+   "TRUNCAR devuelve un número.",
+   "HOY() se recalcula cada vez que se abre o recalcula el libro; TRUNCAR no cambia eso."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Edad actual»"
+ },
+ {
+  "id": "EXC-07",
+  "tema": "EXC",
+  "subtema": "Funciones lógicas",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué devuelve la fórmula si Q2 = 35?",
+  "codigo": "=SI.CONJUNTO(Q2<35;\"Joven\"; Y(Q2>=35;Q2<60);\"Adulto\"; Q2>=60;\"Adulto Mayor\")",
+  "opciones": [
+   "\"Joven\"",
+   "\"Adulto\"",
+   "\"Adulto Mayor\"",
+   "#N/A"
+  ],
+  "correcta": 1,
+  "explicacion": "SI.CONJUNTO evalúa las condiciones en orden y devuelve el valor de la primera verdadera. 35<35 es FALSO, y Y(35>=35; 35<60) es VERDADERO, así que devuelve «Adulto».",
+  "por_que_no": [
+   "Q2<35 es falso cuando Q2 vale 35.",
+   "",
+   "Q2>=60 es falso.",
+   "#N/A aparecería solo si ninguna condición se cumpliera."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Tramo etario»"
+ },
+ {
+  "id": "EXC-08",
+  "tema": "EXC",
+  "subtema": "Funciones lógicas",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con la fórmula del estado de la póliza, ¿qué se obtiene si L90 = \"N\", G90 es una fecha futura y M90 = \"S\"?",
+  "codigo": "=SI(L90=\"S\";\"Anulada\";SI(G90<=HOY();\"Vencida\";SI(M90=\"S\";\"Con siniestro\";\"Vigente\")))",
+  "opciones": [
+   "\"Anulada\"",
+   "\"Vencida\"",
+   "\"Con siniestro\"",
+   "\"Vigente\""
+  ],
+  "correcta": 2,
+  "explicacion": "L90=\"S\" es falso, así que no es «Anulada». G90<=HOY() es falso (fecha futura), así que no es «Vencida». M90=\"S\" es verdadero, así que devuelve «Con siniestro».",
+  "por_que_no": [
+   "Requiere L90 = \"S\".",
+   "Requiere que la fecha de vencimiento sea anterior o igual a hoy.",
+   "",
+   "«Vigente» es el valor final solo si M90 no es \"S\"."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Estado de póliza»"
+ },
+ {
+  "id": "EXC-09",
+  "tema": "EXC",
+  "subtema": "Funciones lógicas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Con la siguiente fórmula, una póliza anulada (L90 = \"S\") cuya fecha de vencimiento ya pasó y que además tuvo un siniestro, ¿qué estado muestra?",
+  "codigo": "=SI(L90=\"S\";\"Anulada\";SI(G90<=HOY();\"Vencida\";SI(M90=\"S\";\"Con siniestro\";\"Vigente\")))",
+  "opciones": [
+   "\"Anulada\", porque la primera condición verdadera corta la evaluación",
+   "\"Vencida\", porque la fecha tiene prioridad",
+   "\"Con siniestro\", porque es la condición más específica",
+   "Las tres etiquetas concatenadas"
+  ],
+  "correcta": 0,
+  "explicacion": "En un SI anidado las condiciones se evalúan en orden. Como L90=\"S\" es verdadero, devuelve «Anulada» y no evalúa el resto. El orden de las condiciones define la prioridad.",
+  "por_que_no": [
+   "",
+   "La fecha recién se evalúa si la primera condición es falsa.",
+   "El siniestro se evalúa último.",
+   "SI devuelve un único valor."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Estado de póliza»"
+ },
+ {
+  "id": "EXC-10",
+  "tema": "EXC",
+  "subtema": "Búsqueda",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la fórmula =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿qué indica el argumento 2?",
+  "opciones": [
+   "Que se busque el valor en la segunda fila",
+   "Que se devuelva el valor de la segunda columna del rango buscado",
+   "Que se busquen dos coincidencias",
+   "Que la búsqueda empiece en la celda A2"
+  ],
+  "correcta": 1,
+  "explicacion": "El tercer argumento de BUSCARV es el número de columna, dentro del rango, cuyo valor se devuelve cuando se encuentra el valor buscado en la primera columna. Así se obtiene, por ejemplo, la descripción del ramo a partir de su código.",
+  "por_que_no": [
+   "BUSCARV busca en la primera columna, no en una fila determinada.",
+   "",
+   "BUSCARV devuelve una sola coincidencia.",
+   "El rango de búsqueda lo define el segundo argumento ($A$3:$C$7)."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Ramo (descripción)»"
+ },
+ {
+  "id": "EXC-11",
+  "tema": "EXC",
+  "subtema": "Búsqueda",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿para qué sirven los signos $ en el rango?",
+  "opciones": [
+   "Para indicar que los valores son monetarios",
+   "Para fijar el rango (referencia absoluta) y que no se desplace al copiar la fórmula a otras filas",
+   "Para que la búsqueda no distinga mayúsculas de minúsculas",
+   "Para que el resultado se muestre con formato de moneda"
+  ],
+  "correcta": 1,
+  "explicacion": "El $ convierte la referencia en absoluta. Al copiar la fórmula hacia abajo, N6 cambia (N7, N8…) pero la tabla de búsqueda queda fija en $A$3:$C$7.",
+  "por_que_no": [
+   "El $ en una referencia no tiene relación con el formato de moneda.",
+   "",
+   "Eso no depende del $.",
+   "El formato de celda no depende del $ en la referencia."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Ramo (descripción)»"
+ },
+ {
+  "id": "EXC-12",
+  "tema": "EXC",
+  "subtema": "Búsqueda",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿qué indica el último argumento 0 (equivalente a FALSO)?",
+  "opciones": [
+   "Que, si no encuentra el valor, devuelva 0",
+   "Que busque una coincidencia exacta del código",
+   "Que ignore la primera fila de la tabla",
+   "Que busque el valor más cercano por debajo"
+  ],
+  "correcta": 1,
+  "explicacion": "El cuarto argumento define el tipo de coincidencia: 0 o FALSO pide coincidencia exacta, que es lo adecuado para buscar códigos como el ramo o la región.",
+  "por_que_no": [
+   "Si no encuentra coincidencia exacta, BUSCARV devuelve #N/A, no 0.",
+   "",
+   "No hay un argumento para omitir filas.",
+   "La coincidencia aproximada corresponde a VERDADERO o 1."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Ramo (descripción)», «Región»"
+ },
+ {
+  "id": "EXC-13",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "En el resumen gerencial se obtuvo «pólizas totales = 1.500» seleccionando la columna de pólizas. ¿Qué función cuenta las celdas no vacías de un rango?",
+  "opciones": [
+   "CONTARA",
+   "CONTAR.SI",
+   "SUMA",
+   "BUSCARV"
+  ],
+  "correcta": 0,
+  "explicacion": "CONTARA cuenta todas las celdas no vacías, sean números o textos, por eso sirve para contar los números de póliza.",
+  "por_que_no": [
+   "",
+   "CONTAR.SI cuenta solo las celdas que cumplen un criterio.",
+   "SUMA suma valores; no los cuenta.",
+   "BUSCARV busca un valor; no cuenta."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Resumen gerencial»"
+ },
+ {
+  "id": "EXC-14",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Se quiere saber cuántas pólizas están vigentes. ¿Qué fórmula es la adecuada?",
+  "opciones": [
+   "=CONTARA(TablaVigencia)",
+   "=CONTAR.SI(TablaVigencia;\"Vigente\")",
+   "=SUMAR.SI(TablaVigencia;\"Vigente\")",
+   "=SI(TablaVigencia=\"Vigente\";1;0)"
+  ],
+  "correcta": 1,
+  "explicacion": "CONTAR.SI(rango; criterio) cuenta las celdas del rango que cumplen el criterio, en este caso las que dicen «Vigente».",
+  "por_que_no": [
+   "Contaría todas las pólizas, sin filtrar por estado.",
+   "",
+   "SUMAR.SI suma un rango numérico; aplicado a textos no cuenta pólizas.",
+   "Evalúa celda por celda y no devuelve el total."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Resumen gerencial»"
+ },
+ {
+  "id": "EXC-15",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Para contar las edades mayores a 40 alguien escribe =CONTAR.SI(Edades;>40) y Excel no acepta la fórmula. ¿Cuál es la forma correcta?",
+  "opciones": [
+   "=CONTAR.SI(Edades;\">\"&40)",
+   "=CONTAR.SI(>40;Edades)",
+   "=CONTAR(Edades>40)",
+   "=CONTAR.SI(Edades;MAYOR(40))"
+  ],
+  "correcta": 0,
+  "explicacion": "El criterio de CONTAR.SI es un texto: el operador va entre comillas y se concatena con el número usando &, como en los apuntes: CONTAR.SI(Tabla;\">\"&40). También vale \">40\".",
+  "por_que_no": [
+   "",
+   "Los argumentos están invertidos: primero va el rango y después el criterio.",
+   "CONTAR no recibe condiciones de esa forma.",
+   "MAYOR es otra función y no sirve como criterio."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Resumen gerencial»"
+ },
+ {
+  "id": "EXC-16",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Para el detalle por ramo hay que contar las pólizas del ramo Vida que están vigentes. ¿Qué fórmula corresponde?",
+  "opciones": [
+   "=CONTAR.SI(Ramo;\"Vida\")",
+   "=CONTAR.SI.CONJUNTO(Ramo;\"Vida\";Estado;\"Vigente\")",
+   "=SUMAR.SI.CONJUNTO(Ramo;\"Vida\";Estado;\"Vigente\")",
+   "=CONTAR.SI(Estado;\"Vigente\")*CONTAR.SI(Ramo;\"Vida\")"
+  ],
+  "correcta": 1,
+  "explicacion": "CONTAR.SI.CONJUNTO admite varios pares rango-criterio y cuenta las filas que cumplen todos a la vez: ramo Vida y estado Vigente.",
+  "por_que_no": [
+   "Cuenta todas las pólizas de Vida, estén o no vigentes.",
+   "",
+   "SUMAR.SI.CONJUNTO necesita como primer argumento el rango a sumar; así escrita no cuenta pólizas.",
+   "Multiplicar dos conteos no da la cantidad que cumple ambas condiciones a la vez."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Detalle por Ramo»"
+ },
+ {
+  "id": "EXC-17",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En =SUMAR.SI.CONJUNTO(Prima;Ramo;\"Vida\";Estado;\"Vigente\"), ¿qué papel cumple el primer argumento?",
+  "opciones": [
+   "Es el primer criterio que se evalúa",
+   "Es el rango cuyos valores se suman para las filas que cumplen todos los criterios",
+   "Es la celda donde se escribe el resultado",
+   "Es el rango que se cuenta"
+  ],
+  "correcta": 1,
+  "explicacion": "En SUMAR.SI.CONJUNTO el primer argumento es el rango a sumar (las primas). Después vienen los pares rango-criterio. Así se obtiene la prima total vigente del ramo Vida.",
+  "por_que_no": [
+   "Los criterios vienen después del rango a sumar.",
+   "",
+   "El resultado aparece en la celda donde se escribe la fórmula.",
+   "La función suma; contar es tarea de CONTAR.SI.CONJUNTO."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Detalle por Ramo»"
+ },
+ {
+  "id": "EXC-18",
+  "tema": "EXC",
+  "subtema": "Conteo y suma condicional",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "La tasa de siniestralidad de un ramo se define como pólizas con siniestro del ramo sobre pólizas totales del ramo. Un analista calcula =CONTAR.SI.CONJUNTO(Ramo;\"Auto\";Estado;\"Con siniestro\")/CONTARA(Polizas). ¿Qué error comete?",
+  "opciones": [
+   "Ninguno, la fórmula es correcta",
+   "El denominador cuenta las pólizas de todos los ramos en lugar de las del ramo Auto, por lo que subestima la tasa",
+   "El numerador debería usar SUMAR.SI",
+   "No se puede dividir el resultado de dos funciones"
+  ],
+  "correcta": 1,
+  "explicacion": "Según los apuntes, el denominador debe ser CONTAR.SI(Ramo;\"Auto\"), las pólizas del propio ramo. Dividir por toda la cartera achica la tasa artificialmente.",
+  "por_que_no": [
+   "El denominador no corresponde a la definición de la tasa.",
+   "",
+   "El numerador es un conteo de pólizas, así que CONTAR.SI.CONJUNTO es correcto.",
+   "Excel permite dividir resultados de funciones sin problema."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Tasa de siniestralidad»"
+ },
+ {
+  "id": "EXC-19",
+  "tema": "EXC",
+  "subtema": "Tablas dinámicas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al hacer el recuento de pólizas en una tabla dinámica, ¿qué campo conviene contar y por qué?",
+  "opciones": [
+   "El DNI, porque identifica a la persona",
+   "El número de póliza, porque no se repite; el DNI puede repetirse si una persona tiene varias pólizas",
+   "La prima, porque siempre tiene valor",
+   "El ramo, porque tiene pocas categorías"
+  ],
+  "correcta": 1,
+  "explicacion": "Los apuntes lo marcan como esencial: para contar pólizas se usa un elemento que no se repite, como el número de póliza. Contar DNI distintos daría cantidad de personas, no de pólizas.",
+  "por_que_no": [
+   "Una misma persona puede tener más de una póliza, así que no estaríamos contando pólizas.",
+   "",
+   "La prima puede tener valores repetidos; además, en una tabla dinámica se resume (suma o promedia) más que contarse.",
+   "El ramo es una categoría para agrupar, no un identificador."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Tablas dinámicas»"
+ },
+ {
+  "id": "EXC-20",
+  "tema": "EXC",
+  "subtema": "Tablas dinámicas",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con una tabla dinámica se quiere responder: «¿qué combinación de tramo etario y sexo paga la prima promedio más alta?». ¿Qué configuración es adecuada?",
+  "opciones": [
+   "Filas: tramo etario; Columnas: sexo; Valores: prima resumida como Promedio",
+   "Filas: número de póliza; Valores: suma de prima",
+   "Filas: sexo; Valores: cuenta de tramo etario",
+   "Filtros: prima; Valores: cuenta de sexo"
+  ],
+  "correcta": 0,
+  "explicacion": "Cruzar tramo etario y sexo en filas y columnas, con la prima resumida como promedio, da una celda por combinación con su prima promedio. Así se identifica la mayor.",
+  "por_que_no": [
+   "",
+   "Lista póliza por póliza sin agrupar y usa la suma en lugar del promedio.",
+   "No cruza ambas variables ni calcula la prima.",
+   "No calcula ninguna prima promedio."
+  ],
+  "referencia": "Apuntes C2 – Excel, «Tablas dinámicas»"
+ },
+ {
+  "id": "EXC-21",
+  "tema": "EXC",
+  "subtema": "Funciones lógicas",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué fórmula devuelve \"OK\" solo si A1 es mayor que 0 y menor que 100?",
+  "opciones": [
+   "=SI(O(A1>0;A1<100);\"OK\";\"NO\")",
+   "=SI(Y(A1>0;A1<100);\"OK\";\"NO\")",
+   "=SI(A1>0;\"OK\";\"NO\")",
+   "=SI(A1<100;\"OK\";\"NO\")"
+  ],
+  "correcta": 1,
+  "explicacion": "Y() es verdadera solo si se cumplen todas sus condiciones a la vez, que es lo que pide el enunciado: mayor que 0 y menor que 100.",
+  "por_que_no": [
+   "O() es verdadera si se cumple al menos una condición: con A1 = 500 también devolvería \"OK\".",
+   "",
+   "No controla el límite superior.",
+   "No controla el límite inferior."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 4"
+ },
+ {
+  "id": "EXC-22",
+  "tema": "EXC",
+  "subtema": "Funciones de texto",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué devuelve la fórmula =LARGO(\"Actuarial\")?",
+  "opciones": [
+   "8",
+   "9",
+   "10",
+   "11"
+  ],
+  "correcta": 1,
+  "explicacion": "LARGO devuelve la cantidad de caracteres del texto. «Actuarial» tiene 9 letras: A-c-t-u-a-r-i-a-l.",
+  "por_que_no": [
+   "Faltaría contar una letra.",
+   "",
+   "Sobra un carácter.",
+   "Sobran dos caracteres."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 5"
+ },
+ {
+  "id": "EXC-23",
+  "tema": "EXC",
+  "subtema": "Funciones lógicas",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es el problema lógico de la siguiente fórmula?",
+  "codigo": "=SI(A1>50;\"Alto\";SI(A1>100;\"Muy alto\";\"Bajo\"))",
+  "opciones": [
+   "La segunda condición nunca puede devolver \"Muy alto\", porque todo valor mayor a 100 ya cumple A1>50",
+   "Falta el valor_si_falso",
+   "Tiene un error de sintaxis",
+   "No tiene ningún problema"
+  ],
+  "correcta": 0,
+  "explicacion": "Las condiciones se evalúan en orden. Si A1 > 100, también es > 50, así que devuelve \"Alto\" y nunca llega a \"Muy alto\". Hay que poner primero la condición más restrictiva: SI(A1>100;…;SI(A1>50;…;…)).",
+  "por_que_no": [
+   "",
+   "Ambos SI tienen sus tres argumentos.",
+   "La sintaxis es válida; el problema es lógico.",
+   "Con A1 = 150 devuelve \"Alto\", lo cual es incorrecto."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 6"
+ },
+ {
+  "id": "EXC-24",
+  "tema": "EXC",
+  "subtema": "Buscar objetivo",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Para qué se utiliza la herramienta Buscar objetivo en Excel?",
+  "opciones": [
+   "Para buscar un valor dentro de una tabla",
+   "Para maximizar una fórmula automáticamente",
+   "Para cambiar el valor de una celda hasta que otra celda que depende de ella alcance un valor dado",
+   "Para resolver sistemas de ecuaciones múltiples"
+  ],
+  "correcta": 2,
+  "explicacion": "Buscar objetivo ajusta una celda de entrada hasta que una celda con fórmula alcance el valor deseado.",
+  "por_que_no": [
+   "Eso lo hacen funciones como BUSCARV.",
+   "Buscar objetivo no maximiza: busca alcanzar un valor fijado.",
+   "",
+   "Trabaja con una sola celda variable y un único objetivo."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 3"
+ },
+ {
+  "id": "EXC-25",
+  "tema": "EXC",
+  "subtema": "Buscar objetivo",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Una planilla calcula en C10 el VAN de un flujo usando la tasa ingresada en C2. ¿Cómo se obtiene la TIR con Buscar objetivo?",
+  "opciones": [
+   "Definir la celda C2 con el valor 0 cambiando la celda C10",
+   "Definir la celda C10 con el valor 0 cambiando la celda C2",
+   "Definir la celda C10 con el valor máximo cambiando C2",
+   "Definir la celda C2 con el valor 1 cambiando C10"
+  ],
+  "correcta": 1,
+  "explicacion": "La TIR es la tasa que anula el VAN. Se pide que la celda con la fórmula (VAN, C10) alcance 0 modificando la celda de entrada (tasa, C2). Es la misma idea que la búsqueda numérica por bisección vista en Python.",
+  "por_que_no": [
+   "Invierte los roles: la celda que se fija es la que tiene la fórmula, no la de entrada.",
+   "",
+   "Buscar objetivo busca un valor dado, no un máximo.",
+   "Invierte los roles y además el VAN no puede cambiarse directamente: es una fórmula."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 3; Clase 10 – «TIR por bisección»"
+ },
+ {
+  "id": "EXC-26",
+  "tema": "EXC",
+  "subtema": "Excel como herramienta",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "Según la clase de estructuras y almacenamiento de datos, ¿cuál de los siguientes NO es un riesgo específico de usar planillas de cálculo como base de datos?",
+  "opciones": [
+   "Celdas combinadas, títulos y notas que rompen la estructura tabular",
+   "Conversión automática de tipos que altera los datos",
+   "Ausencia de trazabilidad sobre quién modificó qué",
+   "Que no pueda leerse desde pandas"
+  ],
+  "correcta": 3,
+  "explicacion": "La clase enumera celdas combinadas, conversión automática de tipos, fórmulas que dependen de la posición, falta de trazabilidad y límite práctico de filas. pandas sí puede leer planillas con pd.read_excel.",
+  "por_que_no": [
+   "Es un riesgo mencionado.",
+   "Es un riesgo mencionado.",
+   "Es un riesgo mencionado.",
+   ""
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Planillas de cálculo»"
+ }
+]

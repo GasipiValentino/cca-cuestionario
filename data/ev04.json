@@ -1,0 +1,934 @@
+{
+ "id": 4,
+ "titulo": "Evaluación 4",
+ "preguntas": [
+  {
+   "id": "CAL-04",
+   "tema": "CAL",
+   "subtema": "Dimensiones",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué dimensión de la calidad responde la pregunta «¿hay registros repetidos?»?",
+   "opciones": [
+    "Unicidad",
+    "Validez",
+    "Oportunidad",
+    "Completitud"
+   ],
+   "correcta": 0,
+   "explicacion": "La unicidad mide si hay registros o claves repetidas. Se calcula como valores únicos sobre el total de filas.",
+   "por_que_no": [
+    "",
+    "La validez responde si los valores respetan su dominio.",
+    "La oportunidad responde si el dato está disponible a tiempo.",
+    "La completitud responde si faltan valores."
+   ],
+   "referencia": "Clase 13, «Dimensiones de la calidad»"
+  },
+  {
+   "id": "BD-21",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuántos tipos de claves se presentan en la clase y para qué sirven en conjunto?",
+   "opciones": [
+    "Dos (primaria y foránea), para ordenar los datos",
+    "Cuatro (una por cada propiedad ACID)",
+    "Tres (primaria, secundaria y terciaria), para acelerar consultas",
+    "Seis (primaria, foránea, única, candidata, compuesta y surrogada), para garantizar unicidad, integridad y relaciones entre tablas"
+   ],
+   "correcta": 3,
+   "explicacion": "La clase enumera seis tipos de claves y explica que las claves garantizan la unicidad, la integridad y las relaciones entre tablas.",
+   "por_que_no": [
+    "Se presentan seis tipos, y su función no es ordenar.",
+    "Las claves no se corresponden con las propiedades ACID.",
+    "Esos nombres no corresponden a los tipos vistos.",
+    ""
+   ],
+   "referencia": "Introducción a bases de datos, «Relaciones y claves»"
+  },
+  {
+   "id": "PC-01",
+   "tema": "PC",
+   "subtema": "Origen del concepto",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Quién utilizó el término «pensamiento computacional» en un artículo de 2006 para describir cómo piensa un científico de la computación?",
+   "opciones": [
+    "Paul Phillips, en un documento de la CSTA y Microsoft",
+    "La ISTE junto con la CSTA, en sus Teacher Resources",
+    "Barr, Harrison y Conery, en Learning & Leading with Technology",
+    "Jeannette M. Wing, profesora de Carnegie Mellon"
+   ],
+   "correcta": 3,
+   "explicacion": "La clase atribuye el término a Jeannette Wing (2006), profesora del Departamento de Computación de Carnegie Mellon, en un artículo de Communications of the ACM.",
+   "por_que_no": [
+    "Phillips (2009) lo describió después como la integración del pensamiento humano con las capacidades de las computadoras, pero no lo acuñó.",
+    "ISTE y CSTA (2011) propusieron una descripción operativa, cinco años después del artículo de Wing.",
+    "Barr, Harrison y Conery (2011) explicaron qué conceptos involucra el término definido por Wing.",
+    ""
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional, «¿Qué es el Pensamiento Computacional?»"
+  },
+  {
+   "id": "EST-02",
+   "tema": "EST",
+   "subtema": "Ciclo de vida del dato",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "Según la clase 12, ¿en qué se consume la mayor parte del tiempo en el trabajo actuarial real?",
+   "opciones": [
+    "En obtener, entender, estructurar y validar los datos que el modelo necesita",
+    "En escribir el informe final",
+    "En elegir el modelo",
+    "En graficar resultados"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase lo afirma explícitamente. Además advierte que un algoritmo con datos mal estructurados produce resultados que parecen correctos y no lo son.",
+   "por_que_no": [
+    "",
+    "El informe es una parte menor del trabajo.",
+    "La clase indica que el modelo no es lo que más tiempo consume.",
+    "Graficar es una parte menor del trabajo."
+   ],
+   "referencia": "Clase 12, «Del algoritmo a los datos»"
+  },
+  {
+   "id": "EXC-02",
+   "tema": "EXC",
+   "subtema": "Funciones de texto",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál de estas fórmulas devuelve exactamente lo mismo que =IZQUIERDA(B3;3)?",
+   "opciones": [
+    "=DERECHA(B3;LARGO(B3)-3)",
+    "=EXTRAE(B3;1;3)",
+    "=EXTRAE(B3;3;3)",
+    "=EXTRAE(B3;0;3)"
+   ],
+   "correcta": 1,
+   "explicacion": "EXTRAE(texto; posición_inicial; núm_caracteres) con posición 1 y 3 caracteres toma los tres primeros, igual que IZQUIERDA(B3;3). Los apuntes muestran ambas alternativas para extraer el ramo.",
+   "por_que_no": [
+    "Devuelve todo el texto salvo los tres primeros caracteres, que es lo contrario.",
+    "",
+    "Empieza en la posición 3: con «SAL-2024…» devolvería «L-2».",
+    "En Excel las posiciones empiezan en 1; la posición 0 genera error."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Ramo (extraído)»"
+  },
+  {
+   "id": "CTL-45",
+   "tema": "CTL",
+   "subtema": "Bucles anidados",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Cuántas veces se ejecuta print(i, j)?",
+   "codigo": "for i in range(3):\n    for j in range(4):\n        print(i, j)",
+   "opciones": [
+    "4",
+    "7",
+    "12",
+    "3"
+   ],
+   "correcta": 2,
+   "explicacion": "El bucle interno completa sus 4 iteraciones por cada una de las 3 del externo: 3 × 4 = 12.",
+   "por_que_no": [
+    "Solo cuenta el interno.",
+    "Suma las iteraciones en lugar de multiplicarlas.",
+    "",
+    "Solo cuenta el externo."
+   ],
+   "referencia": "Clase 10, «Bucles anidados»"
+  },
+  {
+   "id": "SQL-29",
+   "tema": "SQL",
+   "subtema": "ORDER BY y LIMIT",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Si en ORDER BY no se indica ASC ni DESC, ¿cómo se ordena?",
+   "opciones": [
+    "No ordena",
+    "De forma ascendente",
+    "De forma descendente",
+    "Al azar"
+   ],
+   "correcta": 1,
+   "explicacion": "El orden por defecto es ascendente (ASC). Para ordenar de mayor a menor hay que indicar DESC.",
+   "por_que_no": [
+    "Con ORDER BY sí se ordena.",
+    "",
+    "Para descendente hay que escribir DESC.",
+    "El orden es determinista."
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, «ORDER BY … asc»"
+  },
+  {
+   "id": "PYB-11",
+   "tema": "PYB",
+   "subtema": "Diccionarios",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Cuál es un diccionario válido en Python?",
+   "opciones": [
+    "{\"id\": 10, \"edad\": 30}",
+    "[1:\"a\", 2:\"b\"]",
+    "(a=1, b=2)",
+    "{1, 2, 3}"
+   ],
+   "correcta": 0,
+   "explicacion": "Un diccionario se escribe entre llaves con pares clave: valor separados por comas.",
+   "por_que_no": [
+    "",
+    "Los corchetes no forman un diccionario y esa sintaxis no es válida.",
+    "Esa sintaxis no es válida en Python.",
+    "Llaves sin pares clave: valor forman un conjunto (set)."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 13; Clase 12, «Diccionarios»"
+  },
+  {
+   "id": "CTL-57",
+   "tema": "CTL",
+   "subtema": "Funciones",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué hace la instrucción return dentro de una función?",
+   "opciones": [
+    "Repite la función",
+    "Sale de la función y devuelve un valor al punto donde fue llamada",
+    "Imprime el resultado en pantalla",
+    "Interrumpe solo el ciclo más cercano"
+   ],
+   "correcta": 1,
+   "explicacion": "return sale de la función y entrega un valor. En categoria_poliza, cada rama termina con return.",
+   "por_que_no": [
+    "No repite nada.",
+    "",
+    "Imprimir es tarea de print.",
+    "Eso es break."
+   ],
+   "referencia": "Clase 10, «Operadores estructurales: panorama»"
+  },
+  {
+   "id": "JOIN-24",
+   "tema": "JOIN",
+   "subtema": "INSERT",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Cómo se añade a la tabla ARTICULOS el producto «Medias» de $70 del fabricante 2?",
+   "opciones": [
+    "ALTER TABLE ARTICULOS ADD Medias 70;",
+    "UPDATE ARTICULOS SET nombre = 'Medias', precio = 70, fabricante = 2;",
+    "INSERT INTO ARTICULOS (nombre, precio, fabricante) VALUES ('Medias', 70, 2);",
+    "INSERT ARTICULOS VALUES nombre = 'Medias';"
+   ],
+   "correcta": 2,
+   "explicacion": "INSERT INTO tabla (columnas) VALUES (valores) agrega un registro. El código se omite porque suele ser autoincremental.",
+   "por_que_no": [
+    "ALTER TABLE cambia la estructura; no agrega datos.",
+    "UPDATE modifica registros existentes; además, sin WHERE los modificaría a todos.",
+    "",
+    "Sintaxis inválida."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 2d"
+  },
+  {
+   "id": "PC-06",
+   "tema": "PC",
+   "subtema": "Pilares aplicados",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Un actuario calcula la prima de un seguro en pasos: estima la probabilidad de siniestro, calcula el costo esperado y luego ajusta por márgenes de riesgo. ¿Qué pilar está aplicando principalmente?",
+   "opciones": [
+    "Automatización",
+    "Descomposición",
+    "Paralelización",
+    "Abstracción"
+   ],
+   "correcta": 1,
+   "explicacion": "Dividir un problema complejo en partes más pequeñas y manejables es descomposición. La clase usa justamente el ejemplo de la prima de seguro.",
+   "por_que_no": [
+    "La automatización consiste en ejecutar procesos repetitivos con herramientas computacionales.",
+    "",
+    "La paralelización es un concepto asociado, no uno de los cuatro pilares, y no describe este caso.",
+    "La abstracción consiste en quedarse con lo esencial y descartar detalles irrelevantes, no en dividir el problema en pasos."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional, «Descomposición»"
+  },
+  {
+   "id": "PYB-18",
+   "tema": "PYB",
+   "subtema": "Conjuntos",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Para conciliar bases se ejecuta lo siguiente. ¿Qué imprime?",
+   "codigo": "en_sistema = {1001, 1002, 1003, 1004}\nen_contabilidad = {1002, 1003, 1005}\nprint(en_sistema - en_contabilidad)",
+   "opciones": [
+    "{1001, 1002, 1003, 1004, 1005}",
+    "{1005}",
+    "{1001, 1004}",
+    "{1002, 1003}"
+   ],
+   "correcta": 2,
+   "explicacion": "La diferencia de conjuntos devuelve los elementos que están en el primero y no en el segundo: pólizas del sistema que no figuran en contabilidad.",
+   "por_que_no": [
+    "Esa es la unión (|).",
+    "Eso sería en_contabilidad - en_sistema.",
+    "",
+    "Esa es la intersección (&)."
+   ],
+   "referencia": "Clase 12, «Conjuntos» (operaciones para conciliar bases)"
+  },
+  {
+   "id": "JOIN-44",
+   "tema": "JOIN",
+   "subtema": "Múltiples joins",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Para listar los pedidos con el nombre del empleado que los gestionó y el transportista usado, ¿qué uniones se necesitan?",
+   "opciones": [
+    "Orders con Products y Categories",
+    "Customers con Suppliers",
+    "OrderDetails con Employees",
+    "Orders con Employees (EmployeeID) y Orders con Shippers (ShipperID)"
+   ],
+   "correcta": 3,
+   "explicacion": "Según las relaciones de la guía, Orders.EmployeeID → Employees.EmployeeID y Orders.ShipperID → Shippers.ShipperID. Se necesitan dos joins desde Orders.",
+   "por_que_no": [
+    "Esas tablas no tienen el empleado ni el transportista.",
+    "No hay relación directa entre ellas.",
+    "OrderDetails no tiene EmployeeID.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL, «Relaciones clave» y ejercicio 16"
+  },
+  {
+   "id": "CAL-20",
+   "tema": "CAL",
+   "subtema": "Conversión de tipos",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Qué hace pd.to_numeric(serie, errors=\"coerce\")?",
+   "opciones": [
+    "Elimina las filas no numéricas",
+    "Convierte en NaN lo que no puede interpretarse como número, en lugar de interrumpir el programa, lo que permite contar los casos problemáticos",
+    "Reemplaza los valores no numéricos por 0",
+    "Detiene el programa ante el primer valor no numérico"
+   ],
+   "correcta": 1,
+   "explicacion": "«S/D» pasa a NaN. Después de cada conversión conviene contar cuántos valores quedaron nulos: ese número es el diagnóstico.",
+   "por_que_no": [
+    "No elimina filas.",
+    "",
+    "No imputa ceros.",
+    "Ese es el comportamiento sin coerce."
+   ],
+   "referencia": "Clase 13, «Convertir y declarar los faltantes» y «Tipos y conversiones seguras»"
+  },
+  {
+   "id": "BD-25",
+   "tema": "BD",
+   "subtema": "DBMS",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "En una base relacional no se puede cargar un siniestro asociado a una póliza que no existe. ¿Qué aporte de la base de datos ilustra esto?",
+   "opciones": [
+    "Concurrencia",
+    "Integridad",
+    "Seguridad por permisos",
+    "Eficiencia por índices"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase 12 usa este ejemplo para la integridad, que se implementa mediante claves foráneas y restricciones.",
+   "por_que_no": [
+    "La concurrencia permite que muchos usuarios escriban a la vez sin corromper datos.",
+    "",
+    "Los permisos controlan quién accede a qué.",
+    "Los índices evitan recorrer toda la tabla."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+  },
+  {
+   "id": "EDA-43",
+   "tema": "EDA",
+   "subtema": "Interpretación cautelosa",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Con la tabla dinámica de costo por mes y producto de un solo año, ¿se puede afirmar que existe estacionalidad?",
+   "opciones": [
+    "Sí, siempre",
+    "No: normalmente hace falta observar el fenómeno durante varios ciclos temporales y distinguir patrones persistentes de la variación aleatoria",
+    "Sí, si el gráfico tiene colores",
+    "No, la estacionalidad no existe en seguros"
+   ],
+   "correcta": 1,
+   "explicacion": "Un único año no permite separar un patrón persistente del azar. La guía pide una serie histórica más larga.",
+   "por_que_no": [
+    "Un año no alcanza.",
+    "",
+    "Los colores no prueban nada.",
+    "La clase 14 muestra estacionalidad real en Automotores."
+   ],
+   "referencia": "Guía práctica Python, Actividad 15"
+  },
+  {
+   "id": "CAL-18",
+   "tema": "CAL",
+   "subtema": "Faltantes disfrazados",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la clase, ¿cuál es el problema más frecuente con los faltantes?",
+   "opciones": [
+    "El NaN explícito",
+    "Que no se pueden graficar",
+    "El faltante disfrazado de valor: 0, −1, 999, 9999, «S/D», «NA», «-», «» o 01/01/1900",
+    "Que los faltantes ocupan memoria"
+   ],
+   "correcta": 2,
+   "explicacion": "El NaN es visible; el faltante disfrazado pasa desapercibido y contamina promedios y conteos. Por eso se declara con na_values o se reemplaza explícitamente.",
+   "por_que_no": [
+    "El NaN es fácil de detectar con isna().",
+    "No es el problema principal.",
+    "",
+    "No es el problema principal."
+   ],
+   "referencia": "Clase 13, «Faltantes disfrazados»"
+  },
+  {
+   "id": "ALG-09",
+   "tema": "ALG",
+   "subtema": "Mortalidad",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "En la ley de Makeham usada en clase, ¿cómo se obtiene qx a partir de la fuerza de mortalidad μx = A + B·c^x?",
+   "opciones": [
+    "qx = 1 − e^(−μx)",
+    "qx = e^(μx)",
+    "qx = 1 / μx",
+    "qx = μx"
+   ],
+   "correcta": 0,
+   "explicacion": "La función qx(x) calcula mu = A + B * c ** x y devuelve 1 - math.exp(-mu).",
+   "por_que_no": [
+    "",
+    "e^μ es mayor que 1, así que no puede ser una probabilidad.",
+    "No es la relación usada.",
+    "μx es una fuerza (tasa instantánea), no una probabilidad anual."
+   ],
+   "referencia": "Clase 10, «Aplicación: tabla de mortalidad»"
+  },
+  {
+   "id": "CTL-12",
+   "tema": "CTL",
+   "subtema": "Tarifación",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Cuánto devuelve prima_anual(60_000_000, 40)?",
+   "codigo": "def prima_anual(suma_asegurada, edad, fumador=False, tasa_base=0.0025):\n    prima = suma_asegurada * tasa_base\n    if edad >= 60:\n        prima = prima * 1.50\n    elif edad >= 40:\n        prima = prima * 1.20\n    if fumador:\n        prima = prima * 1.35\n    if suma_asegurada > 50_000_000:\n        prima = prima * 0.95\n    return round(prima, 2)",
+   "opciones": [
+    "171000.0",
+    "142500.0",
+    "150000.0",
+    "180000.0"
+   ],
+   "correcta": 0,
+   "explicacion": "Base: 60.000.000 × 0,0025 = 150.000. Por edad 40 a 59: × 1,20 = 180.000. No fuma. Suma > 50 M: × 0,95 = 171.000.",
+   "por_que_no": [
+    "",
+    "Aplica el descuento pero omite el recargo por edad (edad ≥ 40).",
+    "Falta aplicar el recargo por edad y el descuento por volumen.",
+    "Falta aplicar el descuento por volumen (suma > 50 M)."
+   ],
+   "referencia": "Clase 10, «Ejemplo actuarial: tarifación con recargos»"
+  },
+  {
+   "id": "PC-39",
+   "tema": "PC",
+   "subtema": "Rol del actuario",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según las conclusiones de la clase, ¿dónde está el valor actuarial del trabajo computacional?",
+   "opciones": [
+    "En usar siempre el modelo más complejo disponible",
+    "En formular bien el problema, elegir supuestos razonables, validar resultados y comunicar implicancias para la decisión",
+    "En escribir el código más corto posible",
+    "En automatizar todo sin intervención del criterio profesional"
+   ],
+   "correcta": 1,
+   "explicacion": "La programación es una herramienta; el valor actuarial está en formular bien el problema, elegir supuestos razonables, validar resultados y comunicar implicancias para la toma de decisiones.",
+   "por_que_no": [
+    "La complejidad no garantiza calidad; un modelo usado sin entender sus supuestos es un riesgo.",
+    "",
+    "La brevedad del código no es el objetivo.",
+    "La clase pregunta qué parte requiere criterio profesional y no debe delegarse ciegamente al modelo."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Conclusiones»"
+  },
+  {
+   "id": "SQL-38",
+   "tema": "SQL",
+   "subtema": "GROUP BY y HAVING",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta muestra los proveedores que tienen más de 3 productos registrados?",
+   "opciones": [
+    "SELECT SupplierID, COUNT(*) FROM Products ORDER BY COUNT(*) > 3;",
+    "SELECT SupplierID FROM Products WHERE ProductID > 3;",
+    "SELECT SupplierID, COUNT(*) FROM Products WHERE COUNT(*) > 3 GROUP BY SupplierID;",
+    "SELECT SupplierID, COUNT(*) FROM Products GROUP BY SupplierID HAVING COUNT(*) > 3;"
+   ],
+   "correcta": 3,
+   "explicacion": "Se agrupa por proveedor, se cuentan sus productos y HAVING filtra los grupos con más de 3.",
+   "por_que_no": [
+    "ORDER BY no filtra y falta el GROUP BY.",
+    "Filtra por el valor del ID del producto, no por la cantidad de productos.",
+    "No se puede usar COUNT en WHERE, y WHERE va antes de GROUP BY.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 15"
+  },
+  {
+   "id": "EDA-47",
+   "tema": "EDA",
+   "subtema": "Concepto",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la clase 14, ¿cuál es el producto final del EDA?",
+   "opciones": [
+    "Una colección de gráficos",
+    "Un modelo ajustado",
+    "Una lista de hipótesis y decisiones para la etapa de modelado, cada una para contrastar idealmente con datos no usados en la exploración",
+    "Una base sin faltantes"
+   ],
+   "correcta": 2,
+   "explicacion": "El EDA conecta hallazgos con hipótesis, como la binomial negativa para la frecuencia, la lognormal para la severidad o la censura en el tope.",
+   "por_que_no": [
+    "Los gráficos son medios, no el fin.",
+    "El modelado viene después.",
+    "",
+    "No es el objetivo del EDA."
+   ],
+   "referencia": "Clase 14, «Del hallazgo a la hipótesis»"
+  },
+  {
+   "id": "EST-06",
+   "tema": "EST",
+   "subtema": "Escalas de medición",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Un analista calcula el promedio de los códigos numéricos de provincia de la cartera. ¿Qué problema tiene?",
+   "opciones": [
+    "Ninguno",
+    "El promedio debería redondearse",
+    "La provincia es una variable nominal: promediar sus códigos es aritméticamente posible pero conceptualmente absurdo",
+    "Debería usar la mediana"
+   ],
+   "correcta": 2,
+   "explicacion": "La escala determina qué operaciones tienen sentido. En una variable nominal los números son etiquetas, no cantidades.",
+   "por_que_no": [
+    "El cálculo no tiene interpretación.",
+    "Redondear no lo vuelve válido.",
+    "",
+    "La mediana tampoco tiene sentido en una escala nominal, porque no hay orden."
+   ],
+   "referencia": "Clase 12, «Escalas de medición»"
+  },
+  {
+   "id": "PYB-12",
+   "tema": "PYB",
+   "subtema": "Tuplas",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué ocurre al ejecutar la última línea?",
+   "codigo": "poliza = (1002, \"Auto\", 450_000)\npoliza[2] = 500_000",
+   "opciones": [
+    "Se agrega un cuarto elemento",
+    "Se convierte en lista automáticamente",
+    "La prima pasa a ser 500.000",
+    "Se genera un TypeError porque las tuplas son inmutables"
+   ],
+   "correcta": 3,
+   "explicacion": "Las tuplas no pueden modificarse una vez creadas. Esa inmutabilidad es una garantía: sirven para registros que no deben cambiar.",
+   "por_que_no": [
+    "No se agregan elementos.",
+    "Python no convierte tipos de esa forma.",
+    "Eso ocurriría con una lista.",
+    ""
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Tuplas»"
+  },
+  {
+   "id": "JOIN-09",
+   "tema": "JOIN",
+   "subtema": "Joins excluyentes",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué devuelve la siguiente consulta con el ejemplo de clientes (Juan, Clara, Marta) y facturas (11→2, 12→null, 13→1)?",
+   "codigo": "SELECT factura.id AS nro_factura, apellido, nombre, fecha\nFROM cliente\nRIGHT JOIN factura ON cliente.id = factura.cliente_id\nWHERE cliente.id IS NULL;",
+   "opciones": [
+    "Marta García, con factura NULL",
+    "Ninguna fila",
+    "La factura 12, con apellido y nombre NULL",
+    "Las facturas 11 y 13"
+   ],
+   "correcta": 2,
+   "explicacion": "Es un RIGHT JOIN excluyente: conserva todas las facturas y se queda solo con las que no tienen cliente asociado, en este caso la 12.",
+   "por_que_no": [
+    "Marta saldría con un LEFT JOIN excluyente.",
+    "La factura 12 cumple la condición.",
+    "",
+    "Esas facturas sí tienen cliente."
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «RIGHT JOIN Excluyente»"
+  },
+  {
+   "id": "ALG-20",
+   "tema": "ALG",
+   "subtema": "Recursividad",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve producto(7, 6)?",
+   "codigo": "def producto(n, m):\n    if n == 0:\n        return 0\n    return producto(n - 1, m) + m",
+   "opciones": [
+    "13",
+    "36",
+    "Error",
+    "42"
+   ],
+   "correcta": 3,
+   "explicacion": "Se aprovecha que n·m = (n − 1)·m + m: suma 6 siete veces hasta llegar al caso base n = 0. Resultado: 42.",
+   "por_que_no": [
+    "Sería 7 + 6.",
+    "Sería 6 × 6.",
+    "Tiene caso base.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 23"
+  },
+  {
+   "id": "CTL-23",
+   "tema": "CTL",
+   "subtema": "for vs while",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Según la tabla de la clase, ¿qué estructura se usa para «buscar el primer año con déficit»?",
+   "opciones": [
+    "for + break",
+    "Solo if",
+    "while sin condición de salida",
+    "pass"
+   ],
+   "correcta": 0,
+   "explicacion": "Se recorren los años con for y se interrumpe con break en cuanto aparece el primer déficit.",
+   "por_que_no": [
+    "",
+    "if no recorre los años.",
+    "Un while sin salida es un bucle infinito.",
+    "pass no hace nada."
+   ],
+   "referencia": "Clase 10, «for vs while: cómo elegir»"
+  },
+  {
+   "id": "PC-10",
+   "tema": "PC",
+   "subtema": "Heurísticas",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Una característica clave del pensamiento computacional es la capacidad de usar heurísticas. ¿Qué implica esto?",
+   "opciones": [
+    "Encontrar siempre la solución óptima",
+    "Aplicar reglas estrictas sin flexibilidad",
+    "Aceptar soluciones aproximadas cuando el problema lo requiere",
+    "Evitar el uso de la intuición en el proceso"
+   ],
+   "correcta": 2,
+   "explicacion": "Wing señala que, al resolver un problema eficientemente, uno puede preguntarse si una solución aproximada es «suficientemente buena» y que el pensamiento computacional usa razonamiento heurístico para descubrir una solución.",
+   "por_que_no": [
+    "Las heurísticas justamente renuncian a garantizar el óptimo a cambio de eficiencia.",
+    "El razonamiento heurístico es flexible: busca soluciones razonables, no reglas rígidas.",
+    "",
+    "Las heurísticas se apoyan en la experiencia y la intuición."
+   ],
+   "referencia": "Wing (2006); 1er Parcial 1C 2026, pregunta 1"
+  },
+  {
+   "id": "EXC-19",
+   "tema": "EXC",
+   "subtema": "Tablas dinámicas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Al hacer el recuento de pólizas en una tabla dinámica, ¿qué campo conviene contar y por qué?",
+   "opciones": [
+    "La prima, porque siempre tiene valor",
+    "El número de póliza, porque no se repite; el DNI puede repetirse si una persona tiene varias pólizas",
+    "El DNI, porque identifica a la persona",
+    "El ramo, porque tiene pocas categorías"
+   ],
+   "correcta": 1,
+   "explicacion": "Los apuntes lo marcan como esencial: para contar pólizas se usa un elemento que no se repite, como el número de póliza. Contar DNI distintos daría cantidad de personas, no de pólizas.",
+   "por_que_no": [
+    "La prima puede tener valores repetidos; además, en una tabla dinámica se resume (suma o promedia) más que contarse.",
+    "",
+    "Una misma persona puede tener más de una póliza, así que no estaríamos contando pólizas.",
+    "El ramo es una categoría para agrupar, no un identificador."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Tablas dinámicas»"
+  },
+  {
+   "id": "EST-34",
+   "tema": "EST",
+   "subtema": "Selección",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Se quieren extraer los primeros 3 valores de las filas (por posición) de la segunda columna de un DataFrame. ¿Qué sintaxis es correcta?",
+   "opciones": [
+    "data.iloc[2, :3]",
+    "data.loc[:3, 1]",
+    "data.take([1], axis=0).head(3)",
+    "data.iloc[:3, 1]"
+   ],
+   "correcta": 3,
+   "explicacion": "iloc selecciona por posición: [:3] son las filas 0, 1 y 2, y la columna 1 es la segunda (índices desde 0).",
+   "por_que_no": [
+    "Toma la fila 2 y las tres primeras columnas: está invertido.",
+    "loc selecciona por etiquetas, no por posición.",
+    "take([1], axis=0) toma la segunda fila, no la segunda columna.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 30"
+  },
+  {
+   "id": "SQL-41",
+   "tema": "SQL",
+   "subtema": "Joins y agregación",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta muestra cuántos pedidos hizo cada cliente, de mayor a menor?",
+   "opciones": [
+    "SELECT CustomerName, OrderID FROM Customers, Orders ORDER BY OrderID DESC;",
+    "SELECT c.CustomerName, COUNT(o.OrderID) AS pedidos FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID GROUP BY c.CustomerName ORDER BY pedidos DESC;",
+    "SELECT COUNT(*) FROM Orders ORDER BY CustomerID;",
+    "SELECT c.CustomerName, SUM(o.OrderID) FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID GROUP BY c.CustomerName;"
+   ],
+   "correcta": 1,
+   "explicacion": "Se cruzan clientes con pedidos por CustomerID, se agrupa por cliente, se cuentan los pedidos y se ordena por el alias (válido en ORDER BY) de forma descendente.",
+   "por_que_no": [
+    "No cruza por la clave (produce todas las combinaciones) ni cuenta.",
+    "",
+    "Da un único total y no separa por cliente.",
+    "Sumar identificadores de pedido no tiene sentido; hay que contarlos."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 13"
+  },
+  {
+   "id": "CTL-34",
+   "tema": "CTL",
+   "subtema": "break, continue, pass",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "En la revisión de cartera de la clase se reemplazó el break por continue. ¿Qué se imprime ahora?",
+   "opciones": [
+    "Revisada 1, Revisada 2, Revisada 3, Revisada 4, Revisada 5",
+    "Revisada 1, Revisada 3, Caso para reaseguro: 4",
+    "Revisada 1, Revisada 3, Caso para reaseguro: 4, Revisada la póliza 4, Revisada 5",
+    "Revisada 1, Revisada 3, Caso para reaseguro: 4, Revisada 5"
+   ],
+   "correcta": 3,
+   "explicacion": "Con continue, tras imprimir el caso de la póliza 4 se saltea el resto de esa iteración (no se imprime «Revisada la póliza 4») y el ciclo sigue con la 5.",
+   "por_que_no": [
+    "La póliza 2 sigue salteándose y la 4 sigue marcándose para reaseguro.",
+    "Sin break el ciclo no se detiene y la póliza 5 se revisa.",
+    "continue impide imprimir «Revisada» para la póliza 4.",
+    ""
+   ],
+   "referencia": "Clase 10, «break, continue y pass»",
+   "codigo": "cartera = [\n  {\"id\": 1, \"estado\": \"vigente\", \"siniestro\": 120_000},\n  {\"id\": 2, \"estado\": \"anulada\", \"siniestro\": 980_000},\n  {\"id\": 3, \"estado\": \"vigente\", \"siniestro\": 60_000},\n  {\"id\": 4, \"estado\": \"vigente\", \"siniestro\": 1_500_000},\n  {\"id\": 5, \"estado\": \"vigente\", \"siniestro\": 300_000},\n]\nfor p in cartera:\n    if p[\"estado\"] == \"anulada\":\n        continue\n    if p[\"siniestro\"] > 1_000_000:\n        print(\"Caso para reaseguro:\", p[\"id\"])\n        continue          # antes era break\n    print(\"Revisada la póliza\", p[\"id\"])"
+  },
+  {
+   "id": "SQL-47",
+   "tema": "SQL",
+   "subtema": "Agregación avanzada",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "«Listar los empleados que gestionaron más pedidos que el promedio de pedidos por empleado.» ¿Qué debe calcular la subconsulta?",
+   "opciones": [
+    "El promedio, entre empleados, de la cantidad de pedidos de cada uno (un promedio de conteos agrupados)",
+    "El total de pedidos de la base",
+    "El máximo OrderID",
+    "La cantidad de empleados"
+   ],
+   "correcta": 0,
+   "explicacion": "Primero se cuentan los pedidos de cada empleado (GROUP BY EmployeeID) y luego se promedian esos conteos. Cada empleado se compara contra ese valor, típicamente con HAVING COUNT(*) > (subconsulta).",
+   "por_que_no": [
+    "",
+    "Comparar contra el total de pedidos no sirve: ningún empleado lo superaría.",
+    "El ID máximo no es un promedio de pedidos.",
+    "Hace falta el promedio de pedidos por empleado, no solo cuántos empleados hay."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 24"
+  },
+  {
+   "id": "EDA-05",
+   "tema": "EDA",
+   "subtema": "Primer vistazo",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la cartera de trabajo, la columna edad es float64 y no int64. ¿Qué pista da eso?",
+   "opciones": [
+    "Que la columna tiene faltantes: en numpy no existe un entero con NaN",
+    "Que hay edades con decimales",
+    "Que es una categoría",
+    "Que hay un error de lectura del CSV"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase lo señala: hay 401 edades faltantes (2 %) y por eso la columna es float. Una base limpia no es una base sin faltantes, sino una cuyos faltantes están identificados.",
+   "por_que_no": [
+    "",
+    "La causa es la presencia de NaN.",
+    "Es numérica.",
+    "Es el comportamiento esperado ante faltantes."
+   ],
+   "referencia": "Clase 14, «Primer vistazo»"
+  },
+  {
+   "id": "ALG-16",
+   "tema": "ALG",
+   "subtema": "Rentas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "La guía señala que anualidad_vitalicia (versión iterativa) «realiza mucho trabajo redundante». ¿Cuál?",
+   "codigo": "for k in range(0, w - x + 1):\n    valor += v ** k * p_n(x, k)",
+   "opciones": [
+    "Usa range en vez de while",
+    "Recalcula desde cero el producto acumulado kpx en cada término, en lugar de arrastrarlo del paso anterior",
+    "Suma dos veces el primer término",
+    "Calcula v en cada iteración"
+   ],
+   "correcta": 1,
+   "explicacion": "p_n(x, k) vuelve a multiplicar k factores en cada iteración. Conviene ir actualizando la supervivencia de un paso al siguiente, como hace la versión recursiva.",
+   "por_que_no": [
+    "El tipo de bucle no es la fuente de la redundancia.",
+    "",
+    "Cada término se suma una vez.",
+    "v se calcula una sola vez, antes del ciclo."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Renta vitalicia anticipada – Discusión»"
+  },
+  {
+   "id": "JOIN-45",
+   "tema": "JOIN",
+   "subtema": "ALTER TABLE",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "La cátedra muestra ALTER TABLE clientes ALTER COLUMN telefono TYPE BIGINT USING telefono::BIGINT. ¿Qué precaución corresponde antes de ejecutarlo?",
+   "opciones": [
+    "Agregar un WHERE",
+    "Ninguna, el cambio de tipo es siempre seguro",
+    "Borrar la tabla antes",
+    "Verificar que los datos existentes sean compatibles con el nuevo tipo, porque si la columna tiene valores no convertibles la operación puede fallar"
+   ],
+   "correcta": 3,
+   "explicacion": "Si la columna tiene datos, hay que verificar que el nuevo tipo sea compatible: por ejemplo, un teléfono con guiones o letras no se convierte en BIGINT.",
+   "por_que_no": [
+    "ALTER TABLE no lleva WHERE.",
+    "La cátedra advierte lo contrario.",
+    "Borrar la tabla haría perder todos los datos.",
+    ""
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «ALTER TABLE – Modificar el tipo de dato»"
+  },
+  {
+   "id": "CAL-24",
+   "tema": "CAL",
+   "subtema": "Imputación",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Al imputar los faltantes de prima con la mediana, el desvío estándar bajó de 141.049 a 118.477 (un 16 %). ¿Qué consecuencia actuarial señala la clase?",
+   "opciones": [
+    "La base es artificialmente menos variable; si la variable alimenta un cálculo de capital o un percentil alto, la imputación ingenua subestima el riesgo",
+    "Que la media aumentó",
+    "Que hay que imputar con cero",
+    "Ninguna: la base quedó más limpia"
+   ],
+   "correcta": 0,
+   "explicacion": "«Imputar reduce la variabilidad: nunca es gratis.» Al rellenar con un valor central, la dispersión disminuye artificialmente.",
+   "por_que_no": [
+    "",
+    "La media bajó (de 267.000 a 250.714).",
+    "Imputar con cero crearía faltantes disfrazados.",
+    "Parece más limpia, pero es engañoso."
+   ],
+   "referencia": "Clase 13, «El costo de imputar»"
+  },
+  {
+   "id": "PC-45",
+   "tema": "PC",
+   "subtema": "Qué es y qué no es (Wing)",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Wing afirma que el pensamiento computacional será «para todos, en todas partes». ¿Cuándo dice que esto será una realidad?",
+   "opciones": [
+    "Cuando sea tan integral a las actividades humanas que desaparezca como filosofía explícita",
+    "Cuando todas las personas sepan programar en un lenguaje específico",
+    "Cuando las computadoras piensen como humanos",
+    "Cuando todas las universidades tengan una carrera de computación"
+   ],
+   "correcta": 0,
+   "explicacion": "Wing dice que será una realidad cuando esté tan integrado a la actividad humana que deje de ser una filosofía explícita.",
+   "por_que_no": [
+    "",
+    "Wing insiste en que no se trata de programar.",
+    "El pensamiento computacional es una forma de pensar humana; no depende de que las máquinas piensen como humanos.",
+    "Wing propone ofrecer cursos a no especialistas, pero esa no es la condición que plantea."
+   ],
+   "referencia": "Wing (2006), «For everyone, everywhere»"
+  },
+  {
+   "id": "ALG-50",
+   "tema": "ALG",
+   "subtema": "Probabilidad de ruina",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Según la nota metodológica de la guía, ¿con qué debería acompañarse una probabilidad estimada por simulación?",
+   "opciones": [
+    "Con nada: el número es exacto",
+    "Con el código fuente impreso",
+    "Con alguna medida de su propia incertidumbre, porque depende de la semilla, del número de réplicas y de los parámetros supuestos",
+    "Con un gráfico de torta"
+   ],
+   "correcta": 2,
+   "explicacion": "Una estimación Monte Carlo es aleatoria. Informar su incertidumbre (por ejemplo, un intervalo) permite juzgar cuánto creerle.",
+   "por_que_no": [
+    "Es una estimación, no un valor exacto.",
+    "No cuantifica la incertidumbre.",
+    "",
+    "No aporta información sobre la incertidumbre."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Nota metodológica» (sección 19)"
+  },
+  {
+   "id": "BD-30",
+   "tema": "BD",
+   "subtema": "Normalización",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "¿Por qué los sistemas transaccionales tienden a estar normalizados y los repositorios analíticos, desnormalizados?",
+   "opciones": [
+    "Porque responden a preguntas distintas: registrar operaciones de forma consistente frente a consultar y agregar rápido sin muchos cruces",
+    "Porque es una contradicción de diseño que conviene corregir",
+    "Porque los sistemas transaccionales no tienen claves",
+    "Porque los repositorios analíticos no usan SQL"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase aclara que no es una contradicción. Los sistemas OLTP registran operaciones y priorizan la consistencia; los repositorios OLAP responden preguntas agregando millones de filas y priorizan consultas simples y rápidas.",
+   "por_que_no": [
+    "",
+    "La clase dice explícitamente que no es una contradicción.",
+    "Los sistemas transaccionales usan claves intensamente.",
+    "Los repositorios analíticos suelen consultarse con SQL."
+   ],
+   "referencia": "Clase 12, «Normalización y desnormalización» y «OLTP y OLAP»"
+  }
+ ]
+}

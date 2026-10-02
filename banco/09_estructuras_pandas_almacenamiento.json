@@ -1,0 +1,1111 @@
+[
+ {
+  "id": "EST-01",
+  "tema": "EST",
+  "subtema": "Ciclo de vida del dato",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Cuál es el orden de las etapas del ciclo de vida del dato presentado en la clase?",
+  "opciones": [
+   "Análisis → captura → almacenamiento → limpieza → comunicación",
+   "Generación y captura → almacenamiento → integración → limpieza y transformación → análisis y modelado → comunicación → archivo o baja",
+   "Almacenamiento → generación → comunicación → análisis",
+   "Limpieza → captura → modelado → almacenamiento"
+  ],
+  "correcta": 1,
+  "explicacion": "El dato se genera, se almacena, se integra con otras fuentes, se limpia y transforma, se analiza, se comunica y finalmente se archiva o se da de baja. Cada etapa impone restricciones a la siguiente.",
+  "por_que_no": [
+   "No se puede analizar antes de capturar.",
+   "",
+   "El dato debe generarse antes de almacenarse.",
+   "No se puede limpiar lo que todavía no se capturó."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «El ciclo de vida del dato»"
+ },
+ {
+  "id": "EST-02",
+  "tema": "EST",
+  "subtema": "Ciclo de vida del dato",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "Según la clase 12, ¿en qué se consume la mayor parte del tiempo en el trabajo actuarial real?",
+  "opciones": [
+   "En elegir el modelo",
+   "En obtener, entender, estructurar y validar los datos que el modelo necesita",
+   "En graficar resultados",
+   "En escribir el informe final"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase lo afirma explícitamente. Además advierte que un algoritmo con datos mal estructurados produce resultados que parecen correctos y no lo son.",
+  "por_que_no": [
+   "La clase indica que el modelo no es lo que más tiempo consume.",
+   "",
+   "Graficar es una parte menor del trabajo.",
+   "El informe es una parte menor del trabajo."
+  ],
+  "referencia": "Clase 12, «Del algoritmo a los datos»"
+ },
+ {
+  "id": "EST-03",
+  "tema": "EST",
+  "subtema": "Tipos de datos por estructura",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Un archivo JSON con una póliza y sus coberturas anidadas, sin un esquema rígido, es un ejemplo de datos:",
+  "opciones": [
+   "Estructurados",
+   "Semiestructurados",
+   "No estructurados",
+   "Binarios columnar"
+  ],
+  "correcta": 1,
+  "explicacion": "Los semiestructurados tienen etiquetas y jerarquía, pero no un esquema rígido: JSON, respuestas de APIs, XML.",
+  "por_que_no": [
+   "Los estructurados tienen filas y columnas con un esquema definido.",
+   "",
+   "Los no estructurados son texto libre, imágenes, audio y video.",
+   "Es una categoría de formato de archivo, no de estructura del dato."
+  ],
+  "referencia": "Clase 12, «Tipos de datos según su estructura»"
+ },
+ {
+  "id": "EST-04",
+  "tema": "EST",
+  "subtema": "Tipos de datos por estructura",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Las fotografías de daños de un siniestro y las denuncias redactadas por el productor son datos:",
+  "opciones": [
+   "Estructurados",
+   "Semiestructurados",
+   "No estructurados",
+   "Relacionales"
+  ],
+  "correcta": 2,
+  "explicacion": "El texto libre, las imágenes, el audio y el video son no estructurados. La clase señala que suelen ser muy valiosos para detección de fraude o suscripción.",
+  "por_que_no": [
+   "No están en filas y columnas.",
+   "No tienen etiquetas ni jerarquía.",
+   "",
+   "No están organizados en tablas relacionadas."
+  ],
+  "referencia": "Clase 12, «Tipos de datos según su estructura»"
+ },
+ {
+  "id": "EST-05",
+  "tema": "EST",
+  "subtema": "Escalas de medición",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué escala de medición corresponde a la categoría de riesgo (bajo, medio, alto)?",
+  "opciones": [
+   "Nominal",
+   "Ordinal",
+   "Intervalo",
+   "Razón"
+  ],
+  "correcta": 1,
+  "explicacion": "La ordinal admite orden: bajo < medio < alto. La clase da como ejemplos la categoría de riesgo y la franja etaria.",
+  "por_que_no": [
+   "La nominal solo admite igualdad (ramo, provincia), no orden.",
+   "",
+   "La de intervalo admite diferencias (fecha de siniestro).",
+   "La de razón admite cocientes y cero (prima, monto, edad)."
+  ],
+  "referencia": "Clase 12, «Escalas de medición»"
+ },
+ {
+  "id": "EST-06",
+  "tema": "EST",
+  "subtema": "Escalas de medición",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Un analista calcula el promedio de los códigos numéricos de provincia de la cartera. ¿Qué problema tiene?",
+  "opciones": [
+   "Ninguno",
+   "La provincia es una variable nominal: promediar sus códigos es aritméticamente posible pero conceptualmente absurdo",
+   "El promedio debería redondearse",
+   "Debería usar la mediana"
+  ],
+  "correcta": 1,
+  "explicacion": "La escala determina qué operaciones tienen sentido. En una variable nominal los números son etiquetas, no cantidades.",
+  "por_que_no": [
+   "El cálculo no tiene interpretación.",
+   "",
+   "Redondear no lo vuelve válido.",
+   "La mediana tampoco tiene sentido en una escala nominal, porque no hay orden."
+  ],
+  "referencia": "Clase 12, «Escalas de medición»"
+ },
+ {
+  "id": "EST-07",
+  "tema": "EST",
+  "subtema": "Granularidad",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Qué es la granularidad de una tabla y por qué conviene identificarla primero?",
+  "opciones": [
+   "El tamaño en MB de la tabla",
+   "Qué representa una fila (por ejemplo, una póliza por período, un siniestro o un pago); es el primer paso antes de escribir cualquier línea de código",
+   "La cantidad de columnas",
+   "La precisión decimal de los montos"
+  ],
+  "correcta": 1,
+  "explicacion": "Reconocer qué representa una fila evita duplicar o inflar montos al cruzar o agregar.",
+  "por_que_no": [
+   "No se refiere al tamaño en disco.",
+   "",
+   "No se refiere a la cantidad de columnas.",
+   "No se refiere a los decimales."
+  ],
+  "referencia": "Clase 12, «Los datos del mundo actuarial»"
+ },
+ {
+  "id": "EST-08",
+  "tema": "EST",
+  "subtema": "Granularidad",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla de la clase, ¿qué estructura típica tiene el seguimiento de asegurados (individuo × tiempo)?",
+  "opciones": [
+   "Serie temporal",
+   "Datos de panel",
+   "Matriz en formato ancho",
+   "Tabla de una fila por siniestro"
+  ],
+  "correcta": 1,
+  "explicacion": "Los datos de panel combinan la dimensión individual y la temporal: una fila por asegurado y período.",
+  "por_que_no": [
+   "La serie temporal corresponde, por ejemplo, a la telemática.",
+   "",
+   "El formato ancho es típico del triángulo run-off.",
+   "Esa es la estructura del registro de siniestros."
+  ],
+  "referencia": "Clase 12, «Los datos del mundo actuarial» y «Datos de panel»"
+ },
+ {
+  "id": "EST-09",
+  "tema": "EST",
+  "subtema": "pandas: Series",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime s.loc[1002]?",
+  "codigo": "s = pd.Series([120_000, 450_000, 380_000],\n              index=[1001, 1002, 1003], name=\"prima\")",
+  "opciones": [
+   "380000",
+   "450000",
+   "120000",
+   "KeyError"
+  ],
+  "correcta": 1,
+  "explicacion": "Una Series es un arreglo unidimensional con índice etiquetado. .loc accede por etiqueta: la etiqueta 1002 corresponde a 450.000.",
+  "por_que_no": [
+   "Esa es la etiqueta 1003.",
+   "",
+   "Esa es la etiqueta 1001.",
+   "La etiqueta existe."
+  ],
+  "referencia": "Clase 12, «pandas: la Series»"
+ },
+ {
+  "id": "EST-10",
+  "tema": "EST",
+  "subtema": "pandas: Series",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La clase afirma que «el índice de una Series no es decorativo». ¿Por qué?",
+  "opciones": [
+   "Porque define el color de la tabla",
+   "Porque permite alinear automáticamente dos Series por etiqueta al operarlas",
+   "Porque ordena los valores de mayor a menor",
+   "Porque elimina duplicados"
+  ],
+  "correcta": 1,
+  "explicacion": "Al operar dos Series, pandas empareja los valores por etiqueta de índice, no por posición. Por eso el índice determina el resultado.",
+  "por_que_no": [
+   "No tiene relación con el formato visual.",
+   "",
+   "No ordena por valor.",
+   "No deduplica."
+  ],
+  "referencia": "Clase 12, «pandas: la Series»"
+ },
+ {
+  "id": "EST-11",
+  "tema": "EST",
+  "subtema": "pandas: DataFrame",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo define la clase un DataFrame?",
+  "opciones": [
+   "Un arreglo de una dimensión",
+   "Una tabla bidimensional: un conjunto de Series que comparten el mismo índice",
+   "Un diccionario sin claves",
+   "Un archivo CSV"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada columna es una Series y todas comparten el índice de filas. Puede construirse, por ejemplo, desde una lista de diccionarios.",
+  "por_que_no": [
+   "Eso describe a la Series.",
+   "",
+   "No es un diccionario sin claves.",
+   "El CSV es un formato de archivo; el DataFrame es una estructura en memoria."
+  ],
+  "referencia": "Clase 12, «pandas: el DataFrame»"
+ },
+ {
+  "id": "EST-12",
+  "tema": "EST",
+  "subtema": "pandas: DataFrame",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la clase dice que «una lista de diccionarios es la forma natural en que llega la información desde una API»?",
+  "opciones": [
+   "Porque las APIs solo envían números",
+   "Porque cada registro llega como un objeto clave-valor (por ejemplo, una póliza con sus campos) y la colección es una lista de esos objetos, que pd.DataFrame convierte en tabla",
+   "Porque los diccionarios son inmutables",
+   "Porque las listas no admiten textos"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada diccionario es una fila con sus campos y la lista agrupa los registros. pd.DataFrame(registros) produce la tabla.",
+  "por_que_no": [
+   "Envían todo tipo de datos.",
+   "",
+   "Los diccionarios son mutables.",
+   "Las listas admiten cualquier tipo."
+  ],
+  "referencia": "Clase 12, «pandas: el DataFrame»"
+ },
+ {
+  "id": "EST-13",
+  "tema": "EST",
+  "subtema": "Inspección",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué devuelve df.head()?",
+  "opciones": [
+   "Estadísticas básicas",
+   "Las primeras filas",
+   "Las últimas filas",
+   "Los tipos de datos"
+  ],
+  "correcta": 1,
+  "explicacion": "head() muestra las primeras filas (5 por defecto) y es uno de los primeros pasos al inspeccionar una base.",
+  "por_que_no": [
+   "Eso lo hace describe().",
+   "",
+   "Eso lo hace tail().",
+   "Eso lo hace dtypes o info()."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 19; Clase 12, «Inspeccionar un DataFrame»"
+ },
+ {
+  "id": "EST-14",
+  "tema": "EST",
+  "subtema": "Inspección",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué método permite conocer los tipos de datos y la cantidad de valores no nulos de cada columna?",
+  "opciones": [
+   "df.describe()",
+   "df.info()",
+   "df.types()",
+   "df.shape()"
+  ],
+  "correcta": 1,
+  "explicacion": "info() muestra la estructura del DataFrame: columnas, cantidad de valores no nulos y tipo de cada una.",
+  "por_que_no": [
+   "describe() da un resumen estadístico.",
+   "",
+   "No es un método de pandas.",
+   "shape es un atributo (sin paréntesis) que devuelve (filas, columnas)."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 21; Clase 12"
+ },
+ {
+  "id": "EST-15",
+  "tema": "EST",
+  "subtema": "Inspección",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Para qué sirve df.describe()?",
+  "opciones": [
+   "Para generar gráficos",
+   "Para eliminar nulos",
+   "Para obtener estadísticas descriptivas (conteo, media, desvío, mínimo, cuartiles, máximo)",
+   "Para ordenar columnas"
+  ],
+  "correcta": 2,
+  "explicacion": "describe() resume numéricamente las columnas y permite detectar de un vistazo mínimos y máximos imposibles.",
+  "por_que_no": [
+   "Para gráficos se usan plot o matplotlib.",
+   "Eso lo hace dropna().",
+   "",
+   "Para ordenar se usa sort_values."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 20; Clase 12 y Clase 13"
+ },
+ {
+  "id": "EST-16",
+  "tema": "EST",
+  "subtema": "Inspección",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué devuelve df.nunique()?",
+  "opciones": [
+   "El número de filas",
+   "La cantidad de columnas",
+   "La cantidad de valores únicos por columna",
+   "La cantidad de nulos"
+  ],
+  "correcta": 2,
+  "explicacion": "nunique() cuenta los valores distintos de cada columna. Es útil para detectar claves repetidas o categorías mal escritas.",
+  "por_que_no": [
+   "Eso lo da len(df) o df.shape[0].",
+   "Eso lo da df.shape[1].",
+   "",
+   "Eso lo da df.isna().sum()."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 26; Clase 13, «Un informe de calidad reproducible»"
+ },
+ {
+  "id": "EST-17",
+  "tema": "EST",
+  "subtema": "Inspección",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué responde df[\"poliza\"].duplicated().sum()?",
+  "opciones": [
+   "Cuántas pólizas hay",
+   "Cuántos identificadores de póliza están repetidos",
+   "La suma de los números de póliza",
+   "Cuántas columnas están duplicadas"
+  ],
+  "correcta": 1,
+  "explicacion": "duplicated() marca True en cada repetición de un valor ya visto y sum() cuenta esos True. Es una de las siete líneas que la clase recomienda ejecutar siempre.",
+  "por_que_no": [
+   "Eso es len o nunique.",
+   "",
+   "No suma los valores.",
+   "Se aplica a una columna, no a columnas duplicadas."
+  ],
+  "referencia": "Clase 12, «Inspeccionar un DataFrame»"
+ },
+ {
+  "id": "EST-18",
+  "tema": "EST",
+  "subtema": "Lectura de archivos",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cómo se lee un archivo CSV con pandas?",
+  "opciones": [
+   "pd.load_csv()",
+   "pd.open_csv()",
+   "pd.read_csv()",
+   "pd.import_csv()"
+  ],
+  "correcta": 2,
+  "explicacion": "pd.read_csv(\"archivo.csv\") lee el archivo y devuelve un DataFrame. Para escribir se usa df.to_csv().",
+  "por_que_no": [
+   "No existe en pandas.",
+   "No existe en pandas.",
+   "",
+   "No existe en pandas."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 18; Clase 12, «Archivos planos: CSV»"
+ },
+ {
+  "id": "EST-19",
+  "tema": "EST",
+  "subtema": "Lectura de archivos",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Un CSV local usa «;» como separador de campos, «,» como separador decimal y codificación Latin-1. ¿Qué argumentos de pd.read_csv corresponden?",
+  "opciones": [
+   "sep=\",\", decimal=\".\", encoding=\"utf-8\"",
+   "sep=\";\", decimal=\",\", encoding=\"latin-1\"",
+   "delimiter=\"tab\", decimal=\";\"",
+   "Ninguno: pandas lo detecta siempre solo"
+  ],
+  "correcta": 1,
+  "explicacion": "Es la lectura defensiva de la clase: cada argumento corresponde a un error real que aparece si se omite (columnas mal separadas, números como texto, acentos rotos).",
+  "por_que_no": [
+   "Son los valores por defecto, que no corresponden a este archivo.",
+   "",
+   "No corresponde al archivo descripto.",
+   "La clase advierte que leer un archivo nunca es trivial."
+  ],
+  "referencia": "Clase 12, «Archivos planos: lectura defensiva»"
+ },
+ {
+  "id": "EST-20",
+  "tema": "EST",
+  "subtema": "Lectura de archivos",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la lectura defensiva se usa dtype={\"poliza\": \"string\"}, parse_dates=[\"fecha_siniestro\"], dayfirst=True y na_values=[\"\", \"NA\", \"S/D\", \"-\"]. ¿Qué logra na_values?",
+  "opciones": [
+   "Elimina las filas con esos valores",
+   "Declara qué textos deben interpretarse como faltantes (NaN) al leer",
+   "Reemplaza los faltantes por cero",
+   "Convierte las fechas"
+  ],
+  "correcta": 1,
+  "explicacion": "Muchos sistemas codifican el faltante como «S/D», «-» o vacío. Declararlos en na_values los convierte en NaN y evita faltantes disfrazados.",
+  "por_que_no": [
+   "No elimina filas.",
+   "",
+   "No imputa ceros.",
+   "Las fechas se manejan con parse_dates y dayfirst."
+  ],
+  "referencia": "Clase 12, «Lectura defensiva»; Clase 13, «Faltantes disfrazados»"
+ },
+ {
+  "id": "EST-21",
+  "tema": "EST",
+  "subtema": "Tipos de columna",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En una tabla de 500.000 filas, convertir ramo a category, poliza a int32 y exposicion a float32 redujo la memoria de 18,2 MB a 8,5 MB. Además del ahorro, ¿qué otro beneficio menciona la clase sobre elegir bien los tipos?",
+  "opciones": [
+   "Que los gráficos salen en color",
+   "La corrección: por ejemplo, un número de póliza como texto o categoría no admite operaciones aritméticas sin sentido",
+   "Que se eliminan los duplicados",
+   "Que se ordenan las filas"
+  ],
+  "correcta": 1,
+  "explicacion": "El tipo previene errores: un identificador numérico permite sumarlo o promediarlo, algo absurdo. La clase 13 agrega que un identificador nunca es un número.",
+  "por_que_no": [
+   "No tiene relación con los gráficos.",
+   "",
+   "Cambiar el tipo no deduplica.",
+   "No ordena."
+  ],
+  "referencia": "Clase 12, «Tipos de columna y memoria»"
+ },
+ {
+  "id": "EST-22",
+  "tema": "EST",
+  "subtema": "Formato ancho y largo",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la ventaja y la desventaja del formato ancho (una columna por período, como el triángulo run-off)?",
+  "opciones": [
+   "Ventaja: el esquema no cambia nunca. Desventaja: es poco legible",
+   "Ventaja: se lee con naturalidad. Desventaja: agregar un período implica agregar una columna, es decir, cambiar el esquema",
+   "Ventaja: ocupa menos memoria. Desventaja: no se puede graficar",
+   "No tiene desventajas"
+  ],
+  "correcta": 1,
+  "explicacion": "El formato ancho es el de casi todo reporte de gestión. El largo tiene un esquema estable y es el natural para almacenar y graficar.",
+  "por_que_no": [
+   "Eso describe al formato largo.",
+   "",
+   "No es la comparación que plantea la clase.",
+   "Cambiar el esquema por cada período es una desventaja real."
+  ],
+  "referencia": "Clase 12, «Formato ancho» y «Formato largo»"
+ },
+ {
+  "id": "EST-24",
+  "tema": "EST",
+  "subtema": "Formato ancho y largo",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "El DataFrame ancho tiene 3 filas (ocurrencias 2021, 2022 y 2023) y las columnas ocurrencia, d0, d1, d2. ¿Cuántas filas tiene el resultado?",
+  "codigo": "largo = ancho.melt(id_vars=\"ocurrencia\", var_name=\"desarrollo\", value_name=\"monto\")",
+  "opciones": [
+   "3",
+   "4",
+   "9",
+   "12"
+  ],
+  "correcta": 2,
+  "explicacion": "melt pasa de ancho a largo: genera una fila por cada combinación de unidad (3 ocurrencias) y variable (d0, d1, d2), es decir 3 × 3 = 9.",
+  "por_que_no": [
+   "Es la cantidad de filas del formato ancho.",
+   "Confunde con la cantidad de columnas.",
+   "",
+   "ocurrencia es la variable identificadora y no se apila."
+  ],
+  "referencia": "Clase 12, «Formato largo»"
+ },
+ {
+  "id": "EST-25",
+  "tema": "EST",
+  "subtema": "Formato ancho y largo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué relación hay entre melt y pivot?",
+  "opciones": [
+   "Son la misma operación",
+   "Son inversas: melt pasa de ancho a largo y pivot de largo a ancho",
+   "Ambas eliminan columnas",
+   "pivot ordena y melt filtra"
+  ],
+  "correcta": 1,
+  "explicacion": "Por ejemplo, largo.pivot(index=\"ocurrencia\", columns=\"desarrollo\", values=\"monto\") reconstruye el triángulo. Dominar ese par resuelve buena parte de las reestructuraciones.",
+  "por_que_no": [
+   "Hacen transformaciones opuestas.",
+   "",
+   "Reorganizan los datos; no los eliminan.",
+   "No son operaciones de orden ni de filtro."
+  ],
+  "referencia": "Clase 12, «Ir y volver entre formatos»"
+ },
+ {
+  "id": "EST-26",
+  "tema": "EST",
+  "subtema": "Datos jerárquicos",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "poliza = {\n  \"poliza\": 1002,\n  \"asegurado\": {\"nombre\": \"B. Ruiz\", \"edad\": 58},\n  \"coberturas\": [\n    {\"tipo\": \"Responsabilidad civil\", \"suma\": 30_000_000},\n    {\"tipo\": \"Daño total\", \"suma\": 12_000_000},\n  ],\n}\nprint(poliza[\"asegurado\"][\"edad\"], len(poliza[\"coberturas\"]))",
+  "opciones": [
+   "58 2",
+   "B. Ruiz 2",
+   "58 1",
+   "1002 2"
+  ],
+  "correcta": 0,
+  "explicacion": "poliza[\"asegurado\"] es un diccionario anidado cuyo campo edad vale 58. coberturas es una lista con 2 elementos.",
+  "por_que_no": [
+   "",
+   "Se pide la edad, no el nombre.",
+   "Hay dos coberturas.",
+   "1002 es el número de póliza."
+  ],
+  "referencia": "Clase 12, «Datos jerárquicos: JSON»"
+ },
+ {
+  "id": "EST-27",
+  "tema": "EST",
+  "subtema": "Datos jerárquicos",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Al aplanar la póliza con pd.json_normalize(poliza, record_path=\"coberturas\", meta=[\"poliza\", [\"asegurado\", \"nombre\"]]), ¿qué cambia?",
+  "opciones": [
+   "Nada: queda una fila por póliza",
+   "La granularidad: se pasa de «una fila por póliza» a «una fila por cobertura» (2 filas), repitiendo póliza y nombre en cada una",
+   "Se pierde la información de las coberturas",
+   "Se crea un archivo JSON"
+  ],
+  "correcta": 1,
+  "explicacion": "record_path define qué lista se convierte en filas y meta qué datos del nivel superior se repiten. La clase destaca que aplanar es una decisión de modelado, no un detalle técnico.",
+  "por_que_no": [
+   "Cambia la unidad de análisis.",
+   "",
+   "Las coberturas pasan a ser filas.",
+   "Genera un DataFrame, no un archivo."
+  ],
+  "referencia": "Clase 12, «De jerárquico a tabular»"
+ },
+ {
+  "id": "EST-28",
+  "tema": "EST",
+  "subtema": "Series temporales",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con serie = siniestros.set_index(\"fecha\")[\"monto\"], ¿qué devuelve serie.resample(\"ME\").sum()?",
+  "opciones": [
+   "La media móvil de 3 períodos",
+   "El total de montos por mes",
+   "Los montos ordenados",
+   "La cantidad de fechas faltantes"
+  ],
+  "correcta": 1,
+  "explicacion": "resample reagrupa una serie con índice de fechas en otra frecuencia (\"ME\" = fin de mes) y sum totaliza cada mes. La media móvil se obtiene con rolling(3).mean().",
+  "por_que_no": [
+   "Eso lo hace rolling(3).mean().",
+   "",
+   "No ordena.",
+   "No cuenta faltantes."
+  ],
+  "referencia": "Clase 12, «Series temporales»"
+ },
+ {
+  "id": "EST-29",
+  "tema": "EST",
+  "subtema": "Series temporales",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Un archivo trae la fecha «03/04/2025». ¿Cuál es la advertencia de la clase?",
+  "opciones": [
+   "Que es una fecha inválida",
+   "Que puede ser el 3 de abril (formato local) o el 4 de marzo (formato anglosajón), y ambas interpretaciones son válidas; hay que convertir de forma explícita y verificar",
+   "Que siempre es el 3 de abril",
+   "Que siempre es el 4 de marzo"
+  ],
+  "correcta": 1,
+  "explicacion": "La ambigüedad de formato es silenciosa porque ambas lecturas producen fechas reales. Se resuelve indicando el formato (format=\"%d/%m/%Y\" o dayfirst=True).",
+  "por_que_no": [
+   "Es una fecha válida en ambos formatos.",
+   "",
+   "Depende del sistema de origen.",
+   "Depende del sistema de origen."
+  ],
+  "referencia": "Clase 12, «Series temporales»; Clase 13, «Fechas: el problema más subestimado»"
+ },
+ {
+  "id": "EST-30",
+  "tema": "EST",
+  "subtema": "Datos de panel",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Qué devuelve panel.loc[1] si panel = datos.set_index([\"id_asegurado\", \"anio\"])?",
+  "opciones": [
+   "La primera fila de la tabla",
+   "La historia completa del asegurado 1 (todas sus filas por año)",
+   "El año 1",
+   "Un error, porque el índice es doble"
+  ],
+  "correcta": 1,
+  "explicacion": "Con un índice múltiple (asegurado, año), .loc[1] selecciona todas las filas cuyo primer nivel es 1: la evolución del asegurado 1 en el tiempo.",
+  "por_que_no": [
+   ".loc selecciona por etiqueta, no por posición.",
+   "",
+   "El primer nivel del índice es el asegurado, no el año.",
+   "El índice múltiple admite esta selección."
+  ],
+  "referencia": "Clase 12, «Datos de panel»"
+ },
+ {
+  "id": "EST-31",
+  "tema": "EST",
+  "subtema": "merge",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al hacer polizas.merge(asegurados, on=\"id_asegurado\", how=\"left\"), la póliza 1004 (asegurado 9, inexistente en el padrón) aparece con nombre y edad NaN. ¿Por qué?",
+  "opciones": [
+   "Por un error de pandas",
+   "Porque how=\"left\" conserva todas las pólizas aunque no encuentren coincidencia; las columnas del padrón quedan vacías (NaN)",
+   "Porque how=\"left\" elimina las pólizas sin asegurado",
+   "Porque la edad era cero"
+  ],
+  "correcta": 1,
+  "explicacion": "Es el mismo comportamiento que un LEFT JOIN en SQL. Con how=\"inner\", la póliza 1004 se habría descartado.",
+  "por_que_no": [
+   "Es el comportamiento esperado.",
+   "",
+   "Eso haría how=\"inner\".",
+   "No hay dato de edad: falta el asegurado en el padrón."
+  ],
+  "referencia": "Clase 12, «Cruzar tablas: merge»"
+ },
+ {
+  "id": "EST-32",
+  "tema": "EST",
+  "subtema": "merge",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué conserva cada tipo de cruce en pandas: inner, left, right y outer?",
+  "opciones": [
+   "Todos conservan lo mismo",
+   "inner: claves presentes en ambas; left: todas las de la izquierda; right: todas las de la derecha; outer: todas las de ambas",
+   "inner: todas; outer: solo comunes",
+   "left: solo comunes; inner: todas las de la izquierda"
+  ],
+  "correcta": 1,
+  "explicacion": "La tabla de la clase 12 resume así los cuatro tipos de join, análogos a los de SQL.",
+  "por_que_no": [
+   "Cada tipo conserva un conjunto distinto.",
+   "",
+   "Está invertido.",
+   "Está invertido."
+  ],
+  "referencia": "Clase 12, «Los joins y por qué importan»"
+ },
+ {
+  "id": "EST-33",
+  "tema": "EST",
+  "subtema": "groupby",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué produce el siguiente código?",
+  "codigo": "por_poliza = siniestros.groupby(\"poliza\").agg(\n    n_siniestros=(\"monto\", \"size\"),\n    monto_total=(\"monto\", \"sum\")\n)",
+  "opciones": [
+   "Una fila por siniestro con el monto",
+   "Una fila por póliza con la cantidad de siniestros y el monto total: agregar es cambiar la granularidad",
+   "El monto promedio de toda la base",
+   "Una tabla con las pólizas duplicadas"
+  ],
+  "correcta": 1,
+  "explicacion": "groupby + agg pasa de una fila por siniestro a una fila por póliza. Las agregaciones con nombre (n_siniestros=(columna, función)) definen las columnas resultantes.",
+  "por_que_no": [
+   "Esa es la granularidad de partida.",
+   "",
+   "Se agrupa por póliza; no da un único valor.",
+   "Agrupar elimina las repeticiones."
+  ],
+  "referencia": "Clase 12, «Granularidad y agregación»"
+ },
+ {
+  "id": "EST-34",
+  "tema": "EST",
+  "subtema": "Selección",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Se quieren extraer los primeros 3 valores de las filas (por posición) de la segunda columna de un DataFrame. ¿Qué sintaxis es correcta?",
+  "opciones": [
+   "data.iloc[2, :3]",
+   "data.iloc[:3, 1]",
+   "data.loc[:3, 1]",
+   "data.take([1], axis=0).head(3)"
+  ],
+  "correcta": 1,
+  "explicacion": "iloc selecciona por posición: [:3] son las filas 0, 1 y 2, y la columna 1 es la segunda (índices desde 0).",
+  "por_que_no": [
+   "Toma la fila 2 y las tres primeras columnas: está invertido.",
+   "",
+   "loc selecciona por etiquetas, no por posición.",
+   "take([1], axis=0) toma la segunda fila, no la segunda columna."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 30"
+ },
+ {
+  "id": "EST-35",
+  "tema": "EST",
+  "subtema": "concat",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Para unir horizontalmente tres columnas de variaciones de distintos activos (AMZN, SPY, QQQ) que comparten el mismo índice, ¿qué comando se usa?",
+  "opciones": [
+   "pd.concat([df1, df2, df3], axis=0)",
+   "pd.concat([df1, df2, df3], axis=1)",
+   "data.join_horizontal([df1, df2, df3])",
+   "pd.append([df1, df2, df3])"
+  ],
+  "correcta": 1,
+  "explicacion": "concat con axis=1 pone los objetos uno al lado del otro, alineados por índice. Con axis=0 se apilan filas, como al juntar archivos mensuales.",
+  "por_que_no": [
+   "axis=0 apila verticalmente.",
+   "",
+   "No existe ese método.",
+   "No es la forma de unir horizontalmente."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 31; Clase 13, «Apilar períodos: concat»"
+ },
+ {
+  "id": "EST-36",
+  "tema": "EST",
+  "subtema": "Filtrado",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué expresión obtiene las pólizas de Hogar con al menos un siniestro?",
+  "opciones": [
+   "cartera[cartera[\"producto\"] == \"Hogar\" and cartera[\"n_siniestros\"] > 0]",
+   "cartera[(cartera[\"producto\"] == \"Hogar\") & (cartera[\"n_siniestros\"] > 0)]",
+   "cartera.filter(\"Hogar\", 0)",
+   "cartera[\"Hogar\"] > 0"
+  ],
+  "correcta": 1,
+  "explicacion": "En pandas las máscaras booleanas se combinan con & (y | para «o»), y cada condición va entre paréntesis.",
+  "por_que_no": [
+   "and no combina máscaras elemento a elemento; con Series genera un error de ambigüedad.",
+   "",
+   "filter no hace eso.",
+   "No existe una columna llamada «Hogar»."
+  ],
+  "referencia": "Guía práctica Python, Actividad 12"
+ },
+ {
+  "id": "EST-37",
+  "tema": "EST",
+  "subtema": "Filtrado",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué expresión filtra las pólizas con edad entre 30 y 50 años, ambos incluidos?",
+  "opciones": [
+   "cartera[cartera[\"edad\"].between(30, 50)]",
+   "cartera[30 < cartera[\"edad\"] < 50]",
+   "cartera.between(\"edad\", 30, 50)",
+   "cartera[\"edad\"].sort_values(30, 50)"
+  ],
+  "correcta": 0,
+  "explicacion": "Series.between(30, 50) devuelve una máscara que incluye los extremos por defecto.",
+  "por_que_no": [
+   "",
+   "La comparación encadenada no funciona con Series y además excluiría los extremos.",
+   "between es un método de las Series, no del DataFrame con esos argumentos.",
+   "sort_values ordena; no filtra."
+  ],
+  "referencia": "Guía práctica Python, Actividad 12"
+ },
+ {
+  "id": "EST-38",
+  "tema": "EST",
+  "subtema": "Tablas dinámicas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Qué construye este código y para qué sirve fill_value=0?",
+  "codigo": "pivot_mensual = pd.pivot_table(cartera, index=\"mes\", columns=\"producto\",\n                               values=\"monto_siniestros\", aggfunc=\"sum\", fill_value=0)",
+  "opciones": [
+   "Una tabla con un mes por fila, un producto por columna y la suma de siniestros en cada celda; fill_value=0 completa con 0 las combinaciones sin datos",
+   "Una lista de pólizas ordenada por mes",
+   "Un gráfico de calor",
+   "Una tabla que elimina los meses sin siniestros"
+  ],
+  "correcta": 0,
+  "explicacion": "Es la tabla dinámica de Excel trasladada a pandas. Para comparar costos conviene dividirla por la tabla de exposición (pivot_mensual / pivot_exposicion).",
+  "por_que_no": [
+   "",
+   "No lista pólizas: agrega.",
+   "El mapa de calor se dibuja después con plt.imshow.",
+   "Los meses sin datos se completan con 0; no se eliminan."
+  ],
+  "referencia": "Guía práctica Python, «Tabla dinámica mensual»"
+ },
+ {
+  "id": "EST-39",
+  "tema": "EST",
+  "subtema": "Formatos de almacenamiento",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cuál de los siguientes NO es un problema habitual de los archivos CSV mencionado en clase?",
+  "opciones": [
+   "Separador de campos: coma frente a punto y coma",
+   "Codificación UTF-8 frente a Latin-1, con acentos rotos",
+   "Ausencia de tipos: todo es texto hasta que alguien lo interpreta",
+   "Que no puede abrirse con un editor de texto"
+  ],
+  "correcta": 3,
+  "explicacion": "El CSV es universal e inspeccionable con cualquier editor; esa es una de sus ventajas. Los problemas son el separador, el decimal, la codificación, las fechas ambiguas y la falta de tipos.",
+  "por_que_no": [
+   "Es un problema mencionado.",
+   "Es un problema mencionado.",
+   "Es un problema mencionado.",
+   ""
+  ],
+  "referencia": "Clase 12, «Archivos planos: CSV»"
+ },
+ {
+  "id": "EST-40",
+  "tema": "EST",
+  "subtema": "Formatos de almacenamiento",
+  "dificultad": "dificil",
+  "tipo": "diferencia",
+  "enunciado": "¿Por qué Parquet es más eficiente que CSV para consultas analíticas?",
+  "opciones": [
+   "Porque es texto plano",
+   "Porque guarda los datos columna por columna, con compresión por columna y el esquema y los tipos dentro del archivo; las consultas analíticas suelen pedir pocas columnas de muchas filas",
+   "Porque no requiere instalar nada",
+   "Porque se puede editar con el Bloc de notas"
+  ],
+  "correcta": 1,
+  "explicacion": "En la comparación de la clase, el CSV ocupó 13,9 MB y el Parquet 6,2 MB, y leer una sola columna desde Parquet fue mucho más rápido. A cambio, requiere pyarrow y no es legible con un editor de texto.",
+  "por_que_no": [
+   "Parquet es binario.",
+   "",
+   "Requiere instalar pyarrow.",
+   "No es legible con un editor de texto."
+  ],
+  "referencia": "Clase 12, «Orientación a filas y a columnas» y «Parquet: comparación medida»"
+ },
+ {
+  "id": "EST-41",
+  "tema": "EST",
+  "subtema": "Formatos de almacenamiento",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué ventaja tienen JSON y XML frente a un CSV?",
+  "opciones": [
+   "Ocupan menos espacio siempre",
+   "Preservan la jerarquía (por ejemplo, coberturas anidadas), que un CSV no puede representar sin aplanar",
+   "Son binarios",
+   "No necesitan codificación"
+  ],
+  "correcta": 1,
+  "explicacion": "JSON es el formato natural de las APIs y XML sigue siendo común en presentaciones ante organismos de control. Ambos representan estructuras anidadas.",
+  "por_que_no": [
+   "No necesariamente: son verbosos.",
+   "",
+   "Son formatos de texto.",
+   "Se escriben con una codificación, por ejemplo UTF-8."
+  ],
+  "referencia": "Clase 12, «JSON y XML»"
+ },
+ {
+  "id": "EST-42",
+  "tema": "EST",
+  "subtema": "Bases NoSQL",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué tipo de base NoSQL es especialmente útil para detectar fraude encontrando vínculos entre denunciantes, talleres y peritos?",
+  "opciones": [
+   "Documental (MongoDB)",
+   "Clave-valor (Redis)",
+   "Columnar distribuida (Cassandra)",
+   "De grafos (Neo4j)"
+  ],
+  "correcta": 3,
+  "explicacion": "Las bases de grafos modelan relaciones entre entidades, ideales para descubrir redes de vínculos sospechosos.",
+  "por_que_no": [
+   "Es útil cuando cada póliza tiene una estructura distinta de coberturas.",
+   "Es útil para cotizaciones en tiempo real por acceso inmediato por clave.",
+   "Es útil para volúmenes enormes con escritura intensiva, como la telemática.",
+   ""
+  ],
+  "referencia": "Clase 12, «Bases NoSQL»"
+ },
+ {
+  "id": "EST-43",
+  "tema": "EST",
+  "subtema": "Bases NoSQL",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿qué relación hay entre las bases NoSQL y el modelo relacional?",
+  "opciones": [
+   "NoSQL reemplaza al modelo relacional",
+   "No lo reemplazan: resuelven problemas distintos, como esquemas variables o escala horizontal",
+   "Son idénticas",
+   "NoSQL solo se usa con Excel"
+  ],
+  "correcta": 1,
+  "explicacion": "Las bases NoSQL surgen cuando el esquema rígido o la escala horizontal resultan limitantes, pero el modelo relacional sigue siendo central.",
+  "por_que_no": [
+   "La clase lo niega explícitamente.",
+   "",
+   "Tienen modelos de datos distintos.",
+   "No tienen relación con Excel."
+  ],
+  "referencia": "Clase 12, «Bases NoSQL»"
+ },
+ {
+  "id": "EST-44",
+  "tema": "EST",
+  "subtema": "Arquitecturas analíticas",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la diferencia entre un data warehouse y un data lake?",
+  "opciones": [
+   "Son lo mismo",
+   "El warehouse es estructurado, con esquema definido y datos procesados; el lake guarda datos masivos en su formato original, estructurados o no, y sin gobierno se vuelve inutilizable",
+   "El lake requiere decidir de antemano el esquema",
+   "El warehouse solo guarda imágenes"
+  ],
+  "correcta": 1,
+  "explicacion": "En una aseguradora, el warehouse suele alimentar el reporting regulatorio y de gestión, y el lake la exploración y la modelización avanzada. El lakehouse combina ambos enfoques.",
+  "por_que_no": [
+   "Tienen propósitos distintos.",
+   "",
+   "Eso describe al warehouse.",
+   "El warehouse guarda datos estructurados."
+  ],
+  "referencia": "Clase 12, «Data warehouse, data lake y lakehouse»"
+ },
+ {
+  "id": "EST-45",
+  "tema": "EST",
+  "subtema": "ETL y ELT",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la diferencia entre ETL y ELT, y qué regla se mantiene en ambos?",
+  "opciones": [
+   "ETL transforma antes de cargar; ELT carga el dato crudo y transforma después dentro del repositorio. En ambos, el dato crudo nunca se modifica: toda transformación se escribe como código reproducible",
+   "Son idénticos; la regla es borrar el dato crudo",
+   "ETL no transforma nada",
+   "ELT no carga datos"
+  ],
+  "correcta": 0,
+  "explicacion": "El orden de la T cambia entre ambos enfoques. La clase 13 se ubica íntegramente en la T: calidad, limpieza y transformación.",
+  "por_que_no": [
+   "",
+   "Difieren en el orden, y la regla es conservar el dato crudo.",
+   "ETL transforma antes de cargar.",
+   "ELT carga primero."
+  ],
+  "referencia": "Clase 12, «ETL y ELT»"
+ },
+ {
+  "id": "EST-46",
+  "tema": "EST",
+  "subtema": "Criterios de elección",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla «¿Dónde guardo cada cosa?», ¿qué formato es razonable para una base intermedia de un proyecto?",
+  "opciones": [
+   "Excel",
+   "JSON",
+   "Parquet",
+   "Data lake"
+  ],
+  "correcta": 2,
+  "explicacion": "La clase sugiere CSV para tablas chicas a compartir, Excel para resultados del área comercial, JSON para respuestas de APIs, Parquet para bases intermedias y una base relacional para datos operativos con integridad.",
+  "por_que_no": [
+   "Excel se sugiere para resultados destinados al área comercial.",
+   "JSON se sugiere para respuestas de APIs.",
+   "",
+   "El lake se sugiere para datos crudos heterogéneos."
+  ],
+  "referencia": "Clase 12, «¿Dónde guardo cada cosa?»"
+ },
+ {
+  "id": "EST-47",
+  "tema": "EST",
+  "subtema": "Gobierno del dato",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "En el gobierno del dato, ¿qué es el linaje?",
+  "opciones": [
+   "Quién puede ver y modificar qué",
+   "De dónde viene cada tabla y qué transformaciones atravesó",
+   "El significado de cada campo",
+   "La cantidad de versiones del código"
+  ],
+  "correcta": 1,
+  "explicacion": "El linaje traza el origen y el recorrido de los datos. En materia actuarial permite justificar, auditar y reconstruir un cálculo de reservas años después.",
+  "por_que_no": [
+   "Eso es el control de acceso.",
+   "",
+   "Eso es el diccionario de datos.",
+   "Eso es el versionado."
+  ],
+  "referencia": "Clase 12, «Gobierno del dato»"
+ },
+ {
+  "id": "EST-48",
+  "tema": "EST",
+  "subtema": "Organización de proyectos",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "En la organización de proyecto propuesta, ¿qué regla se aplica a la carpeta datos/crudos/ y por qué los scripts se numeran (01_importar.py, 02_limpiar.py…)?",
+  "opciones": [
+   "Los crudos se corrigen a mano; la numeración es estética",
+   "Los crudos se conservan tal como llegaron y nunca se modifican; la numeración documenta el orden de ejecución para reproducir el resultado",
+   "Los crudos se borran tras importarlos; la numeración indica la fecha",
+   "No hay reglas"
+  ],
+  "correcta": 1,
+  "explicacion": "Cualquier persona debería poder reproducir el resultado ejecutando los scripts en secuencia, a partir de datos crudos intactos.",
+  "por_que_no": [
+   "La clase dice que el dato crudo nunca se modifica.",
+   "",
+   "Borrarlos impediría reproducir el resultado.",
+   "La organización tiene reglas claras."
+  ],
+  "referencia": "Clase 12, «Organización de un proyecto»"
+ },
+ {
+  "id": "EST-49",
+  "tema": "EST",
+  "subtema": "Datos personales",
+  "dificultad": "facil",
+  "tipo": "caso",
+  "enunciado": "¿Cuál de las siguientes prácticas sobre datos personales recomienda la clase?",
+  "opciones": [
+   "Copiar bases completas a equipos personales para trabajar más cómodo",
+   "Usar identificadores en lugar de nombres y anonimizar o seudonimizar los datos de clases, pruebas y desarrollos",
+   "Dar acceso a toda la base a todo el equipo",
+   "Usar datos reales en ejemplos de clase"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase recomienda identificadores, no copiar bases a equipos personales, limitar el acceso a lo necesario y anonimizar. En la materia se trabaja con datos ficticios o sintéticos.",
+  "por_que_no": [
+   "La clase lo desaconseja.",
+   "",
+   "Se debe limitar el acceso a lo estrictamente necesario.",
+   "La materia usa datos ficticios."
+  ],
+  "referencia": "Clase 12, «Datos personales y confidencialidad»"
+ }
+]

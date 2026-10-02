@@ -1,0 +1,934 @@
+{
+ "id": 8,
+ "titulo": "Evaluación 8",
+ "preguntas": [
+  {
+   "id": "CTL-39",
+   "tema": "CTL",
+   "subtema": "range",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué valores recorre for t in range(0, 21, 5)?",
+   "opciones": [
+    "0, 5, 10, 15",
+    "0, 5, 10, 15, 20",
+    "0, 21, 5",
+    "5, 10, 15, 20"
+   ],
+   "correcta": 1,
+   "explicacion": "El tercer argumento es el paso. Se generan 0, 5, 10, 15, 20; el 21 (fin) se excluye, pero el 20 es menor que 21 y se incluye.",
+   "por_que_no": [
+    "20 < 21, así que se incluye.",
+    "",
+    "Los argumentos son inicio, fin y paso; no se listan así.",
+    "Empieza en 0."
+   ],
+   "referencia": "Clase 10, «El bucle for y la función range()»"
+  },
+  {
+   "id": "EXC-22",
+   "tema": "EXC",
+   "subtema": "Funciones de texto",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué devuelve la fórmula =LARGO(\"Actuarial\")?",
+   "opciones": [
+    "11",
+    "9",
+    "10",
+    "8"
+   ],
+   "correcta": 1,
+   "explicacion": "LARGO devuelve la cantidad de caracteres del texto. «Actuarial» tiene 9 letras: A-c-t-u-a-r-i-a-l.",
+   "por_que_no": [
+    "Sobran dos caracteres.",
+    "",
+    "Sobra un carácter.",
+    "Faltaría contar una letra."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 5"
+  },
+  {
+   "id": "SQL-30",
+   "tema": "SQL",
+   "subtema": "ORDER BY y LIMIT",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué obtiene la siguiente consulta?",
+   "codigo": "SELECT *\nFROM Products\nORDER BY Price DESC\nLIMIT 1;",
+   "opciones": [
+    "Todos los productos ordenados",
+    "El producto más caro",
+    "El precio promedio",
+    "El producto más barato"
+   ],
+   "correcta": 1,
+   "explicacion": "Ordena de mayor a menor precio y LIMIT 1 deja la primera fila: el producto más caro.",
+   "por_que_no": [
+    "LIMIT 1 deja una sola fila.",
+    "",
+    "No se calcula ningún promedio.",
+    "Para el más barato sería ORDER BY Price ASC."
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, «para filtrar el más caro»"
+  },
+  {
+   "id": "EST-49",
+   "tema": "EST",
+   "subtema": "Datos personales",
+   "dificultad": "facil",
+   "tipo": "caso",
+   "enunciado": "¿Cuál de las siguientes prácticas sobre datos personales recomienda la clase?",
+   "opciones": [
+    "Usar datos reales en ejemplos de clase",
+    "Usar identificadores en lugar de nombres y anonimizar o seudonimizar los datos de clases, pruebas y desarrollos",
+    "Dar acceso a toda la base a todo el equipo",
+    "Copiar bases completas a equipos personales para trabajar más cómodo"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase recomienda identificadores, no copiar bases a equipos personales, limitar el acceso a lo necesario y anonimizar. En la materia se trabaja con datos ficticios o sintéticos.",
+   "por_que_no": [
+    "La materia usa datos ficticios.",
+    "",
+    "Se debe limitar el acceso a lo estrictamente necesario.",
+    "La clase lo desaconseja."
+   ],
+   "referencia": "Clase 12, «Datos personales y confidencialidad»"
+  },
+  {
+   "id": "JOIN-04",
+   "tema": "JOIN",
+   "subtema": "INNER JOIN",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué JOIN devuelve solo las filas con coincidencia en ambas tablas?",
+   "opciones": [
+    "FULL JOIN",
+    "LEFT JOIN",
+    "INNER JOIN",
+    "RIGHT JOIN"
+   ],
+   "correcta": 2,
+   "explicacion": "INNER JOIN devuelve únicamente los registros que cumplen la condición del ON en ambas tablas.",
+   "por_que_no": [
+    "Conserva todos los registros de ambas tablas.",
+    "Conserva todos los registros de la tabla izquierda.",
+    "",
+    "Conserva todos los registros de la tabla derecha."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 10"
+  },
+  {
+   "id": "EDA-01",
+   "tema": "EDA",
+   "subtema": "Concepto",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿De quién proviene el término «análisis exploratorio de datos» y qué propone?",
+   "opciones": [
+    "De John Tukey (1977): mirar los datos con apertura, sin un modelo previo, para descubrir su estructura, regularidades y anomalías",
+    "De Wing (2006): programar antes de pensar",
+    "De McKinney: usar pandas",
+    "De Connolly y Begg: diseñar bases de datos"
+   ],
+   "correcta": 0,
+   "explicacion": "Tukey lo describe como «trabajo de detective». Combina resúmenes numéricos, gráficos y preguntas sucesivas en un proceso iterativo.",
+   "por_que_no": [
+    "",
+    "Wing trata el pensamiento computacional.",
+    "McKinney es bibliografía de pandas, no el origen del término.",
+    "No se los cita en relación con el EDA."
+   ],
+   "referencia": "Clase 14 – EDA, «¿Qué es el análisis exploratorio?»"
+  },
+  {
+   "id": "PYB-28",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Cuál es una característica fundamental de los arrays de NumPy?",
+   "opciones": [
+    "Todos los elementos de un array deben ser del mismo tipo",
+    "Pueden mezclar elementos de diferentes tipos (strings y números)",
+    "Solo pueden tener un máximo de dos dimensiones",
+    "Son más lentos que las listas porque consumen más memoria"
+   ],
+   "correcta": 0,
+   "explicacion": "Un ndarray almacena elementos del mismo tipo en memoria contigua, lo que habilita las operaciones vectorizadas.",
+   "por_que_no": [
+    "",
+    "Esa es una característica de las listas.",
+    "Los arrays pueden tener más de dos dimensiones.",
+    "Son más rápidos para cálculo numérico: es la ventaja de la vectorización."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 16; Clase 12, «numpy: el arreglo homogéneo»"
+  },
+  {
+   "id": "BD-07",
+   "tema": "BD",
+   "subtema": "Entidades y atributos",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "En el modelo de datos, una entidad es:",
+   "opciones": [
+    "Una consulta SQL guardada",
+    "Una columna de una tabla",
+    "Un tipo de dato numérico",
+    "Un objeto, real o abstracto, acerca del cual se recoge información de interés para la base de datos"
+   ],
+   "correcta": 3,
+   "explicacion": "La clase define la entidad como un objeto real o abstracto sobre el que se recoge información. Sus propiedades particulares son los atributos.",
+   "por_que_no": [
+    "Una consulta no es una entidad del modelo.",
+    "La columna representa un atributo de la entidad.",
+    "Los tipos de datos describen los atributos; no son entidades.",
+    ""
+   ],
+   "referencia": "Introducción a bases de datos, «Entidades»"
+  },
+  {
+   "id": "CTL-31",
+   "tema": "CTL",
+   "subtema": "break, continue, pass",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la diferencia entre break y continue?",
+   "opciones": [
+    "break sale de la función y continue del programa",
+    "Son equivalentes",
+    "break interrumpe el ciclo por completo; continue abandona la iteración actual y pasa a la siguiente",
+    "continue interrumpe el ciclo; break salta una iteración"
+   ],
+   "correcta": 2,
+   "explicacion": "break sale del ciclo y sigue con la línea posterior al bucle. continue salta al comienzo de la siguiente iteración.",
+   "por_que_no": [
+    "Para salir de una función se usa return.",
+    "Tienen efectos distintos.",
+    "",
+    "Los roles están invertidos."
+   ],
+   "referencia": "Clase 10, «break, continue y pass»"
+  },
+  {
+   "id": "SQL-51",
+   "tema": "SQL",
+   "subtema": "SQL y pandas",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué operación de pandas equivale a JOIN en SQL?",
+   "opciones": [
+    "df[[\"a\", \"b\"]]",
+    "df.head()",
+    "df.sort_values(...)",
+    "df.merge(...)"
+   ],
+   "correcta": 3,
+   "explicacion": "La clase relaciona JOIN con df.merge(...): ambos cruzan dos tablas a partir de columnas en común.",
+   "por_que_no": [
+    "Equivale a seleccionar columnas (SELECT a, b).",
+    "Equivale a LIMIT.",
+    "Equivale a ORDER BY.",
+    ""
+   ],
+   "referencia": "Clase 12, «SQL y pandas: el mismo razonamiento»"
+  },
+  {
+   "id": "BD-01",
+   "tema": "BD",
+   "subtema": "Definición",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Según la clase de introducción a bases de datos, una base de datos es:",
+   "opciones": [
+    "Un servidor web que muestra páginas a los clientes",
+    "Una planilla de cálculo con muchas filas",
+    "Un lenguaje de programación para consultar información",
+    "Un conjunto organizado de datos estructurados que permite su almacenamiento, gestión y recuperación eficiente mediante un DBMS"
+   ],
+   "correcta": 3,
+   "explicacion": "Una base de datos es un conjunto organizado de datos estructurados que permite almacenarlos, gestionarlos y recuperarlos eficientemente mediante un sistema de gestión de bases de datos (DBMS). Se diseña para modelar aspectos del mundo real.",
+   "por_que_no": [
+    "El servidor web es otro componente de la arquitectura cliente-servidor.",
+    "Una planilla no es una base de datos; de hecho, la clase 12 advierte que Excel es una mala base de datos.",
+    "El lenguaje es SQL; la base de datos es el conjunto de datos que se consulta.",
+    ""
+   ],
+   "referencia": "Introducción a bases de datos, «¿Qué es una base de datos?»"
+  },
+  {
+   "id": "PC-08",
+   "tema": "PC",
+   "subtema": "Pilares aplicados",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "«Con un programa en Python podemos calcular millones de escenarios de riesgo en minutos, algo imposible de hacer manualmente.» ¿Qué pilar ilustra esta frase?",
+   "opciones": [
+    "Descomposición",
+    "Abstracción",
+    "Automatización",
+    "Algoritmos"
+   ],
+   "correcta": 2,
+   "explicacion": "La automatización consiste en usar herramientas computacionales para ejecutar procesos repetitivos. La frase es el ejemplo de la clase para ese pilar.",
+   "por_que_no": [
+    "La frase no habla de dividir el problema en partes.",
+    "La frase no habla de simplificar la representación del problema.",
+    "",
+    "El algoritmo es la receta de pasos; la frase destaca su ejecución masiva y veloz."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional, «Automatización»"
+  },
+  {
+   "id": "ALG-18",
+   "tema": "ALG",
+   "subtema": "Recursividad",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve factorial(6)?",
+   "codigo": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)",
+   "opciones": [
+    "6",
+    "720",
+    "120",
+    "Error"
+   ],
+   "correcta": 1,
+   "explicacion": "6! = 6 × 5 × 4 × 3 × 2 × 1 = 720. El caso base factorial(0) = 1 corta la recursión.",
+   "por_que_no": [
+    "Es el argumento, no el resultado.",
+    "",
+    "120 es 5!.",
+    "Hay caso base, así que la recursión termina."
+   ],
+   "referencia": "Clase 10, «Recursividad: factorial y suma»"
+  },
+  {
+   "id": "JOIN-37",
+   "tema": "JOIN",
+   "subtema": "CREATE TABLE",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Al ejecutar CREATE TABLE Clientes (ID INTEGER, Nombre VARCHAR(50), Telefono VARCHAR(20)); ¿qué se define?",
+   "opciones": [
+    "Los registros iniciales de la tabla",
+    "Un índice sobre Clientes",
+    "Una consulta guardada",
+    "El nombre de la tabla, sus columnas y el tipo de dato de cada una"
+   ],
+   "correcta": 3,
+   "explicacion": "CREATE TABLE define la estructura: el nombre, las columnas y sus tipos. La cátedra sugiere además definir claves primarias y restricciones.",
+   "por_que_no": [
+    "Los registros se agregan después con INSERT.",
+    "No crea índices.",
+    "No es una consulta.",
+    ""
+   ],
+   "referencia": "Clase 5 (CCA), «CREATE TABLE»"
+  },
+  {
+   "id": "JOIN-12",
+   "tema": "JOIN",
+   "subtema": "Ambigüedad y alias",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Las tablas Cliente y Factura tienen ambas una columna ID. ¿Qué problema tiene SELECT ID FROM Cliente INNER JOIN Factura ON Cliente.ID = Factura.Cliente_ID?",
+   "opciones": [
+    "Ninguno",
+    "Es ambiguo: SQL no sabe a qué ID se refiere; hay que escribir Cliente.ID o usar alias (c.ID, f.ID)",
+    "El INNER JOIN no admite columnas ID",
+    "Falta un GROUP BY"
+   ],
+   "correcta": 1,
+   "explicacion": "Cuando dos tablas comparten un nombre de columna, la referencia sin prefijo es ambigua. Se resuelve indicando la tabla o un alias, lo cual además mejora la legibilidad.",
+   "por_que_no": [
+    "La consulta es ambigua.",
+    "",
+    "El problema es la ambigüedad, no el nombre de la columna.",
+    "No hay agregaciones."
+   ],
+   "referencia": "Clase 5 (CCA), «Identificación de columnas»; guía SQL, ejercicio 11 (resolución)"
+  },
+  {
+   "id": "JOIN-05",
+   "tema": "JOIN",
+   "subtema": "INNER JOIN",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Cuántas filas devuelve el INNER JOIN ON cliente.id = factura.cliente_id?",
+   "opciones": [
+    "3",
+    "6",
+    "4",
+    "2"
+   ],
+   "correcta": 3,
+   "explicacion": "Solo coinciden la factura 11 con Clara y la 13 con Juan. Marta no tiene factura y la factura 12 no tiene cliente: ambas quedan fuera.",
+   "por_que_no": [
+    "Sería 3 con un LEFT o un RIGHT JOIN.",
+    "6 no corresponde a ningún join con condición; serían todas las combinaciones posibles (3 × 3 = 9).",
+    "Sería 4 con un FULL OUTER JOIN.",
+    ""
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), ejemplo cliente/factura con INNER JOIN"
+  },
+  {
+   "id": "CTL-07",
+   "tema": "CTL",
+   "subtema": "Condiciones compuestas",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve tarifa_preferencial(28, True, 0)?",
+   "codigo": "def tarifa_preferencial(edad, fumador, siniestros_previos):\n    return edad < 35 and not fumador and siniestros_previos == 0",
+   "opciones": [
+    "False",
+    "None",
+    "True",
+    "Error"
+   ],
+   "correcta": 0,
+   "explicacion": "edad < 35 es True y siniestros_previos == 0 es True, pero not fumador es not True = False. Con and, basta un False para que el resultado sea False.",
+   "por_que_no": [
+    "",
+    "La función devuelve un booleano.",
+    "Falla la condición de no fumar.",
+    "El código es válido."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 3"
+  },
+  {
+   "id": "CAL-22",
+   "tema": "CAL",
+   "subtema": "Tratamiento de faltantes",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Según la tabla de tratamiento de faltantes, ¿cuándo es razonable eliminar las filas incompletas y cuál es su riesgo?",
+   "opciones": [
+    "Siempre; no tiene riesgo",
+    "Cuando el campo está casi vacío; el riesgo es aumentar la dimensión",
+    "Con pocos casos y faltantes MCAR; el riesgo es introducir sesgo si no son MCAR",
+    "Nunca"
+   ],
+   "correcta": 2,
+   "explicacion": "Eliminar filas sirve con pocos casos MCAR. Si el faltante tiene un patrón (MAR o MNAR), eliminar sesga el análisis.",
+   "por_que_no": [
+    "Tiene riesgo de sesgo.",
+    "Con un campo casi vacío lo que se elimina es la columna, y el riesgo es perder información.",
+    "",
+    "Hay casos en que es razonable."
+   ],
+   "referencia": "Clase 13, «Tratamiento de faltantes»"
+  },
+  {
+   "id": "EST-25",
+   "tema": "EST",
+   "subtema": "Formato ancho y largo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué relación hay entre melt y pivot?",
+   "opciones": [
+    "Son la misma operación",
+    "pivot ordena y melt filtra",
+    "Son inversas: melt pasa de ancho a largo y pivot de largo a ancho",
+    "Ambas eliminan columnas"
+   ],
+   "correcta": 2,
+   "explicacion": "Por ejemplo, largo.pivot(index=\"ocurrencia\", columns=\"desarrollo\", values=\"monto\") reconstruye el triángulo. Dominar ese par resuelve buena parte de las reestructuraciones.",
+   "por_que_no": [
+    "Hacen transformaciones opuestas.",
+    "No son operaciones de orden ni de filtro.",
+    "",
+    "Reorganizan los datos; no los eliminan."
+   ],
+   "referencia": "Clase 12, «Ir y volver entre formatos»"
+  },
+  {
+   "id": "PYB-07",
+   "tema": "PYB",
+   "subtema": "Listas e índices",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Cuál es el «costo promedio por póliza» que calcula este código?",
+   "codigo": "siniestros = [0, 125000, 0, 840000, 0, 250000, 0]\npromedio_cartera = sum(siniestros) / len(siniestros)",
+   "opciones": [
+    "250000",
+    "173571.43 (aprox.)",
+    "405000.0",
+    "1215000"
+   ],
+   "correcta": 1,
+   "explicacion": "La suma es 1.215.000 y hay 7 pólizas: 1.215.000 / 7 ≈ 173.571,43. Es un promedio sobre toda la cartera, con ceros incluidos.",
+   "por_que_no": [
+    "Es uno de los montos, no el promedio.",
+    "",
+    "Ese sería el promedio solo entre las 3 pólizas con siniestro positivo.",
+    "Es la suma total, no el promedio."
+   ],
+   "referencia": "Guía práctica Python, Actividad 2"
+  },
+  {
+   "id": "CAL-15",
+   "tema": "CAL",
+   "subtema": "Faltantes",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Falta el monto de siniestro justamente en los siniestros más grandes, porque siguen en litigio. ¿Qué mecanismo de faltante es?",
+   "opciones": [
+    "MNAR",
+    "No es un faltante",
+    "MCAR",
+    "MAR"
+   ],
+   "correcta": 0,
+   "explicacion": "MNAR (faltante no al azar): la ausencia depende del propio valor no observado. Bajo MNAR, eliminar los registros es siempre peligroso.",
+   "por_que_no": [
+    "",
+    "El dato falta.",
+    "MCAR es una ausencia que no depende de nada, como un error de transmisión.",
+    "MAR depende de otras variables observadas, no del valor faltante."
+   ],
+   "referencia": "Clase 13, «Valores faltantes: los tres mecanismos»"
+  },
+  {
+   "id": "EST-17",
+   "tema": "EST",
+   "subtema": "Inspección",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué responde df[\"poliza\"].duplicated().sum()?",
+   "opciones": [
+    "La suma de los números de póliza",
+    "Cuántas pólizas hay",
+    "Cuántos identificadores de póliza están repetidos",
+    "Cuántas columnas están duplicadas"
+   ],
+   "correcta": 2,
+   "explicacion": "duplicated() marca True en cada repetición de un valor ya visto y sum() cuenta esos True. Es una de las siete líneas que la clase recomienda ejecutar siempre.",
+   "por_que_no": [
+    "No suma los valores.",
+    "Eso es len o nunique.",
+    "",
+    "Se aplica a una columna, no a columnas duplicadas."
+   ],
+   "referencia": "Clase 12, «Inspeccionar un DataFrame»"
+  },
+  {
+   "id": "PYB-39",
+   "tema": "PYB",
+   "subtema": "Listas",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "lst = [1, 2, 3, 4, 5]\nlst_2 = []\nadd = 0\nfor number in lst:\n    add += number\n    lst_2.append(add)\nprint(lst_2)",
+   "opciones": [
+    "[15]",
+    "[1, 3, 6, 10, 15]",
+    "[0, 1, 3, 6, 10]",
+    "[1, 2, 3, 4, 5]"
+   ],
+   "correcta": 1,
+   "explicacion": "add acumula la suma y en cada iteración se agrega el valor acumulado: 1, 3, 6, 10, 15 (sumas parciales).",
+   "por_que_no": [
+    "append está dentro del for, así que se agrega en cada iteración.",
+    "",
+    "Se suma antes de agregar, así que el primer elemento es 1.",
+    "Se agregan las sumas acumuladas, no los números originales."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 3b (ii)"
+  },
+  {
+   "id": "SQL-14",
+   "tema": "SQL",
+   "subtema": "Funciones de agregado",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la tabla Employees se ejecuta SELECT MAX(BirthDate), MIN(BirthDate) FROM Employees. ¿Qué representa MAX(BirthDate)?",
+   "opciones": [
+    "La cantidad máxima de empleados",
+    "El año actual",
+    "La fecha de nacimiento más reciente, es decir, la del empleado más joven",
+    "La fecha de nacimiento del empleado de mayor edad"
+   ],
+   "correcta": 2,
+   "explicacion": "En fechas, MAX devuelve la más reciente. La persona nacida más recientemente es la más joven; MIN devuelve la del empleado de mayor edad.",
+   "por_que_no": [
+    "MAX no cuenta filas.",
+    "Devuelve una fecha de la tabla, no el año actual.",
+    "",
+    "Esa la devuelve MIN(BirthDate)."
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, ejemplo con Employees"
+  },
+  {
+   "id": "EXC-05",
+   "tema": "EXC",
+   "subtema": "Fechas y edad",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Para calcular la edad actual se usa =TRUNCAR((HOY()-FechaNac)/365,25). ¿Por qué se divide por 365,25?",
+   "opciones": [
+    "Para contemplar en promedio los años bisiestos al convertir días en años",
+    "Porque HOY() devuelve horas",
+    "Para expresar la diferencia en meses",
+    "Para redondear la edad hacia arriba"
+   ],
+   "correcta": 0,
+   "explicacion": "La resta de fechas da días. Dividir por 365,25 los convierte en años considerando que, en promedio, uno de cada cuatro años tiene 366 días.",
+   "por_que_no": [
+    "",
+    "HOY() devuelve la fecha actual; la resta de dos fechas da días.",
+    "Para obtener meses habría que dividir por unos 30,4, no por 365,25.",
+    "El redondeo no lo determina el divisor sino la función TRUNCAR, que además corta hacia abajo."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Edad actual»"
+  },
+  {
+   "id": "CTL-17",
+   "tema": "CTL",
+   "subtema": "Franquicia",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "La indemnización es I(X) = min(max(X − d, 0), M). Con deducible d = 10.000 y tope M = 500.000, ¿cuánto paga la compañía por siniestros de 5.000, 80.000 y 900.000?",
+   "opciones": [
+    "0; 70.000; 500.000",
+    "−5.000; 70.000; 890.000",
+    "0; 80.000; 890.000",
+    "5.000; 80.000; 900.000"
+   ],
+   "correcta": 0,
+   "explicacion": "5.000 ≤ deducible: paga 0. 80.000 − 10.000 = 70.000, que no supera el tope. 900.000 − 10.000 = 890.000 supera el tope: paga 500.000.",
+   "por_que_no": [
+    "",
+    "El max(…, 0) impide pagos negativos y el tope limita el pago.",
+    "No aplica el tope y no descuenta el deducible en 80.000.",
+    "No descuenta el deducible ni aplica el tope."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 5"
+  },
+  {
+   "id": "PC-18",
+   "tema": "PC",
+   "subtema": "Ejemplos cotidianos (Wing)",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según Wing, los CAPTCHA autentican a los humanos porque:",
+   "opciones": [
+    "Explotan la dificultad de resolver problemas difíciles de inteligencia artificial para frenar a los agentes computacionales",
+    "Aplican redundancia para que el sistema no falle",
+    "Usan contraseñas cifradas que solo conocen los humanos",
+    "Usan prefetching para anticipar las respuestas del usuario"
+   ],
+   "correcta": 0,
+   "explicacion": "Wing explica que los CAPTCHA aprovechan que ciertos problemas de inteligencia artificial son difíciles para las máquinas y fáciles para las personas.",
+   "por_que_no": [
+    "",
+    "La redundancia corresponde al ejemplo del teléfono.",
+    "El artículo no menciona contraseñas cifradas.",
+    "El prefetching corresponde al ejemplo de la mochila."
+   ],
+   "referencia": "Wing (2006), ejemplos cotidianos"
+  },
+  {
+   "id": "SQL-39",
+   "tema": "SQL",
+   "subtema": "GROUP BY y HAVING",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Con FABRICANTES(codigo, nombre) y ARTICULOS(codigo, nombre, precio, fabricante), ¿qué consulta obtiene los fabricantes cuyo precio medio de productos es mayor o igual a $1.500?",
+   "opciones": [
+    "SELECT F.NOMBRE, AVG(A.PRECIO) FROM ARTICULOS A, FABRICANTES F HAVING A.PRECIO >= 1500",
+    "SELECT F.NOMBRE, AVG(A.PRECIO) FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.FABRICANTE = F.CODIGO GROUP BY F.NOMBRE HAVING AVG(A.PRECIO) >= 1500",
+    "SELECT F.NOMBRE FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.FABRICANTE = F.CODIGO WHERE A.PRECIO >= 1500",
+    "SELECT NOMBRE FROM FABRICANTES WHERE AVG(PRECIO) >= 1500"
+   ],
+   "correcta": 1,
+   "explicacion": "Se cruzan artículos y fabricantes, se agrupa por fabricante, se calcula el precio medio y HAVING filtra los grupos con promedio ≥ 1500.",
+   "por_que_no": [
+    "No une por la clave ni agrupa, y HAVING compara un precio individual.",
+    "",
+    "Filtra artículos individuales caros, no el precio medio del fabricante.",
+    "FABRICANTES no tiene precio y AVG no puede ir en WHERE."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 2b"
+  },
+  {
+   "id": "ALG-43",
+   "tema": "ALG",
+   "subtema": "Pérdida agregada",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En el modelo colectivo S = Σ Xk con N ~ Poisson(3) y Xk ~ Lognormal, el código usa if N[k] > 0 dentro del for. ¿Por qué?",
+   "codigo": "for k in range(n_sim):\n    if N[k] > 0:\n        total[k] = np.random.lognormal(mu, sigma, N[k]).sum()",
+   "opciones": [
+    "Para calcular el VaR",
+    "Para descartar los escenarios con muchos siniestros",
+    "Para ordenar las pérdidas",
+    "Para contemplar el caso sin siniestros: si N = 0 la pérdida agregada queda en 0 (valor inicial de total)"
+   ],
+   "correcta": 3,
+   "explicacion": "El if contempla el caso sin siniestros y el for recorre las réplicas. Con λ = 3, la proporción de años sin siniestros es ≈ e^(−3) ≈ 0,05 (la guía obtiene 0,0505).",
+   "por_que_no": [
+    "El VaR se calcula después, sobre total.",
+    "No descarta escenarios.",
+    "No ordena.",
+    ""
+   ],
+   "referencia": "Clase 10, «Aplicación: modelo de pérdida agregada»; Guía, Actividad 21"
+  },
+  {
+   "id": "EXC-10",
+   "tema": "EXC",
+   "subtema": "Búsqueda",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la fórmula =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿qué indica el argumento 2?",
+   "opciones": [
+    "Que se busque el valor en la segunda fila",
+    "Que se devuelva el valor de la segunda columna del rango buscado",
+    "Que se busquen dos coincidencias",
+    "Que la búsqueda empiece en la celda A2"
+   ],
+   "correcta": 1,
+   "explicacion": "El tercer argumento de BUSCARV es el número de columna, dentro del rango, cuyo valor se devuelve cuando se encuentra el valor buscado en la primera columna. Así se obtiene, por ejemplo, la descripción del ramo a partir de su código.",
+   "por_que_no": [
+    "BUSCARV busca en la primera columna, no en una fila determinada.",
+    "",
+    "BUSCARV devuelve una sola coincidencia.",
+    "El rango de búsqueda lo define el segundo argumento ($A$3:$C$7)."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Ramo (descripción)»"
+  },
+  {
+   "id": "BD-12",
+   "tema": "BD",
+   "subtema": "Cardinalidad",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Cómo se implementa en la base de datos una relación muchos a muchos (N:M), por ejemplo clientes y productos?",
+   "opciones": [
+    "Uniendo ambas tablas en una sola",
+    "La relación pasa a ser una tabla intermedia (pivot) con una PK y dos FK, una hacia cada tabla",
+    "Agregando product_id en la tabla de clientes",
+    "Con una clave única en cada tabla"
+   ],
+   "correcta": 1,
+   "explicacion": "En las relaciones N:M la relación misma se convierte en una tabla (por ejemplo CLIENTE_PRODUCTO) con id (PK), producto_id (FK) y cliente_id (FK).",
+   "por_que_no": [
+    "Fusionar las tablas generaría repetición masiva de datos.",
+    "",
+    "Un cliente compra muchos productos; una sola columna no alcanza.",
+    "La clave única evita duplicados, pero no modela la relación."
+   ],
+   "referencia": "Introducción a bases de datos, «Muchos a muchos (N:M)»; apuntes C3"
+  },
+  {
+   "id": "PC-42",
+   "tema": "PC",
+   "subtema": "Estrategias (Wing)",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Wing menciona «pensar en términos de prevención, protección y recuperación ante los peores escenarios». ¿A través de qué mecanismos?",
+   "opciones": [
+    "Eliminación de los datos extremos",
+    "Reducción del tamaño del sistema",
+    "Uso exclusivo de soluciones óptimas",
+    "Redundancia, contención de daños y corrección de errores"
+   ],
+   "correcta": 3,
+   "explicacion": "Wing enumera la redundancia, la contención de daños y la corrección de errores como formas de prevenir, proteger y recuperarse ante escenarios adversos.",
+   "por_que_no": [
+    "Eliminar extremos no protege contra escenarios adversos; los ignora.",
+    "Reducir el tamaño del sistema no se menciona.",
+    "Wing valora también las soluciones aproximadas y heurísticas.",
+    ""
+   ],
+   "referencia": "Wing (2006)"
+  },
+  {
+   "id": "EDA-33",
+   "tema": "EDA",
+   "subtema": "Tiempo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Comercio muestra oscilaciones mensuales visibles, pero el test de uniformidad da p = 0,56 (226 siniestros, unos 20 por mes). ¿Qué concluye la clase?",
+   "opciones": [
+    "Que hay que eliminar los meses altos",
+    "Que el test está mal",
+    "Que Comercio tiene una estacionalidad fuerte",
+    "Que es ruido: con tan pocos siniestros por mes esas oscilaciones son las esperables por azar. No toda oscilación es estacionalidad"
+   ],
+   "correcta": 3,
+   "explicacion": "En cambio, Automotores concentra siniestros en invierno (p < 0,001). Tomar oscilaciones aleatorias como patrones es un error frecuente.",
+   "por_que_no": [
+    "No corresponde eliminar datos.",
+    "El resultado es coherente.",
+    "El test no encuentra evidencia de estacionalidad.",
+    ""
+   ],
+   "referencia": "Clase 14, «El tiempo: patrones mensuales»"
+  },
+  {
+   "id": "SQL-45",
+   "tema": "SQL",
+   "subtema": "Subconsultas",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué técnica sugiere la guía para encontrar los proveedores cuyos productos nunca fueron pedidos?",
+   "opciones": [
+    "Un ORDER BY por SupplierID",
+    "Un INNER JOIN entre Suppliers y OrderDetails",
+    "Un UPDATE de la tabla Suppliers",
+    "Una subconsulta con NOT IN o NOT EXISTS contra los productos presentes en OrderDetails"
+   ],
+   "correcta": 3,
+   "explicacion": "Se buscan productos que no aparecen en OrderDetails: NOT IN o NOT EXISTS devuelven los elementos ausentes de otro conjunto. Es la misma lógica que un LEFT JOIN excluyente.",
+   "por_que_no": [
+    "Ordenar no identifica ausencias.",
+    "Un INNER JOIN devolvería justamente los que sí fueron pedidos.",
+    "UPDATE modifica datos; no consulta.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 27"
+  },
+  {
+   "id": "JOIN-41",
+   "tema": "JOIN",
+   "subtema": "Joins y filtros",
+   "dificultad": "dificil",
+   "tipo": "error",
+   "enunciado": "Se escribe asesores LEFT JOIN datos_clientes LEFT JOIN operaciones y luego WHERE O.FECHA_OPERACION BETWEEN '2025-05-01' AND '2025-05-31'. ¿Qué efecto tiene ese WHERE sobre el LEFT JOIN?",
+   "opciones": [
+    "Ninguno: se siguen conservando todos los asesores",
+    "Convierte el LEFT JOIN en RIGHT JOIN",
+    "Agrega filas nuevas",
+    "Descarta las filas sin operaciones (con fecha NULL), así que los asesores sin operaciones en mayo desaparecen y el resultado se comporta como un INNER JOIN"
+   ],
+   "correcta": 3,
+   "explicacion": "El WHERE se aplica después del join (FROM, JOIN y ON se procesan antes que WHERE). Una fecha NULL no cumple el BETWEEN, así que esas filas se descartan. Es la misma lógica del LEFT JOIN excluyente, pero al revés.",
+   "por_que_no": [
+    "El WHERE filtra filas del resultado del join, incluidas las conservadas por el LEFT.",
+    "No cambia la tabla de partida; elimina filas con NULL.",
+    "WHERE nunca agrega filas.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2025, resolución 1c; SQL Básico, orden de ejecución"
+  },
+  {
+   "id": "PYB-34",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "dificil",
+   "tipo": "examen",
+   "enunciado": "En un arreglo de NumPy de dos dimensiones (filas y columnas), ¿qué resultado da np.sum(a, axis=0)?",
+   "codigo": "a = np.array([[1, 2, 3],\n              [4, 5, 6]])",
+   "opciones": [
+    "[1 4]: la primera columna",
+    "21: la suma de todo el arreglo",
+    "[6 15]: un total por fila",
+    "[5 7 9]: suma a lo largo del eje 0 (las filas) y devuelve un total por columna"
+   ],
+   "correcta": 3,
+   "explicacion": "axis=0 es el eje de las filas (el primer índice). Sumar a lo largo de ese eje colapsa las filas y deja un resultado por columna: [1+4, 2+5, 3+6] = [5, 7, 9]. El parcial pregunta a qué se refiere axis=0: a las filas.",
+   "por_que_no": [
+    "No es una suma.",
+    "Eso es np.sum(a) sin indicar el eje.",
+    "Eso corresponde a axis=1.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 17 (axis=0)"
+  },
+  {
+   "id": "EDA-20",
+   "tema": "EDA",
+   "subtema": "Frecuencia",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Los siniestros por póliza tienen media 0,120 y varianza 0,144 (varianza/media = 1,19), con más pólizas en 0 y en 3 o más de las que predice Poisson. ¿Qué se concluye?",
+   "opciones": [
+    "Que Poisson ajusta perfectamente",
+    "Que la media está mal calculada",
+    "Que hay que eliminar los ceros",
+    "Que hay sobredispersión: los riesgos no son homogéneos, lo que es una razón para pensar en una binomial negativa"
+   ],
+   "correcta": 3,
+   "explicacion": "Bajo Poisson la varianza iguala a la media. Una varianza mayor (sobredispersión) indica heterogeneidad entre riesgos.",
+   "por_que_no": [
+    "La varianza supera a la media en un 19 %.",
+    "Es coherente con los datos.",
+    "Los ceros son reales: la mayoría no tuvo siniestros.",
+    ""
+   ],
+   "referencia": "Clase 14, «La frecuencia: un conteo con muchos ceros»"
+  },
+  {
+   "id": "CTL-52",
+   "tema": "CTL",
+   "subtema": "while",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "Un fondo empieza en 0, recibe aportes mensuales de 50.000 y se capitaliza al 0,5 % mensual antes de cada aporte. ¿En qué mes se alcanza el objetivo de 300.000?",
+   "opciones": [
+    "Nunca",
+    "7",
+    "5",
+    "6"
+   ],
+   "correcta": 3,
+   "explicacion": "Los intereses son pequeños: tras 5 meses el fondo ronda 252.500 y tras 6 meses ≈ 303.775. Se alcanza igual en el mes 6, con un fondo final algo mayor.",
+   "por_que_no": [
+    "El fondo crece en cada mes.",
+    "El interés no alcanza a demorar un mes completo.",
+    "Tras 5 meses todavía no llega a 300.000.",
+    ""
+   ],
+   "referencia": "Guía práctica Python, Actividad 8",
+   "codigo": "fondo = 0\nmes = 0\nwhile fondo < 300000:\n    fondo = fondo * (1 + 0.005) + 50000\n    mes += 1\nprint(mes)"
+  },
+  {
+   "id": "CAL-48",
+   "tema": "CAL",
+   "subtema": "Cuándo detenerse",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Cuándo debe detenerse la limpieza de una base, según la clase?",
+   "opciones": [
+    "Cuando se acaba el tiempo",
+    "Cuando no quede ningún faltante",
+    "Nunca",
+    "Cuando la base es suficiente para el uso previsto, criterio que se fija antes de empezar; si tratar un problema de otra forma razonable no cambia el resultado, no vale la pena seguir"
+   ],
+   "correcta": 3,
+   "explicacion": "Una alternativa honesta es cuantificar el problema remanente y declararlo como limitación, o analizar por separado el subconjunto problemático y reportar ambos resultados.",
+   "por_que_no": [
+    "El criterio se fija en función del uso.",
+    "Una base sin faltantes puede ser imposible e innecesaria.",
+    "Hay un criterio de suficiencia.",
+    ""
+   ],
+   "referencia": "Clase 13, «¿Cuándo detenerse?»"
+  },
+  {
+   "id": "ALG-35",
+   "tema": "ALG",
+   "subtema": "Chain ladder",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "La fila 2 del triángulo es [1120, 1600, 1810, 1905, None] y f3 = 1,0230. ¿Qué valor completa la celda faltante?",
+   "opciones": [
+    "≈ 1948,8",
+    "≈ 3810,0",
+    "1905,0",
+    "≈ 1862,2"
+   ],
+   "correcta": 0,
+   "explicacion": "La celda se proyecta multiplicando la última observada por el factor de esa columna: 1905 × 1,0230 ≈ 1948,8.",
+   "por_que_no": [
+    "",
+    "Suma la celda dos veces.",
+    "No proyecta el desarrollo restante.",
+    "Divide en lugar de multiplicar."
+   ],
+   "referencia": "Clase 10, «Triángulo run-off (III)»"
+  }
+ ]
+}

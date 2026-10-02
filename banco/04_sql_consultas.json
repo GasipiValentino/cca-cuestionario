@@ -1,0 +1,1258 @@
+[
+ {
+  "id": "SQL-01",
+  "tema": "SQL",
+  "subtema": "Orden de las cláusulas",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuál es el orden en que se ESCRIBEN las cláusulas de una consulta SQL?",
+  "opciones": [
+   "FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+   "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+   "SELECT, WHERE, FROM, HAVING, GROUP BY, ORDER BY",
+   "SELECT, FROM, GROUP BY, WHERE, ORDER BY, HAVING"
+  ],
+  "correcta": 1,
+  "explicacion": "La consulta se teclea en el orden SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY. El orden en que el motor la interpreta es distinto.",
+  "por_que_no": [
+   "Ese es el orden lógico en que el motor la procesa, no el de escritura.",
+   "",
+   "WHERE no puede ir antes que FROM, ni HAVING antes que GROUP BY.",
+   "WHERE va antes que GROUP BY, y HAVING antes que ORDER BY."
+  ],
+  "referencia": "SQL Básico, «¿Cómo procesa esta consulta?»; apuntes C4"
+ },
+ {
+  "id": "SQL-02",
+  "tema": "SQL",
+  "subtema": "Orden de las cláusulas",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿En qué orden INTERPRETA (procesa lógicamente) el motor de base de datos las cláusulas principales?",
+  "opciones": [
+   "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+   "FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+   "FROM, SELECT, WHERE, GROUP BY, ORDER BY, HAVING",
+   "WHERE, FROM, SELECT, GROUP BY, HAVING, ORDER BY"
+  ],
+  "correcta": 1,
+  "explicacion": "El procesamiento lógico empieza por FROM (de dónde salen los datos), sigue con WHERE, GROUP BY y HAVING, recién después SELECT, y termina con ORDER BY.",
+  "por_que_no": [
+   "Ese es el orden de escritura.",
+   "",
+   "SELECT se procesa después de agrupar y filtrar grupos, y HAVING va antes que ORDER BY.",
+   "Sin FROM no hay datos que filtrar: WHERE no puede ser lo primero."
+  ],
+  "referencia": "SQL Básico, «¿Cómo procesa esta consulta?»"
+ },
+ {
+  "id": "SQL-03",
+  "tema": "SQL",
+  "subtema": "Orden de las cláusulas",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "En los 10 pasos con que el motor interpreta una consulta (FROM, JOIN, ON, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, LIMIT), ¿qué ocurre inmediatamente después de SELECT?",
+  "opciones": [
+   "HAVING",
+   "DISTINCT",
+   "ORDER BY",
+   "WHERE"
+  ],
+  "correcta": 1,
+  "explicacion": "Una vez calculado el resultado en SELECT, si se pidió eliminar duplicados se aplica DISTINCT. Después vienen ORDER BY y LIMIT.",
+  "por_que_no": [
+   "HAVING se aplica antes de SELECT.",
+   "",
+   "ORDER BY viene después de DISTINCT.",
+   "WHERE es de los primeros pasos."
+  ],
+  "referencia": "SQL Básico, «¿Cómo interpreta la consulta un motor de base de datos?»"
+ },
+ {
+  "id": "SQL-04",
+  "tema": "SQL",
+  "subtema": "Alias",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "La siguiente consulta da error. ¿Por qué?",
+  "codigo": "SELECT ProductName, Price * 1.21 AS precio_iva\nFROM Products\nWHERE precio_iva > 100;",
+  "opciones": [
+   "Porque no se puede multiplicar una columna por un número",
+   "Porque WHERE se procesa antes que SELECT, así que el alias precio_iva todavía no existe",
+   "Porque falta GROUP BY",
+   "Porque los alias solo se pueden usar en HAVING"
+  ],
+  "correcta": 1,
+  "explicacion": "Usar en WHERE el alias de una columna del SELECT es un error frecuente: esa columna se crea en la fase SELECT, que todavía no se ejecutó. Se puede repetir la expresión: WHERE Price * 1.21 > 100.",
+  "por_que_no": [
+   "Las operaciones aritméticas en el SELECT son válidas.",
+   "",
+   "No hay ninguna función de agregado que requiera agrupar.",
+   "HAVING también se procesa antes que SELECT; la única fase que admite alias es ORDER BY."
+  ],
+  "referencia": "SQL Básico, «WHERE»; apuntes C4"
+ },
+ {
+  "id": "SQL-05",
+  "tema": "SQL",
+  "subtema": "Alias",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "Según la clase, ¿en qué cláusula se pueden usar los alias declarados en el SELECT?",
+  "opciones": [
+   "WHERE",
+   "GROUP BY",
+   "HAVING",
+   "ORDER BY"
+  ],
+  "correcta": 3,
+  "explicacion": "ORDER BY es la última fase y la única que admite los alias del SELECT, porque SELECT ya se ejecutó.",
+  "por_que_no": [
+   "WHERE se ejecuta antes de SELECT.",
+   "La clase indica que en GROUP BY tampoco deben usarse los alias.",
+   "HAVING se ejecuta antes de SELECT.",
+   ""
+  ],
+  "referencia": "SQL Básico, «ORDER BY»"
+ },
+ {
+  "id": "SQL-06",
+  "tema": "SQL",
+  "subtema": "WHERE y HAVING",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Para qué se utiliza HAVING en SQL?",
+  "opciones": [
+   "Para filtrar registros antes del GROUP BY",
+   "Para ordenar resultados",
+   "Para filtrar resultados agregados (grupos)",
+   "Para limitar columnas"
+  ],
+  "correcta": 2,
+  "explicacion": "HAVING es similar a WHERE, pero filtra los resultados del GROUP BY, por eso se ejecuta después de agrupar.",
+  "por_que_no": [
+   "Eso lo hace WHERE.",
+   "Eso lo hace ORDER BY.",
+   "",
+   "Las columnas se eligen en SELECT."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 24; SQL Básico, «HAVING»"
+ },
+ {
+  "id": "SQL-07",
+  "tema": "SQL",
+  "subtema": "WHERE y HAVING",
+  "dificultad": "dificil",
+  "tipo": "diferencia",
+  "enunciado": "Se pide el precio promedio de los productos por categoría, solo para categorías con precio promedio mayor a 20. ¿Qué diferencia hay entre usar WHERE Price > 20 y HAVING AVG(Price) > 20?",
+  "opciones": [
+   "Ninguna: ambas devuelven el mismo resultado",
+   "WHERE descarta productos baratos antes de promediar (cambia los promedios); HAVING calcula el promedio con todos los productos y luego descarta las categorías",
+   "WHERE da error porque Price no existe",
+   "HAVING descarta productos individuales antes de agrupar"
+  ],
+  "correcta": 1,
+  "explicacion": "WHERE filtra filas antes del GROUP BY, así que el promedio se calcularía solo con productos de más de 20 (inflado). HAVING filtra grupos después de agregar, que es lo que pide el ejercicio.",
+  "por_que_no": [
+   "Filtran en momentos distintos y en general dan resultados distintos.",
+   "",
+   "Price existe en Products; WHERE Price > 20 es válido.",
+   "HAVING actúa sobre grupos, no sobre filas individuales."
+  ],
+  "referencia": "Guía de ejercicios SQL (W3Schools), ejercicio 17; SQL Básico, «WHERE» y «HAVING»"
+ },
+ {
+  "id": "SQL-08",
+  "tema": "SQL",
+  "subtema": "GROUP BY",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es el error en la consulta?",
+  "codigo": "SELECT nombre, COUNT(*)\nFROM empleados;",
+  "opciones": [
+   "Falta WHERE",
+   "Falta GROUP BY nombre",
+   "COUNT no existe",
+   "nombre debe ser numérico"
+  ],
+  "correcta": 1,
+  "explicacion": "Las columnas del SELECT que no están dentro de una función de agregado (MAX, MIN, AVG, COUNT…) deben listarse en el GROUP BY.",
+  "por_que_no": [
+   "WHERE es opcional.",
+   "",
+   "COUNT es una función de agregado válida.",
+   "El tipo de la columna no tiene relación con el error."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 11; SQL Básico, «GROUP BY»"
+ },
+ {
+  "id": "SQL-09",
+  "tema": "SQL",
+  "subtema": "GROUP BY",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué hace esta consulta?",
+  "codigo": "SELECT ciudad, COUNT(*)\nFROM clientes\nGROUP BY ciudad;",
+  "opciones": [
+   "Devuelve un cliente por ciudad",
+   "Cuenta los clientes de cada ciudad",
+   "Filtra ciudades duplicadas",
+   "Ordena las ciudades"
+  ],
+  "correcta": 1,
+  "explicacion": "GROUP BY ciudad forma un grupo por ciudad y COUNT(*) cuenta las filas (clientes) de cada grupo.",
+  "por_que_no": [
+   "No devuelve clientes individuales, sino un conteo por grupo.",
+   "",
+   "Aunque cada ciudad aparece una vez, la consulta además cuenta; no es un simple filtro de duplicados.",
+   "No hay ORDER BY."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 7"
+ },
+ {
+  "id": "SQL-10",
+  "tema": "SQL",
+  "subtema": "GROUP BY",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Qué hace exactamente esta consulta?",
+  "codigo": "SELECT category, COUNT(*) AS total\nFROM products\nGROUP BY category\nORDER BY total DESC\nLIMIT 1;",
+  "opciones": [
+   "Muestra la categoría con mayor cantidad de productos",
+   "Muestra todas las categorías ordenadas",
+   "Muestra la categoría cuyo precio promedio es mayor",
+   "Muestra la categoría que aparece primero alfabéticamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Cuenta los productos por categoría, ordena de mayor a menor por ese conteo y LIMIT 1 deja solo la primera fila: la categoría con más productos.",
+  "por_que_no": [
+   "",
+   "LIMIT 1 deja una sola fila.",
+   "No se calcula ningún promedio de precio.",
+   "El orden es por total, no alfabético."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 32"
+ },
+ {
+  "id": "SQL-11",
+  "tema": "SQL",
+  "subtema": "DISTINCT",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la base de W3Schools, SELECT CustomerID FROM Orders devuelve 95 filas y SELECT DISTINCT CustomerID FROM Orders devuelve 74. ¿Qué se concluye?",
+  "opciones": [
+   "Hay 95 clientes registrados en Customers",
+   "74 clientes distintos realizaron al menos un pedido; algunos hicieron más de uno",
+   "Hay 21 pedidos con error",
+   "DISTINCT eliminó 21 clientes de la base"
+  ],
+  "correcta": 1,
+  "explicacion": "Orders tiene una fila por pedido (95). DISTINCT elimina los CustomerID repetidos, así que 74 clientes distintos hicieron pedidos y algunos repiten.",
+  "por_que_no": [
+   "La consulta mira Orders, no Customers.",
+   "",
+   "Los repetidos son clientes con varios pedidos, no errores.",
+   "DISTINCT solo afecta lo que se muestra; no borra datos."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, «SELECT / DISTINCT»"
+ },
+ {
+  "id": "SQL-13",
+  "tema": "SQL",
+  "subtema": "Funciones de agregado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué devuelve esta consulta?",
+  "codigo": "SELECT COUNT(DISTINCT ProductID) AS qty_dist_prod,\n       SUM(Quantity) AS total_qty\nFROM OrderDetails\nGROUP BY OrderID;",
+  "opciones": [
+   "Una fila por producto, con la cantidad de pedidos en que aparece",
+   "Una fila por pedido, con la cantidad de productos distintos y el total de unidades del pedido",
+   "Una sola fila con totales generales",
+   "Una fila por cliente"
+  ],
+  "correcta": 1,
+  "explicacion": "GROUP BY OrderID genera una fila por pedido. COUNT(DISTINCT ProductID) cuenta los productos diferentes del pedido y SUM(Quantity) suma las unidades.",
+  "por_que_no": [
+   "Se agrupa por OrderID, no por ProductID.",
+   "",
+   "Con GROUP BY hay una fila por grupo.",
+   "OrderDetails no tiene el cliente; para eso habría que cruzar con Orders."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, ejemplos con OrderDetails"
+ },
+ {
+  "id": "SQL-14",
+  "tema": "SQL",
+  "subtema": "Funciones de agregado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la tabla Employees se ejecuta SELECT MAX(BirthDate), MIN(BirthDate) FROM Employees. ¿Qué representa MAX(BirthDate)?",
+  "opciones": [
+   "La fecha de nacimiento del empleado de mayor edad",
+   "La fecha de nacimiento más reciente, es decir, la del empleado más joven",
+   "La cantidad máxima de empleados",
+   "El año actual"
+  ],
+  "correcta": 1,
+  "explicacion": "En fechas, MAX devuelve la más reciente. La persona nacida más recientemente es la más joven; MIN devuelve la del empleado de mayor edad.",
+  "por_que_no": [
+   "Esa la devuelve MIN(BirthDate).",
+   "",
+   "MAX no cuenta filas.",
+   "Devuelve una fecha de la tabla, no el año actual."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, ejemplo con Employees"
+ },
+ {
+  "id": "SQL-15",
+  "tema": "SQL",
+  "subtema": "Funciones de agregado",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál de las siguientes NO es una función de agregado?",
+  "opciones": [
+   "COUNT",
+   "AVG",
+   "MAX",
+   "YEAR"
+  ],
+  "correcta": 3,
+  "explicacion": "COUNT, AVG, MAX, MIN y SUM resumen muchas filas en un valor. YEAR extrae el año de cada fecha: actúa fila por fila y no agrega.",
+  "por_que_no": [
+   "COUNT es una función de agregado.",
+   "AVG es una función de agregado.",
+   "MAX es una función de agregado.",
+   ""
+  ],
+  "referencia": "SQL Básico, «SELECT» y «GROUP BY»"
+ },
+ {
+  "id": "SQL-16",
+  "tema": "SQL",
+  "subtema": "Agregados en WHERE",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "Se quieren los productos con precio por encima del promedio general. ¿Cuál es el problema de esta consulta?",
+  "codigo": "SELECT ProductName, Price\nFROM Products\nWHERE Price > AVG(Price);",
+  "opciones": [
+   "Ninguno, es correcta",
+   "No se puede usar una función de agregado en WHERE, porque WHERE se evalúa fila por fila antes de agrupar; hay que usar una subconsulta",
+   "Falta ORDER BY",
+   "AVG solo funciona con GROUP BY ProductName"
+  ],
+  "correcta": 1,
+  "explicacion": "WHERE filtra filas antes de cualquier agregación, así que AVG no puede usarse ahí. La solución de la guía es una subconsulta: WHERE Price > (SELECT AVG(Price) FROM Products).",
+  "por_que_no": [
+   "La consulta es inválida tal como está escrita.",
+   "",
+   "ORDER BY es opcional y no resuelve el problema.",
+   "Agrupar por ProductName daría el promedio de cada producto, no el promedio general."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 21; SQL Básico, «WHERE»"
+ },
+ {
+  "id": "SQL-17",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta lista los productos cuyo precio supera el precio promedio general?",
+  "opciones": [
+   "SELECT ProductName FROM Products WHERE Price > (SELECT AVG(Price) FROM Products);",
+   "SELECT ProductName FROM Products HAVING Price > AVG(Price);",
+   "SELECT ProductName, AVG(Price) FROM Products GROUP BY ProductName;",
+   "SELECT ProductName FROM Products ORDER BY AVG(Price);"
+  ],
+  "correcta": 0,
+  "explicacion": "La subconsulta calcula una vez el promedio general y la consulta externa compara cada precio contra ese valor.",
+  "por_que_no": [
+   "",
+   "HAVING sin GROUP BY no compara cada producto contra el promedio general.",
+   "Calcula el promedio de cada producto consigo mismo y no filtra nada.",
+   "Solo ordena; no filtra."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 21 (subquery en el WHERE)"
+ },
+ {
+  "id": "SQL-18",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "Según la clase de joins, DML y DDL, ¿qué es una subquery?",
+  "opciones": [
+   "Una consulta que solo puede usarse en DELETE",
+   "Una consulta incluida dentro de otra; genera una tabla intermedia que existe mientras se ejecuta la consulta",
+   "Una vista guardada permanentemente",
+   "Un índice que acelera las búsquedas"
+  ],
+  "correcta": 1,
+  "explicacion": "Una subquery es una consulta SQL dentro de otra. La consulta interior produce una tabla intermedia, como una tabla temporal, sobre la que se aplican nuevas operaciones. Sirve para construir problemas complejos de manera progresiva.",
+  "por_que_no": [
+   "Se usa en SELECT, FROM, WHERE, entre otros.",
+   "",
+   "No se guarda: existe solo durante la ejecución.",
+   "No tiene relación con los índices."
+  ],
+  "referencia": "Clase 5 (CCA) – SQL: Joins, DML y DDL, «Subqueries»"
+ },
+ {
+  "id": "SQL-19",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En el ejercicio «cliente que más gastó» se usa una subconsulta en el FROM. ¿Qué hace la consulta externa?",
+  "codigo": "SELECT CustomerName, SUM(Precio_Total) AS Total\nFROM (\n  SELECT c.CustomerName, od.Quantity * p.Price AS Precio_Total\n  FROM OrderDetails AS od\n  INNER JOIN Products AS p ON od.ProductID = p.ProductID\n  INNER JOIN Orders AS o ON od.OrderID = o.OrderID\n  LEFT JOIN Customers AS c ON o.CustomerID = c.CustomerID\n) AS subtabla1\nGROUP BY CustomerName\nORDER BY Total DESC;",
+  "opciones": [
+   "Suma el importe de todas las líneas de compra de cada cliente y los ordena de mayor a menor gasto",
+   "Cuenta cuántos productos distintos compró cada cliente",
+   "Calcula el precio promedio de cada producto",
+   "Lista las líneas de compra sin agrupar"
+  ],
+  "correcta": 0,
+  "explicacion": "La subconsulta calcula el importe de cada línea (Quantity × Price) con el nombre del cliente. La consulta externa suma esos importes por cliente y ordena de forma descendente: el primero es quien más gastó.",
+  "por_que_no": [
+   "",
+   "Usa SUM sobre importes, no un conteo de productos.",
+   "No se calcula ningún promedio.",
+   "GROUP BY agrupa las líneas por cliente."
+  ],
+  "referencia": "Clase 5 (CCA), «Ejercicio práctico: cliente que más dinero gastó»; apuntes C5"
+ },
+ {
+  "id": "SQL-20",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la consulta del ejercicio «cliente que más gastó», la subconsulta del FROM termina con «) AS subtabla1». ¿Para qué sirve ese alias?",
+  "opciones": [
+   "Para guardar la subconsulta como tabla permanente",
+   "Para dar nombre a la tabla intermedia que produce la subconsulta y poder referirse a ella en la consulta externa",
+   "Para ordenar el resultado",
+   "Para eliminar duplicados"
+  ],
+  "correcta": 1,
+  "explicacion": "La subconsulta del FROM produce una tabla intermedia y el alias le da nombre (AS SubTabla en el ejemplo de la clase) para usarla en la consulta externa.",
+  "por_que_no": [
+   "No crea una tabla permanente; para eso se usa CREATE TABLE … AS.",
+   "",
+   "Ordenar es tarea de ORDER BY.",
+   "Eliminar duplicados es tarea de DISTINCT."
+  ],
+  "referencia": "Clase 5 (CCA), «Subqueries»",
+  "codigo": "SELECT CustomerName, SUM(Precio_Total) AS Total\nFROM (\n  SELECT c.CustomerName, od.Quantity * p.Price AS Precio_Total\n  FROM OrderDetails AS od\n  INNER JOIN Products AS p ON od.ProductID = p.ProductID\n  INNER JOIN Orders AS o ON od.OrderID = o.OrderID\n  LEFT JOIN Customers AS c ON o.CustomerID = c.CustomerID\n) AS subtabla1\nGROUP BY CustomerName\nORDER BY Total DESC;"
+ },
+ {
+  "id": "SQL-21",
+  "tema": "SQL",
+  "subtema": "CASE WHEN",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué produce la siguiente columna?",
+  "codigo": "CASE WHEN YEAR(OrderDate) = 1996 THEN 1 ELSE 0 END AS case_when_year_1996",
+  "opciones": [
+   "Una columna que vale 1 si el pedido es de 1996 y 0 en otro caso",
+   "Un filtro que deja solo los pedidos de 1996",
+   "La cantidad de pedidos de 1996",
+   "El año del pedido"
+  ],
+  "correcta": 0,
+  "explicacion": "CASE WHEN crea una columna condicional en el SELECT. En este caso es un indicador: 1 para los pedidos de 1996 y 0 para el resto.",
+  "por_que_no": [
+   "",
+   "No filtra filas: todas siguen apareciendo.",
+   "No agrega ni cuenta; para eso habría que sumar la columna.",
+   "Devuelve 1 o 0, no el año."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, «CASE»"
+ },
+ {
+  "id": "SQL-22",
+  "tema": "SQL",
+  "subtema": "CASE WHEN",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "Se debe aplicar un 10 % de descuento a los productos de más de $200 y un 12 % a los de más de $500. ¿Qué problema tiene esta versión?",
+  "codigo": "CASE\n  WHEN PRECIO > 200 THEN ROUND(PRECIO * 0.10, 2)\n  WHEN PRECIO > 500 THEN ROUND(PRECIO * 0.12, 2)\n  ELSE 0\nEND AS DESCUENTO_PESOS",
+  "opciones": [
+   "Ninguno",
+   "Un producto de $800 recibe 10 % porque la primera condición verdadera corta la evaluación; la condición > 500 debe ir primero",
+   "ROUND no admite dos argumentos",
+   "Falta el ELSE"
+  ],
+  "correcta": 1,
+  "explicacion": "CASE devuelve el resultado de la primera condición verdadera. Como todo precio > 500 también es > 200, la segunda rama nunca se usa. La resolución del parcial pone primero WHEN PRECIO > 500.",
+  "por_que_no": [
+   "Los productos de más de $500 quedan mal calculados.",
+   "",
+   "ROUND(valor, 2) redondea a 2 decimales y es válido.",
+   "El ELSE 0 está presente."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2c"
+ },
+ {
+  "id": "SQL-23",
+  "tema": "SQL",
+  "subtema": "CASE WHEN",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con la versión correcta del CASE (WHEN PRECIO > 500 THEN 12 %, WHEN PRECIO > 200 THEN 10 %, ELSE 0), ¿qué descuento recibe un artículo de exactamente $500?",
+  "opciones": [
+   "12 % ($60)",
+   "10 % ($50)",
+   "0 %",
+   "Error, porque 500 no cumple ninguna condición"
+  ],
+  "correcta": 1,
+  "explicacion": "500 > 500 es falso, así que no entra en la primera rama. 500 > 200 es verdadero: descuento del 10 %, es decir ROUND(500 × 0,10; 2) = 50.",
+  "por_que_no": [
+   "El operador > es estricto: 500 no es mayor que 500.",
+   "",
+   "Sí cumple la segunda condición.",
+   "Cumple la segunda condición y, además, existe el ELSE."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2c"
+ },
+ {
+  "id": "SQL-24",
+  "tema": "SQL",
+  "subtema": "Filtros",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué pedidos devuelve el filtro siguiente?",
+  "codigo": "WHERE YEAR(OrderDate) = 1996 AND MONTH(OrderDate) IN (7, 8, 9)",
+  "opciones": [
+   "Todos los pedidos de 1996",
+   "Los pedidos de julio, agosto y septiembre de 1996",
+   "Los pedidos de los meses 7, 8 y 9 de cualquier año",
+   "Los pedidos de 1996 excepto julio, agosto y septiembre"
+  ],
+  "correcta": 1,
+  "explicacion": "AND exige ambas condiciones: año 1996 y mes en la lista (7, 8, 9). IN compara contra un conjunto de valores.",
+  "por_que_no": [
+   "La condición de mes restringe a tres meses.",
+   "",
+   "El año también está restringido.",
+   "Eso correspondería a NOT IN."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, ejemplo con MONTH/YEAR"
+ },
+ {
+  "id": "SQL-25",
+  "tema": "SQL",
+  "subtema": "Filtros",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué cambia si en la condición MONTH(OrderDate) IN (7, 8, 9) se reemplaza IN por NOT IN?",
+  "opciones": [
+   "Nada",
+   "Se seleccionan los meses que NO son julio, agosto ni septiembre",
+   "Da error de sintaxis",
+   "Se invierte el orden del resultado"
+  ],
+  "correcta": 1,
+  "explicacion": "NOT IN niega la pertenencia: selecciona las filas cuyo mes no está en la lista. Los apuntes lo señalan como alternativa.",
+  "por_que_no": [
+   "Cambia el conjunto de filas seleccionadas.",
+   "",
+   "NOT IN es sintaxis válida.",
+   "El orden lo define ORDER BY."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico («puede ser NOT IN»)"
+ },
+ {
+  "id": "SQL-26",
+  "tema": "SQL",
+  "subtema": "Filtros",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Se piden clientes «de al menos 30 años y no más de 75». ¿Qué condición lo expresa correctamente?",
+  "opciones": [
+   "EDAD BETWEEN 30 AND 75",
+   "EDAD > 30 AND EDAD < 75",
+   "EDAD BETWEEN 31 AND 74",
+   "EDAD >= 30 OR EDAD <= 75"
+  ],
+  "correcta": 0,
+  "explicacion": "BETWEEN incluye ambos extremos, así que equivale a EDAD >= 30 AND EDAD <= 75, como usa la resolución del parcial.",
+  "por_que_no": [
+   "",
+   "Excluye a quienes tienen exactamente 30 o 75 años.",
+   "Excluye los extremos 30 y 75.",
+   "Con OR, cualquier edad cumple al menos una condición."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 1a"
+ },
+ {
+  "id": "SQL-27",
+  "tema": "SQL",
+  "subtema": "Filtros",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "En la resolución del parcial 2025 aparece el filtro WHERE T2.LIMITE_MENSUAL > 100.000 para pedir «límite mayor a $100.000». ¿Qué problema tiene?",
+  "opciones": [
+   "Ninguno: SQL entiende el punto como separador de miles",
+   "En SQL el punto es separador decimal: 100.000 equivale a 100, así que se filtran límites mayores a $100",
+   "Falta un GROUP BY",
+   "El operador > no funciona con números"
+  ],
+  "correcta": 1,
+  "explicacion": "Los literales numéricos en SQL usan el punto como separador decimal y no admiten separador de miles. Hay que escribir 100000.",
+  "por_que_no": [
+   "No existe separador de miles en los literales SQL.",
+   "",
+   "GROUP BY no tiene relación con el error del literal.",
+   "> es válido para números."
+  ],
+  "referencia": "1er Parcial 1C 2025, resolución del ejercicio 1a (análisis crítico)"
+ },
+ {
+  "id": "SQL-28",
+  "tema": "SQL",
+  "subtema": "ORDER BY y LIMIT",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cómo queda ordenado el resultado con ORDER BY year_date DESC, month_date ASC?",
+  "opciones": [
+   "Por mes ascendente y, dentro de cada mes, por año descendente",
+   "Primero los años más recientes y, dentro de cada año, los meses de menor a mayor",
+   "Todo de forma descendente",
+   "Solo por año; el mes se ignora"
+  ],
+  "correcta": 1,
+  "explicacion": "El primer criterio manda (año descendente) y el segundo desempata dentro de cada año (mes ascendente).",
+  "por_que_no": [
+   "Invierte la prioridad de los criterios.",
+   "",
+   "El mes está indicado ASC.",
+   "El mes desempata dentro de cada año."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, «ORDER BY»"
+ },
+ {
+  "id": "SQL-29",
+  "tema": "SQL",
+  "subtema": "ORDER BY y LIMIT",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Si en ORDER BY no se indica ASC ni DESC, ¿cómo se ordena?",
+  "opciones": [
+   "De forma ascendente",
+   "De forma descendente",
+   "Al azar",
+   "No ordena"
+  ],
+  "correcta": 0,
+  "explicacion": "El orden por defecto es ascendente (ASC). Para ordenar de mayor a menor hay que indicar DESC.",
+  "por_que_no": [
+   "",
+   "Para descendente hay que escribir DESC.",
+   "El orden es determinista.",
+   "Con ORDER BY sí se ordena."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, «ORDER BY … asc»"
+ },
+ {
+  "id": "SQL-30",
+  "tema": "SQL",
+  "subtema": "ORDER BY y LIMIT",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué obtiene la siguiente consulta?",
+  "codigo": "SELECT *\nFROM Products\nORDER BY Price DESC\nLIMIT 1;",
+  "opciones": [
+   "El producto más barato",
+   "El producto más caro",
+   "El precio promedio",
+   "Todos los productos ordenados"
+  ],
+  "correcta": 1,
+  "explicacion": "Ordena de mayor a menor precio y LIMIT 1 deja la primera fila: el producto más caro.",
+  "por_que_no": [
+   "Para el más barato sería ORDER BY Price ASC.",
+   "",
+   "No se calcula ningún promedio.",
+   "LIMIT 1 deja una sola fila."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, «para filtrar el más caro»"
+ },
+ {
+  "id": "SQL-31",
+  "tema": "SQL",
+  "subtema": "ORDER BY y LIMIT",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "La guía de ejercicios está escrita para T-SQL (SQL Server). ¿Cómo se piden allí los 5 productos más caros?",
+  "opciones": [
+   "SELECT TOP 5 ProductName, Price FROM Products ORDER BY Price DESC;",
+   "SELECT ProductName, Price FROM Products ORDER BY Price DESC LIMIT 5;",
+   "SELECT ProductName, MAX(Price, 5) FROM Products;",
+   "SELECT FIRST 5 ProductName FROM Products;"
+  ],
+  "correcta": 0,
+  "explicacion": "La guía aclara que en T-SQL se usa TOP N en lugar de LIMIT, combinado con ORDER BY para que los «primeros» sean los más caros.",
+  "por_que_no": [
+   "",
+   "Es la sintaxis con LIMIT de otros motores (la de los apuntes), pero la guía usa T-SQL.",
+   "MAX no recibe esos argumentos ni devuelve varias filas.",
+   "FIRST no es la sintaxis indicada."
+  ],
+  "referencia": "Guía de ejercicios SQL, encabezado («se usa TOP N en vez de LIMIT») y ejercicio 8"
+ },
+ {
+  "id": "SQL-32",
+  "tema": "SQL",
+  "subtema": "ORDER BY y LIMIT",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿qué naturaleza tiene LIMIT?",
+  "opciones": [
+   "Es un cálculo que cambia los valores agregados",
+   "Es una opción de presentación de la información que se aplica en el último paso",
+   "Es un filtro que se aplica antes del WHERE",
+   "Es una función de agregado"
+  ],
+  "correcta": 1,
+  "explicacion": "LIMIT se ejecuta al final y es una opción de presentación, no de cálculo: limita cuántas filas se muestran.",
+  "por_que_no": [
+   "No modifica los cálculos; solo recorta lo que se muestra.",
+   "",
+   "Es lo último que se ejecuta.",
+   "No resume filas."
+  ],
+  "referencia": "SQL Básico, «LIMIT»"
+ },
+ {
+  "id": "SQL-33",
+  "tema": "SQL",
+  "subtema": "Comentarios",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo se escriben comentarios en SQL?",
+  "opciones": [
+   "Con # al inicio de la línea únicamente",
+   "Con -- para comentar una línea y /* … */ para un bloque",
+   "Con // y <!-- -->",
+   "SQL no admite comentarios"
+  ],
+  "correcta": 1,
+  "explicacion": "Los apuntes muestran ambos estilos: anteponer -- transforma la línea en comentario y /* … */ comenta un bloque.",
+  "por_que_no": [
+   "# no es la forma vista en clase.",
+   "",
+   "// y <!-- --> son de otros lenguajes.",
+   "SQL sí admite comentarios."
+  ],
+  "referencia": "Apuntes C4 y C5 (comentarios en SQL)"
+ },
+ {
+  "id": "SQL-34",
+  "tema": "SQL",
+  "subtema": "Consultas básicas",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta lista los clientes de Alemania mostrando nombre y país?",
+  "opciones": [
+   "SELECT CustomerName, Country FROM Customers WHERE Country = 'Germany';",
+   "SELECT CustomerName, Country FROM Customers HAVING Country = 'Germany';",
+   "SELECT * FROM Germany;",
+   "SELECT CustomerName FROM Customers ORDER BY 'Germany';"
+  ],
+  "correcta": 0,
+  "explicacion": "Para filtrar filas por una condición se usa WHERE. El texto va entre comillas simples.",
+  "por_que_no": [
+   "",
+   "HAVING se usa para filtrar grupos tras un GROUP BY.",
+   "Germany es un valor de la columna Country, no una tabla.",
+   "ORDER BY ordena; no filtra."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 3 (resolución manuscrita)"
+ },
+ {
+  "id": "SQL-35",
+  "tema": "SQL",
+  "subtema": "Consultas básicas",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Cómo se cuenta cuántos clientes hay en total?",
+  "opciones": [
+   "SELECT SUM(CustomerID) FROM Customers;",
+   "SELECT COUNT(*) FROM Customers;",
+   "SELECT MAX(CustomerID) FROM Customers;",
+   "SELECT DISTINCT Customers;"
+  ],
+  "correcta": 1,
+  "explicacion": "COUNT(*) cuenta las filas de la tabla, una por cliente.",
+  "por_que_no": [
+   "Suma los identificadores, lo cual no tiene sentido.",
+   "",
+   "El ID máximo no tiene por qué coincidir con la cantidad de filas.",
+   "Sintaxis inválida; DISTINCT se aplica a columnas."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 5"
+ },
+ {
+  "id": "SQL-36",
+  "tema": "SQL",
+  "subtema": "Consultas básicas",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta muestra los productos cuyo nombre empieza con la letra C?",
+  "opciones": [
+   "SELECT ProductName FROM Products WHERE ProductName LIKE 'C%';",
+   "SELECT ProductName FROM Products WHERE ProductName = 'C';",
+   "SELECT ProductName FROM Products WHERE ProductName LIKE '%C';",
+   "SELECT ProductName FROM Products WHERE LEFT = 'C';"
+  ],
+  "correcta": 0,
+  "explicacion": "LIKE con el comodín % al final ('C%') busca textos que empiezan con C y siguen con cualquier cosa.",
+  "por_que_no": [
+   "",
+   "= 'C' solo encuentra nombres que sean exactamente «C».",
+   "'%C' busca nombres que terminan con C.",
+   "LEFT es una función y necesita argumentos; así escrita la condición es inválida."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 6"
+ },
+ {
+  "id": "SQL-37",
+  "tema": "SQL",
+  "subtema": "Consultas básicas",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta lista los distintos países en los que hay clientes?",
+  "opciones": [
+   "SELECT Country FROM Customers;",
+   "SELECT DISTINCT Country FROM Customers;",
+   "SELECT COUNT(Country) FROM Customers;",
+   "SELECT Country FROM Customers GROUP BY CustomerID;"
+  ],
+  "correcta": 1,
+  "explicacion": "DISTINCT elimina los países repetidos y devuelve cada país una sola vez.",
+  "por_que_no": [
+   "Repetiría el país una vez por cada cliente.",
+   "",
+   "Devuelve un número, no la lista de países.",
+   "Agrupar por cliente no elimina los países repetidos."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 7"
+ },
+ {
+  "id": "SQL-38",
+  "tema": "SQL",
+  "subtema": "GROUP BY y HAVING",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta muestra los proveedores que tienen más de 3 productos registrados?",
+  "opciones": [
+   "SELECT SupplierID, COUNT(*) FROM Products WHERE COUNT(*) > 3 GROUP BY SupplierID;",
+   "SELECT SupplierID, COUNT(*) FROM Products GROUP BY SupplierID HAVING COUNT(*) > 3;",
+   "SELECT SupplierID FROM Products WHERE ProductID > 3;",
+   "SELECT SupplierID, COUNT(*) FROM Products ORDER BY COUNT(*) > 3;"
+  ],
+  "correcta": 1,
+  "explicacion": "Se agrupa por proveedor, se cuentan sus productos y HAVING filtra los grupos con más de 3.",
+  "por_que_no": [
+   "No se puede usar COUNT en WHERE, y WHERE va antes de GROUP BY.",
+   "",
+   "Filtra por el valor del ID del producto, no por la cantidad de productos.",
+   "ORDER BY no filtra y falta el GROUP BY."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 15"
+ },
+ {
+  "id": "SQL-39",
+  "tema": "SQL",
+  "subtema": "GROUP BY y HAVING",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Con FABRICANTES(codigo, nombre) y ARTICULOS(codigo, nombre, precio, fabricante), ¿qué consulta obtiene los fabricantes cuyo precio medio de productos es mayor o igual a $1.500?",
+  "opciones": [
+   "SELECT F.NOMBRE, AVG(A.PRECIO) FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.FABRICANTE = F.CODIGO GROUP BY F.NOMBRE HAVING AVG(A.PRECIO) >= 1500",
+   "SELECT F.NOMBRE FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.FABRICANTE = F.CODIGO WHERE A.PRECIO >= 1500",
+   "SELECT F.NOMBRE, AVG(A.PRECIO) FROM ARTICULOS A, FABRICANTES F HAVING A.PRECIO >= 1500",
+   "SELECT NOMBRE FROM FABRICANTES WHERE AVG(PRECIO) >= 1500"
+  ],
+  "correcta": 0,
+  "explicacion": "Se cruzan artículos y fabricantes, se agrupa por fabricante, se calcula el precio medio y HAVING filtra los grupos con promedio ≥ 1500.",
+  "por_que_no": [
+   "",
+   "Filtra artículos individuales caros, no el precio medio del fabricante.",
+   "No une por la clave ni agrupa, y HAVING compara un precio individual.",
+   "FABRICANTES no tiene precio y AVG no puede ir en WHERE."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2b"
+ },
+ {
+  "id": "SQL-40",
+  "tema": "SQL",
+  "subtema": "GROUP BY",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cuántas filas devuelve una consulta con GROUP BY MONTH(OrderDate), YEAR(OrderDate) si los pedidos filtrados cubren julio, agosto y septiembre de 1996?",
+  "opciones": [
+   "Una sola fila",
+   "Tres filas, una por cada combinación de mes y año",
+   "Tantas filas como pedidos haya",
+   "Doce filas, una por mes del año"
+  ],
+  "correcta": 1,
+  "explicacion": "GROUP BY genera una fila por cada combinación distinta de los valores agrupados. Hay tres combinaciones (7/1996, 8/1996, 9/1996).",
+  "por_que_no": [
+   "Habría una sola fila si todos los pedidos compartieran mes y año.",
+   "",
+   "GROUP BY resume los pedidos en grupos.",
+   "Solo aparecen los meses presentes en los datos filtrados."
+  ],
+  "referencia": "Apuntes C4 – SQL Básico, ejemplo de agrupación por mes y año"
+ },
+ {
+  "id": "SQL-41",
+  "tema": "SQL",
+  "subtema": "Joins y agregación",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta muestra cuántos pedidos hizo cada cliente, de mayor a menor?",
+  "opciones": [
+   "SELECT c.CustomerName, COUNT(o.OrderID) AS pedidos FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID GROUP BY c.CustomerName ORDER BY pedidos DESC;",
+   "SELECT CustomerName, OrderID FROM Customers, Orders ORDER BY OrderID DESC;",
+   "SELECT COUNT(*) FROM Orders ORDER BY CustomerID;",
+   "SELECT c.CustomerName, SUM(o.OrderID) FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID GROUP BY c.CustomerName;"
+  ],
+  "correcta": 0,
+  "explicacion": "Se cruzan clientes con pedidos por CustomerID, se agrupa por cliente, se cuentan los pedidos y se ordena por el alias (válido en ORDER BY) de forma descendente.",
+  "por_que_no": [
+   "",
+   "No cruza por la clave (produce todas las combinaciones) ni cuenta.",
+   "Da un único total y no separa por cliente.",
+   "Sumar identificadores de pedido no tiene sentido; hay que contarlos."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 13"
+ },
+ {
+  "id": "SQL-42",
+  "tema": "SQL",
+  "subtema": "Joins y agregación",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Para el ingreso total de cada pedido (Quantity × Price), ¿qué hace falta?",
+  "opciones": [
+   "Solo la tabla OrderDetails, porque ya tiene el precio",
+   "Unir OrderDetails con Products por ProductID para obtener Price, calcular SUM(Quantity * Price) y agrupar por OrderID",
+   "Unir Orders con Customers y sumar CustomerID",
+   "Usar DISTINCT sobre OrderID"
+  ],
+  "correcta": 1,
+  "explicacion": "OrderDetails tiene OrderID, ProductID y Quantity, pero el precio está en Products. Hay que cruzarlas por ProductID, multiplicar cantidad por precio y sumar por pedido.",
+  "por_que_no": [
+   "OrderDetails no contiene el precio.",
+   "",
+   "Esas tablas no tienen cantidades ni precios.",
+   "DISTINCT no calcula importes."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 19; Clase 5 (CCA), «Primera etapa»"
+ },
+ {
+  "id": "SQL-43",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Se quieren los clientes que compraron algún producto de la categoría 'Seafood'. ¿Qué estructura propone la guía?",
+  "opciones": [
+   "Una subconsulta con IN que recorre las tablas relacionadas (Orders, OrderDetails, Products y Categories) hasta llegar a la categoría",
+   "Un único SELECT sobre Customers con WHERE Category = 'Seafood'",
+   "Un DELETE de los clientes que no compraron Seafood",
+   "Un GROUP BY por CategoryName sin cruzar con clientes"
+  ],
+  "correcta": 0,
+  "explicacion": "La categoría está en Categories, vinculada a Products, que se vincula con OrderDetails, luego Orders y finalmente Customers. La guía sugiere resolverlo con una subconsulta con IN sobre las tablas relacionadas.",
+  "por_que_no": [
+   "",
+   "Customers no tiene una columna de categoría.",
+   "DELETE modifica datos; la consigna es consultar.",
+   "Sin cruzar con clientes no se sabe quién compró."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 23"
+ },
+ {
+  "id": "SQL-44",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Para mostrar el porcentaje que representa el gasto de cada cliente sobre el gasto total de todos los clientes, ¿qué se necesita en el denominador?",
+  "opciones": [
+   "El gasto del propio cliente",
+   "El gasto total de todos los clientes, obtenido por ejemplo con una subconsulta que suma todos los importes",
+   "La cantidad de clientes",
+   "El precio promedio de los productos"
+  ],
+  "correcta": 1,
+  "explicacion": "El porcentaje es gasto del cliente / gasto total × 100. El total es un único valor sobre toda la base, que puede calcularse con una subconsulta.",
+  "por_que_no": [
+   "Daría siempre 100 %.",
+   "",
+   "Dividir por la cantidad de clientes no da una participación sobre el gasto.",
+   "No tiene relación con la participación en el gasto."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 28"
+ },
+ {
+  "id": "SQL-45",
+  "tema": "SQL",
+  "subtema": "Subconsultas",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué técnica sugiere la guía para encontrar los proveedores cuyos productos nunca fueron pedidos?",
+  "opciones": [
+   "Una subconsulta con NOT IN o NOT EXISTS contra los productos presentes en OrderDetails",
+   "Un INNER JOIN entre Suppliers y OrderDetails",
+   "Un ORDER BY por SupplierID",
+   "Un UPDATE de la tabla Suppliers"
+  ],
+  "correcta": 0,
+  "explicacion": "Se buscan productos que no aparecen en OrderDetails: NOT IN o NOT EXISTS devuelven los elementos ausentes de otro conjunto. Es la misma lógica que un LEFT JOIN excluyente.",
+  "por_que_no": [
+   "",
+   "Un INNER JOIN devolvería justamente los que sí fueron pedidos.",
+   "Ordenar no identifica ausencias.",
+   "UPDATE modifica datos; no consulta."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 27"
+ },
+ {
+  "id": "SQL-46",
+  "tema": "SQL",
+  "subtema": "Agregación avanzada",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Para mostrar el pedido más reciente de cada cliente, ¿qué alternativa propone la guía?",
+  "opciones": [
+   "Una subconsulta correlacionada o un JOIN con MAX(OrderDate) agrupado por cliente",
+   "Ordenar Orders por OrderDate y quedarse con LIMIT 1",
+   "Usar MIN(OrderDate)",
+   "Usar DISTINCT OrderDate"
+  ],
+  "correcta": 0,
+  "explicacion": "La fecha más reciente es MAX(OrderDate). Hay que calcularla por cliente (GROUP BY CustomerID), ya sea con una subconsulta correlacionada o con un JOIN.",
+  "por_que_no": [
+   "",
+   "LIMIT 1 da un único pedido para toda la tabla, no uno por cliente.",
+   "MIN da el pedido más antiguo.",
+   "DISTINCT no identifica el máximo por cliente."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 22"
+ },
+ {
+  "id": "SQL-47",
+  "tema": "SQL",
+  "subtema": "Agregación avanzada",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "«Listar los empleados que gestionaron más pedidos que el promedio de pedidos por empleado.» ¿Qué debe calcular la subconsulta?",
+  "opciones": [
+   "El total de pedidos de la base",
+   "El promedio, entre empleados, de la cantidad de pedidos de cada uno (un promedio de conteos agrupados)",
+   "El máximo OrderID",
+   "La cantidad de empleados"
+  ],
+  "correcta": 1,
+  "explicacion": "Primero se cuentan los pedidos de cada empleado (GROUP BY EmployeeID) y luego se promedian esos conteos. Cada empleado se compara contra ese valor, típicamente con HAVING COUNT(*) > (subconsulta).",
+  "por_que_no": [
+   "Comparar contra el total de pedidos no sirve: ningún empleado lo superaría.",
+   "",
+   "El ID máximo no es un promedio de pedidos.",
+   "Hace falta el promedio de pedidos por empleado, no solo cuántos empleados hay."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 24"
+ },
+ {
+  "id": "SQL-48",
+  "tema": "SQL",
+  "subtema": "Distribución de frecuencias",
+  "dificultad": "dificil",
+  "tipo": "examen",
+  "enunciado": "Se pide una distribución de frecuencias relativas de operaciones por rangos de edad (30 a 45, 45 a 60 y 60 a 75). ¿Qué cuidado hay que tener al definir los rangos con CASE?",
+  "opciones": [
+   "Ninguno: CASE no admite rangos",
+   "Que los rangos no se superpongan; una edad de 45 no puede caer en dos grupos. Por eso la resolución usa 30-44, 45-59 y 60-75",
+   "Que los rangos estén ordenados alfabéticamente",
+   "Que se use DISTINCT en la edad"
+  ],
+  "correcta": 1,
+  "explicacion": "Si 45 pertenece a «30 a 45» y a «45 a 60», el conteo sería ambiguo. Los rangos deben ser excluyentes y cubrir todo el dominio. Además, la frecuencia relativa divide el conteo de cada grupo por el total.",
+  "por_que_no": [
+   "CASE WHEN admite condiciones como BETWEEN.",
+   "",
+   "El orden alfabético no tiene relación con definir bien los rangos.",
+   "DISTINCT no resuelve la superposición de rangos."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 1b"
+ },
+ {
+  "id": "SQL-49",
+  "tema": "SQL",
+  "subtema": "Filtros por fecha",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Para quedarse solo con las operaciones de mayo de 2025 se usa una condición sobre la fecha de operación. ¿Cuál es adecuada?",
+  "opciones": [
+   "WHERE FECHA_OPERACION BETWEEN '2025-05-01' AND '2025-05-31'",
+   "WHERE FECHA_OPERACION = '2025-05'",
+   "HAVING FECHA_OPERACION = 'MAYO'",
+   "ORDER BY FECHA_OPERACION LIMIT 31"
+  ],
+  "correcta": 0,
+  "explicacion": "Un rango de fechas con BETWEEN (inclusivo) entre el primer y el último día del mes filtra las operaciones de mayo, como en la resolución del ejercicio 1c.",
+  "por_que_no": [
+   "",
+   "Compara contra un texto que no es una fecha completa.",
+   "HAVING se usa con grupos y el valor no corresponde al tipo fecha.",
+   "No filtra por mes; solo recorta filas."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 1c"
+ },
+ {
+  "id": "SQL-50",
+  "tema": "SQL",
+  "subtema": "SQL y pandas",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es el equivalente en pandas de WHERE x > 10?",
+  "opciones": [
+   "df.sort_values(\"x\")",
+   "df[df[\"x\"] > 10]",
+   "df.groupby(\"x\")",
+   "df.head(10)"
+  ],
+  "correcta": 1,
+  "explicacion": "Filtrar filas con una condición en pandas es indexar con una máscara booleana: df[df[\"x\"] > 10].",
+  "por_que_no": [
+   "Equivale a ORDER BY x.",
+   "",
+   "Equivale a GROUP BY x.",
+   "Equivale a LIMIT 10."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «SQL y pandas: el mismo razonamiento»"
+ },
+ {
+  "id": "SQL-51",
+  "tema": "SQL",
+  "subtema": "SQL y pandas",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué operación de pandas equivale a JOIN en SQL?",
+  "opciones": [
+   "df.merge(...)",
+   "df.sort_values(...)",
+   "df.head()",
+   "df[[\"a\", \"b\"]]"
+  ],
+  "correcta": 0,
+  "explicacion": "La clase relaciona JOIN con df.merge(...): ambos cruzan dos tablas a partir de columnas en común.",
+  "por_que_no": [
+   "",
+   "Equivale a ORDER BY.",
+   "Equivale a LIMIT.",
+   "Equivale a seleccionar columnas (SELECT a, b)."
+  ],
+  "referencia": "Clase 12, «SQL y pandas: el mismo razonamiento»"
+ },
+ {
+  "id": "SQL-52",
+  "tema": "SQL",
+  "subtema": "SQL y pandas",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Una base de pólizas tiene 100 millones de filas y el análisis requiere los totales por ramo de 2025. Según el criterio práctico de la clase, ¿qué conviene hacer?",
+  "opciones": [
+   "Traer la tabla completa a pandas y filtrar ahí",
+   "Filtrar y agregar en la base de datos con SQL y traer a Python solo el resultado a analizar",
+   "Exportar todo a Excel",
+   "Copiar la base a un equipo personal para trabajar más rápido"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase recomienda filtrar y agregar en la base de datos y traer a Python solo lo que se va a analizar: «nunca traer una tabla de cien millones de filas para quedarse con diez mil».",
+  "por_que_no": [
+   "Es justamente lo que la clase desaconseja.",
+   "",
+   "Excel tiene un límite práctico de filas y no es una base de datos.",
+   "Viola las buenas prácticas de confidencialidad y no resuelve el volumen."
+  ],
+  "referencia": "Clase 12, «SQL y pandas: el mismo razonamiento»"
+ },
+ {
+  "id": "SQL-53",
+  "tema": "SQL",
+  "subtema": "SQL desde Python",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué hace este código?",
+  "codigo": "import sqlite3\ncon = sqlite3.connect(\"cartera.db\")\nresumen = pd.read_sql(consulta, con)",
+  "opciones": [
+   "Crea un archivo CSV con la consulta",
+   "Se conecta a la base SQLite cartera.db, ejecuta la consulta SQL y devuelve el resultado como DataFrame",
+   "Convierte un DataFrame en una tabla SQL",
+   "Elimina la base cartera.db"
+  ],
+  "correcta": 1,
+  "explicacion": "sqlite3.connect abre la conexión con el archivo de base de datos y pd.read_sql ejecuta la consulta y trae el resultado a un DataFrame.",
+  "por_que_no": [
+   "No escribe ningún CSV.",
+   "",
+   "Lee de la base; no escribe en ella.",
+   "No borra nada."
+  ],
+  "referencia": "Clase 12, «SQL desde Python»"
+ },
+ {
+  "id": "SQL-54",
+  "tema": "SQL",
+  "subtema": "Joins y agregación",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la resolución manuscrita de un ejercicio se busca el producto más caro comprado por cada país. ¿Qué rol cumple GROUP BY Customers.Country?",
+  "codigo": "SELECT Customers.Country, MAX(Products.Price) AS PrecioMasCaro\nFROM Customers\nJOIN Orders ON Customers.CustomerID = Orders.CustomerID\nJOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID\nJOIN Products ON OrderDetails.ProductID = Products.ProductID\nGROUP BY Customers.Country;",
+  "opciones": [
+   "Ordena los países alfabéticamente",
+   "Forma un grupo por país para que MAX(Products.Price) devuelva el precio más alto dentro de cada país",
+   "Elimina los países sin pedidos",
+   "Es opcional: el resultado sería el mismo sin él"
+  ],
+  "correcta": 1,
+  "explicacion": "Sin GROUP BY, MAX devolvería un único máximo general (y la consulta fallaría por incluir Country). Con GROUP BY, el máximo se calcula dentro de cada país.",
+  "por_que_no": [
+   "GROUP BY no garantiza un orden.",
+   "",
+   "Los países sin pedidos ya quedan fuera por los JOIN (INNER), no por el GROUP BY.",
+   "Sin GROUP BY la consulta sería inválida o daría un único valor."
+  ],
+  "referencia": "Guía de ejercicios SQL, resolución manuscrita («prod más caro por cada país»)"
+ },
+ {
+  "id": "SQL-55",
+  "tema": "SQL",
+  "subtema": "Consultas básicas",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta calcula el precio promedio de todos los productos?",
+  "opciones": [
+   "SELECT AVG(Price) FROM Products;",
+   "SELECT MEAN(Price) FROM Products;",
+   "SELECT SUM(Price) FROM Products;",
+   "SELECT Price FROM Products GROUP BY Price;"
+  ],
+  "correcta": 0,
+  "explicacion": "AVG es la función de agregado que calcula el promedio en SQL.",
+  "por_que_no": [
+   "",
+   "MEAN no es la función de SQL vista en clase (es un nombre propio de pandas).",
+   "Calcula la suma, no el promedio.",
+   "Agrupa por precio y no promedia."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 9"
+ }
+]

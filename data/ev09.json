@@ -1,0 +1,932 @@
+{
+ "id": 9,
+ "titulo": "Evaluación 9",
+ "preguntas": [
+  {
+   "id": "PYB-02",
+   "tema": "PYB",
+   "subtema": "Tipos de datos",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "Si cantidad_siniestros = 1, ¿de qué tipo es tuvo_siniestro = cantidad_siniestros > 0 y qué valor tiene?",
+   "opciones": [
+    "bool, con valor True",
+    "int, con valor 1",
+    "str, con valor \"True\"",
+    "float, con valor 1.0"
+   ],
+   "correcta": 0,
+   "explicacion": "Una comparación devuelve un booleano. 1 > 0 es True, así que tuvo_siniestro es de tipo bool.",
+   "por_que_no": [
+    "",
+    "La comparación no devuelve un número.",
+    "No es un texto: es el valor lógico True.",
+    "No es un número decimal."
+   ],
+   "referencia": "Guía práctica Python, Actividad 1"
+  },
+  {
+   "id": "PC-05",
+   "tema": "PC",
+   "subtema": "Pilares",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Según la clase, ¿cuáles son los cuatro pilares del pensamiento computacional?",
+   "opciones": [
+    "Recursión, paralelización, búsqueda binaria y simulación",
+    "Datos, modelo, decisión y comunicación",
+    "Descomposición, abstracción, algoritmos y automatización",
+    "Programación, compilación, ejecución y depuración"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase indica que, según Wing, el pensamiento computacional se basa en descomposición, abstracción, algoritmos y automatización.",
+   "por_que_no": [
+    "Son conceptos asociados (algunos «no tan conocidos»), no los cuatro pilares.",
+    "Se parecen al flujo «problema → datos → modelo → algoritmo → validación → decisión», que no es la lista de pilares.",
+    "",
+    "Son etapas del trabajo con código, no los pilares del pensamiento computacional."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional, pilares"
+  },
+  {
+   "id": "PYB-30",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "import numpy as np\nmontos = np.array([0, 125000, 0, 840000, 0, 250000, 0])\nprint(montos > 0)",
+   "opciones": [
+    "True",
+    "[125000 840000 250000]",
+    "3",
+    "[False  True False  True False  True False]"
+   ],
+   "correcta": 3,
+   "explicacion": "Comparar un arreglo con un número se hace elemento a elemento y devuelve un arreglo booleano del mismo tamaño.",
+   "por_que_no": [
+    "No devuelve un único booleano.",
+    "Eso sería montos[montos > 0], el filtrado por máscara.",
+    "Eso sería (montos > 0).sum().",
+    ""
+   ],
+   "referencia": "Guía práctica Python, «Introducción a numpy»; Clase 12"
+  },
+  {
+   "id": "JOIN-13",
+   "tema": "JOIN",
+   "subtema": "LEFT JOIN",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "En un LEFT JOIN, ¿qué tabla funciona como «tabla de partida» cuyos registros se conservan?",
+   "opciones": [
+    "La que tenga la clave primaria",
+    "La que tenga más filas",
+    "La que aparece inmediatamente después del FROM",
+    "La que aparece después del LEFT JOIN"
+   ],
+   "correcta": 2,
+   "explicacion": "La tabla que sigue al FROM es la tabla de partida: el LEFT JOIN conserva todos sus registros y agrega la información coincidente de la derecha.",
+   "por_que_no": [
+    "La posición en la consulta es lo que importa.",
+    "El tamaño de las tablas no tiene relación.",
+    "",
+    "Esa es la tabla derecha, cuyos registros sin coincidencia se pierden."
+   ],
+   "referencia": "Clase 5 (CCA), «LEFT JOIN»"
+  },
+  {
+   "id": "CTL-32",
+   "tema": "CTL",
+   "subtema": "break, continue, pass",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Para qué sirve pass?",
+   "opciones": [
+    "Para interrumpir el ciclo",
+    "Para saltear la iteración",
+    "No hace nada: es un marcador de lugar donde la sintaxis exige un bloque",
+    "Para devolver un valor"
+   ],
+   "correcta": 2,
+   "explicacion": "pass no ejecuta ninguna acción. Se usa cuando la sintaxis requiere un bloque que todavía no se escribió.",
+   "por_que_no": [
+    "Eso lo hace break.",
+    "Eso lo hace continue.",
+    "",
+    "Eso lo hace return."
+   ],
+   "referencia": "Clase 10, «break, continue y pass»"
+  },
+  {
+   "id": "CTL-01",
+   "tema": "CTL",
+   "subtema": "Concepto",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué son las estructuras de control?",
+   "opciones": [
+    "Librerías para graficar resultados",
+    "Instrucciones que permiten controlar el flujo de ejecución de un programa según condiciones evaluadas en tiempo de ejecución",
+    "Tipos de datos especiales para guardar condiciones",
+    "Comentarios que documentan el código"
+   ],
+   "correcta": 1,
+   "explicacion": "Las estructuras de control permiten que un programa se comporte distinto según los datos, repita cálculos y se detenga cuando se cumple un criterio. Sin ellas, sería una lista de instrucciones que se ejecutan una vez y en orden.",
+   "por_que_no": [
+    "Graficar es tarea de librerías como matplotlib.",
+    "",
+    "Los booleanos son un tipo de dato; las estructuras de control usan esas condiciones para decidir el flujo.",
+    "Los comentarios no se ejecutan."
+   ],
+   "referencia": "Clase 10 – Estructuras de Control, «¿Qué es una estructura de control?»"
+  },
+  {
+   "id": "SQL-37",
+   "tema": "SQL",
+   "subtema": "Consultas básicas",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta lista los distintos países en los que hay clientes?",
+   "opciones": [
+    "SELECT COUNT(Country) FROM Customers;",
+    "SELECT DISTINCT Country FROM Customers;",
+    "SELECT Country FROM Customers GROUP BY CustomerID;",
+    "SELECT Country FROM Customers;"
+   ],
+   "correcta": 1,
+   "explicacion": "DISTINCT elimina los países repetidos y devuelve cada país una sola vez.",
+   "por_que_no": [
+    "Devuelve un número, no la lista de países.",
+    "",
+    "Agrupar por cliente no elimina los países repetidos.",
+    "Repetiría el país una vez por cada cliente."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 7"
+  },
+  {
+   "id": "EXC-24",
+   "tema": "EXC",
+   "subtema": "Buscar objetivo",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Para qué se utiliza la herramienta Buscar objetivo en Excel?",
+   "opciones": [
+    "Para resolver sistemas de ecuaciones múltiples",
+    "Para cambiar el valor de una celda hasta que otra celda que depende de ella alcance un valor dado",
+    "Para buscar un valor dentro de una tabla",
+    "Para maximizar una fórmula automáticamente"
+   ],
+   "correcta": 1,
+   "explicacion": "Buscar objetivo ajusta una celda de entrada hasta que una celda con fórmula alcance el valor deseado.",
+   "por_que_no": [
+    "Trabaja con una sola celda variable y un único objetivo.",
+    "",
+    "Eso lo hacen funciones como BUSCARV.",
+    "Buscar objetivo no maximiza: busca alcanzar un valor fijado."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 3"
+  },
+  {
+   "id": "BD-15",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué característica define a la clave primaria (PK)?",
+   "opciones": [
+    "Identifica unívocamente cada fila; no puede ser nula ni estar duplicada",
+    "Es cualquier campo que podría llegar a ser clave",
+    "Hace referencia a la clave primaria de otra tabla",
+    "Evita duplicados pero permite nulos"
+   ],
+   "correcta": 0,
+   "explicacion": "La PK identifica de forma única cada fila. Por eso no admite valores nulos ni duplicados.",
+   "por_que_no": [
+    "",
+    "Eso describe a la clave candidata.",
+    "Eso describe a la clave foránea.",
+    "Eso describe a la clave única."
+   ],
+   "referencia": "Introducción a bases de datos, «Claves»; apuntes C3"
+  },
+  {
+   "id": "EST-26",
+   "tema": "EST",
+   "subtema": "Datos jerárquicos",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "poliza = {\n  \"poliza\": 1002,\n  \"asegurado\": {\"nombre\": \"B. Ruiz\", \"edad\": 58},\n  \"coberturas\": [\n    {\"tipo\": \"Responsabilidad civil\", \"suma\": 30_000_000},\n    {\"tipo\": \"Daño total\", \"suma\": 12_000_000},\n  ],\n}\nprint(poliza[\"asegurado\"][\"edad\"], len(poliza[\"coberturas\"]))",
+   "opciones": [
+    "1002 2",
+    "B. Ruiz 2",
+    "58 2",
+    "58 1"
+   ],
+   "correcta": 2,
+   "explicacion": "poliza[\"asegurado\"] es un diccionario anidado cuyo campo edad vale 58. coberturas es una lista con 2 elementos.",
+   "por_que_no": [
+    "1002 es el número de póliza.",
+    "Se pide la edad, no el nombre.",
+    "",
+    "Hay dos coberturas."
+   ],
+   "referencia": "Clase 12, «Datos jerárquicos: JSON»"
+  },
+  {
+   "id": "PC-41",
+   "tema": "PC",
+   "subtema": "Estrategias (Wing)",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Cuál de las siguientes ideas forma parte de la descripción del pensamiento computacional de Wing?",
+   "opciones": [
+    "Elegir siempre la representación más detallada de un problema",
+    "Evitar el uso de datos masivos porque ralentizan el cálculo",
+    "Juzgar un programa solo por su corrección",
+    "Hacer concesiones (trade-offs) entre tiempo y espacio, y entre poder de procesamiento y capacidad de almacenamiento"
+   ],
+   "correcta": 3,
+   "explicacion": "Wing incluye «hacer trade-offs entre tiempo y espacio y entre poder de procesamiento y capacidad de almacenamiento». También menciona usar grandes cantidades de datos para acelerar el cálculo.",
+   "por_que_no": [
+    "Wing habla de elegir una representación apropiada, no la más detallada.",
+    "Wing dice lo contrario: usar grandes cantidades de datos para acelerar la computación.",
+    "Wing dice que un programa se juzga por su corrección, su eficiencia y también su estética.",
+    ""
+   ],
+   "referencia": "Wing (2006)"
+  },
+  {
+   "id": "EST-12",
+   "tema": "EST",
+   "subtema": "pandas: DataFrame",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué la clase dice que «una lista de diccionarios es la forma natural en que llega la información desde una API»?",
+   "opciones": [
+    "Porque las APIs solo envían números",
+    "Porque las listas no admiten textos",
+    "Porque cada registro llega como un objeto clave-valor (por ejemplo, una póliza con sus campos) y la colección es una lista de esos objetos, que pd.DataFrame convierte en tabla",
+    "Porque los diccionarios son inmutables"
+   ],
+   "correcta": 2,
+   "explicacion": "Cada diccionario es una fila con sus campos y la lista agrupa los registros. pd.DataFrame(registros) produce la tabla.",
+   "por_que_no": [
+    "Envían todo tipo de datos.",
+    "Las listas admiten cualquier tipo.",
+    "",
+    "Los diccionarios son mutables."
+   ],
+   "referencia": "Clase 12, «pandas: el DataFrame»"
+  },
+  {
+   "id": "CTL-40",
+   "tema": "CTL",
+   "subtema": "range",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Alguien escribe for t in range(1, 5): esperando 5 iteraciones. ¿Qué ocurre?",
+   "opciones": [
+    "Se ejecutan 5 iteraciones (1 a 5)",
+    "Se ejecutan 6 iteraciones",
+    "Se ejecutan 4 iteraciones (1 a 4), porque el extremo superior no se incluye",
+    "Da error porque range necesita empezar en 0"
+   ],
+   "correcta": 2,
+   "explicacion": "range(1, 5) genera 1, 2, 3 y 4. Para 5 iteraciones de 1 a 5 hay que escribir range(1, 6). La guía plantea esta pregunta conceptual.",
+   "por_que_no": [
+    "El 5 no se incluye.",
+    "Genera 4 valores.",
+    "",
+    "range puede empezar en cualquier entero."
+   ],
+   "referencia": "Guía – Estructuras de Control, «for y range() – Pregunta conceptual»"
+  },
+  {
+   "id": "JOIN-11",
+   "tema": "JOIN",
+   "subtema": "FULL OUTER JOIN",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según el profesor, ¿cuáles son los dos tipos de join más importantes en la práctica?",
+   "opciones": [
+    "RIGHT JOIN y FULL OUTER JOIN",
+    "INNER JOIN y LEFT JOIN",
+    "LEFT JOIN excluyente y RIGHT JOIN excluyente",
+    "FULL OUTER JOIN e INNER JOIN"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase remarca que INNER JOIN y LEFT JOIN cubren la gran mayoría de los casos de uso. Lo central es entender qué registros se quieren conservar.",
+   "por_que_no": [
+    "El FULL OUTER genera muchos nulos y se usa mucho menos.",
+    "",
+    "Son variantes útiles pero menos frecuentes.",
+    "El FULL OUTER se usa mucho menos."
+   ],
+   "referencia": "Clase 5 (CCA), «FULL OUTER JOIN»"
+  },
+  {
+   "id": "EDA-24",
+   "tema": "EDA",
+   "subtema": "Indicadores técnicos",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Cómo se calculan la severidad y la siniestralidad en la clase?",
+   "opciones": [
+    "Severidad = prima / monto; siniestralidad = monto × prima",
+    "Severidad = monto / exposición; siniestralidad = siniestros / pólizas",
+    "Ambas son monto / pólizas",
+    "Severidad = monto / cantidad de siniestros; siniestralidad = monto / prima"
+   ],
+   "correcta": 3,
+   "explicacion": "La severidad es el monto por siniestro. La siniestralidad compara lo pagado con la prima cobrada (por ejemplo, 0,742 en Automotores).",
+   "por_que_no": [
+    "No corresponde a ninguna definición.",
+    "Monto / exposición es la prima pura.",
+    "No son las definiciones de la clase.",
+    ""
+   ],
+   "referencia": "Clase 14, «Indicadores técnicos por ramo»"
+  },
+  {
+   "id": "JOIN-08",
+   "tema": "JOIN",
+   "subtema": "Joins excluyentes",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta devuelve solo los clientes que no tienen ninguna factura?",
+   "opciones": [
+    "SELECT cliente.* FROM cliente INNER JOIN factura ON cliente.id = factura.cliente_id;",
+    "SELECT cliente.* FROM cliente WHERE id = NULL;",
+    "SELECT cliente.* FROM cliente RIGHT JOIN factura ON cliente.id = factura.cliente_id WHERE cliente.id IS NULL;",
+    "SELECT cliente.* FROM cliente LEFT JOIN factura ON cliente.id = factura.cliente_id WHERE factura.id IS NULL;"
+   ],
+   "correcta": 3,
+   "explicacion": "El LEFT JOIN excluyente conserva todos los clientes y luego WHERE factura.id IS NULL deja solo los que no encontraron coincidencia. Sirve para detectar registros faltantes.",
+   "por_que_no": [
+    "Devuelve los clientes con factura.",
+    "Compara con = NULL en lugar de IS NULL, no cruza con facturas y además el id de cliente nunca es nulo.",
+    "Devuelve las facturas sin cliente (RIGHT excluyente).",
+    ""
+   ],
+   "referencia": "Clase 5 (CCA), «LEFT JOIN excluyente»; apuntes C5"
+  },
+  {
+   "id": "ALG-46",
+   "tema": "ALG",
+   "subtema": "Medidas de riesgo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cómo cambia la estimación del percentil 99 si se usan 1.000 réplicas en lugar de 50.000?",
+   "opciones": [
+    "Se vuelve exacta",
+    "No cambia",
+    "Siempre da el doble",
+    "Se vuelve más inestable: con 1.000 réplicas solo unas 10 observaciones superan el percentil 99"
+   ],
+   "correcta": 3,
+   "explicacion": "Los cuantiles extremos se estiman con pocas observaciones de la cola. Con menos réplicas la estimación varía mucho de una corrida a otra.",
+   "por_que_no": [
+    "Ninguna simulación finita es exacta.",
+    "La precisión depende del número de réplicas.",
+    "No hay una relación fija.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 21 («Preguntas para discutir»)"
+  },
+  {
+   "id": "PC-24",
+   "tema": "PC",
+   "subtema": "Disposiciones ISTE/CSTA",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Según ISTE y CSTA (2011), ¿cuál de las siguientes es una de las destrezas o actitudes que necesitan los estudiantes para desarrollar el pensamiento computacional?",
+   "opciones": [
+    "Preferencia por problemas cerrados con una única respuesta",
+    "Tolerancia a la ambigüedad",
+    "Trabajo exclusivamente individual",
+    "Evitar los problemas difíciles para no perder tiempo"
+   ],
+   "correcta": 1,
+   "explicacion": "La lista incluye confianza para trabajar con la complejidad, persistencia ante problemas difíciles, tolerancia a la ambigüedad, habilidad para problemas abiertos y cerrados, y capacidad de comunicarse y trabajar con otros.",
+   "por_que_no": [
+    "Se pide habilidad para lidiar con problemas abiertos y cerrados, no preferencia por los cerrados.",
+    "",
+    "Se pide habilidad para comunicarse y trabajar con otros.",
+    "Se pide persistencia al trabajar con problemas difíciles."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional (ISTE y CSTA, 2011)"
+  },
+  {
+   "id": "ALG-47",
+   "tema": "ALG",
+   "subtema": "Pérdida agregada",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué la distribución simulada de la pérdida agregada resulta asimétrica hacia la derecha?",
+   "opciones": [
+    "Por un error de la semilla",
+    "Porque λ es entero",
+    "Porque la pérdida no puede ser negativa, la severidad lognormal es asimétrica y algunos años combinan muchos siniestros o siniestros grandes",
+    "Porque se usó la normal"
+   ],
+   "correcta": 2,
+   "explicacion": "Hay una masa de años con pérdidas bajas o nulas y una cola larga de años con pérdidas muy grandes. Las pérdidas están acotadas en 0 por izquierda y no tienen tope por derecha.",
+   "por_que_no": [
+    "La semilla no determina la forma de la distribución.",
+    "No tiene relación con la asimetría.",
+    "",
+    "No se usa la normal."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 21 («Preguntas para discutir»)"
+  },
+  {
+   "id": "SQL-11",
+   "tema": "SQL",
+   "subtema": "DISTINCT",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la base de W3Schools, SELECT CustomerID FROM Orders devuelve 95 filas y SELECT DISTINCT CustomerID FROM Orders devuelve 74. ¿Qué se concluye?",
+   "opciones": [
+    "Hay 21 pedidos con error",
+    "Hay 95 clientes registrados en Customers",
+    "74 clientes distintos realizaron al menos un pedido; algunos hicieron más de uno",
+    "DISTINCT eliminó 21 clientes de la base"
+   ],
+   "correcta": 2,
+   "explicacion": "Orders tiene una fila por pedido (95). DISTINCT elimina los CustomerID repetidos, así que 74 clientes distintos hicieron pedidos y algunos repiten.",
+   "por_que_no": [
+    "Los repetidos son clientes con varios pedidos, no errores.",
+    "La consulta mira Orders, no Customers.",
+    "",
+    "DISTINCT solo afecta lo que se muestra; no borra datos."
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, «SELECT / DISTINCT»"
+  },
+  {
+   "id": "CAL-45",
+   "tema": "CAL",
+   "subtema": "Pipeline",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué ventaja tiene encadenar la limpieza con .pipe(...) usando funciones con nombre?",
+   "opciones": [
+    "Modifica el archivo original",
+    "Ninguna",
+    "Elimina la necesidad de documentar",
+    "Cada paso se prueba por separado, la cadena describe el proceso completo y, si llega una base nueva con los mismos problemas, se ejecuta la misma cadena"
+   ],
+   "correcta": 3,
+   "explicacion": "Es la ventaja decisiva sobre la limpieza manual: un proceso reproducible y legible de arriba hacia abajo.",
+   "por_que_no": [
+    "El original nunca se modifica.",
+    "Es una práctica recomendada.",
+    "La documentación sigue siendo necesaria.",
+    ""
+   ],
+   "referencia": "Clase 13, «Encadenar las transformaciones»"
+  },
+  {
+   "id": "SQL-40",
+   "tema": "SQL",
+   "subtema": "GROUP BY",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cuántas filas devuelve una consulta con GROUP BY MONTH(OrderDate), YEAR(OrderDate) si los pedidos filtrados cubren julio, agosto y septiembre de 1996?",
+   "opciones": [
+    "Doce filas, una por mes del año",
+    "Una sola fila",
+    "Tantas filas como pedidos haya",
+    "Tres filas, una por cada combinación de mes y año"
+   ],
+   "correcta": 3,
+   "explicacion": "GROUP BY genera una fila por cada combinación distinta de los valores agrupados. Hay tres combinaciones (7/1996, 8/1996, 9/1996).",
+   "por_que_no": [
+    "Solo aparecen los meses presentes en los datos filtrados.",
+    "Habría una sola fila si todos los pedidos compartieran mes y año.",
+    "GROUP BY resume los pedidos en grupos.",
+    ""
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, ejemplo de agrupación por mes y año"
+  },
+  {
+   "id": "EDA-40",
+   "tema": "EDA",
+   "subtema": "Automatizar y registrar",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué es la bitácora de hallazgos del EDA y qué responde cada entrada?",
+   "opciones": [
+    "Un gráfico resumen",
+    "El diccionario de datos",
+    "Una lista de errores de código",
+    "Un registro análogo al de tratamiento de la limpieza: cada entrada dice qué se vio, con qué evidencia y qué se hace con eso"
+   ],
+   "correcta": 3,
+   "explicacion": "Ejemplo H3: «52 siniestros alcanzan la suma asegurada. Acción: modelar la severidad con censura en el tope.» Si no está en código y en la bitácora, no ocurrió.",
+   "por_que_no": [
+    "No es un gráfico.",
+    "El diccionario describe campos.",
+    "Registra hallazgos sobre los datos.",
+    ""
+   ],
+   "referencia": "Clase 14, «Registrar los hallazgos»"
+  },
+  {
+   "id": "CTL-49",
+   "tema": "CTL",
+   "subtema": "Comprensión de listas",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál de las siguientes expresiones produce la misma lista que este bucle?",
+   "codigo": "recargadas = []\nfor p in primas:\n    recargadas.append(p * 1.1)",
+   "opciones": [
+    "recargadas = [primas * 1.1]",
+    "recargadas = [p for p in primas if p * 1.1]",
+    "recargadas = [p * 1.1 for p in primas]",
+    "recargadas = primas * 1.1"
+   ],
+   "correcta": 2,
+   "explicacion": "La comprensión [expresión for elemento in secuencia] equivale al bucle con acumulación por append.",
+   "por_que_no": [
+    "Crea una lista con un único elemento (y además daría error).",
+    "Usa p * 1.1 como condición: copia los valores sin recargar.",
+    "",
+    "Multiplicar una lista por un decimal da error; con numpy sí funcionaría."
+   ],
+   "referencia": "Clase 10 y Guía – Estructuras de Control, «Comprensiones de listas»"
+  },
+  {
+   "id": "PYB-31",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve montos[montos > 0]?",
+   "codigo": "import numpy as np\nmontos = np.array([0, 125000, 0, 840000, 0, 250000, 0])",
+   "opciones": [
+    "3",
+    "[False True False True False True False]",
+    "[1 3 5]",
+    "[125000 840000 250000]"
+   ],
+   "correcta": 3,
+   "explicacion": "Indexar con una máscara booleana filtra el arreglo: quedan solo los elementos donde la condición es True.",
+   "por_que_no": [
+    "Esa es la cantidad de positivos.",
+    "Esa es la máscara, no el resultado de filtrar.",
+    "Esos son los índices de los montos positivos, no los valores.",
+    ""
+   ],
+   "referencia": "Clase 12, «numpy: el arreglo homogéneo» (filtrado por máscara)"
+  },
+  {
+   "id": "EDA-04",
+   "tema": "EDA",
+   "subtema": "Concepto",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cuáles son las dos advertencias de entrada de la clase sobre el EDA?",
+   "opciones": [
+    "Que siempre confirma la hipótesis inicial",
+    "Que encuentra problemas de calidad que la limpieza no vio, y que no prueba nada: genera preguntas e hipótesis que después hay que contrastar",
+    "Que reemplaza al modelado",
+    "Que es opcional y que solo usa gráficos"
+   ],
+   "correcta": 1,
+   "explicacion": "El EDA se ubica entre la limpieza y el modelado: conoce la cartera, detecta anomalías y propone hipótesis.",
+   "por_que_no": [
+    "No confirma nada.",
+    "",
+    "Lo precede; no lo reemplaza.",
+    "Es una etapa esencial y usa más que gráficos."
+   ],
+   "referencia": "Clase 14, «Dónde estamos»"
+  },
+  {
+   "id": "EXC-17",
+   "tema": "EXC",
+   "subtema": "Conteo y suma condicional",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En =SUMAR.SI.CONJUNTO(Prima;Ramo;\"Vida\";Estado;\"Vigente\"), ¿qué papel cumple el primer argumento?",
+   "opciones": [
+    "Es la celda donde se escribe el resultado",
+    "Es el rango cuyos valores se suman para las filas que cumplen todos los criterios",
+    "Es el rango que se cuenta",
+    "Es el primer criterio que se evalúa"
+   ],
+   "correcta": 1,
+   "explicacion": "En SUMAR.SI.CONJUNTO el primer argumento es el rango a sumar (las primas). Después vienen los pares rango-criterio. Así se obtiene la prima total vigente del ramo Vida.",
+   "por_que_no": [
+    "El resultado aparece en la celda donde se escribe la fórmula.",
+    "",
+    "La función suma; contar es tarea de CONTAR.SI.CONJUNTO.",
+    "Los criterios vienen después del rango a sumar."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Detalle por Ramo»"
+  },
+  {
+   "id": "PYB-03",
+   "tema": "PYB",
+   "subtema": "Tipos de datos",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia conceptual hay entre cantidad_siniestros (entero) y tuvo_siniestro (booleano)?",
+   "opciones": [
+    "La primera cuenta cuántos siniestros hubo; la segunda solo indica si hubo al menos uno, así que pierde información",
+    "El booleano permite hacer más cálculos",
+    "El entero no puede ser cero",
+    "Ninguna, representan lo mismo"
+   ],
+   "correcta": 0,
+   "explicacion": "Un conteo (0, 1, 2…) conserva cuántos eventos ocurrieron. El indicador True/False solo distingue «ninguno» de «al menos uno».",
+   "por_que_no": [
+    "",
+    "Con el conteo se puede calcular la frecuencia; con el indicador, no.",
+    "0 es un conteo válido.",
+    "Uno es más informativo que el otro."
+   ],
+   "referencia": "Guía práctica Python, «Preguntas para discutir» de la Actividad 1"
+  },
+  {
+   "id": "EST-31",
+   "tema": "EST",
+   "subtema": "merge",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Al hacer polizas.merge(asegurados, on=\"id_asegurado\", how=\"left\"), la póliza 1004 (asegurado 9, inexistente en el padrón) aparece con nombre y edad NaN. ¿Por qué?",
+   "opciones": [
+    "Porque la edad era cero",
+    "Por un error de pandas",
+    "Porque how=\"left\" elimina las pólizas sin asegurado",
+    "Porque how=\"left\" conserva todas las pólizas aunque no encuentren coincidencia; las columnas del padrón quedan vacías (NaN)"
+   ],
+   "correcta": 3,
+   "explicacion": "Es el mismo comportamiento que un LEFT JOIN en SQL. Con how=\"inner\", la póliza 1004 se habría descartado.",
+   "por_que_no": [
+    "No hay dato de edad: falta el asegurado en el padrón.",
+    "Es el comportamiento esperado.",
+    "Eso haría how=\"inner\".",
+    ""
+   ],
+   "referencia": "Clase 12, «Cruzar tablas: merge»"
+  },
+  {
+   "id": "CAL-21",
+   "tema": "CAL",
+   "subtema": "Faltantes disfrazados",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la limpieza de la prima se ejecuta limpia.loc[limpia[\"prima\"] == 0, \"prima\"] = np.nan. ¿Por qué?",
+   "opciones": [
+    "Porque en esa base el 0 no es una prima real sino «no informado»: se lo declara faltante para que no distorsione promedios",
+    "Para eliminar las primas grandes",
+    "Porque NaN ocupa menos memoria",
+    "Por error"
+   ],
+   "correcta": 0,
+   "explicacion": "Interpretar el cero como valor cuando significa «no informado» (o al revés) es un error frecuente de la lista de la clase.",
+   "por_que_no": [
+    "",
+    "Afecta solo los ceros.",
+    "No es una razón de memoria.",
+    "Es una decisión deliberada y documentada."
+   ],
+   "referencia": "Clase 13, «Convertir y declarar los faltantes»; «Errores frecuentes»"
+  },
+  {
+   "id": "ALG-14",
+   "tema": "ALG",
+   "subtema": "Rentas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "La renta vitalicia anticipada es äx = Σ v^k · kpx, con v = 1/(1 + i). La guía obtiene ä40 = 21,47 y ä65 = 15,05 al 4 %. ¿Por qué ä65 < ä40?",
+   "opciones": [
+    "Por un error de redondeo",
+    "Porque la tasa es distinta",
+    "Porque v es mayor a los 65",
+    "Porque a los 65 quedan menos años esperados de pago, es decir, menos términos con probabilidad de supervivencia relevante"
+   ],
+   "correcta": 3,
+   "explicacion": "La renta es una suma de pagos descontados y ponderados por la probabilidad de estar vivo. A mayor edad, menos años esperados de supervivencia.",
+   "por_que_no": [
+    "La diferencia es grande y tiene explicación actuarial.",
+    "Ambas se calculan al 4 %.",
+    "v depende solo de la tasa.",
+    ""
+   ],
+   "referencia": "Clase 10, «Renta vitalicia anticipada»; Guía, Actividad 11"
+  },
+  {
+   "id": "BD-19",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "En una tabla de cuotas, ninguna columna por sí sola identifica cada fila, pero la combinación (número de póliza, número de cuota) sí lo hace. ¿Qué tipo de clave es?",
+   "opciones": [
+    "Clave compuesta",
+    "Clave surrogada",
+    "Clave única",
+    "Clave foránea"
+   ],
+   "correcta": 0,
+   "explicacion": "Una clave compuesta se forma con más de un campo. Lo mismo ocurre con los datos de panel, identificados por (id_asegurado, año).",
+   "por_que_no": [
+    "",
+    "Una surrogada es un ID artificial de un solo campo.",
+    "Una clave única es un campo que no admite duplicados y puede ser nulo; aquí se necesita la combinación de dos campos.",
+    "Aunque el número de póliza podría ser FK hacia pólizas, la combinación que identifica la fila es una clave compuesta."
+   ],
+   "referencia": "Introducción a bases de datos, «Claves»"
+  },
+  {
+   "id": "CAL-35",
+   "tema": "CAL",
+   "subtema": "Valores extremos",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "Para los montos positivos, Q1 = 67.500 y Q3 = 220.000. ¿Cuál es el límite superior del criterio del rango intercuartílico?",
+   "opciones": [
+    "220.000",
+    "372.500",
+    "287.500",
+    "448.750"
+   ],
+   "correcta": 3,
+   "explicacion": "IQR = 220.000 − 67.500 = 152.500. Límite superior = Q3 + 1,5 × IQR = 220.000 + 228.750 = 448.750. El monto 9.999.999 queda señalado.",
+   "por_que_no": [
+    "Es Q3, no el límite.",
+    "Suma un IQR (Q3 + 1 × IQR), no 1,5.",
+    "Suma solo medio IQR (Q3 + 0,5 × IQR).",
+    ""
+   ],
+   "referencia": "Clase 13, «Valores extremos: detectar»; Guía práctica Python, «Rango intercuartílico»"
+  },
+  {
+   "id": "EST-10",
+   "tema": "EST",
+   "subtema": "pandas: Series",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "La clase afirma que «el índice de una Series no es decorativo». ¿Por qué?",
+   "opciones": [
+    "Porque define el color de la tabla",
+    "Porque ordena los valores de mayor a menor",
+    "Porque permite alinear automáticamente dos Series por etiqueta al operarlas",
+    "Porque elimina duplicados"
+   ],
+   "correcta": 2,
+   "explicacion": "Al operar dos Series, pandas empareja los valores por etiqueta de índice, no por posición. Por eso el índice determina el resultado.",
+   "por_que_no": [
+    "No tiene relación con el formato visual.",
+    "No ordena por valor.",
+    "",
+    "No deduplica."
+   ],
+   "referencia": "Clase 12, «pandas: la Series»"
+  },
+  {
+   "id": "ALG-28",
+   "tema": "ALG",
+   "subtema": "Reservas",
+   "dificultad": "dificil",
+   "tipo": "concepto",
+   "enunciado": "La recursión de Fackler es (Vt + P)(1 + i) = qx+t·S + px+t·Vt+1. ¿Cómo se despeja la reserva del año siguiente en el código?",
+   "opciones": [
+    "V[t+1] = ((V[t] + P) * (1 + i) - qx(x+t) * S) / (1 - qx(x+t))",
+    "V[t+1] = V[t] + P - S",
+    "V[t+1] = (V[t] + P) * (1 + i)",
+    "V[t+1] = qx(x+t) * S"
+   ],
+   "correcta": 0,
+   "explicacion": "Se despeja Vt+1 dividiendo por px+t = 1 − qx+t, después de restar el costo esperado de fallecimiento qx+t·S a la reserva más la prima capitalizada.",
+   "por_que_no": [
+    "",
+    "No capitaliza ni pondera por probabilidades.",
+    "Omite el costo de los fallecimientos y la división por px+t.",
+    "Es solo el costo esperado de fallecimiento."
+   ],
+   "referencia": "Clase 10, «Recursión de reservas (Fackler)»; Guía, Actividad 25"
+  },
+  {
+   "id": "CTL-60",
+   "tema": "CTL",
+   "subtema": "Fibonacci",
+   "dificultad": "dificil",
+   "tipo": "examen",
+   "enunciado": "¿Qué imprime la siguiente alternativa del parcial?",
+   "codigo": "n = 10\nfibonacci_list = [0, 1]\nwhile len(fibonacci_list) < n:\n    siguiente = fibonacci_list[-1] + fibonacci_list[-2]\n    fibonacci_list.append(siguiente)\nprint(fibonacci_list)",
+   "opciones": [
+    "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+    "[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]",
+    "[0, 1, 1, 2, 3, 5, 8, 13, 21]",
+    "Un ciclo infinito"
+   ],
+   "correcta": 0,
+   "explicacion": "El while agrega la suma de los dos últimos elementos (índices −1 y −2) hasta que la lista tiene 10 elementos.",
+   "por_que_no": [
+    "",
+    "La lista empieza en [0, 1].",
+    "La condición sigue hasta tener 10 elementos.",
+    "len crece en cada iteración, así que el ciclo termina."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 3a (alternativa 2)"
+  },
+  {
+   "id": "SQL-20",
+   "tema": "SQL",
+   "subtema": "Subconsultas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la consulta del ejercicio «cliente que más gastó», la subconsulta del FROM termina con «) AS subtabla1». ¿Para qué sirve ese alias?",
+   "opciones": [
+    "Para dar nombre a la tabla intermedia que produce la subconsulta y poder referirse a ella en la consulta externa",
+    "Para guardar la subconsulta como tabla permanente",
+    "Para ordenar el resultado",
+    "Para eliminar duplicados"
+   ],
+   "correcta": 0,
+   "explicacion": "La subconsulta del FROM produce una tabla intermedia y el alias le da nombre (AS SubTabla en el ejemplo de la clase) para usarla en la consulta externa.",
+   "por_que_no": [
+    "",
+    "No crea una tabla permanente; para eso se usa CREATE TABLE … AS.",
+    "Ordenar es tarea de ORDER BY.",
+    "Eliminar duplicados es tarea de DISTINCT."
+   ],
+   "referencia": "Clase 5 (CCA), «Subqueries»",
+   "codigo": "SELECT CustomerName, SUM(Precio_Total) AS Total\nFROM (\n  SELECT c.CustomerName, od.Quantity * p.Price AS Precio_Total\n  FROM OrderDetails AS od\n  INNER JOIN Products AS p ON od.ProductID = p.ProductID\n  INNER JOIN Orders AS o ON od.OrderID = o.OrderID\n  LEFT JOIN Customers AS c ON o.CustomerID = c.CustomerID\n) AS subtabla1\nGROUP BY CustomerName\nORDER BY Total DESC;"
+  },
+  {
+   "id": "ALG-36",
+   "tema": "ALG",
+   "subtema": "Chain ladder",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Cómo se calcula la reserva estimada con el triángulo completado?",
+   "opciones": [
+    "Multiplicando todos los factores",
+    "Sumando la primera columna",
+    "Promediando los factores",
+    "Siniestros últimos estimados (suma de la última columna completada) menos siniestros acumulados a hoy (suma de la diagonal: la última celda observada de cada fila)"
+   ],
+   "correcta": 3,
+   "explicacion": "En la guía: último = 10.671,4 y acumulado a hoy = 8.985,0, así que la reserva es ≈ 1.686,4. Es lo que falta pagar.",
+   "por_que_no": [
+    "El producto de factores es un factor acumulado, no un monto.",
+    "La primera columna es el desarrollo inicial.",
+    "El promedio de factores no es una reserva.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 17; Clase 10"
+  },
+  {
+   "id": "EDA-13",
+   "tema": "EDA",
+   "subtema": "Medidas robustas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Si las medidas robustas son menos sensibles a los extremos, ¿por qué en seguros la prima pura se calcula con la MEDIA de la severidad?",
+   "opciones": [
+    "Porque la mediana no se puede calcular",
+    "Porque la compañía paga todos los siniestros, incluidos los grandes: la mediana describe el siniestro típico, pero la media determina el costo",
+    "Por costumbre",
+    "Porque la media es robusta"
+   ],
+   "correcta": 1,
+   "explicacion": "El criterio práctico de la clase es reportar ambas. Si difieren mucho, esa diferencia ya es un hallazgo sobre la cola.",
+   "por_que_no": [
+    "La mediana se puede calcular.",
+    "",
+    "Hay una razón económica.",
+    "La media no es robusta."
+   ],
+   "referencia": "Clase 14, «Medidas clásicas y medidas robustas»"
+  },
+  {
+   "id": "PC-40",
+   "tema": "PC",
+   "subtema": "Estrategias (Wing)",
+   "dificultad": "dificil",
+   "tipo": "concepto",
+   "enunciado": "Según Wing, ¿qué significa reformular un problema aparentemente difícil?",
+   "opciones": [
+    "Abandonarlo y buscar otro más sencillo",
+    "Resolverlo por fuerza bruta probando todas las combinaciones",
+    "Pedir a una computadora que lo resuelva sin modificarlo",
+    "Transformarlo en uno que ya sabemos resolver, por ejemplo mediante reducción, incrustación (embedding), transformación o simulación"
+   ],
+   "correcta": 3,
+   "explicacion": "Wing define el pensamiento computacional, entre otras cosas, como reformular un problema aparentemente difícil en uno que sabemos resolver, quizás por reducción, embedding, transformación o simulación.",
+   "por_que_no": [
+    "Reformular no es abandonar el problema.",
+    "La fuerza bruta no es reformular el problema.",
+    "Reformular implica una transformación conceptual hecha por la persona.",
+    ""
+   ],
+   "referencia": "Wing (2006)"
+  }
+ ]
+}

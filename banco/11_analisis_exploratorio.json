@@ -1,0 +1,1060 @@
+[
+ {
+  "id": "EDA-01",
+  "tema": "EDA",
+  "subtema": "Concepto",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿De quién proviene el término «análisis exploratorio de datos» y qué propone?",
+  "opciones": [
+   "De Wing (2006): programar antes de pensar",
+   "De John Tukey (1977): mirar los datos con apertura, sin un modelo previo, para descubrir su estructura, regularidades y anomalías",
+   "De Connolly y Begg: diseñar bases de datos",
+   "De McKinney: usar pandas"
+  ],
+  "correcta": 1,
+  "explicacion": "Tukey lo describe como «trabajo de detective». Combina resúmenes numéricos, gráficos y preguntas sucesivas en un proceso iterativo.",
+  "por_que_no": [
+   "Wing trata el pensamiento computacional.",
+   "",
+   "No se los cita en relación con el EDA.",
+   "McKinney es bibliografía de pandas, no el origen del término."
+  ],
+  "referencia": "Clase 14 – EDA, «¿Qué es el análisis exploratorio?»"
+ },
+ {
+  "id": "EDA-02",
+  "tema": "EDA",
+  "subtema": "Exploratorio vs. confirmatorio",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia al análisis exploratorio del confirmatorio?",
+  "opciones": [
+   "Son idénticos",
+   "El exploratorio parte de los datos y produce hipótesis y sospechas; el confirmatorio parte de una hipótesis previa y produce conclusiones con incertidumbre medida (tests, intervalos, modelos)",
+   "El confirmatorio no usa datos",
+   "El exploratorio usa solo tests estadísticos"
+  ],
+  "correcta": 1,
+  "explicacion": "El riesgo típico del exploratorio es ver patrones en el ruido; el del confirmatorio, contestar la pregunta equivocada.",
+  "por_que_no": [
+   "Tienen objetivos distintos.",
+   "",
+   "Ambos usan datos.",
+   "Los tests son herramientas del confirmatorio."
+  ],
+  "referencia": "Clase 14, «Exploratorio frente a confirmatorio»"
+ },
+ {
+  "id": "EDA-03",
+  "tema": "EDA",
+  "subtema": "Exploratorio vs. confirmatorio",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Tras mirar cien cortes distintos de la cartera, un analista encuentra uno con siniestralidad llamativa y lo presenta como conclusión, usando esos mismos datos. ¿Qué regla de oro viola?",
+  "opciones": [
+   "Ninguna",
+   "Una hipótesis no puede confirmarse con los mismos datos que la sugirieron: con tantos cortes, lo más probable es que sea azar hasta que se demuestre lo contrario",
+   "Que hay que usar gráficos de torta",
+   "Que hay que eliminar los extremos"
+  ],
+  "correcta": 1,
+  "explicacion": "El EDA genera hipótesis; confirmarlas exige contrastarlas, idealmente con datos no usados en la exploración.",
+  "por_que_no": [
+   "Viola la regla de oro.",
+   "",
+   "No tiene relación con el tipo de gráfico.",
+   "No tiene relación con los extremos."
+  ],
+  "referencia": "Clase 14, «Exploratorio frente a confirmatorio»; «Errores frecuentes»"
+ },
+ {
+  "id": "EDA-04",
+  "tema": "EDA",
+  "subtema": "Concepto",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cuáles son las dos advertencias de entrada de la clase sobre el EDA?",
+  "opciones": [
+   "Que es opcional y que solo usa gráficos",
+   "Que encuentra problemas de calidad que la limpieza no vio, y que no prueba nada: genera preguntas e hipótesis que después hay que contrastar",
+   "Que reemplaza al modelado",
+   "Que siempre confirma la hipótesis inicial"
+  ],
+  "correcta": 1,
+  "explicacion": "El EDA se ubica entre la limpieza y el modelado: conoce la cartera, detecta anomalías y propone hipótesis.",
+  "por_que_no": [
+   "Es una etapa esencial y usa más que gráficos.",
+   "",
+   "Lo precede; no lo reemplaza.",
+   "No confirma nada."
+  ],
+  "referencia": "Clase 14, «Dónde estamos»"
+ },
+ {
+  "id": "EDA-05",
+  "tema": "EDA",
+  "subtema": "Primer vistazo",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la cartera de trabajo, la columna edad es float64 y no int64. ¿Qué pista da eso?",
+  "opciones": [
+   "Que hay edades con decimales",
+   "Que la columna tiene faltantes: en numpy no existe un entero con NaN",
+   "Que es una categoría",
+   "Que hay un error de lectura del CSV"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase lo señala: hay 401 edades faltantes (2 %) y por eso la columna es float. Una base limpia no es una base sin faltantes, sino una cuyos faltantes están identificados.",
+  "por_que_no": [
+   "La causa es la presencia de NaN.",
+   "",
+   "Es numérica.",
+   "Es el comportamiento esperado ante faltantes."
+  ],
+  "referencia": "Clase 14, «Primer vistazo»"
+ },
+ {
+  "id": "EDA-06",
+  "tema": "EDA",
+  "subtema": "Primer vistazo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En el describe() de la cartera, la suma asegurada tiene media ≈ 39,5 millones y mediana ≈ 26,8 millones. ¿Qué se lee de inmediato?",
+  "opciones": [
+   "Que la distribución es simétrica",
+   "Que la distribución es asimétrica a derecha: unos pocos valores grandes empujan la media por encima de la mediana",
+   "Que hay un error en los datos",
+   "Que la mediana está mal calculada"
+  ],
+  "correcta": 1,
+  "explicacion": "Cuando la media supera ampliamente a la mediana, hay una cola larga hacia valores altos. El mismo describe() muestra que la exposición media es 0,86 y que la mediana de siniestros es 0.",
+  "por_que_no": [
+   "En una distribución simétrica media y mediana se parecen.",
+   "",
+   "Es una característica de la distribución, no un error.",
+   "No hay evidencia de error."
+  ],
+  "referencia": "Clase 14, «Resumen numérico»"
+ },
+ {
+  "id": "EDA-07",
+  "tema": "EDA",
+  "subtema": "Mapa del análisis",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Según el mapa del análisis, ¿qué resumen y gráfico corresponden a dos variables cualitativas (por ejemplo, canal × ramo)?",
+  "opciones": [
+   "Correlación y dispersión",
+   "Tabla de contingencia y barras agrupadas o heatmap",
+   "Histograma y ECDF",
+   "Líneas en el tiempo"
+  ],
+  "correcta": 1,
+  "explicacion": "Cualitativa × cualitativa se resume con una tabla de contingencia (pd.crosstab) y se grafica con barras agrupadas o heatmap.",
+  "por_que_no": [
+   "Corresponden a cuantitativa × cuantitativa.",
+   "",
+   "Corresponden a una variable cuantitativa.",
+   "Corresponden a variable × tiempo."
+  ],
+  "referencia": "Clase 14, «Mapa del análisis»"
+ },
+ {
+  "id": "EDA-08",
+  "tema": "EDA",
+  "subtema": "Univariado cualitativo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cómo recomienda la clase graficar una variable cualitativa nominal como la provincia, y qué cambia si la variable es ordinal?",
+  "opciones": [
+   "Torta 3D en ambos casos",
+   "Barras horizontales ordenadas por frecuencia; en una ordinal se respeta el orden natural de las categorías",
+   "Histograma en ambos casos",
+   "Líneas"
+  ],
+  "correcta": 1,
+  "explicacion": "Las barras horizontales se leen sin girar la cabeza y el orden por frecuencia transmite información. En una ordinal (franja etaria) el orden natural es el que manda.",
+  "por_que_no": [
+   "La clase desaconseja tortas y gráficos 3D.",
+   "",
+   "El histograma es para variables cuantitativas.",
+   "Las líneas son para series temporales."
+  ],
+  "referencia": "Clase 14, «Univariado: variables cualitativas»"
+ },
+ {
+  "id": "EDA-09",
+  "tema": "EDA",
+  "subtema": "Univariado cualitativo",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Hay 1.236 pólizas con exactamente 18 años (siete veces más que con 19) y el 19,5 % de las pólizas del canal digital tiene 18 años, frente a ≈ 1 % en los otros canales. ¿Qué hipótesis plantea la clase?",
+  "opciones": [
+   "Que el canal digital vende solo a jóvenes",
+   "Que podría ser un valor por defecto del formulario web: un posible problema de calidad que la limpieza no vio",
+   "Que hay que eliminar a todos los menores de 20",
+   "Que la edad está bien cargada"
+  ],
+  "correcta": 1,
+  "explicacion": "El EDA detecta anomalías que la limpieza no captó. La acción propuesta (H1 de la bitácora) es consultar a sistemas y, hasta aclararlo, analizar con y sin esos casos.",
+  "por_que_no": [
+   "La concentración exacta en 18 es sospechosa.",
+   "",
+   "Eliminar sin investigar no es la acción propuesta.",
+   "El patrón sugiere un problema."
+  ],
+  "referencia": "Clase 14, «Una variable, mirada con cuidado»; «Registrar los hallazgos»"
+ },
+ {
+  "id": "EDA-10",
+  "tema": "EDA",
+  "subtema": "Severidad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La severidad tiene media 2.562.372 y mediana 1.349.000, y el 73 % de los siniestros está por debajo del promedio. ¿Qué conclusión extrae la clase?",
+  "opciones": [
+   "Que la media describe bien el siniestro típico",
+   "Que hablar de «siniestro típico» usando la media es engañoso en esta distribución",
+   "Que hay que eliminar los siniestros grandes",
+   "Que la mediana está mal calculada"
+  ],
+  "correcta": 1,
+  "explicacion": "En distribuciones asimétricas la media se desplaza hacia la cola. La mediana describe mejor el siniestro típico.",
+  "por_que_no": [
+   "La mayoría de los siniestros está por debajo de la media.",
+   "",
+   "La cola es real y relevante.",
+   "Es coherente con la asimetría."
+  ],
+  "referencia": "Clase 14, «Posición y dispersión: la severidad»"
+ },
+ {
+  "id": "EDA-11",
+  "tema": "EDA",
+  "subtema": "Severidad",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Con desvío 4.305.599 y media 2.562.372, ¿cuánto vale el coeficiente de variación?",
+  "opciones": [
+   "≈ 0,60",
+   "≈ 1,68",
+   "≈ 2,56",
+   "≈ 4,31"
+  ],
+  "correcta": 1,
+  "explicacion": "CV = desvío / media = 4.305.599 / 2.562.372 ≈ 1,68. Es una medida de dispersión relativa, sin unidades.",
+  "por_que_no": [
+   "Es la media sobre el desvío (invertido).",
+   "",
+   "Es la media en millones.",
+   "Es el desvío en millones."
+  ],
+  "referencia": "Clase 14, «Posición y dispersión: la severidad»"
+ },
+ {
+  "id": "EDA-12",
+  "tema": "EDA",
+  "subtema": "Medidas robustas",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál de las siguientes es la contraparte robusta del desvío estándar?",
+  "opciones": [
+   "El rango",
+   "El IQR o el MAD (desvío absoluto mediano)",
+   "La media",
+   "La curtosis"
+  ],
+  "correcta": 1,
+  "explicacion": "La tabla de la clase empareja media con mediana o media recortada, desvío con IQR o MAD, y rango con rango entre percentiles. Las robustas son poco sensibles a los extremos.",
+  "por_que_no": [
+   "El rango es totalmente sensible a los extremos.",
+   "",
+   "La media es una medida de posición.",
+   "La curtosis es una medida de forma."
+  ],
+  "referencia": "Clase 14, «Medidas clásicas y medidas robustas»"
+ },
+ {
+  "id": "EDA-13",
+  "tema": "EDA",
+  "subtema": "Medidas robustas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Si las medidas robustas son menos sensibles a los extremos, ¿por qué en seguros la prima pura se calcula con la MEDIA de la severidad?",
+  "opciones": [
+   "Por costumbre",
+   "Porque la compañía paga todos los siniestros, incluidos los grandes: la mediana describe el siniestro típico, pero la media determina el costo",
+   "Porque la mediana no se puede calcular",
+   "Porque la media es robusta"
+  ],
+  "correcta": 1,
+  "explicacion": "El criterio práctico de la clase es reportar ambas. Si difieren mucho, esa diferencia ya es un hallazgo sobre la cola.",
+  "por_que_no": [
+   "Hay una razón económica.",
+   "",
+   "La mediana se puede calcular.",
+   "La media no es robusta."
+  ],
+  "referencia": "Clase 14, «Medidas clásicas y medidas robustas»"
+ },
+ {
+  "id": "EDA-14",
+  "tema": "EDA",
+  "subtema": "Forma",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "El monto tiene asimetría 7,26 y curtosis en exceso 101,72, mientras que log(monto) tiene asimetría −0,07 y curtosis 0,37. ¿Qué pista de modelado da esto?",
+  "opciones": [
+   "Que la severidad es normal",
+   "Que una lognormal podría ser un buen punto de partida para la severidad, porque el logaritmo es casi simétrico y cercano a la normal",
+   "Que hay que usar una Poisson para el monto",
+   "Que no hay que modelar"
+  ],
+  "correcta": 1,
+  "explicacion": "Si log(X) es aproximadamente normal, X es aproximadamente lognormal. La clase lo verifica después con un QQ-plot.",
+  "por_que_no": [
+   "En escala original es extremadamente asimétrica.",
+   "",
+   "La Poisson es para conteos.",
+   "El EDA busca justamente pistas para modelar."
+  ],
+  "referencia": "Clase 14, «Forma: asimetría y curtosis»"
+ },
+ {
+  "id": "EDA-15",
+  "tema": "EDA",
+  "subtema": "Histogramas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué advierte la clase sobre la cantidad de intervalos (bins) de un histograma?",
+  "opciones": [
+   "Que siempre hay que usar 10",
+   "Que el histograma depende de los bins: con pocos se pierde la forma y con demasiados aparece ruido; conviene probar varios o usar reglas como Freedman-Diaconis (bins=\"fd\")",
+   "Que no influyen",
+   "Que siempre hay que usar 200"
+  ],
+  "correcta": 1,
+  "explicacion": "El histograma no es un objeto único. Nunca hay que confiar en el valor por defecto sin mirarlo.",
+  "por_que_no": [
+   "No hay un número fijo correcto.",
+   "",
+   "Influyen mucho en la forma visible.",
+   "Demasiados bins generan ruido."
+  ],
+  "referencia": "Clase 14, «Histogramas: la elección de intervalos»"
+ },
+ {
+  "id": "EDA-16",
+  "tema": "EDA",
+  "subtema": "Escala logarítmica",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué para montos monetarios suele ser preferible la escala logarítmica en un histograma?",
+  "opciones": [
+   "Porque elimina los montos grandes",
+   "Porque en escala lineal casi todo el gráfico muestra unos pocos siniestros grandes; en escala log se ve toda la distribución (cuerpo, moda y colas)",
+   "Porque los montos son negativos",
+   "Porque es obligatorio en pandas"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase concluye que para montos la escala logarítmica suele ser la escala natural.",
+  "por_que_no": [
+   "No elimina datos.",
+   "",
+   "Los montos son positivos.",
+   "No es obligatorio."
+  ],
+  "referencia": "Clase 14, «Escala logarítmica»"
+ },
+ {
+  "id": "EDA-17",
+  "tema": "EDA",
+  "subtema": "Comparar grupos",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Por ramo, Hogar tiene la mediana de severidad más baja (0,47 M) y el coeficiente de variación más alto (2,81). ¿Cómo se interpreta?",
+  "opciones": [
+   "Que Hogar tiene siniestros homogéneos",
+   "Siniestros chicos frecuentes y algunos muy grandes",
+   "Que Hogar no tiene siniestros grandes",
+   "Que hay un error en los datos"
+  ],
+  "correcta": 1,
+  "explicacion": "Una mediana baja con alta dispersión relativa indica que la mayoría de los siniestros son chicos, pero unos pocos son muy grandes.",
+  "por_que_no": [
+   "Un CV alto indica heterogeneidad.",
+   "",
+   "El máximo de Hogar es 36,5 M.",
+   "Es un patrón plausible del negocio."
+  ],
+  "referencia": "Clase 14, «Comparar grupos: boxplots»"
+ },
+ {
+  "id": "EDA-18",
+  "tema": "EDA",
+  "subtema": "ECDF y concentración",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué ventaja tiene la función de distribución empírica (ECDF) frente al histograma?",
+  "opciones": [
+   "Es más colorida",
+   "No depende de elecciones arbitrarias como los intervalos y permite leer cuantiles directamente",
+   "Muestra la media",
+   "Solo sirve para variables cualitativas"
+  ],
+  "correcta": 1,
+  "explicacion": "La ECDF muestra, para cada x, la proporción de observaciones ≤ x. Por ejemplo, el 1 % de los siniestros supera 20,2 millones: un cuantil empírico, primer paso hacia el VaR.",
+  "por_que_no": [
+   "No es una cuestión estética.",
+   "",
+   "Muestra proporciones acumuladas, no la media.",
+   "Es para variables cuantitativas."
+  ],
+  "referencia": "Clase 14, «La función de distribución empírica»"
+ },
+ {
+  "id": "EDA-19",
+  "tema": "EDA",
+  "subtema": "ECDF y concentración",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "En la cartera, el top 1 % de los siniestros explica el 12,1 % del monto y apenas el 11,8 % de los siniestros explica la mitad del monto total. ¿Qué implica?",
+  "opciones": [
+   "Que los siniestros grandes son irrelevantes",
+   "Que el resultado del año depende de lo que pase en la cola: unos pocos siniestros grandes pesan mucho en el total",
+   "Que hay que eliminar el top 1 %",
+   "Que la distribución es uniforme"
+  ],
+  "correcta": 1,
+  "explicacion": "La curva de concentración muestra cuánto pesan los valores grandes. Eliminarlos «por atípicos» bajaría la severidad media de forma indefendible.",
+  "por_que_no": [
+   "Son determinantes.",
+   "",
+   "Detectar no es decidir que son errores.",
+   "Es muy concentrada, no uniforme."
+  ],
+  "referencia": "Clase 14, «Concentración: ¿cuánto pesan los grandes?»"
+ },
+ {
+  "id": "EDA-20",
+  "tema": "EDA",
+  "subtema": "Frecuencia",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Los siniestros por póliza tienen media 0,120 y varianza 0,144 (varianza/media = 1,19), con más pólizas en 0 y en 3 o más de las que predice Poisson. ¿Qué se concluye?",
+  "opciones": [
+   "Que Poisson ajusta perfectamente",
+   "Que hay sobredispersión: los riesgos no son homogéneos, lo que es una razón para pensar en una binomial negativa",
+   "Que hay que eliminar los ceros",
+   "Que la media está mal calculada"
+  ],
+  "correcta": 1,
+  "explicacion": "Bajo Poisson la varianza iguala a la media. Una varianza mayor (sobredispersión) indica heterogeneidad entre riesgos.",
+  "por_que_no": [
+   "La varianza supera a la media en un 19 %.",
+   "",
+   "Los ceros son reales: la mayoría no tuvo siniestros.",
+   "Es coherente con los datos."
+  ],
+  "referencia": "Clase 14, «La frecuencia: un conteo con muchos ceros»"
+ },
+ {
+  "id": "EDA-21",
+  "tema": "EDA",
+  "subtema": "Exposición",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Automotores tiene 10.978 pólizas, exposición 9.394,7 años-póliza y 1.877 siniestros. ¿Cuál es su frecuencia correcta?",
+  "opciones": [
+   "1.877 / 10.978 ≈ 0,171",
+   "1.877 / 9.394,7 ≈ 0,200",
+   "10.978 / 1.877 ≈ 5,85",
+   "9.394,7 / 10.978 ≈ 0,856"
+  ],
+  "correcta": 1,
+  "explicacion": "En seguros las frecuencias son tasas: siniestros sobre exposición, no sobre cantidad de pólizas. Dividir por pólizas (frecuencia «ingenua») subestima la frecuencia en torno a un 15 % en esta cartera.",
+  "por_que_no": [
+   "Es la frecuencia ingenua: ignora que no todas las pólizas estuvieron vigentes todo el año.",
+   "",
+   "Está invertida.",
+   "Es la exposición media por póliza."
+  ],
+  "referencia": "Clase 14, «Tasas, no conteos: la exposición»"
+ },
+ {
+  "id": "EDA-22",
+  "tema": "EDA",
+  "subtema": "Exposición",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuánta exposición aporta una póliza que estuvo vigente tres meses en el año?",
+  "opciones": [
+   "1 año",
+   "0,25 años",
+   "3 años",
+   "0,75 años"
+  ],
+  "correcta": 1,
+  "explicacion": "La exposición mide cuánto tiempo estuvo cubierto el riesgo: 3/12 = 0,25 años-póliza.",
+  "por_que_no": [
+   "Sobrestima la exposición.",
+   "",
+   "Confunde meses con años.",
+   "Corresponde a nueve meses."
+  ],
+  "referencia": "Clase 14, «Tasas, no conteos: la exposición»"
+ },
+ {
+  "id": "EDA-23",
+  "tema": "EDA",
+  "subtema": "Indicadores técnicos",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Un segmento tiene frecuencia 0,2 siniestros por año-póliza y severidad de $2.500.000. ¿Cuál es la prima pura?",
+  "opciones": [
+   "$2.500.000",
+   "$500.000",
+   "$12.500.000",
+   "$2.500.000,2"
+  ],
+  "correcta": 1,
+  "explicacion": "Prima pura = frecuencia × severidad = 0,2 × 2.500.000 = 500.000. Equivale a monto total / exposición.",
+  "por_que_no": [
+   "Es la severidad sola.",
+   "",
+   "Divide en lugar de multiplicar.",
+   "Suma en lugar de multiplicar."
+  ],
+  "referencia": "Clase 14, «Indicadores técnicos por ramo»"
+ },
+ {
+  "id": "EDA-24",
+  "tema": "EDA",
+  "subtema": "Indicadores técnicos",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo se calculan la severidad y la siniestralidad en la clase?",
+  "opciones": [
+   "Severidad = monto / exposición; siniestralidad = siniestros / pólizas",
+   "Severidad = monto / cantidad de siniestros; siniestralidad = monto / prima",
+   "Severidad = prima / monto; siniestralidad = monto × prima",
+   "Ambas son monto / pólizas"
+  ],
+  "correcta": 1,
+  "explicacion": "La severidad es el monto por siniestro. La siniestralidad compara lo pagado con la prima cobrada (por ejemplo, 0,742 en Automotores).",
+  "por_que_no": [
+   "Monto / exposición es la prima pura.",
+   "",
+   "No corresponde a ninguna definición.",
+   "No son las definiciones de la clase."
+  ],
+  "referencia": "Clase 14, «Indicadores técnicos por ramo»"
+ },
+ {
+  "id": "EDA-25",
+  "tema": "EDA",
+  "subtema": "Indicadores técnicos",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Comercio tiene la mitad de frecuencia que Automotores y casi el doble de severidad, con prima pura similar. ¿Qué enseñanza destaca la clase?",
+  "opciones": [
+   "Que ambos ramos tienen el mismo riesgo",
+   "Que un mismo resultado final puede venir de dinámicas de riesgo muy distintas, y el EDA debe separarlas",
+   "Que hay un error de datos",
+   "Que la severidad no importa"
+  ],
+  "correcta": 1,
+  "explicacion": "Prima pura = frecuencia × severidad. Dos segmentos pueden tener valores parecidos por motivos opuestos, y eso cambia cómo se tarifica, se reasegura o se gestiona.",
+  "por_que_no": [
+   "Las dinámicas son distintas.",
+   "",
+   "Los datos son coherentes.",
+   "La severidad es clave."
+  ],
+  "referencia": "Clase 14, «Indicadores técnicos por ramo»"
+ },
+ {
+  "id": "EDA-26",
+  "tema": "EDA",
+  "subtema": "Bivariado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La frecuencia de Automotores por edad muestra la típica «curva en U». ¿Qué significa y por qué se informa la exposición junto a cada punto?",
+  "opciones": [
+   "Que la frecuencia es constante con la edad",
+   "Que los jóvenes y los mayores tienen más frecuencia que las edades intermedias; la exposición indica cuánto creerle a cada tasa",
+   "Que la edad no influye",
+   "Que la exposición es decorativa"
+  ],
+  "correcta": 1,
+  "explicacion": "Los conductores jóvenes duplican la frecuencia de los de 51 a 65 y vuelve a subir en los mayores. Sin la exposición no se sabe cuán estable es cada tasa.",
+  "por_que_no": [
+   "Varía en forma de U.",
+   "",
+   "Influye fuertemente.",
+   "Es esencial para juzgar la confiabilidad."
+  ],
+  "referencia": "Clase 14, «Bivariado: frecuencia por edad»"
+ },
+ {
+  "id": "EDA-27",
+  "tema": "EDA",
+  "subtema": "Incertidumbre",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La franja de 66 años o más tiene un intervalo de confianza para la frecuencia casi tres veces más ancho que la de 51 a 65. ¿Por qué, y qué teoría tarifaria origina este problema?",
+  "opciones": [
+   "Porque tiene más siniestros; teoría de colas",
+   "Porque tiene mucha menos exposición, así que su tasa es inestable; este problema da origen a la teoría de la credibilidad",
+   "Por un error de cálculo; teoría de juegos",
+   "Porque la edad es mayor; teoría de la ruina"
+  ],
+  "correcta": 1,
+  "explicacion": "Una tasa calculada con poca exposición es incierta: el intervalo exacto para Poisson se ensancha. La credibilidad combina la experiencia del grupo con información más amplia.",
+  "por_que_no": [
+   "Tiene menos datos, no más.",
+   "",
+   "Es un fenómeno estadístico esperable.",
+   "La edad en sí no ensancha el intervalo: lo hace la exposición."
+  ],
+  "referencia": "Clase 14, «La incertidumbre también se explora»"
+ },
+ {
+  "id": "EDA-28",
+  "tema": "EDA",
+  "subtema": "Bivariado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En pd.crosstab(polizas[\"canal\"], polizas[\"ramo\"], normalize=\"index\") la composición por ramo es casi igual en los tres canales y el test χ² da p = 0,53. ¿Qué se concluye?",
+  "opciones": [
+   "Que hay que descartar el análisis",
+   "Que no hay evidencia de asociación entre canal y ramo; y que esto es un hallazgo: las diferencias de siniestralidad entre canales no se explican por la mezcla de ramos",
+   "Que los canales venden ramos distintos",
+   "Que el test está mal"
+  ],
+  "correcta": 1,
+  "explicacion": "normalize=\"index\" convierte cada fila en proporciones, lo que permite comparar canales de distinto tamaño. «Que no haya diferencias también es un hallazgo.»",
+  "por_que_no": [
+   "Un resultado nulo también informa.",
+   "",
+   "La composición es prácticamente igual.",
+   "No hay indicio de error."
+  ],
+  "referencia": "Clase 14, «Cualitativa frente a cualitativa»"
+ },
+ {
+  "id": "EDA-29",
+  "tema": "EDA",
+  "subtema": "Correlación",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "La correlación de Spearman entre suma asegurada y prima es 0,67 en Automotores, 0,78 en Hogar y 0,77 en Comercio, pero −0,08 con todos los ramos juntos. ¿Qué explica la diferencia?",
+  "opciones": [
+   "Un error de cálculo",
+   "Que mezclar grupos heterogéneos (Hogar y Comercio con sumas altas y primas relativamente bajas frente a Automotores) puede hacer desaparecer o invertir una asociación: un coeficiente sobre una población heterogénea puede no describir a ningún grupo",
+   "Que la prima no depende de la suma asegurada",
+   "Que Spearman no sirve"
+  ],
+  "correcta": 1,
+  "explicacion": "Antes de correlacionar hay que preguntarse si tiene sentido mezclar los grupos.",
+  "por_que_no": [
+   "Es un fenómeno real de agregación.",
+   "",
+   "Dentro de cada ramo la relación es fuerte.",
+   "El problema es mezclar los grupos, no el coeficiente."
+  ],
+  "referencia": "Clase 14, «Correlación: agregada y por grupo»"
+ },
+ {
+  "id": "EDA-30",
+  "tema": "EDA",
+  "subtema": "Correlación",
+  "dificultad": "dificil",
+  "tipo": "diferencia",
+  "enunciado": "Con dos variables independientes, agregar un solo punto extremo llevó Pearson de −0,06 a 0,78, mientras Spearman pasó de 0,04 a 0,10. ¿Por qué?",
+  "opciones": [
+   "Porque Spearman ignora los datos",
+   "Porque Pearson mide asociación lineal y es muy sensible a valores extremos; Spearman es Pearson calculado sobre rangos, mide asociación monótona y es robusto",
+   "Porque Pearson es robusto",
+   "Por azar"
+  ],
+  "correcta": 1,
+  "explicacion": "Con montos de siniestros, que siempre tienen extremos, Spearman es la opción por defecto para explorar. Y siempre conviene mirar el gráfico de dispersión antes de interpretar.",
+  "por_que_no": [
+   "Usa los rangos de los datos.",
+   "",
+   "Es al revés.",
+   "Es un efecto sistemático del punto extremo."
+  ],
+  "referencia": "Clase 14, «Pearson frente a Spearman»"
+ },
+ {
+  "id": "EDA-31",
+  "tema": "EDA",
+  "subtema": "Correlación",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La edad casi no correlaciona con la cantidad de siniestros. ¿Significa que no hay relación?",
+  "opciones": [
+   "Sí, la correlación baja prueba que no hay relación",
+   "No: una correlación baja no implica ausencia de relación; la relación existe y tiene forma de U, que una correlación monótona no capta",
+   "Sí, porque la edad tiene faltantes",
+   "No se puede saber nunca"
+  ],
+  "correcta": 1,
+  "explicacion": "Los coeficientes miden asociación lineal (Pearson) o monótona (Spearman). Una relación en U puede tener correlación cercana a cero.",
+  "por_que_no": [
+   "Es una conclusión errónea.",
+   "",
+   "Los faltantes no explican la forma.",
+   "El EDA por franjas sí la muestra."
+  ],
+  "referencia": "Clase 14, «Matriz de correlaciones»"
+ },
+ {
+  "id": "EDA-32",
+  "tema": "EDA",
+  "subtema": "Paradoja de Simpson",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "En el total, el canal digital de Automotores tiene una frecuencia 20 % mayor que el productor, pero dentro de cada franja etaria tiene menor frecuencia. El 37,7 % de la exposición digital está en 18-25 años, frente a 1,9 % del productor. ¿Qué ocurre?",
+  "opciones": [
+   "Un error en los datos",
+   "La paradoja de Simpson: la edad es una variable de confusión y la comparación relevante es la ajustada por la composición de la cartera",
+   "Que el canal digital vende peores riesgos en todas las edades",
+   "Que hay que eliminar a los jóvenes"
+  ],
+  "correcta": 1,
+  "explicacion": "La inversión se produce porque el digital concentra su exposición en jóvenes, que tienen mayor frecuencia. Acción (H2): comparar canales siempre ajustando por edad.",
+  "por_que_no": [
+   "Es un fenómeno real de agregación.",
+   "",
+   "Dentro de cada franja vende mejores riesgos.",
+   "La solución es ajustar la comparación, no eliminar datos."
+  ],
+  "referencia": "Clase 14, «Cuando agregar invierte la conclusión» y «La paradoja de Simpson»"
+ },
+ {
+  "id": "EDA-33",
+  "tema": "EDA",
+  "subtema": "Tiempo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Comercio muestra oscilaciones mensuales visibles, pero el test de uniformidad da p = 0,56 (226 siniestros, unos 20 por mes). ¿Qué concluye la clase?",
+  "opciones": [
+   "Que Comercio tiene una estacionalidad fuerte",
+   "Que es ruido: con tan pocos siniestros por mes esas oscilaciones son las esperables por azar. No toda oscilación es estacionalidad",
+   "Que hay que eliminar los meses altos",
+   "Que el test está mal"
+  ],
+  "correcta": 1,
+  "explicacion": "En cambio, Automotores concentra siniestros en invierno (p < 0,001). Tomar oscilaciones aleatorias como patrones es un error frecuente.",
+  "por_que_no": [
+   "El test no encuentra evidencia de estacionalidad.",
+   "",
+   "No corresponde eliminar datos.",
+   "El resultado es coherente."
+  ],
+  "referencia": "Clase 14, «El tiempo: patrones mensuales»"
+ },
+ {
+  "id": "EDA-34",
+  "tema": "EDA",
+  "subtema": "Faltantes",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Los faltantes de edad son el 8,2 % en el canal Banco y menos del 1 % en los demás, y las pólizas sin edad tienen menos siniestros por póliza (0,097 frente a 0,121). ¿Qué se concluye?",
+  "opciones": [
+   "Que los faltantes son MCAR y pueden eliminarse sin problema",
+   "Que no son MCAR: eliminarlos cambiaría la composición por canal de la base. Además surge una pregunta para sistemas: ¿el canal bancario tiene la edad como campo opcional?",
+   "Que hay que imputar 18 años",
+   "Que el canal Banco no tiene clientes"
+  ],
+  "correcta": 1,
+  "explicacion": "El EDA es el momento de investigar qué mecanismo de faltante opera. Si se concentran en un canal, la ausencia depende de una variable observada.",
+  "por_que_no": [
+   "La concentración por canal muestra que no son completamente al azar.",
+   "",
+   "Imputar 18 agravaría la anomalía detectada.",
+   "Tiene clientes; les falta un dato."
+  ],
+  "referencia": "Clase 14, «Los faltantes también se exploran»"
+ },
+ {
+  "id": "EDA-35",
+  "tema": "EDA",
+  "subtema": "Cola de la severidad",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Los cinco siniestros más grandes de Automotores son menores que los que predice la lognormal ajustada, y 52 siniestros alcanzan la suma asegurada. ¿Cuál es la explicación?",
+  "opciones": [
+   "Un error estadístico del QQ-plot",
+   "Contractual: hay pérdidas totales topeadas por la suma asegurada; la severidad observada está censurada por el contrato, y un modelo que ignore esa masa en el tope sobreestimará la cola",
+   "Que la lognormal es siempre mala",
+   "Que faltan datos"
+  ],
+  "correcta": 1,
+  "explicacion": "Un buen EDA conecta el patrón estadístico con la mecánica del negocio. Acción (H3): modelar la severidad con censura en el tope.",
+  "por_que_no": [
+   "El QQ-plot muestra un fenómeno real.",
+   "",
+   "Ajusta bien en el cuerpo.",
+   "Los datos están; están topeados."
+  ],
+  "referencia": "Clase 14, «Lo que el QQ-plot estaba mostrando»"
+ },
+ {
+  "id": "EDA-36",
+  "tema": "EDA",
+  "subtema": "Gráficos",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Un gráfico de barras de siniestralidad por ramo usa un eje vertical de 0,60 a 0,76. Comercio (0,64) parece la décima parte de Automotores (0,74). ¿Cuál es el problema?",
+  "opciones": [
+   "Ninguno",
+   "En un gráfico de barras la altura codifica la magnitud, así que el eje debe empezar en cero; con el eje truncado una diferencia del 13 % parece enorme",
+   "Que debería ser una torta",
+   "Que faltan colores"
+  ],
+  "correcta": 1,
+  "explicacion": "Es un ejemplo de gráfico engañoso. En gráficos de líneas o de puntos truncar puede ser razonable, si se indica con claridad.",
+  "por_que_no": [
+   "Distorsiona la comparación.",
+   "",
+   "La clase desaconseja las tortas.",
+   "El color no es el problema."
+  ],
+  "referencia": "Clase 14, «Gráficos que engañan»"
+ },
+ {
+  "id": "EDA-37",
+  "tema": "EDA",
+  "subtema": "Gráficos",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla «Qué gráfico para qué pregunta», ¿cuál corresponde a «¿cuánto pesan los valores grandes?»?",
+  "opciones": [
+   "Gráfico de torta",
+   "Curva de concentración",
+   "Líneas",
+   "Barras horizontales ordenadas"
+  ],
+  "correcta": 1,
+  "explicacion": "La curva de concentración muestra qué fracción del monto explican los siniestros más grandes. Las líneas son para la evolución temporal; las barras ordenadas, para el reparto de categorías.",
+  "por_que_no": [
+   "La clase desaconseja las tortas.",
+   "",
+   "Las líneas son para la evolución en el tiempo.",
+   "Las barras ordenadas son para categorías."
+  ],
+  "referencia": "Clase 14, «Qué gráfico para qué pregunta»"
+ },
+ {
+  "id": "EDA-38",
+  "tema": "EDA",
+  "subtema": "Gráficos",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cuál de las siguientes NO es una buena práctica para gráficos según la clase?",
+  "opciones": [
+   "Un mensaje por gráfico, con un título que lo diga",
+   "Ejes rotulados con unidades",
+   "Usar dos ejes verticales con escalas distintas para sugerir relaciones",
+   "Generarlo por código y guardarlo con savefig"
+  ],
+  "correcta": 2,
+  "explicacion": "La clase recomienda un solo eje vertical: dos escalas en el mismo gráfico permiten sugerir cualquier relación. También pide color con propósito y mostrar n o la exposición.",
+  "por_que_no": [
+   "Es una buena práctica.",
+   "Es una buena práctica.",
+   "",
+   "Es una buena práctica de reproducibilidad."
+  ],
+  "referencia": "Clase 14, «Buenas prácticas para un gráfico»"
+ },
+ {
+  "id": "EDA-39",
+  "tema": "EDA",
+  "subtema": "Automatizar y registrar",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Una función perfilar(df) muestra que la moda de la edad es 18. ¿Qué enseña la clase sobre herramientas automáticas como ydata-profiling?",
+  "opciones": [
+   "Que reemplazan al analista",
+   "Que son útiles como punto de partida, pero no reemplazan las preguntas del analista",
+   "Que no sirven",
+   "Que eliminan los faltantes"
+  ],
+  "correcta": 1,
+  "explicacion": "El perfilado automático encontró solo la anomalía de los 18 años, pero interpretarla (¿valor por defecto del formulario?) requiere criterio.",
+  "por_que_no": [
+   "La clase lo niega explícitamente.",
+   "",
+   "Son útiles como punto de partida.",
+   "Perfilan; no limpian."
+  ],
+  "referencia": "Clase 14, «Automatizar el primer vistazo»"
+ },
+ {
+  "id": "EDA-40",
+  "tema": "EDA",
+  "subtema": "Automatizar y registrar",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué es la bitácora de hallazgos del EDA y qué responde cada entrada?",
+  "opciones": [
+   "Un gráfico resumen",
+   "Un registro análogo al de tratamiento de la limpieza: cada entrada dice qué se vio, con qué evidencia y qué se hace con eso",
+   "Una lista de errores de código",
+   "El diccionario de datos"
+  ],
+  "correcta": 1,
+  "explicacion": "Ejemplo H3: «52 siniestros alcanzan la suma asegurada. Acción: modelar la severidad con censura en el tope.» Si no está en código y en la bitácora, no ocurrió.",
+  "por_que_no": [
+   "No es un gráfico.",
+   "",
+   "Registra hallazgos sobre los datos.",
+   "El diccionario describe campos."
+  ],
+  "referencia": "Clase 14, «Registrar los hallazgos»"
+ },
+ {
+  "id": "EDA-41",
+  "tema": "EDA",
+  "subtema": "Del hallazgo a la hipótesis",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla «del hallazgo a la hipótesis», ¿qué decisión de modelado se asocia a una función de exceso medio creciente?",
+  "opciones": [
+   "Frecuencia binomial negativa",
+   "Evaluar una cola Pareto por encima de un umbral",
+   "Edad por franjas",
+   "Controlar por mes"
+  ],
+  "correcta": 1,
+  "explicacion": "Un exceso medio e(u) = E[X − u | X > u] creciente es típico de colas pesadas. La binomial negativa responde a la sobredispersión, la edad por franjas a la curva en U y el control por mes a la estacionalidad.",
+  "por_que_no": [
+   "Corresponde a una varianza de conteos mayor que la media.",
+   "",
+   "Corresponde a la curva en U por edad.",
+   "Corresponde a la estacionalidad en Automotores."
+  ],
+  "referencia": "Clase 14, «Del hallazgo a la hipótesis»"
+ },
+ {
+  "id": "EDA-42",
+  "tema": "EDA",
+  "subtema": "Interpretación cautelosa",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La guía calcula la frecuencia y el costo por exposición por producto. ¿Por qué advierte que esas diferencias «no alcanzan para afirmar» que un grupo tiene un riesgo estructuralmente diferente?",
+  "opciones": [
+   "Porque los cálculos están mal",
+   "Porque podrían existir efectos de tamaño muestral, composición, azar u otras variables omitidas",
+   "Porque solo importa la prima",
+   "Porque los productos son iguales"
+  ],
+  "correcta": 1,
+  "explicacion": "Son medidas descriptivas. Para afirmar diferencias estructurales hay que descartar el azar y las variables de confusión, como en la paradoja de Simpson.",
+  "por_que_no": [
+   "Los cálculos son correctos.",
+   "",
+   "La prima no es lo único relevante.",
+   "No se afirma que sean iguales."
+  ],
+  "referencia": "Guía práctica Python, «Resúmenes por grupo – Interpretación»"
+ },
+ {
+  "id": "EDA-43",
+  "tema": "EDA",
+  "subtema": "Interpretación cautelosa",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Con la tabla dinámica de costo por mes y producto de un solo año, ¿se puede afirmar que existe estacionalidad?",
+  "opciones": [
+   "Sí, siempre",
+   "No: normalmente hace falta observar el fenómeno durante varios ciclos temporales y distinguir patrones persistentes de la variación aleatoria",
+   "Sí, si el gráfico tiene colores",
+   "No, la estacionalidad no existe en seguros"
+  ],
+  "correcta": 1,
+  "explicacion": "Un único año no permite separar un patrón persistente del azar. La guía pide una serie histórica más larga.",
+  "por_que_no": [
+   "Un año no alcanza.",
+   "",
+   "Los colores no prueban nada.",
+   "La clase 14 muestra estacionalidad real en Automotores."
+  ],
+  "referencia": "Guía práctica Python, Actividad 15"
+ },
+ {
+  "id": "EDA-44",
+  "tema": "EDA",
+  "subtema": "Estadística descriptiva",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Para el DataFrame del parcial con Edad = [23, 45, 12, 35, 29], ¿cuánto valen la media y la mediana de la edad?",
+  "opciones": [
+   "Media 28,8; mediana 29",
+   "Media 29; mediana 28,8",
+   "Media 28,8; mediana 35",
+   "Media 30; mediana 29"
+  ],
+  "correcta": 0,
+  "explicacion": "Media = (23 + 45 + 12 + 35 + 29) / 5 = 144 / 5 = 28,8. Ordenadas: 12, 23, 29, 35, 45, y el valor central es 29. En pandas: df[\"Edad\"].mean() y df[\"Edad\"].median().",
+  "por_que_no": [
+   "",
+   "Están invertidas.",
+   "35 no es el valor central.",
+   "La media es 28,8."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 4b"
+ },
+ {
+  "id": "EDA-45",
+  "tema": "EDA",
+  "subtema": "Estadística descriptiva",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "En el análisis descriptivo del parcial se piden percentiles. ¿Qué método de pandas se usa?",
+  "opciones": [
+   "df.percentile()",
+   "df.percent()",
+   "df.quantile()",
+   "df.percentilize()"
+  ],
+  "correcta": 2,
+  "explicacion": "quantile(q) devuelve el cuantil q (por ejemplo 0,25, 0,5 o 0,75). La clase lo usa para el IQR: positivos.quantile([0.25, 0.75]).",
+  "por_que_no": [
+   "No existe en pandas.",
+   "No existe en pandas.",
+   "",
+   "No existe en pandas."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 33; Clase 13"
+ },
+ {
+  "id": "EDA-47",
+  "tema": "EDA",
+  "subtema": "Concepto",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase 14, ¿cuál es el producto final del EDA?",
+  "opciones": [
+   "Una colección de gráficos",
+   "Una lista de hipótesis y decisiones para la etapa de modelado, cada una para contrastar idealmente con datos no usados en la exploración",
+   "Un modelo ajustado",
+   "Una base sin faltantes"
+  ],
+  "correcta": 1,
+  "explicacion": "El EDA conecta hallazgos con hipótesis, como la binomial negativa para la frecuencia, la lognormal para la severidad o la censura en el tope.",
+  "por_que_no": [
+   "Los gráficos son medios, no el fin.",
+   "",
+   "El modelado viene después.",
+   "No es el objetivo del EDA."
+  ],
+  "referencia": "Clase 14, «Del hallazgo a la hipótesis»"
+ }
+]

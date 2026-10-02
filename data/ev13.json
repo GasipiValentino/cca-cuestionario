@@ -1,0 +1,468 @@
+{
+ "id": 13,
+ "titulo": "Evaluación 13 — Repaso integrador",
+ "preguntas": [
+  {
+   "id": "BD-22",
+   "tema": "BD",
+   "subtema": "Modelado",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué es un DER?",
+   "opciones": [
+    "Un Diagrama Entidad-Relación, que representa las entidades y cómo se relacionan entre sí",
+    "Un Documento de Especificación de Requisitos",
+    "Un tipo de JOIN",
+    "Un lenguaje para definir datos"
+   ],
+   "correcta": 0,
+   "explicacion": "El DER es el Diagrama Entidad-Relación, la representación gráfica del modelo entidad-relación que usan las bases relacionales.",
+   "por_que_no": [
+    "",
+    "No es un documento de requisitos.",
+    "Los JOIN son operaciones de consulta.",
+    "El lenguaje de definición de datos es DDL."
+   ],
+   "referencia": "Introducción a bases de datos, «DER – Diagrama Entidad-Relación»"
+  },
+  {
+   "id": "PYB-37",
+   "tema": "PYB",
+   "subtema": "Comparaciones",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "Con exposicion = 0.75, ¿qué devuelve 0 <= exposicion <= 1?",
+   "opciones": [
+    "0.75",
+    "True",
+    "Error de sintaxis",
+    "False"
+   ],
+   "correcta": 1,
+   "explicacion": "Python permite encadenar comparaciones: equivale a (0 <= exposicion) and (exposicion <= 1), y ambas se cumplen.",
+   "por_que_no": [
+    "Devuelve un booleano.",
+    "",
+    "El encadenamiento es válido en Python.",
+    "0,75 está dentro del intervalo [0, 1]."
+   ],
+   "referencia": "Guía práctica – Estructuras de Control, Actividad 1"
+  },
+  {
+   "id": "CTL-21",
+   "tema": "CTL",
+   "subtema": "for vs while",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuál es la regla práctica para elegir entre for y while?",
+   "opciones": [
+    "for para textos, while para números",
+    "for solo sirve con range",
+    "while siempre es más rápido",
+    "Si puedo responder «¿cuántas veces?» antes de empezar, uso for; si la respuesta es «hasta que pase tal cosa», uso while"
+   ],
+   "correcta": 3,
+   "explicacion": "for repite una cantidad determinada de veces o recorre una secuencia. while repite mientras se cumpla una condición, cuando no se sabe de antemano cuántas iteraciones harán falta.",
+   "por_que_no": [
+    "Ambos sirven para cualquier tipo de dato.",
+    "for recorre cualquier secuencia: listas, cadenas, enumerate, zip.",
+    "La elección no depende de la velocidad.",
+    ""
+   ],
+   "referencia": "Clase 10, «Estructuras de repetición»"
+  },
+  {
+   "id": "JOIN-01",
+   "tema": "JOIN",
+   "subtema": "Concepto de join",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué es un join en SQL?",
+   "opciones": [
+    "Una operación que combina información de dos o más tablas según una condición lógica que vincula sus registros",
+    "Una función que suma columnas",
+    "Un tipo de dato para unir textos",
+    "Una sentencia que borra tablas"
+   ],
+   "correcta": 0,
+   "explicacion": "Un join combina información de varias tablas. Hace falta una condición, escrita en ON, que determine qué registros de una tabla se corresponden con los de la otra.",
+   "por_que_no": [
+    "",
+    "Sumar es tarea de SUM.",
+    "No es un tipo de dato.",
+    "Borrar tablas es tarea de DROP TABLE."
+   ],
+   "referencia": "Clase 5 (CCA) – SQL: Joins, DML y DDL, «Joins»"
+  },
+  {
+   "id": "SQL-35",
+   "tema": "SQL",
+   "subtema": "Consultas básicas",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Cómo se cuenta cuántos clientes hay en total?",
+   "opciones": [
+    "SELECT COUNT(*) FROM Customers;",
+    "SELECT SUM(CustomerID) FROM Customers;",
+    "SELECT DISTINCT Customers;",
+    "SELECT MAX(CustomerID) FROM Customers;"
+   ],
+   "correcta": 0,
+   "explicacion": "COUNT(*) cuenta las filas de la tabla, una por cliente.",
+   "por_que_no": [
+    "",
+    "Suma los identificadores, lo cual no tiene sentido.",
+    "Sintaxis inválida; DISTINCT se aplica a columnas.",
+    "El ID máximo no tiene por qué coincidir con la cantidad de filas."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 5"
+  },
+  {
+   "id": "CTL-55",
+   "tema": "CTL",
+   "subtema": "if/elif/else",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "Con x = 15, ¿qué diferencia hay entre los dos fragmentos?",
+   "codigo": "# Fragmento A\nif x > 10:\n    print(\"A\")\nelif x > 5:\n    print(\"B\")\n\n# Fragmento B\nif x > 10:\n    print(\"A\")\nif x > 5:\n    print(\"B\")",
+   "opciones": [
+    "A imprime solo «A»; B imprime «A» y «B», porque los if independientes se evalúan todos",
+    "A imprime «B» y B imprime «A»",
+    "Ambos imprimen A y B",
+    "Ambos imprimen solo A"
+   ],
+   "correcta": 0,
+   "explicacion": "En if/elif la primera condición verdadera corta la cadena. Con dos if independientes se evalúan ambas condiciones y las dos se cumplen.",
+   "por_que_no": [
+    "",
+    "Los dos fragmentos imprimen «A» primero.",
+    "El fragmento A corta tras el primer verdadero.",
+    "El fragmento B evalúa ambos if."
+   ],
+   "referencia": "Clase 10, «if / elif / else» y «Errores frecuentes»"
+  },
+  {
+   "id": "PYB-32",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Cuál es la frecuencia observada que calcula este código?",
+   "codigo": "exposicion = np.array([1.0, 1.0, 0.5, 1.0, 0.75, 1.0, 0.25])\nconteo = np.array([0, 1, 0, 2, 0, 1, 0])\nfrecuencia_observada = conteo.sum() / exposicion.sum()",
+   "opciones": [
+    "0.7273",
+    "5.5",
+    "0.5714",
+    "4"
+   ],
+   "correcta": 0,
+   "explicacion": "Hay 4 siniestros y la exposición total es 5,5: 4 / 5,5 ≈ 0,7273.",
+   "por_que_no": [
+    "",
+    "Es la exposición total.",
+    "Es 4/7: divide por la cantidad de pólizas en lugar de la exposición.",
+    "Es la cantidad de siniestros."
+   ],
+   "referencia": "Guía práctica Python, Actividad 4"
+  },
+  {
+   "id": "CAL-02",
+   "tema": "CAL",
+   "subtema": "Concepto de calidad",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué consecuencias prácticas extrae la clase de definir la calidad como aptitud para el uso?",
+   "opciones": [
+    "Que los criterios de calidad se definen antes de mirar los datos, a partir del uso, y que la evaluación se expresa en indicadores, no en impresiones",
+    "Que no hace falta medir nada",
+    "Que la calidad la define el área de sistemas",
+    "Que siempre hay que eliminar los faltantes"
+   ],
+   "correcta": 0,
+   "explicacion": "Si la calidad depende del uso, los criterios se fijan primero y se miden con indicadores reproducibles.",
+   "por_que_no": [
+    "",
+    "Justamente hay que medirla con indicadores.",
+    "Depende del uso previsto, no de quién la defina.",
+    "El tratamiento de faltantes depende del caso."
+   ],
+   "referencia": "Clase 13, «Qué es la calidad de datos»"
+  },
+  {
+   "id": "EXC-12",
+   "tema": "EXC",
+   "subtema": "Búsqueda",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿qué indica el último argumento 0 (equivalente a FALSO)?",
+   "opciones": [
+    "Que ignore la primera fila de la tabla",
+    "Que, si no encuentra el valor, devuelva 0",
+    "Que busque el valor más cercano por debajo",
+    "Que busque una coincidencia exacta del código"
+   ],
+   "correcta": 3,
+   "explicacion": "El cuarto argumento define el tipo de coincidencia: 0 o FALSO pide coincidencia exacta, que es lo adecuado para buscar códigos como el ramo o la región.",
+   "por_que_no": [
+    "No hay un argumento para omitir filas.",
+    "Si no encuentra coincidencia exacta, BUSCARV devuelve #N/A, no 0.",
+    "La coincidencia aproximada corresponde a VERDADERO o 1.",
+    ""
+   ],
+   "referencia": "Apuntes C2 – Excel, «Ramo (descripción)», «Región»"
+  },
+  {
+   "id": "ALG-29",
+   "tema": "ALG",
+   "subtema": "Reservas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En el seguro temporario a 10 años de la guía, la reserva parte de 0, crece hasta ≈ 1.292 en t = 6 y vuelve a 0 en t = 10. ¿Qué indica esto?",
+   "opciones": [
+    "Que la prima está mal calculada",
+    "Que el código reproduce la teoría: la reserva de un temporario crece, alcanza un máximo y vuelve a cero al vencimiento",
+    "Que la tasa es cero",
+    "Que hay un error en la recursión"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase destaca que el código reproduce exactamente lo que dice la teoría para un temporario con prima neta nivelada.",
+   "por_que_no": [
+    "Volver a cero en t = n confirma que la prima es la neta.",
+    "",
+    "La tasa usada es 4 %.",
+    "Es el comportamiento esperado."
+   ],
+   "referencia": "Clase 10, «Recursión de reservas»; Guía, Actividad 25"
+  },
+  {
+   "id": "JOIN-07",
+   "tema": "JOIN",
+   "subtema": "RIGHT JOIN",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Qué devuelve FROM cliente RIGHT JOIN factura ON cliente.id = factura.cliente_id?",
+   "opciones": [
+    "Solo la factura 12",
+    "Las facturas 11, 12 y 13; la 12 con apellido y nombre NULL",
+    "Solo las facturas 11 y 13",
+    "Los tres clientes con sus facturas"
+   ],
+   "correcta": 1,
+   "explicacion": "El RIGHT JOIN conserva todos los registros de la tabla derecha (factura). La factura 12 aparece aunque no tenga cliente, con NULL en las columnas de cliente.",
+   "por_que_no": [
+    "Ese es el RIGHT JOIN excluyente.",
+    "",
+    "Ese es el INNER JOIN.",
+    "Eso describe el LEFT JOIN, que además no incluye la factura 12."
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «RIGHT JOIN»"
+  },
+  {
+   "id": "EDA-44",
+   "tema": "EDA",
+   "subtema": "Estadística descriptiva",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Para el DataFrame del parcial con Edad = [23, 45, 12, 35, 29], ¿cuánto valen la media y la mediana de la edad?",
+   "opciones": [
+    "Media 30; mediana 29",
+    "Media 29; mediana 28,8",
+    "Media 28,8; mediana 35",
+    "Media 28,8; mediana 29"
+   ],
+   "correcta": 3,
+   "explicacion": "Media = (23 + 45 + 12 + 35 + 29) / 5 = 144 / 5 = 28,8. Ordenadas: 12, 23, 29, 35, 45, y el valor central es 29. En pandas: df[\"Edad\"].mean() y df[\"Edad\"].median().",
+   "por_que_no": [
+    "La media es 28,8.",
+    "Están invertidas.",
+    "35 no es el valor central.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 4b"
+  },
+  {
+   "id": "BD-17",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la diferencia entre una clave única (Unique Key) y una clave primaria?",
+   "opciones": [
+    "La clave única permite valores nulos; la primaria no",
+    "No hay diferencia",
+    "La clave única siempre es autoincremental",
+    "La clave única permite duplicados; la primaria no"
+   ],
+   "correcta": 0,
+   "explicacion": "Ambas evitan valores duplicados, pero la clave única permite nulos y la primaria no.",
+   "por_que_no": [
+    "",
+    "Difieren en la admisión de nulos.",
+    "El autoincremento corresponde a las claves surrogadas.",
+    "La clave única justamente evita duplicados."
+   ],
+   "referencia": "Introducción a bases de datos, «Claves»; apuntes C3"
+  },
+  {
+   "id": "SQL-03",
+   "tema": "SQL",
+   "subtema": "Orden de las cláusulas",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "En los 10 pasos con que el motor interpreta una consulta (FROM, JOIN, ON, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, ORDER BY, LIMIT), ¿qué ocurre inmediatamente después de SELECT?",
+   "opciones": [
+    "WHERE",
+    "ORDER BY",
+    "HAVING",
+    "DISTINCT"
+   ],
+   "correcta": 3,
+   "explicacion": "Una vez calculado el resultado en SELECT, si se pidió eliminar duplicados se aplica DISTINCT. Después vienen ORDER BY y LIMIT.",
+   "por_que_no": [
+    "WHERE es de los primeros pasos.",
+    "ORDER BY viene después de DISTINCT.",
+    "HAVING se aplica antes de SELECT.",
+    ""
+   ],
+   "referencia": "SQL Básico, «¿Cómo interpreta la consulta un motor de base de datos?»"
+  },
+  {
+   "id": "EST-22",
+   "tema": "EST",
+   "subtema": "Formato ancho y largo",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la ventaja y la desventaja del formato ancho (una columna por período, como el triángulo run-off)?",
+   "opciones": [
+    "Ventaja: se lee con naturalidad. Desventaja: agregar un período implica agregar una columna, es decir, cambiar el esquema",
+    "Ventaja: el esquema no cambia nunca. Desventaja: es poco legible",
+    "No tiene desventajas",
+    "Ventaja: ocupa menos memoria. Desventaja: no se puede graficar"
+   ],
+   "correcta": 0,
+   "explicacion": "El formato ancho es el de casi todo reporte de gestión. El largo tiene un esquema estable y es el natural para almacenar y graficar.",
+   "por_que_no": [
+    "",
+    "Eso describe al formato largo.",
+    "Cambiar el esquema por cada período es una desventaja real.",
+    "No es la comparación que plantea la clase."
+   ],
+   "referencia": "Clase 12, «Formato ancho» y «Formato largo»"
+  },
+  {
+   "id": "PC-27",
+   "tema": "PC",
+   "subtema": "Pipeline computacional",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En el pipeline «Entrada → Proceso → Salida → Control», ¿a qué etapa corresponden la trazabilidad, la validación, la documentación, el versionado y la revisión?",
+   "opciones": [
+    "Control",
+    "Salida",
+    "Proceso",
+    "Entrada"
+   ],
+   "correcta": 0,
+   "explicacion": "La etapa de control agrupa trazabilidad, validación, documentación, versionado y revisión. La entrada son los datos; el proceso, la limpieza y la modelización; la salida, primas, reservas y recomendaciones.",
+   "por_que_no": [
+    "",
+    "La salida son la prima, la reserva, el capital y las recomendaciones.",
+    "El proceso incluye limpieza, exploración, modelización, simulación y optimización.",
+    "La entrada son pólizas, siniestros, tablas, curvas, supuestos y escenarios."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Del problema actuarial al pipeline computacional»"
+  },
+  {
+   "id": "SQL-48",
+   "tema": "SQL",
+   "subtema": "Distribución de frecuencias",
+   "dificultad": "dificil",
+   "tipo": "examen",
+   "enunciado": "Se pide una distribución de frecuencias relativas de operaciones por rangos de edad (30 a 45, 45 a 60 y 60 a 75). ¿Qué cuidado hay que tener al definir los rangos con CASE?",
+   "opciones": [
+    "Que los rangos estén ordenados alfabéticamente",
+    "Que se use DISTINCT en la edad",
+    "Ninguno: CASE no admite rangos",
+    "Que los rangos no se superpongan; una edad de 45 no puede caer en dos grupos. Por eso la resolución usa 30-44, 45-59 y 60-75"
+   ],
+   "correcta": 3,
+   "explicacion": "Si 45 pertenece a «30 a 45» y a «45 a 60», el conteo sería ambiguo. Los rangos deben ser excluyentes y cubrir todo el dominio. Además, la frecuencia relativa divide el conteo de cada grupo por el total.",
+   "por_que_no": [
+    "El orden alfabético no tiene relación con definir bien los rangos.",
+    "DISTINCT no resuelve la superposición de rangos.",
+    "CASE WHEN admite condiciones como BETWEEN.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 1b"
+  },
+  {
+   "id": "EDA-29",
+   "tema": "EDA",
+   "subtema": "Correlación",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "La correlación de Spearman entre suma asegurada y prima es 0,67 en Automotores, 0,78 en Hogar y 0,77 en Comercio, pero −0,08 con todos los ramos juntos. ¿Qué explica la diferencia?",
+   "opciones": [
+    "Que mezclar grupos heterogéneos (Hogar y Comercio con sumas altas y primas relativamente bajas frente a Automotores) puede hacer desaparecer o invertir una asociación: un coeficiente sobre una población heterogénea puede no describir a ningún grupo",
+    "Que Spearman no sirve",
+    "Un error de cálculo",
+    "Que la prima no depende de la suma asegurada"
+   ],
+   "correcta": 0,
+   "explicacion": "Antes de correlacionar hay que preguntarse si tiene sentido mezclar los grupos.",
+   "por_que_no": [
+    "",
+    "El problema es mezclar los grupos, no el coeficiente.",
+    "Es un fenómeno real de agregación.",
+    "Dentro de cada ramo la relación es fuerte."
+   ],
+   "referencia": "Clase 14, «Correlación: agregada y por grupo»"
+  },
+  {
+   "id": "ALG-12",
+   "tema": "ALG",
+   "subtema": "Mortalidad",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Si en la ley de Makeham se aumenta el parámetro c, ¿qué ocurre con la curva de supervivencia desde los 40 años?",
+   "opciones": [
+    "Se vuelve constante",
+    "Sube por encima de 1",
+    "Cae más rápido, porque la mortalidad crece más aceleradamente con la edad",
+    "Se mantiene igual"
+   ],
+   "correcta": 2,
+   "explicacion": "μx = A + B·c^x: un c mayor hace crecer más rápido la componente exponencial de la mortalidad. Los qx son mayores a edades altas y la supervivencia acumulada decrece más rápido.",
+   "por_que_no": [
+    "Sigue siendo decreciente con la edad.",
+    "Una probabilidad nunca supera 1.",
+    "",
+    "c afecta directamente a qx."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 10 («Preguntas para discutir»)"
+  },
+  {
+   "id": "CAL-39",
+   "tema": "CAL",
+   "subtema": "Variables derivadas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Al calcular la severidad por ramo se usa resumen[\"siniestros\"].replace(0, np.nan) en el denominador. ¿Por qué no devolver 0 cuando un ramo no tuvo siniestros?",
+   "opciones": [
+    "Por estética",
+    "Porque si no hubo siniestros la severidad no es cero: no está definida. Devolver cero sería un error conceptual (y dividir por cero, un error técnico)",
+    "Porque la frecuencia también sería NaN",
+    "Porque NaN es más rápido"
+   ],
+   "correcta": 1,
+   "explicacion": "La severidad es monto/siniestros. Sin siniestros el cociente no tiene sentido. NaN expresa «indefinido» y evita la división por cero.",
+   "por_que_no": [
+    "Es una cuestión conceptual.",
+    "",
+    "La frecuencia sí está definida: es 0/exposición = 0.",
+    "No es una razón de rendimiento."
+   ],
+   "referencia": "Clase 13, «Transformar: crear variables derivadas»"
+  }
+ ]
+}

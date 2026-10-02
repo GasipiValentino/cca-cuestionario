@@ -1,0 +1,935 @@
+{
+ "id": 7,
+ "titulo": "Evaluación 7",
+ "preguntas": [
+  {
+   "id": "CTL-06",
+   "tema": "CTL",
+   "subtema": "Operadores lógicos",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Si p = True y q = False, ¿qué valen p and q, p or q y not p?",
+   "opciones": [
+    "True, False, True",
+    "False, False, True",
+    "False, True, False",
+    "True, True, False"
+   ],
+   "correcta": 2,
+   "explicacion": "and exige ambas (False), or exige al menos una (True) y not niega (not True = False).",
+   "por_que_no": [
+    "Los tres valores son incorrectos.",
+    "p or q es True porque p es True.",
+    "",
+    "p and q es False porque q es False."
+   ],
+   "referencia": "Clase 10, «Operadores lógicos y tablas de verdad»"
+  },
+  {
+   "id": "CTL-16",
+   "tema": "CTL",
+   "subtema": "Clasificación",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "monto = 145_000\nprima = 180_000\nratio = monto / prima\nif ratio < 0.5:\n    resultado = \"favorable\"\nelif ratio <= 1:\n    resultado = \"ajustado\"\nelse:\n    resultado = \"desfavorable\"\nprint(resultado)",
+   "opciones": [
+    "ajustado",
+    "desfavorable",
+    "favorable",
+    "0.806"
+   ],
+   "correcta": 0,
+   "explicacion": "ratio = 145.000 / 180.000 ≈ 0,806. No es < 0,5, pero sí ≤ 1: «ajustado».",
+   "por_que_no": [
+    "",
+    "Solo sería desfavorable si el ratio superara 1.",
+    "0,806 no es menor que 0,5.",
+    "Se imprime la clasificación, no el número."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 2"
+  },
+  {
+   "id": "BD-08",
+   "tema": "BD",
+   "subtema": "Entidades y atributos",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Para la entidad Estudiante se registran registro, DNI, nombre, apellido y carrera. Estos elementos son:",
+   "opciones": [
+    "Relaciones N:M",
+    "Atributos que describen las características de la entidad",
+    "Entidades relacionadas",
+    "Claves foráneas"
+   ],
+   "correcta": 1,
+   "explicacion": "Los atributos describen las características de una entidad. En una tabla aparecen como columnas.",
+   "por_que_no": [
+    "Una relación vincula entidades; no es una lista de características.",
+    "",
+    "Son propiedades de una sola entidad, no entidades distintas.",
+    "Una clave foránea referencia a otra tabla; estos son datos propios del estudiante."
+   ],
+   "referencia": "Introducción a bases de datos, «Entidades»"
+  },
+  {
+   "id": "JOIN-32",
+   "tema": "JOIN",
+   "subtema": "DROP TABLE",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué ventaja tiene DROP TABLE IF EXISTS pedidos; frente a DROP TABLE pedidos;?",
+   "opciones": [
+    "Borra solo las filas",
+    "Permite recuperar la tabla después",
+    "Pide confirmación al usuario",
+    "Evita un error si la tabla no existe"
+   ],
+   "correcta": 3,
+   "explicacion": "IF EXISTS hace que la sentencia no falle cuando la tabla no existe. Si existe, igual la elimina de forma permanente.",
+   "por_que_no": [
+    "DROP elimina la tabla completa, con o sin IF EXISTS.",
+    "La eliminación sigue siendo irreversible.",
+    "No incorpora ninguna confirmación.",
+    ""
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «DROP TABLE – Ejemplo seguro»"
+  },
+  {
+   "id": "PC-32",
+   "tema": "PC",
+   "subtema": "Buenas prácticas",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "¿Cuál de las siguientes afirmaciones sobre calidad de datos coincide con la clase de pensamiento computacional aplicado?",
+   "opciones": [
+    "Los datos faltantes siempre son aleatorios",
+    "Un modelo suficientemente sofisticado compensa los errores en los datos",
+    "Un modelo sofisticado no corrige datos mal construidos",
+    "Los duplicados no afectan los cálculos actuariales"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase lo dice literalmente: «Un modelo sofisticado no corrige datos mal construidos». Por eso se controlan duplicados, fechas inconsistentes, exposiciones negativas, montos extremos y otros problemas.",
+   "por_que_no": [
+    "La clase menciona los «datos faltantes no aleatorios» como un problema típico.",
+    "Es lo contrario de lo que plantea la clase.",
+    "",
+    "Los duplicados figuran entre los controles típicos porque distorsionan los resultados."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Buenas prácticas: calidad de datos»"
+  },
+  {
+   "id": "PYB-46",
+   "tema": "PYB",
+   "subtema": "Listas",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "primas = [120_000, 450_000, 380_000]\nprimas.append(200_000)\nprimas[0] = 125_000\nprint(primas)",
+   "opciones": [
+    "[120000, 450000, 380000]",
+    "[200000, 125000, 450000, 380000]",
+    "[125000, 450000, 380000, 200000]",
+    "[125000, 450000, 380000]"
+   ],
+   "correcta": 2,
+   "explicacion": "append agrega al final y primas[0] = … reemplaza el primer elemento. Los guiones bajos en los números solo mejoran la legibilidad.",
+   "por_que_no": [
+    "La lista sí se modifica: es mutable.",
+    "append agrega al final, no al principio.",
+    "",
+    "Falta el elemento agregado con append."
+   ],
+   "referencia": "Clase 12, «Listas»"
+  },
+  {
+   "id": "SQL-15",
+   "tema": "SQL",
+   "subtema": "Funciones de agregado",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál de las siguientes NO es una función de agregado?",
+   "opciones": [
+    "MAX",
+    "YEAR",
+    "AVG",
+    "COUNT"
+   ],
+   "correcta": 1,
+   "explicacion": "COUNT, AVG, MAX, MIN y SUM resumen muchas filas en un valor. YEAR extrae el año de cada fecha: actúa fila por fila y no agrega.",
+   "por_que_no": [
+    "MAX es una función de agregado.",
+    "",
+    "AVG es una función de agregado.",
+    "COUNT es una función de agregado."
+   ],
+   "referencia": "SQL Básico, «SELECT» y «GROUP BY»"
+  },
+  {
+   "id": "EST-04",
+   "tema": "EST",
+   "subtema": "Tipos de datos por estructura",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Las fotografías de daños de un siniestro y las denuncias redactadas por el productor son datos:",
+   "opciones": [
+    "Semiestructurados",
+    "Estructurados",
+    "Relacionales",
+    "No estructurados"
+   ],
+   "correcta": 3,
+   "explicacion": "El texto libre, las imágenes, el audio y el video son no estructurados. La clase señala que suelen ser muy valiosos para detección de fraude o suscripción.",
+   "por_que_no": [
+    "No tienen etiquetas ni jerarquía.",
+    "No están en filas y columnas.",
+    "No están organizados en tablas relacionadas.",
+    ""
+   ],
+   "referencia": "Clase 12, «Tipos de datos según su estructura»"
+  },
+  {
+   "id": "PYB-27",
+   "tema": "PYB",
+   "subtema": "Funciones",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Según la guía, ¿cuál de las siguientes NO es una característica deseable de una función bien diseñada?",
+   "opciones": [
+    "Nombres de variables comprensibles",
+    "Resultados distintos cada vez que se ejecuta con los mismos datos",
+    "Validaciones básicas",
+    "Entradas claramente identificadas"
+   ],
+   "correcta": 1,
+   "explicacion": "La guía pide entradas claras, validaciones, un resultado interpretable, nombres comprensibles y comportamiento reproducible. Dar resultados distintos con los mismos datos contradice la reproducibilidad.",
+   "por_que_no": [
+    "Es una característica deseable.",
+    "",
+    "Es una característica deseable.",
+    "Es una característica deseable."
+   ],
+   "referencia": "Guía práctica Python, «Funciones – Discusión»"
+  },
+  {
+   "id": "CAL-03",
+   "tema": "CAL",
+   "subtema": "Concepto de calidad",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué la clase dice que un modelo correcto alimentado con datos defectuosos es especialmente peligroso?",
+   "opciones": [
+    "Porque produce resultados defectuosos con apariencia de rigor: salen números, gráficos y decimales",
+    "Porque no produce ningún resultado",
+    "Porque se borra la base",
+    "Porque el código da error"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase menciona primas mal calibradas, reservas subestimadas, reportes regulatorios rechazados y pérdida de confianza. Regla: ningún número se reporta sin verificar los datos que lo produjeron.",
+   "por_que_no": [
+    "",
+    "El problema es que sí produce resultados, que parecen válidos.",
+    "No borra nada.",
+    "El código puede correr sin errores."
+   ],
+   "referencia": "Clase 13, «¿Por qué importa la calidad de datos?»"
+  },
+  {
+   "id": "CTL-59",
+   "tema": "CTL",
+   "subtema": "Fibonacci",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Para mostrar los primeros 10 números de Fibonacci (0, 1, 1, 2, 3, …) sin bibliotecas, se imprimen n1 = 0 y n2 = 1 y luego se usa un for que calcula n3 = n1 + n2. ¿Cuántas iteraciones necesita el for y cuál es el último número impreso?",
+   "opciones": [
+    "10 iteraciones; último 55",
+    "9 iteraciones; último 34",
+    "8 iteraciones; último 21",
+    "8 iteraciones; último 34"
+   ],
+   "correcta": 3,
+   "explicacion": "Ya se imprimieron 2 números, así que faltan 8: for i in range(8). La secuencia es 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 y el décimo es 34.",
+   "por_que_no": [
+    "Imprimiría 12 números.",
+    "Imprimiría 11 números.",
+    "21 es el noveno número.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 3a (alternativa 1)"
+  },
+  {
+   "id": "PYB-19",
+   "tema": "PYB",
+   "subtema": "Conjuntos",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Dados en_sistema = {1001, 1002, 1003, 1004} y en_contabilidad = {1002, 1003, 1005}, ¿qué operación devuelve las pólizas presentes en ambas fuentes?",
+   "opciones": [
+    "en_sistema & en_contabilidad",
+    "en_sistema + en_contabilidad",
+    "en_sistema - en_contabilidad",
+    "en_sistema | en_contabilidad"
+   ],
+   "correcta": 0,
+   "explicacion": "& es la intersección: devuelve {1002, 1003}.",
+   "por_que_no": [
+    "",
+    "Los conjuntos no admiten +.",
+    "- es la diferencia.",
+    "| es la unión: devuelve todas."
+   ],
+   "referencia": "Clase 12, «Conjuntos»"
+  },
+  {
+   "id": "PC-19",
+   "tema": "PC",
+   "subtema": "Qué es y qué no es (Wing)",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Wing dice que el pensamiento computacional es una habilidad «fundamental, no mecánica (rote)». ¿Qué quiere decir?",
+   "opciones": [
+    "Que es algo que toda persona debe saber para desenvolverse en la sociedad moderna, y no una rutina mecánica",
+    "Que solo sirve para resolver problemas fundamentales de la matemática",
+    "Que se aprende repitiendo ejercicios de memoria",
+    "Que las computadoras ya la ejecutan de forma automática"
+   ],
+   "correcta": 0,
+   "explicacion": "Una habilidad fundamental es algo que todo ser humano debe saber para funcionar en la sociedad moderna; «rote» significa rutina mecánica.",
+   "por_que_no": [
+    "",
+    "Wing la presenta como habilidad para la vida cotidiana y para todas las disciplinas.",
+    "Es justamente lo contrario: no es una rutina de memoria.",
+    "Wing aclara que el pensamiento solo será mecánico cuando la computación resuelva el gran desafío de hacer que las computadoras piensen como humanos."
+   ],
+   "referencia": "Wing (2006), «Fundamental, not rote skill»"
+  },
+  {
+   "id": "EST-33",
+   "tema": "EST",
+   "subtema": "groupby",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué produce el siguiente código?",
+   "codigo": "por_poliza = siniestros.groupby(\"poliza\").agg(\n    n_siniestros=(\"monto\", \"size\"),\n    monto_total=(\"monto\", \"sum\")\n)",
+   "opciones": [
+    "El monto promedio de toda la base",
+    "Una tabla con las pólizas duplicadas",
+    "Una fila por póliza con la cantidad de siniestros y el monto total: agregar es cambiar la granularidad",
+    "Una fila por siniestro con el monto"
+   ],
+   "correcta": 2,
+   "explicacion": "groupby + agg pasa de una fila por siniestro a una fila por póliza. Las agregaciones con nombre (n_siniestros=(columna, función)) definen las columnas resultantes.",
+   "por_que_no": [
+    "Se agrupa por póliza; no da un único valor.",
+    "Agrupar elimina las repeticiones.",
+    "",
+    "Esa es la granularidad de partida."
+   ],
+   "referencia": "Clase 12, «Granularidad y agregación»"
+  },
+  {
+   "id": "BD-10",
+   "tema": "BD",
+   "subtema": "Cardinalidad",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Un usuario tiene una sola dirección y una dirección pertenece a un solo usuario. Según el ejemplo de clase, ¿cómo se establece la relación?",
+   "opciones": [
+    "Repitiendo todos los datos de la dirección en cada fila de usuarios",
+    "No hace falta relacionarlas",
+    "Con una tabla intermedia (pivot) con dos claves foráneas",
+    "Colocando la clave primaria de la dirección como clave foránea (direccion_id) en la tabla de usuarios"
+   ],
+   "correcta": 3,
+   "explicacion": "En la relación 1:1 del ejemplo se agrega direccion_id (FK) en USUARIOS, que referencia el id (PK) de DIRECCIONES.",
+   "por_que_no": [
+    "Repetir datos es desnormalizar, no establecer una relación con claves.",
+    "Sin una clave no hay forma de saber qué dirección corresponde a cada usuario.",
+    "La tabla pivot es propia de las relaciones N:M.",
+    ""
+   ],
+   "referencia": "Introducción a bases de datos, «Uno a uno (1:1)»"
+  },
+  {
+   "id": "CTL-09",
+   "tema": "CTL",
+   "subtema": "if/elif/else",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Alguien reescribe la segmentación con las condiciones en orden inverso. ¿Qué pasa con una póliza de 120 millones?",
+   "codigo": "if suma_asegurada >= 10_000_000:\n    segmento = \"Intermedia\"\nelif suma_asegurada >= 50_000_000:\n    segmento = \"Premium\"\nelif suma_asegurada >= 100_000_000:\n    segmento = \"Corporativa\"",
+   "opciones": [
+    "Se clasifica como «Intermedia»: la primera condición, demasiado amplia, se cumple y corta la cadena",
+    "Se clasifica en las tres categorías",
+    "Da error",
+    "Se clasifica como «Corporativa»"
+   ],
+   "correcta": 0,
+   "explicacion": "El orden importa: la primera condición que se cumple corta la evaluación. Hay que ir de la condición más restrictiva a la más amplia.",
+   "por_que_no": [
+    "",
+    "if/elif asigna un solo camino.",
+    "El código es válido; el error es lógico.",
+    "Nunca llega a evaluar la rama «Corporativa»."
+   ],
+   "referencia": "Clase 10, «Estructura de decisión: if / elif / else»; Guía, «Errores frecuentes»"
+  },
+  {
+   "id": "EST-29",
+   "tema": "EST",
+   "subtema": "Series temporales",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "Un archivo trae la fecha «03/04/2025». ¿Cuál es la advertencia de la clase?",
+   "opciones": [
+    "Que siempre es el 3 de abril",
+    "Que es una fecha inválida",
+    "Que siempre es el 4 de marzo",
+    "Que puede ser el 3 de abril (formato local) o el 4 de marzo (formato anglosajón), y ambas interpretaciones son válidas; hay que convertir de forma explícita y verificar"
+   ],
+   "correcta": 3,
+   "explicacion": "La ambigüedad de formato es silenciosa porque ambas lecturas producen fechas reales. Se resuelve indicando el formato (format=\"%d/%m/%Y\" o dayfirst=True).",
+   "por_que_no": [
+    "Depende del sistema de origen.",
+    "Es una fecha válida en ambos formatos.",
+    "Depende del sistema de origen.",
+    ""
+   ],
+   "referencia": "Clase 12, «Series temporales»; Clase 13, «Fechas: el problema más subestimado»"
+  },
+  {
+   "id": "CAL-38",
+   "tema": "CAL",
+   "subtema": "Tipos",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué «un identificador nunca es un número», según la clase?",
+   "opciones": [
+    "Porque los números no pueden repetirse",
+    "Porque ocupa más memoria",
+    "Porque no se promedia ni se suma, y no debe perder ceros a la izquierda; por eso se guarda como string",
+    "Porque pandas no admite enteros"
+   ],
+   "correcta": 2,
+   "explicacion": "Guardar un identificador como entero habilita operaciones absurdas y puede perder ceros iniciales (por ejemplo, «00123» pasa a 123).",
+   "por_que_no": [
+    "No es la razón.",
+    "La razón es conceptual, no de memoria.",
+    "",
+    "pandas admite enteros."
+   ],
+   "referencia": "Clase 13, «Tipos y conversiones seguras»"
+  },
+  {
+   "id": "CTL-58",
+   "tema": "CTL",
+   "subtema": "Buenas prácticas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cuál de las siguientes NO figura entre las buenas prácticas de la clase de estructuras de control?",
+   "opciones": [
+    "Probar con un caso chico verificable a mano",
+    "Fijar la semilla para que la simulación sea reproducible",
+    "Comentar qué hace cada línea en lugar de por qué",
+    "Escribir primero el algoritmo en palabras y después traducirlo a código"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase recomienda comentar el porqué, no el qué. También pide nombrar variables por su significado, encapsular en funciones y contrastar con soluciones analíticas.",
+   "por_que_no": [
+    "Es una buena práctica de la lista.",
+    "Es una buena práctica de la lista.",
+    "",
+    "Es una buena práctica de la lista."
+   ],
+   "referencia": "Clase 10, «Buenas prácticas»"
+  },
+  {
+   "id": "EXC-07",
+   "tema": "EXC",
+   "subtema": "Funciones lógicas",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué devuelve la fórmula si Q2 = 35?",
+   "codigo": "=SI.CONJUNTO(Q2<35;\"Joven\"; Y(Q2>=35;Q2<60);\"Adulto\"; Q2>=60;\"Adulto Mayor\")",
+   "opciones": [
+    "\"Joven\"",
+    "#N/A",
+    "\"Adulto Mayor\"",
+    "\"Adulto\""
+   ],
+   "correcta": 3,
+   "explicacion": "SI.CONJUNTO evalúa las condiciones en orden y devuelve el valor de la primera verdadera. 35<35 es FALSO, y Y(35>=35; 35<60) es VERDADERO, así que devuelve «Adulto».",
+   "por_que_no": [
+    "Q2<35 es falso cuando Q2 vale 35.",
+    "#N/A aparecería solo si ninguna condición se cumpliera.",
+    "Q2>=60 es falso.",
+    ""
+   ],
+   "referencia": "Apuntes C2 – Excel, «Tramo etario»"
+  },
+  {
+   "id": "SQL-17",
+   "tema": "SQL",
+   "subtema": "Subconsultas",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta lista los productos cuyo precio supera el precio promedio general?",
+   "opciones": [
+    "SELECT ProductName FROM Products HAVING Price > AVG(Price);",
+    "SELECT ProductName, AVG(Price) FROM Products GROUP BY ProductName;",
+    "SELECT ProductName FROM Products WHERE Price > (SELECT AVG(Price) FROM Products);",
+    "SELECT ProductName FROM Products ORDER BY AVG(Price);"
+   ],
+   "correcta": 2,
+   "explicacion": "La subconsulta calcula una vez el promedio general y la consulta externa compara cada precio contra ese valor.",
+   "por_que_no": [
+    "HAVING sin GROUP BY no compara cada producto contra el promedio general.",
+    "Calcula el promedio de cada producto consigo mismo y no filtra nada.",
+    "",
+    "Solo ordena; no filtra."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 21 (subquery en el WHERE)"
+  },
+  {
+   "id": "CAL-27",
+   "tema": "CAL",
+   "subtema": "Duplicados",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia hay entre un duplicado exacto y un duplicado de clave?",
+   "opciones": [
+    "Son lo mismo",
+    "En el exacto toda la fila se repite (casi siempre error de carga); en el de clave se repite el identificador con contenido distinto (puede ser error o legítimo si la granularidad no es la supuesta)",
+    "El de clave siempre es un error",
+    "El exacto siempre es legítimo"
+   ],
+   "correcta": 1,
+   "explicacion": "Antes de deduplicar hay que preguntarse si la tabla tiene, en realidad, una fila por póliza y por período.",
+   "por_que_no": [
+    "Son situaciones distintas.",
+    "",
+    "Puede ser legítimo.",
+    "Casi siempre es un error."
+   ],
+   "referencia": "Clase 13, «Duplicados»"
+  },
+  {
+   "id": "SQL-05",
+   "tema": "SQL",
+   "subtema": "Alias",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Según la clase, ¿en qué cláusula se pueden usar los alias declarados en el SELECT?",
+   "opciones": [
+    "ORDER BY",
+    "WHERE",
+    "GROUP BY",
+    "HAVING"
+   ],
+   "correcta": 0,
+   "explicacion": "ORDER BY es la última fase y la única que admite los alias del SELECT, porque SELECT ya se ejecutó.",
+   "por_que_no": [
+    "",
+    "WHERE se ejecuta antes de SELECT.",
+    "La clase indica que en GROUP BY tampoco deben usarse los alias.",
+    "HAVING se ejecuta antes de SELECT."
+   ],
+   "referencia": "SQL Básico, «ORDER BY»"
+  },
+  {
+   "id": "ALG-33",
+   "tema": "ALG",
+   "subtema": "Chain ladder",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué el bucle interno de los factores verifica que triangulo[i][j] y triangulo[i][j+1] no sean None?",
+   "opciones": [
+    "Porque None vale cero",
+    "Para usar solo pares de celdas efectivamente observadas: None marca desarrollo que todavía no ocurrió",
+    "Para ordenar el triángulo",
+    "Por estilo"
+   ],
+   "correcta": 1,
+   "explicacion": "El factor compara montos de dos columnas consecutivas en las mismas filas. Incluir celdas no observadas distorsionaría el cociente (o daría error).",
+   "por_que_no": [
+    "None no es cero: es ausencia de dato.",
+    "",
+    "No ordena nada.",
+    "Es una condición necesaria para el cálculo."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 17 («Preguntas para discutir»)"
+  },
+  {
+   "id": "EST-36",
+   "tema": "EST",
+   "subtema": "Filtrado",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué expresión obtiene las pólizas de Hogar con al menos un siniestro?",
+   "opciones": [
+    "cartera[(cartera[\"producto\"] == \"Hogar\") & (cartera[\"n_siniestros\"] > 0)]",
+    "cartera.filter(\"Hogar\", 0)",
+    "cartera[cartera[\"producto\"] == \"Hogar\" and cartera[\"n_siniestros\"] > 0]",
+    "cartera[\"Hogar\"] > 0"
+   ],
+   "correcta": 0,
+   "explicacion": "En pandas las máscaras booleanas se combinan con & (y | para «o»), y cada condición va entre paréntesis.",
+   "por_que_no": [
+    "",
+    "filter no hace eso.",
+    "and no combina máscaras elemento a elemento; con Series genera un error de ambigüedad.",
+    "No existe una columna llamada «Hogar»."
+   ],
+   "referencia": "Guía práctica Python, Actividad 12"
+  },
+  {
+   "id": "ALG-27",
+   "tema": "ALG",
+   "subtema": "Iterativo vs. recursivo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué recomienda la clase para la práctica actuarial respecto de recursión e iteración?",
+   "opciones": [
+    "No usar nunca recursión",
+    "Elegir al azar",
+    "Escribir la recursión para entender y validar el modelo, e implementar la versión iterativa (o vectorizada) para producción",
+    "Usar siempre recursión en producción"
+   ],
+   "correcta": 2,
+   "explicacion": "La recursión suele reflejar la fórmula teórica y facilita validar. Para correr a escala conviene la versión iterativa o vectorizada.",
+   "por_que_no": [
+    "La clase la valora para entender el modelo.",
+    "La elección es razonada.",
+    "",
+    "La recursión puede ser costosa y tener límites de profundidad."
+   ],
+   "referencia": "Clase 10, «¿Cuándo usar cada uno?»"
+  },
+  {
+   "id": "EDA-15",
+   "tema": "EDA",
+   "subtema": "Histogramas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué advierte la clase sobre la cantidad de intervalos (bins) de un histograma?",
+   "opciones": [
+    "Que siempre hay que usar 200",
+    "Que no influyen",
+    "Que el histograma depende de los bins: con pocos se pierde la forma y con demasiados aparece ruido; conviene probar varios o usar reglas como Freedman-Diaconis (bins=\"fd\")",
+    "Que siempre hay que usar 10"
+   ],
+   "correcta": 2,
+   "explicacion": "El histograma no es un objeto único. Nunca hay que confiar en el valor por defecto sin mirarlo.",
+   "por_que_no": [
+    "Demasiados bins generan ruido.",
+    "Influyen mucho en la forma visible.",
+    "",
+    "No hay un número fijo correcto."
+   ],
+   "referencia": "Clase 14, «Histogramas: la elección de intervalos»"
+  },
+  {
+   "id": "JOIN-36",
+   "tema": "JOIN",
+   "subtema": "CREATE TABLE",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué hace CREATE TABLE CopiaClientes AS SELECT * FROM Clientes;?",
+   "opciones": [
+    "Renombra la tabla Clientes",
+    "Crea una tabla nueva a partir del resultado de una consulta (útil para tablas intermedias o auxiliares)",
+    "Borra la tabla Clientes",
+    "Vincula dos tablas existentes"
+   ],
+   "correcta": 1,
+   "explicacion": "CREATE TABLE … AS SELECT crea una tabla a partir del resultado de la consulta. El profesor señaló que es útil para tablas temporales o auxiliares de análisis. La resolución del parcial 2025 usa CREATE TABLE CONSULTA_A AS SELECT ….",
+   "por_que_no": [
+    "No renombra: crea otra tabla.",
+    "",
+    "Clientes se mantiene intacta.",
+    "No establece relaciones."
+   ],
+   "referencia": "Clase 5 (CCA), «CREATE TABLE»; 1er Parcial 1C 2025, resolución 1a"
+  },
+  {
+   "id": "EDA-28",
+   "tema": "EDA",
+   "subtema": "Bivariado",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En pd.crosstab(polizas[\"canal\"], polizas[\"ramo\"], normalize=\"index\") la composición por ramo es casi igual en los tres canales y el test χ² da p = 0,53. ¿Qué se concluye?",
+   "opciones": [
+    "Que no hay evidencia de asociación entre canal y ramo; y que esto es un hallazgo: las diferencias de siniestralidad entre canales no se explican por la mezcla de ramos",
+    "Que hay que descartar el análisis",
+    "Que los canales venden ramos distintos",
+    "Que el test está mal"
+   ],
+   "correcta": 0,
+   "explicacion": "normalize=\"index\" convierte cada fila en proporciones, lo que permite comparar canales de distinto tamaño. «Que no haya diferencias también es un hallazgo.»",
+   "por_que_no": [
+    "",
+    "Un resultado nulo también informa.",
+    "La composición es prácticamente igual.",
+    "No hay indicio de error."
+   ],
+   "referencia": "Clase 14, «Cualitativa frente a cualitativa»"
+  },
+  {
+   "id": "PC-37",
+   "tema": "PC",
+   "subtema": "Pilares aplicados",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Al modelar una cartera, ¿cuál de las siguientes representaciones aplica correctamente la abstracción?",
+   "opciones": [
+    "Registrar todos los datos personales disponibles de cada asegurado, sean o no relevantes para el riesgo",
+    "Representar cada póliza mediante las variables relevantes para el riesgo: edad, zona, suma asegurada, historial de siniestros y tipo de cobertura",
+    "Copiar la base completa en una planilla para no perder información",
+    "Usar solo el número de póliza, porque identifica unívocamente al asegurado"
+   ],
+   "correcta": 1,
+   "explicacion": "Abstraer es quedarse con lo esencial: una póliza no se modela con todos sus detalles, sino con las variables relevantes para el riesgo.",
+   "por_que_no": [
+    "Incluir todo, aunque sea irrelevante, es lo opuesto a abstraer y además choca con la minimización de datos personales.",
+    "",
+    "Copiar la base no es una decisión de modelado.",
+    "El identificador no contiene información sobre el riesgo."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Pilar 2: Abstracción»"
+  },
+  {
+   "id": "BD-13",
+   "tema": "BD",
+   "subtema": "Cardinalidad",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "En una facultad, un estudiante cursa muchas materias y cada materia tiene muchos estudiantes. ¿Qué cardinalidad tiene la relación?",
+   "opciones": [
+    "1:1",
+    "No es una relación",
+    "N:M",
+    "1:N"
+   ],
+   "correcta": 2,
+   "explicacion": "Ambos lados admiten «muchos», así que es muchos a muchos. Se implementaría con una tabla intermedia, por ejemplo una de inscripciones.",
+   "por_que_no": [
+    "Ni el estudiante tiene una sola materia ni la materia un solo estudiante.",
+    "Hay un vínculo claro entre ambas entidades.",
+    "",
+    "Sería 1:N si cada materia tuviera un único estudiante, o al revés."
+   ],
+   "referencia": "Introducción a bases de datos, «Cardinalidad»"
+  },
+  {
+   "id": "EST-24",
+   "tema": "EST",
+   "subtema": "Formato ancho y largo",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "El DataFrame ancho tiene 3 filas (ocurrencias 2021, 2022 y 2023) y las columnas ocurrencia, d0, d1, d2. ¿Cuántas filas tiene el resultado?",
+   "codigo": "largo = ancho.melt(id_vars=\"ocurrencia\", var_name=\"desarrollo\", value_name=\"monto\")",
+   "opciones": [
+    "9",
+    "12",
+    "3",
+    "4"
+   ],
+   "correcta": 0,
+   "explicacion": "melt pasa de ancho a largo: genera una fila por cada combinación de unidad (3 ocurrencias) y variable (d0, d1, d2), es decir 3 × 3 = 9.",
+   "por_que_no": [
+    "",
+    "ocurrencia es la variable identificadora y no se apila.",
+    "Es la cantidad de filas del formato ancho.",
+    "Confunde con la cantidad de columnas."
+   ],
+   "referencia": "Clase 12, «Formato largo»"
+  },
+  {
+   "id": "ALG-22",
+   "tema": "ALG",
+   "subtema": "Recursividad",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Al comparar la renta recursiva con la iterativa de la guía, la recursiva resultó tan o más eficiente. ¿Qué lección extrae la guía?",
+   "opciones": [
+    "La eficiencia no depende del estilo elegido, sino del trabajo redundante que el algoritmo evite",
+    "Python optimiza las funciones recursivas",
+    "La recursión siempre es más rápida",
+    "La iteración siempre es más rápida"
+   ],
+   "correcta": 0,
+   "explicacion": "La recursiva arrastra la probabilidad de supervivencia de un paso al siguiente, mientras que la iterativa recalcula kpx desde cero. La diferencia está en el trabajo redundante, no en la forma de escribirlo.",
+   "por_que_no": [
+    "",
+    "No es la explicación que da la guía.",
+    "Fibonacci recursivo es un contraejemplo.",
+    "En este caso no lo fue."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 24 («Discusión»)"
+  },
+  {
+   "id": "ALG-25",
+   "tema": "ALG",
+   "subtema": "Fibonacci",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En el desafío de la guía, fib_memo guarda en un diccionario los valores ya calculados. ¿Qué logra esta técnica (memorización)?",
+   "opciones": [
+    "Evitar recalcular subproblemas: cada fib(k) se calcula una sola vez y luego se consulta en el diccionario",
+    "Que el resultado sea aproximado",
+    "Que la función ya no sea recursiva",
+    "Usar menos memoria que la versión iterativa"
+   ],
+   "correcta": 0,
+   "explicacion": "Al consultar primero «if n in memoria», se elimina el trabajo redundante que hace exponencial al recursivo simple.",
+   "por_que_no": [
+    "",
+    "El resultado es exacto.",
+    "Sigue llamándose a sí misma.",
+    "Usa memoria adicional para el diccionario."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Fibonacci – Desafío»"
+  },
+  {
+   "id": "EDA-32",
+   "tema": "EDA",
+   "subtema": "Paradoja de Simpson",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "En el total, el canal digital de Automotores tiene una frecuencia 20 % mayor que el productor, pero dentro de cada franja etaria tiene menor frecuencia. El 37,7 % de la exposición digital está en 18-25 años, frente a 1,9 % del productor. ¿Qué ocurre?",
+   "opciones": [
+    "Un error en los datos",
+    "Que hay que eliminar a los jóvenes",
+    "La paradoja de Simpson: la edad es una variable de confusión y la comparación relevante es la ajustada por la composición de la cartera",
+    "Que el canal digital vende peores riesgos en todas las edades"
+   ],
+   "correcta": 2,
+   "explicacion": "La inversión se produce porque el digital concentra su exposición en jóvenes, que tienen mayor frecuencia. Acción (H2): comparar canales siempre ajustando por edad.",
+   "por_que_no": [
+    "Es un fenómeno real de agregación.",
+    "La solución es ajustar la comparación, no eliminar datos.",
+    "",
+    "Dentro de cada franja vende mejores riesgos."
+   ],
+   "referencia": "Clase 14, «Cuando agregar invierte la conclusión» y «La paradoja de Simpson»"
+  },
+  {
+   "id": "EXC-09",
+   "tema": "EXC",
+   "subtema": "Funciones lógicas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Con la siguiente fórmula, una póliza anulada (L90 = \"S\") cuya fecha de vencimiento ya pasó y que además tuvo un siniestro, ¿qué estado muestra?",
+   "codigo": "=SI(L90=\"S\";\"Anulada\";SI(G90<=HOY();\"Vencida\";SI(M90=\"S\";\"Con siniestro\";\"Vigente\")))",
+   "opciones": [
+    "\"Anulada\", porque la primera condición verdadera corta la evaluación",
+    "Las tres etiquetas concatenadas",
+    "\"Con siniestro\", porque es la condición más específica",
+    "\"Vencida\", porque la fecha tiene prioridad"
+   ],
+   "correcta": 0,
+   "explicacion": "En un SI anidado las condiciones se evalúan en orden. Como L90=\"S\" es verdadero, devuelve «Anulada» y no evalúa el resto. El orden de las condiciones define la prioridad.",
+   "por_que_no": [
+    "",
+    "SI devuelve un único valor.",
+    "El siniestro se evalúa último.",
+    "La fecha recién se evalúa si la primera condición es falsa."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Estado de póliza»"
+  },
+  {
+   "id": "PC-36",
+   "tema": "PC",
+   "subtema": "Lectura actuarial del código",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la simulación de pérdida agregada de la clase, ¿qué representa la última línea?",
+   "codigo": "S = np.array(perdidas)\nprint(S.mean(), np.quantile(S, 0.995))",
+   "opciones": [
+    "La pérdida esperada y un percentil alto que aproxima una medida de capital",
+    "La pérdida mínima y la mediana de la pérdida",
+    "La frecuencia media y la severidad máxima",
+    "La prima comercial y la prima pura"
+   ],
+   "correcta": 0,
+   "explicacion": "S.mean() estima la pérdida esperada. np.quantile(S, 0.995) es un percentil alto que, según la clase, «aproxima una medida de capital» (del estilo VaR).",
+   "por_que_no": [
+    "",
+    "0.995 corresponde a la cola superior, no a la mediana (0.5).",
+    "S es la pérdida agregada, no la frecuencia ni la severidad por separado.",
+    "No se calculan primas en esa línea."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Código Colab: simulación frecuencia-severidad»"
+  },
+  {
+   "id": "SQL-46",
+   "tema": "SQL",
+   "subtema": "Agregación avanzada",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "Para mostrar el pedido más reciente de cada cliente, ¿qué alternativa propone la guía?",
+   "opciones": [
+    "Usar DISTINCT OrderDate",
+    "Usar MIN(OrderDate)",
+    "Una subconsulta correlacionada o un JOIN con MAX(OrderDate) agrupado por cliente",
+    "Ordenar Orders por OrderDate y quedarse con LIMIT 1"
+   ],
+   "correcta": 2,
+   "explicacion": "La fecha más reciente es MAX(OrderDate). Hay que calcularla por cliente (GROUP BY CustomerID), ya sea con una subconsulta correlacionada o con un JOIN.",
+   "por_que_no": [
+    "DISTINCT no identifica el máximo por cliente.",
+    "MIN da el pedido más antiguo.",
+    "",
+    "LIMIT 1 da un único pedido para toda la tabla, no uno por cliente."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 22"
+  },
+  {
+   "id": "CAL-30",
+   "tema": "CAL",
+   "subtema": "Identificadores",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "¿Cuántos valores únicos quedan después de normalizar?",
+   "codigo": "ids = pd.Series([\"20-12345678-3\", \"20123456783\",\n                 \"CUIT 20.12345678/3\", \" 20-12345678-3 \"])\nnorm = ids.str.replace(r\"\\D\", \"\", regex=True)\nprint(norm.nunique())",
+   "opciones": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correcta": 1,
+   "explicacion": "\\D coincide con cualquier carácter que no sea dígito, así que se eliminan guiones, puntos, barras, espacios y «CUIT». Todas quedan como «20123456783»: cuatro claves aparentes eran una sola.",
+   "por_que_no": [
+    "Todas quedan iguales.",
+    "",
+    "Sería el resultado antes de normalizar.",
+    "Todas quedan iguales."
+   ],
+   "referencia": "Clase 13, «Identificadores: expresiones regulares»"
+  },
+  {
+   "id": "CAL-42",
+   "tema": "CAL",
+   "subtema": "Reestructurar",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Al armar el triángulo con pivot desde el registro en formato largo, algunas celdas quedan NaN. ¿Cómo deben interpretarse?",
+   "opciones": [
+    "Como ceros",
+    "Como datos faltantes que hay que imputar",
+    "Como errores de carga",
+    "Como información que todavía no ocurrió (desarrollo futuro); confundirlos con faltantes es uno de los errores más caros en el cálculo de reservas"
+   ],
+   "correcta": 3,
+   "explicacion": "En un triángulo, la parte inferior derecha corresponde a desarrollos futuros: no son faltantes, sino lo que se va a estimar.",
+   "por_que_no": [
+    "Tratarlos como cero subestimaría la reserva.",
+    "Imputarlos distorsionaría la reserva.",
+    "No son errores.",
+    ""
+   ],
+   "referencia": "Clase 13, «Reestructurar: del registro al triángulo»"
+  }
+ ]
+}

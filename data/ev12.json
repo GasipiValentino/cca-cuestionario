@@ -1,0 +1,931 @@
+{
+ "id": 12,
+ "titulo": "Evaluación 12",
+ "preguntas": [
+  {
+   "id": "SQL-01",
+   "tema": "SQL",
+   "subtema": "Orden de las cláusulas",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuál es el orden en que se ESCRIBEN las cláusulas de una consulta SQL?",
+   "opciones": [
+    "SELECT, FROM, GROUP BY, WHERE, ORDER BY, HAVING",
+    "SELECT, WHERE, FROM, HAVING, GROUP BY, ORDER BY",
+    "FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+    "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY"
+   ],
+   "correcta": 3,
+   "explicacion": "La consulta se teclea en el orden SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY. El orden en que el motor la interpreta es distinto.",
+   "por_que_no": [
+    "WHERE va antes que GROUP BY, y HAVING antes que ORDER BY.",
+    "WHERE no puede ir antes que FROM, ni HAVING antes que GROUP BY.",
+    "Ese es el orden lógico en que el motor la procesa, no el de escritura.",
+    ""
+   ],
+   "referencia": "SQL Básico, «¿Cómo procesa esta consulta?»; apuntes C4"
+  },
+  {
+   "id": "CTL-25",
+   "tema": "CTL",
+   "subtema": "while",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código y cuánto vale count al terminar?",
+   "codigo": "count = 0\nwhile count < 5:\n    print(count)\n    count += 1",
+   "opciones": [
+    "Imprime 0 a 4; count termina en 5",
+    "Imprime 0 a 4; count termina en 4",
+    "Imprime 0 a 5; count termina en 5",
+    "Imprime 1 a 5; count termina en 5"
+   ],
+   "correcta": 0,
+   "explicacion": "La condición se evalúa antes de cada iteración. Se imprime 0, 1, 2, 3, 4; cuando count vale 5 la condición es falsa y el ciclo termina.",
+   "por_que_no": [
+    "",
+    "Después de imprimir 4 se incrementa a 5.",
+    "Con count = 5 no se entra al cuerpo.",
+    "Se imprime antes de incrementar, así que empieza en 0."
+   ],
+   "referencia": "Clase 10, «while: ejemplo introductorio»"
+  },
+  {
+   "id": "PC-15",
+   "tema": "PC",
+   "subtema": "Ejemplos cotidianos (Wing)",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Un chico perdió sus guantes y sus padres le sugieren desandar el camino que recorrió. Según Wing, eso es:",
+   "opciones": [
+    "Prefetching",
+    "Paralelización",
+    "Redundancia",
+    "Backtracking"
+   ],
+   "correcta": 3,
+   "explicacion": "Volver sobre los propios pasos para encontrar lo perdido es backtracking, uno de los ejemplos cotidianos del artículo.",
+   "por_que_no": [
+    "Prefetching es anticipar lo que se necesitará, como preparar la mochila.",
+    "La paralelización consiste en hacer tareas simultáneamente; no corresponde a este ejemplo.",
+    "La redundancia aparece en el ejemplo del teléfono que funciona durante un corte de luz.",
+    ""
+   ],
+   "referencia": "Wing (2006), ejemplos cotidianos"
+  },
+  {
+   "id": "PC-02",
+   "tema": "PC",
+   "subtema": "Definición de Wing",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuál es la definición de pensamiento computacional que propone Wing (2006, 2010)?",
+   "opciones": [
+    "La capacidad de los seres humanos de razonar exactamente como lo hace una computadora",
+    "El proceso de pensamiento involucrado en formular un problema y sus soluciones de modo que puedan ser llevadas a cabo por un agente de procesamiento de información",
+    "La habilidad de escribir programas correctos en al menos un lenguaje de programación",
+    "El uso de software estadístico para automatizar cálculos repetitivos"
+   ],
+   "correcta": 1,
+   "explicacion": "Wing lo define como el proceso de pensamiento envuelto en formular un problema y sus soluciones de manera que las soluciones puedan ser ejecutadas por un agente de procesamiento de información (humano o máquina).",
+   "por_que_no": [
+    "Wing aclara que es una forma en que piensan los humanos, no un intento de que los humanos piensen como computadoras.",
+    "",
+    "Wing insiste en que el pensamiento computacional es «conceptualizar, no programar».",
+    "La automatización es uno de sus pilares, pero no es la definición del concepto."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional; Wing (2006)"
+  },
+  {
+   "id": "EST-03",
+   "tema": "EST",
+   "subtema": "Tipos de datos por estructura",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Un archivo JSON con una póliza y sus coberturas anidadas, sin un esquema rígido, es un ejemplo de datos:",
+   "opciones": [
+    "Binarios columnar",
+    "Semiestructurados",
+    "No estructurados",
+    "Estructurados"
+   ],
+   "correcta": 1,
+   "explicacion": "Los semiestructurados tienen etiquetas y jerarquía, pero no un esquema rígido: JSON, respuestas de APIs, XML.",
+   "por_que_no": [
+    "Es una categoría de formato de archivo, no de estructura del dato.",
+    "",
+    "Los no estructurados son texto libre, imágenes, audio y video.",
+    "Los estructurados tienen filas y columnas con un esquema definido."
+   ],
+   "referencia": "Clase 12, «Tipos de datos según su estructura»"
+  },
+  {
+   "id": "CTL-08",
+   "tema": "CTL",
+   "subtema": "if/elif/else",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué segmento se asigna?",
+   "codigo": "suma_asegurada = 62_000_000\nif suma_asegurada >= 100_000_000:\n    segmento = \"Corporativa\"\nelif suma_asegurada >= 50_000_000:\n    segmento = \"Premium\"\nelif suma_asegurada >= 10_000_000:\n    segmento = \"Intermedia\"\nelse:\n    segmento = \"Estándar\"",
+   "opciones": [
+    "Corporativa",
+    "Premium",
+    "Estándar",
+    "Intermedia"
+   ],
+   "correcta": 1,
+   "explicacion": "La primera condición (≥ 100 M) es falsa y la segunda (≥ 50 M) es verdadera, así que asigna «Premium» y corta la evaluación.",
+   "por_que_no": [
+    "62 M no alcanza 100 M.",
+    "",
+    "Solo se llega al else si ninguna condición se cumple.",
+    "También se cumple ≥ 10 M, pero la evaluación ya se cortó en la rama anterior."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Segmentación descriptiva de una póliza»"
+  },
+  {
+   "id": "PYB-09",
+   "tema": "PYB",
+   "subtema": "Listas",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "Una lista en Python es:",
+   "opciones": [
+    "Ordenada y mutable",
+    "Numérica únicamente",
+    "Desordenada e inmutable",
+    "Inmutable y ordenada"
+   ],
+   "correcta": 0,
+   "explicacion": "La lista es una secuencia ordenada y mutable cuyos elementos pueden ser de tipos distintos.",
+   "por_que_no": [
+    "",
+    "Puede contener elementos de cualquier tipo.",
+    "Una lista conserva el orden y puede modificarse.",
+    "Eso describe a la tupla."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 12; Clase 12, «Listas»"
+  },
+  {
+   "id": "BD-27",
+   "tema": "BD",
+   "subtema": "Motores",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué motor relacional mencionado en clase funciona como un archivo único, sin servidor?",
+   "opciones": [
+    "Oracle",
+    "SQL Server",
+    "SQLite",
+    "PostgreSQL"
+   ],
+   "correcta": 2,
+   "explicacion": "SQLite guarda toda la base en un único archivo y no requiere un servidor. Por eso se usa desde Python con sqlite3.connect(\"cartera.db\").",
+   "por_que_no": [
+    "Oracle funciona con un servidor.",
+    "SQL Server funciona con un servidor.",
+    "",
+    "PostgreSQL funciona con un servidor."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+  },
+  {
+   "id": "EST-48",
+   "tema": "EST",
+   "subtema": "Organización de proyectos",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "En la organización de proyecto propuesta, ¿qué regla se aplica a la carpeta datos/crudos/ y por qué los scripts se numeran (01_importar.py, 02_limpiar.py…)?",
+   "opciones": [
+    "Los crudos se conservan tal como llegaron y nunca se modifican; la numeración documenta el orden de ejecución para reproducir el resultado",
+    "No hay reglas",
+    "Los crudos se borran tras importarlos; la numeración indica la fecha",
+    "Los crudos se corrigen a mano; la numeración es estética"
+   ],
+   "correcta": 0,
+   "explicacion": "Cualquier persona debería poder reproducir el resultado ejecutando los scripts en secuencia, a partir de datos crudos intactos.",
+   "por_que_no": [
+    "",
+    "La organización tiene reglas claras.",
+    "Borrarlos impediría reproducir el resultado.",
+    "La clase dice que el dato crudo nunca se modifica."
+   ],
+   "referencia": "Clase 12, «Organización de un proyecto»"
+  },
+  {
+   "id": "EXC-21",
+   "tema": "EXC",
+   "subtema": "Funciones lógicas",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué fórmula devuelve \"OK\" solo si A1 es mayor que 0 y menor que 100?",
+   "opciones": [
+    "=SI(A1>0;\"OK\";\"NO\")",
+    "=SI(O(A1>0;A1<100);\"OK\";\"NO\")",
+    "=SI(Y(A1>0;A1<100);\"OK\";\"NO\")",
+    "=SI(A1<100;\"OK\";\"NO\")"
+   ],
+   "correcta": 2,
+   "explicacion": "Y() es verdadera solo si se cumplen todas sus condiciones a la vez, que es lo que pide el enunciado: mayor que 0 y menor que 100.",
+   "por_que_no": [
+    "No controla el límite superior.",
+    "O() es verdadera si se cumple al menos una condición: con A1 = 500 también devolvería \"OK\".",
+    "",
+    "No controla el límite inferior."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 4"
+  },
+  {
+   "id": "JOIN-23",
+   "tema": "JOIN",
+   "subtema": "INSERT",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué agrega la sentencia INSERT a una tabla?",
+   "opciones": [
+    "Filas (registros) nuevos con valores para las columnas existentes",
+    "Columnas nuevas",
+    "Una tabla nueva",
+    "Una clave primaria"
+   ],
+   "correcta": 0,
+   "explicacion": "INSERT agrega filas, no columnas: las columnas ya forman parte de la estructura de la tabla. Para agregar columnas se usa ALTER TABLE ADD.",
+   "por_que_no": [
+    "",
+    "Agregar columnas es tarea de ALTER TABLE.",
+    "Crear tablas es tarea de CREATE TABLE.",
+    "Las claves se definen en la estructura (DDL)."
+   ],
+   "referencia": "Clase 5 (CCA), «INSERT»"
+  },
+  {
+   "id": "BD-18",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "En la tabla de asegurados tanto el DNI como el CUIT identifican unívocamente a cada persona. Se elige el DNI como clave primaria. ¿Cómo se clasifica el CUIT?",
+   "opciones": [
+    "Clave foránea",
+    "Clave candidata",
+    "Clave compuesta",
+    "Clave surrogada"
+   ],
+   "correcta": 1,
+   "explicacion": "Una clave candidata es un campo (o conjunto de campos) que podría ser clave primaria. El CUIT cumple esa condición aunque no haya sido elegido.",
+   "por_que_no": [
+    "No referencia a otra tabla.",
+    "",
+    "Está formado por un solo campo.",
+    "No es un ID artificial generado por el sistema."
+   ],
+   "referencia": "Introducción a bases de datos, «Claves»"
+  },
+  {
+   "id": "CAL-34",
+   "tema": "CAL",
+   "subtema": "Estandarización",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué la clase prefiere un diccionario explícito de equivalencias antes que una corrección automática?",
+   "opciones": [
+    "Porque elimina los nulos",
+    "Porque queda documentado qué se unificó con qué",
+    "Porque es más rápido",
+    "Porque no requiere pandas"
+   ],
+   "correcta": 1,
+   "explicacion": "La trazabilidad es central: el mapa explícito deja constancia de cada unificación y puede revisarse o auditarse.",
+   "por_que_no": [
+    "No tiene relación con los nulos.",
+    "",
+    "La razón es la documentación, no la velocidad.",
+    "Se usa con .map de pandas."
+   ],
+   "referencia": "Clase 13, «Estandarización de texto»"
+  },
+  {
+   "id": "JOIN-10",
+   "tema": "JOIN",
+   "subtema": "FULL OUTER JOIN",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Cuántas filas devuelve un FULL OUTER JOIN ON cliente.id = factura.cliente_id?",
+   "opciones": [
+    "2",
+    "4",
+    "3",
+    "9"
+   ],
+   "correcta": 1,
+   "explicacion": "El FULL OUTER JOIN conserva todo: los 2 pares coincidentes (Clara-11 y Juan-13), Marta sin factura y la factura 12 sin cliente. Son 4 filas.",
+   "por_que_no": [
+    "Eso es el INNER JOIN.",
+    "",
+    "Eso es el LEFT o el RIGHT JOIN.",
+    "9 serían todas las combinaciones posibles, sin condición."
+   ],
+   "referencia": "Clase 5 (CCA), «FULL OUTER JOIN»"
+  },
+  {
+   "id": "JOIN-35",
+   "tema": "JOIN",
+   "subtema": "ALTER TABLE",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué hay que tener cuidado al ejecutar ALTER TABLE clientes DROP COLUMN telefono;?",
+   "opciones": [
+    "Porque convierte la columna en NULL",
+    "Porque solo funciona si la columna está vacía",
+    "Porque la eliminación de la columna es irreversible y puede afectar consultas o tablas que dependan de ella",
+    "Porque borra la tabla entera"
+   ],
+   "correcta": 2,
+   "explicacion": "La cátedra marca esta acción como irreversible. Además, modificar la estructura puede afectar otras consultas o tablas dependientes.",
+   "por_que_no": [
+    "La elimina; no la vuelve nula.",
+    "La columna puede tener datos; se pierden.",
+    "",
+    "Solo elimina esa columna."
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «ALTER TABLE»; Clase 5 (CCA)"
+  },
+  {
+   "id": "ALG-26",
+   "tema": "ALG",
+   "subtema": "Iterativo vs. recursivo",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "Según la tabla de la clase, ¿qué diferencia hay en memoria y riesgo típico entre una solución iterativa y una recursiva?",
+   "opciones": [
+    "Ambas usan la misma memoria",
+    "La recursiva no tiene riesgos",
+    "Iterativa: memoria constante, riesgo de bucle infinito. Recursiva: una entrada en la pila por cada llamada, riesgo de RecursionError",
+    "La iterativa produce RecursionError"
+   ],
+   "correcta": 2,
+   "explicacion": "El iterativo reutiliza las mismas variables. El recursivo apila una llamada por nivel; si la recursión es muy profunda o no tiene caso base, aparece un RecursionError.",
+   "por_que_no": [
+    "La recursiva consume pila.",
+    "Puede fallar por falta de caso base o por profundidad excesiva.",
+    "",
+    "Eso corresponde a la recursiva."
+   ],
+   "referencia": "Clase 10, «¿Cuándo usar cada uno?»"
+  },
+  {
+   "id": "EST-47",
+   "tema": "EST",
+   "subtema": "Gobierno del dato",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "En el gobierno del dato, ¿qué es el linaje?",
+   "opciones": [
+    "La cantidad de versiones del código",
+    "De dónde viene cada tabla y qué transformaciones atravesó",
+    "El significado de cada campo",
+    "Quién puede ver y modificar qué"
+   ],
+   "correcta": 1,
+   "explicacion": "El linaje traza el origen y el recorrido de los datos. En materia actuarial permite justificar, auditar y reconstruir un cálculo de reservas años después.",
+   "por_que_no": [
+    "Eso es el versionado.",
+    "",
+    "Eso es el diccionario de datos.",
+    "Eso es el control de acceso."
+   ],
+   "referencia": "Clase 12, «Gobierno del dato»"
+  },
+  {
+   "id": "PC-13",
+   "tema": "PC",
+   "subtema": "Qué es y qué no es (Wing)",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Wing afirma que el pensamiento computacional implica «conceptualizar, no programar». ¿Qué significa?",
+   "opciones": [
+    "Que pensar como un científico de la computación es más que saber programar: requiere pensar en múltiples niveles de abstracción",
+    "Que programar es irrelevante y no debe enseñarse",
+    "Que solo los matemáticos pueden conceptualizar problemas",
+    "Que los programas deben escribirse primero en papel"
+   ],
+   "correcta": 0,
+   "explicacion": "Para Wing, la ciencia de la computación no es programación: pensar como un científico de la computación significa más que poder programar una computadora y exige pensar en múltiples niveles de abstracción.",
+   "por_que_no": [
+    "",
+    "Wing no dice que programar sea irrelevante, sino que no alcanza para definir el pensamiento computacional.",
+    "Wing sostiene que es una habilidad para todos, no exclusiva de matemáticos.",
+    "El artículo no habla de escribir programas en papel."
+   ],
+   "referencia": "Wing (2006), «Conceptualizing, not programming»"
+  },
+  {
+   "id": "SQL-26",
+   "tema": "SQL",
+   "subtema": "Filtros",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Se piden clientes «de al menos 30 años y no más de 75». ¿Qué condición lo expresa correctamente?",
+   "opciones": [
+    "EDAD BETWEEN 30 AND 75",
+    "EDAD > 30 AND EDAD < 75",
+    "EDAD >= 30 OR EDAD <= 75",
+    "EDAD BETWEEN 31 AND 74"
+   ],
+   "correcta": 0,
+   "explicacion": "BETWEEN incluye ambos extremos, así que equivale a EDAD >= 30 AND EDAD <= 75, como usa la resolución del parcial.",
+   "por_que_no": [
+    "",
+    "Excluye a quienes tienen exactamente 30 o 75 años.",
+    "Con OR, cualquier edad cumple al menos una condición.",
+    "Excluye los extremos 30 y 75."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 1a"
+  },
+  {
+   "id": "PYB-29",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "Según la clase, ¿cuál es la diferencia clave entre una lista de Python y un arreglo de numpy?",
+   "opciones": [
+    "La lista es más rápida para cálculos masivos",
+    "La lista no puede contener números",
+    "La lista es una colección de objetos independientes; el arreglo es un bloque de números del mismo tipo en memoria contigua",
+    "El arreglo no admite índices"
+   ],
+   "correcta": 2,
+   "explicacion": "Cada elemento de una lista es un objeto independiente de Python, cómodo para volúmenes chicos. El arreglo es un bloque homogéneo pensado para cálculo numérico vectorizado.",
+   "por_que_no": [
+    "Es al revés: numpy es más eficiente.",
+    "Las listas pueden contener números.",
+    "",
+    "Los arreglos admiten índices y máscaras."
+   ],
+   "referencia": "Clase 12, «Listas» y «numpy: el arreglo homogéneo»"
+  },
+  {
+   "id": "EDA-07",
+   "tema": "EDA",
+   "subtema": "Mapa del análisis",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Según el mapa del análisis, ¿qué resumen y gráfico corresponden a dos variables cualitativas (por ejemplo, canal × ramo)?",
+   "opciones": [
+    "Histograma y ECDF",
+    "Correlación y dispersión",
+    "Tabla de contingencia y barras agrupadas o heatmap",
+    "Líneas en el tiempo"
+   ],
+   "correcta": 2,
+   "explicacion": "Cualitativa × cualitativa se resume con una tabla de contingencia (pd.crosstab) y se grafica con barras agrupadas o heatmap.",
+   "por_que_no": [
+    "Corresponden a una variable cuantitativa.",
+    "Corresponden a cuantitativa × cuantitativa.",
+    "",
+    "Corresponden a variable × tiempo."
+   ],
+   "referencia": "Clase 14, «Mapa del análisis»"
+  },
+  {
+   "id": "EXC-15",
+   "tema": "EXC",
+   "subtema": "Conteo y suma condicional",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Para contar las edades mayores a 40 alguien escribe =CONTAR.SI(Edades;>40) y Excel no acepta la fórmula. ¿Cuál es la forma correcta?",
+   "opciones": [
+    "=CONTAR(Edades>40)",
+    "=CONTAR.SI(>40;Edades)",
+    "=CONTAR.SI(Edades;\">\"&40)",
+    "=CONTAR.SI(Edades;MAYOR(40))"
+   ],
+   "correcta": 2,
+   "explicacion": "El criterio de CONTAR.SI es un texto: el operador va entre comillas y se concatena con el número usando &, como en los apuntes: CONTAR.SI(Tabla;\">\"&40). También vale \">40\".",
+   "por_que_no": [
+    "CONTAR no recibe condiciones de esa forma.",
+    "Los argumentos están invertidos: primero va el rango y después el criterio.",
+    "",
+    "MAYOR es otra función y no sirve como criterio."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Resumen gerencial»"
+  },
+  {
+   "id": "EDA-02",
+   "tema": "EDA",
+   "subtema": "Exploratorio vs. confirmatorio",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia al análisis exploratorio del confirmatorio?",
+   "opciones": [
+    "Son idénticos",
+    "El exploratorio usa solo tests estadísticos",
+    "El exploratorio parte de los datos y produce hipótesis y sospechas; el confirmatorio parte de una hipótesis previa y produce conclusiones con incertidumbre medida (tests, intervalos, modelos)",
+    "El confirmatorio no usa datos"
+   ],
+   "correcta": 2,
+   "explicacion": "El riesgo típico del exploratorio es ver patrones en el ruido; el del confirmatorio, contestar la pregunta equivocada.",
+   "por_que_no": [
+    "Tienen objetivos distintos.",
+    "Los tests son herramientas del confirmatorio.",
+    "",
+    "Ambos usan datos."
+   ],
+   "referencia": "Clase 14, «Exploratorio frente a confirmatorio»"
+  },
+  {
+   "id": "CAL-08",
+   "tema": "CAL",
+   "subtema": "Indicadores",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "La base de 8 filas tiene 7 números de póliza distintos (la 1003 aparece dos veces). ¿Cuánto vale la unicidad de la clave?",
+   "opciones": [
+    "0,875",
+    "0,125",
+    "1",
+    "8"
+   ],
+   "correcta": 0,
+   "explicacion": "U = valores únicos / n = 7/8 = 0,875. Una clave sin repetidos tendría unicidad 1.",
+   "por_que_no": [
+    "",
+    "Es la proporción de repetidos.",
+    "Hay una clave repetida.",
+    "No es una proporción."
+   ],
+   "referencia": "Clase 13, «Cómo se miden»"
+  },
+  {
+   "id": "CTL-56",
+   "tema": "CTL",
+   "subtema": "Modificar listas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la tabla de errores frecuentes, ¿qué conviene hacer si se necesita modificar una lista mientras se la recorre?",
+   "opciones": [
+    "Convertirla en tupla",
+    "Usar while True",
+    "Iterar sobre una copia de la lista",
+    "Usar pass"
+   ],
+   "correcta": 2,
+   "explicacion": "Modificar una lista mientras se la recorre produce resultados inesperados. La recomendación es iterar sobre una copia.",
+   "por_que_no": [
+    "Una tupla no puede modificarse.",
+    "while True no resuelve el problema.",
+    "",
+    "pass no hace nada."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Errores frecuentes»"
+  },
+  {
+   "id": "PYB-16",
+   "tema": "PYB",
+   "subtema": "Diccionarios",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Al buscar la póliza 199.999 entre 200.000 registros, la clase midió unas 2.356 veces menos tiempo con un diccionario que con una lista. ¿Por qué?",
+   "opciones": [
+    "Porque en la lista hay que recorrer los elementos hasta encontrarlo, mientras que en el diccionario el acceso por clave es directo",
+    "Porque el diccionario está ordenado alfabéticamente",
+    "Porque las listas no admiten números grandes",
+    "Porque los diccionarios ocupan menos memoria"
+   ],
+   "correcta": 0,
+   "explicacion": "Buscar en una lista obliga a recorrerla; en un diccionario el acceso por clave es prácticamente inmediato. Si el algoritmo consulta identificadores dentro de un ciclo, la estructura elegida cambia el orden de magnitud del tiempo.",
+   "por_que_no": [
+    "",
+    "No se trata de orden alfabético.",
+    "Las listas admiten cualquier número.",
+    "La ventaja es el tipo de acceso, no la memoria."
+   ],
+   "referencia": "Clase 12, «¿Por qué importa el diccionario? Costo de búsqueda»"
+  },
+  {
+   "id": "ALG-05",
+   "tema": "ALG",
+   "subtema": "TIR por bisección",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué la TIR se busca con un while y una tolerancia, en lugar de una fórmula directa?",
+   "opciones": [
+    "Porque la TIR no tiene solución cerrada: se busca numéricamente, repitiendo hasta alcanzar la tolerancia deseada",
+    "Porque Python no tiene la función potencia",
+    "Porque el for no admite decimales",
+    "Porque así siempre da un número entero"
+   ],
+   "correcta": 0,
+   "explicacion": "No hay una fórmula general para despejar la tasa que anula el VAN, así que se aproxima con un método numérico. Es el uso típico de while como criterio de convergencia.",
+   "por_que_no": [
+    "",
+    "Python tiene el operador **.",
+    "La elección del while se debe a que no se sabe cuántas iteraciones harán falta.",
+    "El resultado es un número real."
+   ],
+   "referencia": "Clase 10, «TIR por bisección»; Guía, «Búsqueda numérica»"
+  },
+  {
+   "id": "PC-20",
+   "tema": "PC",
+   "subtema": "Qué es y qué no es (Wing)",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Wing afirma que el pensamiento computacional trata de «ideas, no artefactos». ¿Qué significa?",
+   "opciones": [
+    "Que las ideas deben patentarse antes de programarlas",
+    "Que el hardware y el software no tienen importancia",
+    "Que los artefactos físicos son más importantes que las ideas",
+    "Que lo que estará presente en todas partes no son solo los programas y equipos, sino los conceptos computacionales que usamos para resolver problemas y organizar la vida diaria"
+   ],
+   "correcta": 3,
+   "explicacion": "No solo los artefactos de software y hardware nos rodearán: también los conceptos computacionales con los que resolvemos problemas, gestionamos la vida diaria y nos comunicamos.",
+   "por_que_no": [
+    "El artículo no habla de patentes.",
+    "Wing no les quita importancia; dice que no son lo único.",
+    "Es la idea opuesta a la que plantea Wing.",
+    ""
+   ],
+   "referencia": "Wing (2006), «Ideas, not artifacts»"
+  },
+  {
+   "id": "SQL-02",
+   "tema": "SQL",
+   "subtema": "Orden de las cláusulas",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿En qué orden INTERPRETA (procesa lógicamente) el motor de base de datos las cláusulas principales?",
+   "opciones": [
+    "FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY",
+    "WHERE, FROM, SELECT, GROUP BY, HAVING, ORDER BY",
+    "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+    "FROM, SELECT, WHERE, GROUP BY, ORDER BY, HAVING"
+   ],
+   "correcta": 0,
+   "explicacion": "El procesamiento lógico empieza por FROM (de dónde salen los datos), sigue con WHERE, GROUP BY y HAVING, recién después SELECT, y termina con ORDER BY.",
+   "por_que_no": [
+    "",
+    "Sin FROM no hay datos que filtrar: WHERE no puede ser lo primero.",
+    "Ese es el orden de escritura.",
+    "SELECT se procesa después de agrupar y filtrar grupos, y HAVING va antes que ORDER BY."
+   ],
+   "referencia": "SQL Básico, «¿Cómo procesa esta consulta?»"
+  },
+  {
+   "id": "EST-43",
+   "tema": "EST",
+   "subtema": "Bases NoSQL",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la clase, ¿qué relación hay entre las bases NoSQL y el modelo relacional?",
+   "opciones": [
+    "NoSQL reemplaza al modelo relacional",
+    "Son idénticas",
+    "No lo reemplazan: resuelven problemas distintos, como esquemas variables o escala horizontal",
+    "NoSQL solo se usa con Excel"
+   ],
+   "correcta": 2,
+   "explicacion": "Las bases NoSQL surgen cuando el esquema rígido o la escala horizontal resultan limitantes, pero el modelo relacional sigue siendo central.",
+   "por_que_no": [
+    "La clase lo niega explícitamente.",
+    "Tienen modelos de datos distintos.",
+    "",
+    "No tienen relación con Excel."
+   ],
+   "referencia": "Clase 12, «Bases NoSQL»"
+  },
+  {
+   "id": "CTL-10",
+   "tema": "CTL",
+   "subtema": "Condiciones compuestas",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve clasificar_riesgo(44, True, 5)?",
+   "codigo": "def clasificar_riesgo(edad, fumador, siniestros_previos):\n    if edad >= 65 or siniestros_previos >= 3:\n        return \"Riesgo alto\"\n    elif fumador and edad >= 45:\n        return \"Riesgo medio\"\n    else:\n        return \"Riesgo estándar\"",
+   "opciones": [
+    "Riesgo medio",
+    "None",
+    "Riesgo estándar",
+    "Riesgo alto"
+   ],
+   "correcta": 3,
+   "explicacion": "La primera condición usa or: aunque la edad sea menor a 65, siniestros_previos >= 3 es True (5 ≥ 3). Devuelve «Riesgo alto».",
+   "por_que_no": [
+    "No llega a evaluarse la segunda rama y, además, 44 no es ≥ 45.",
+    "Todas las ramas devuelven un valor.",
+    "La primera condición ya se cumplió.",
+    ""
+   ],
+   "referencia": "Clase 10, «Ejemplo actuarial: clasificación de riesgo»"
+  },
+  {
+   "id": "JOIN-20",
+   "tema": "JOIN",
+   "subtema": "Granularidad",
+   "dificultad": "dificil",
+   "tipo": "error",
+   "enunciado": "Se cruza la tabla de pólizas (una fila por póliza, con su prima) con la de siniestros (una fila por siniestro) y luego se suma la prima. ¿Qué error puede aparecer?",
+   "opciones": [
+    "Se pierden todas las pólizas sin siniestros siempre, sea cual sea el join",
+    "Las pólizas con varios siniestros se repiten, así que la prima se suma varias veces y se infla; antes de cruzar hay que llevar ambas tablas a la misma granularidad",
+    "La prima se convierte en texto",
+    "Ninguno"
+   ],
+   "correcta": 1,
+   "explicacion": "Si una tabla tiene una fila por póliza y la otra una por siniestro, el cruce repite cada póliza tantas veces como siniestros tenga. La clase recomienda agregar primero (por ejemplo, siniestros por póliza) y después cruzar.",
+   "por_que_no": [
+    "Con un LEFT JOIN desde pólizas no se pierden; el problema principal es la duplicación.",
+    "",
+    "El tipo de dato no cambia por el cruce.",
+    "Hay un error de granularidad."
+   ],
+   "referencia": "Clase 12, «Granularidad y agregación»"
+  },
+  {
+   "id": "ALG-42",
+   "tema": "ALG",
+   "subtema": "Monte Carlo",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la estimación de una probabilidad condicional por simulación, ¿qué problema aparece si la condición es muy poco frecuente?",
+   "opciones": [
+    "El código entra en un bucle infinito",
+    "La estimación siempre da cero",
+    "Ninguno",
+    "Pocas réplicas cumplen la condición, así que la estimación se basa en una muestra chica y resulta muy inestable"
+   ],
+   "correcta": 3,
+   "explicacion": "El denominador efectivo es la cantidad de réplicas que cumplen la condición. Si es chico, la variabilidad de la estimación es grande y hacen falta muchas más réplicas.",
+   "por_que_no": [
+    "No hay bucle infinito.",
+    "No necesariamente; puede dar valores muy variables.",
+    "Afecta la precisión.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 20 («Pregunta conceptual»)"
+  },
+  {
+   "id": "EDA-03",
+   "tema": "EDA",
+   "subtema": "Exploratorio vs. confirmatorio",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Tras mirar cien cortes distintos de la cartera, un analista encuentra uno con siniestralidad llamativa y lo presenta como conclusión, usando esos mismos datos. ¿Qué regla de oro viola?",
+   "opciones": [
+    "Que hay que eliminar los extremos",
+    "Que hay que usar gráficos de torta",
+    "Ninguna",
+    "Una hipótesis no puede confirmarse con los mismos datos que la sugirieron: con tantos cortes, lo más probable es que sea azar hasta que se demuestre lo contrario"
+   ],
+   "correcta": 3,
+   "explicacion": "El EDA genera hipótesis; confirmarlas exige contrastarlas, idealmente con datos no usados en la exploración.",
+   "por_que_no": [
+    "No tiene relación con los extremos.",
+    "No tiene relación con el tipo de gráfico.",
+    "Viola la regla de oro.",
+    ""
+   ],
+   "referencia": "Clase 14, «Exploratorio frente a confirmatorio»; «Errores frecuentes»"
+  },
+  {
+   "id": "SQL-42",
+   "tema": "SQL",
+   "subtema": "Joins y agregación",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "Para el ingreso total de cada pedido (Quantity × Price), ¿qué hace falta?",
+   "opciones": [
+    "Unir Orders con Customers y sumar CustomerID",
+    "Solo la tabla OrderDetails, porque ya tiene el precio",
+    "Usar DISTINCT sobre OrderID",
+    "Unir OrderDetails con Products por ProductID para obtener Price, calcular SUM(Quantity * Price) y agrupar por OrderID"
+   ],
+   "correcta": 3,
+   "explicacion": "OrderDetails tiene OrderID, ProductID y Quantity, pero el precio está en Products. Hay que cruzarlas por ProductID, multiplicar cantidad por precio y sumar por pedido.",
+   "por_que_no": [
+    "Esas tablas no tienen cantidades ni precios.",
+    "OrderDetails no contiene el precio.",
+    "DISTINCT no calcula importes.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 19; Clase 5 (CCA), «Primera etapa»"
+  },
+  {
+   "id": "ALG-30",
+   "tema": "ALG",
+   "subtema": "Reservas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la recursión de reservas, ¿qué significaría que Vn (al vencimiento) resulte distinto de cero?",
+   "opciones": [
+    "Que el asegurado falleció",
+    "Que la recursión es correcta",
+    "Que la tasa es negativa",
+    "Que la prima usada no es la prima neta nivelada que equilibra beneficios y primas, o que hay un error en el cálculo"
+   ],
+   "correcta": 3,
+   "explicacion": "Con la prima neta correcta (P = S·A/ä), la reserva vuelve a cero en t = n. Un Vn ≠ 0 indica que P no equilibra las obligaciones (por ejemplo, una prima un 10 % mayor) o un error de implementación.",
+   "por_que_no": [
+    "La reserva es un valor esperado sobre la cartera, no un caso individual.",
+    "Con la prima neta correcta, Vn = 0.",
+    "No se deduce de Vn ≠ 0.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 25 («Preguntas para discutir»)"
+  },
+  {
+   "id": "CTL-15",
+   "tema": "CTL",
+   "subtema": "Tarifación",
+   "dificultad": "dificil",
+   "tipo": "error",
+   "enunciado": "Un analista escribe los recargos por edad con dos if independientes. ¿Qué factor total por edad recibe una persona de 65 años?",
+   "codigo": "if edad >= 60:\n    prima = prima * 1.50\nif edad >= 40:\n    prima = prima * 1.20",
+   "opciones": [
+    "1,50",
+    "1,80",
+    "2,70",
+    "1,20"
+   ],
+   "correcta": 1,
+   "explicacion": "Con if independientes se evalúan ambas condiciones. A los 65 se cumplen las dos: 1,50 × 1,20 = 1,80. Es el error de «escribir varios if independientes cuando las categorías deberían ser excluyentes».",
+   "por_que_no": [
+    "Sería el resultado correcto con elif.",
+    "",
+    "Los factores se multiplican, no se suman (1,5 + 1,2 = 2,7).",
+    "Solo aplicaría si fallara la primera condición."
+   ],
+   "referencia": "Clase 10, «Errores frecuentes con condicionales»"
+  },
+  {
+   "id": "CAL-14",
+   "tema": "CAL",
+   "subtema": "Reglas de validación",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "El ejercicio de clase propone dos reglas: «si hay fecha de siniestro, el monto debe ser > 0» y «si el monto es > 0, debe existir fecha de siniestro». ¿Es redundante escribir ambas?",
+   "opciones": [
+    "Sí, son idénticas",
+    "Sí, porque una implica la otra",
+    "No, porque una es de completitud y otra de exactitud",
+    "No: son la misma regla vista desde los dos lados, pero detectan errores de carga distintos (fecha sin monto frente a monto sin fecha)"
+   ],
+   "correcta": 3,
+   "explicacion": "Cada dirección atrapa un tipo de error distinto: siniestros fechados sin monto y montos cargados sin fecha.",
+   "por_que_no": [
+    "Detectan casos distintos.",
+    "Ninguna implica a la otra.",
+    "Ambas son reglas de consistencia.",
+    ""
+   ],
+   "referencia": "Clase 13, «Ejercicio en clase»"
+  },
+  {
+   "id": "PC-25",
+   "tema": "PC",
+   "subtema": "PC vs. otros tipos de pensamiento",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "Según Barr, Harrison y Conery (2011), ¿qué distingue al pensamiento computacional del pensamiento crítico y del matemático?",
+   "opciones": [
+    "Que reemplaza por completo al pensamiento matemático",
+    "Que solo se aplica a problemas de programación",
+    "Que está más orientado a las herramientas y permite resolver problemas en contextos antes imprácticos gracias a la automatización y la velocidad de procesamiento",
+    "Que no requiere lógica"
+   ],
+   "correcta": 2,
+   "explicacion": "El pensamiento computacional es una combinación única de destrezas, está más orientado a las herramientas y aprovecha la automatización y las grandes velocidades de procesamiento para resolver problemas antes imprácticos.",
+   "por_que_no": [
+    "Se lo presenta como una combinación de destrezas, no como un reemplazo.",
+    "Se aplica a resolver ecuaciones, planificar proyectos e incluso redactar.",
+    "",
+    "La lógica es central: por ejemplo, analizar y organizar datos de forma lógica."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional (Barr, Harrison y Conery, 2011)"
+  },
+  {
+   "id": "EST-38",
+   "tema": "EST",
+   "subtema": "Tablas dinámicas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Qué construye este código y para qué sirve fill_value=0?",
+   "codigo": "pivot_mensual = pd.pivot_table(cartera, index=\"mes\", columns=\"producto\",\n                               values=\"monto_siniestros\", aggfunc=\"sum\", fill_value=0)",
+   "opciones": [
+    "Una lista de pólizas ordenada por mes",
+    "Una tabla con un mes por fila, un producto por columna y la suma de siniestros en cada celda; fill_value=0 completa con 0 las combinaciones sin datos",
+    "Una tabla que elimina los meses sin siniestros",
+    "Un gráfico de calor"
+   ],
+   "correcta": 1,
+   "explicacion": "Es la tabla dinámica de Excel trasladada a pandas. Para comparar costos conviene dividirla por la tabla de exposición (pivot_mensual / pivot_exposicion).",
+   "por_que_no": [
+    "No lista pólizas: agrega.",
+    "",
+    "Los meses sin datos se completan con 0; no se eliminan.",
+    "El mapa de calor se dibuja después con plt.imshow."
+   ],
+   "referencia": "Guía práctica Python, «Tabla dinámica mensual»"
+  }
+ ]
+}

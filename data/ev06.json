@@ -1,0 +1,934 @@
+{
+ "id": 6,
+ "titulo": "Evaluación 6",
+ "preguntas": [
+  {
+   "id": "JOIN-03",
+   "tema": "JOIN",
+   "subtema": "INNER JOIN",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Si en una consulta se escribe simplemente JOIN, sin indicar el tipo, ¿qué join se ejecuta?",
+   "opciones": [
+    "LEFT JOIN",
+    "FULL OUTER JOIN",
+    "INNER JOIN",
+    "RIGHT JOIN"
+   ],
+   "correcta": 2,
+   "explicacion": "JOIN sin especificar equivale por defecto a INNER JOIN, la opción predeterminada.",
+   "por_que_no": [
+    "LEFT hay que escribirlo explícitamente.",
+    "FULL OUTER hay que escribirlo explícitamente.",
+    "",
+    "RIGHT hay que escribirlo explícitamente."
+   ],
+   "referencia": "Clase 5 (CCA), «INNER JOIN»; Joins, DML & DDL (cátedra)"
+  },
+  {
+   "id": "PC-26",
+   "tema": "PC",
+   "subtema": "Flujo de trabajo",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "La clase propone «pensar el problema antes del código». ¿Cuál es la secuencia que se presenta?",
+   "opciones": [
+    "Problema actuarial → datos → modelo → algoritmo → validación → decisión",
+    "Decisión → modelo → datos → validación",
+    "Datos → código → gráfico → informe",
+    "Código → datos → decisión → validación"
+   ],
+   "correcta": 0,
+   "explicacion": "El pensamiento computacional no es solo programar: se parte del problema actuarial, se pasa por datos, modelo y algoritmo, se valida y finalmente se toma la decisión.",
+   "por_que_no": [
+    "",
+    "La decisión es el final del proceso, no el comienzo.",
+    "Omite el modelo y la validación, y no parte del problema.",
+    "Empieza por el código, que es lo contrario de pensar el problema primero."
+   ],
+   "referencia": "Clase 1 – PC aplicado a problemas actuariales, «¿Qué es el pensamiento computacional?»"
+  },
+  {
+   "id": "EXC-13",
+   "tema": "EXC",
+   "subtema": "Conteo y suma condicional",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "En el resumen gerencial se obtuvo «pólizas totales = 1.500» seleccionando la columna de pólizas. ¿Qué función cuenta las celdas no vacías de un rango?",
+   "opciones": [
+    "CONTARA",
+    "BUSCARV",
+    "CONTAR.SI",
+    "SUMA"
+   ],
+   "correcta": 0,
+   "explicacion": "CONTARA cuenta todas las celdas no vacías, sean números o textos, por eso sirve para contar los números de póliza.",
+   "por_que_no": [
+    "",
+    "BUSCARV busca un valor; no cuenta.",
+    "CONTAR.SI cuenta solo las celdas que cumplen un criterio.",
+    "SUMA suma valores; no los cuenta."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Resumen gerencial»"
+  },
+  {
+   "id": "EST-11",
+   "tema": "EST",
+   "subtema": "pandas: DataFrame",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cómo define la clase un DataFrame?",
+   "opciones": [
+    "Un archivo CSV",
+    "Un diccionario sin claves",
+    "Un arreglo de una dimensión",
+    "Una tabla bidimensional: un conjunto de Series que comparten el mismo índice"
+   ],
+   "correcta": 3,
+   "explicacion": "Cada columna es una Series y todas comparten el índice de filas. Puede construirse, por ejemplo, desde una lista de diccionarios.",
+   "por_que_no": [
+    "El CSV es un formato de archivo; el DataFrame es una estructura en memoria.",
+    "No es un diccionario sin claves.",
+    "Eso describe a la Series.",
+    ""
+   ],
+   "referencia": "Clase 12, «pandas: el DataFrame»"
+  },
+  {
+   "id": "SQL-33",
+   "tema": "SQL",
+   "subtema": "Comentarios",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cómo se escriben comentarios en SQL?",
+   "opciones": [
+    "Con -- para comentar una línea y /* … */ para un bloque",
+    "Con // y <!-- -->",
+    "SQL no admite comentarios",
+    "Con # al inicio de la línea únicamente"
+   ],
+   "correcta": 0,
+   "explicacion": "Los apuntes muestran ambos estilos: anteponer -- transforma la línea en comentario y /* … */ comenta un bloque.",
+   "por_que_no": [
+    "",
+    "// y <!-- --> son de otros lenguajes.",
+    "SQL sí admite comentarios.",
+    "# no es la forma vista en clase."
+   ],
+   "referencia": "Apuntes C4 y C5 (comentarios en SQL)"
+  },
+  {
+   "id": "PYB-17",
+   "tema": "PYB",
+   "subtema": "Conjuntos",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "polizas = [1001, 1002, 1003, 1002, 1004, 1001]\nprint(len(polizas), len(set(polizas)))",
+   "opciones": [
+    "6 4",
+    "6 6",
+    "6 3",
+    "4 6"
+   ],
+   "correcta": 0,
+   "explicacion": "La lista tiene 6 registros. set() elimina los repetidos y quedan 4 pólizas únicas (1001, 1002, 1003 y 1004).",
+   "por_que_no": [
+    "",
+    "El set elimina duplicados, así que no puede quedar en 6.",
+    "Quedan 4 valores únicos, no 3.",
+    "El orden de los valores está invertido."
+   ],
+   "referencia": "Clase 12, «Conjuntos»"
+  },
+  {
+   "id": "BD-06",
+   "tema": "BD",
+   "subtema": "Impacto y casos de uso",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuál de los siguientes NO figura entre los impactos de las bases de datos mencionados en clase?",
+   "opciones": [
+    "Escalabilidad y eficiencia",
+    "Eliminación de la necesidad de seguridad informática",
+    "Análisis y predicción con Big Data",
+    "Automatización y reducción de errores"
+   ],
+   "correcta": 1,
+   "explicacion": "Los impactos mencionados son escalabilidad y eficiencia, automatización y reducción de errores, análisis y predicción con Big Data, y seguridad y protección de datos. Las bases de datos incorporan seguridad; no la vuelven innecesaria.",
+   "por_que_no": [
+    "Figura en la lista.",
+    "",
+    "Figura en la lista.",
+    "Figura en la lista."
+   ],
+   "referencia": "Introducción a bases de datos, «Impacto y casos de uso»"
+  },
+  {
+   "id": "CTL-43",
+   "tema": "CTL",
+   "subtema": "Patrón acumulador",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "suma = 0\nfor i in range(1, 10, 2):\n    suma += i\nprint(suma)",
+   "opciones": [
+    "9",
+    "45",
+    "20",
+    "25"
+   ],
+   "correcta": 3,
+   "explicacion": "range(1, 10, 2) genera 1, 3, 5, 7 y 9. La suma acumulada es 25. Es el patrón acumulador: inicializar en cero y sumar en cada iteración.",
+   "por_que_no": [
+    "9 es el último valor, no la suma.",
+    "Sería la suma de 1 a 9 (paso 1).",
+    "No corresponde a ninguna suma de esos valores.",
+    ""
+   ],
+   "referencia": "Clase 10, «El patrón acumulador»"
+  },
+  {
+   "id": "CTL-54",
+   "tema": "CTL",
+   "subtema": "if/elif/else",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué estado se asigna si n = 2?",
+   "codigo": "if n == 0:\n    estado = \"sin siniestros\"\nelif n == 1:\n    estado = \"un siniestro\"\nelse:\n    estado = \"múltiples siniestros\"",
+   "opciones": [
+    "Ninguno",
+    "un siniestro",
+    "múltiples siniestros",
+    "sin siniestros"
+   ],
+   "correcta": 2,
+   "explicacion": "n == 0 y n == 1 son falsas, así que se ejecuta el else: «múltiples siniestros».",
+   "por_que_no": [
+    "El else garantiza que siempre se asigne un estado.",
+    "n no es 1.",
+    "",
+    "n no es 0."
+   ],
+   "referencia": "Guía práctica Python, Actividad 5"
+  },
+  {
+   "id": "SQL-32",
+   "tema": "SQL",
+   "subtema": "ORDER BY y LIMIT",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la clase, ¿qué naturaleza tiene LIMIT?",
+   "opciones": [
+    "Es una función de agregado",
+    "Es un filtro que se aplica antes del WHERE",
+    "Es una opción de presentación de la información que se aplica en el último paso",
+    "Es un cálculo que cambia los valores agregados"
+   ],
+   "correcta": 2,
+   "explicacion": "LIMIT se ejecuta al final y es una opción de presentación, no de cálculo: limita cuántas filas se muestran.",
+   "por_que_no": [
+    "No resume filas.",
+    "Es lo último que se ejecuta.",
+    "",
+    "No modifica los cálculos; solo recorta lo que se muestra."
+   ],
+   "referencia": "SQL Básico, «LIMIT»"
+  },
+  {
+   "id": "ALG-44",
+   "tema": "ALG",
+   "subtema": "Medidas de riesgo",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Cómo se calculan el VaR 99 % y el TVaR 99 % a partir de las pérdidas simuladas total?",
+   "opciones": [
+    "VaR = total.mean(); TVaR = total.max()",
+    "VaR = np.percentile(total, 1); TVaR = total.min()",
+    "VaR = np.percentile(total, 99); TVaR = total[total > VaR].mean()",
+    "VaR = total.std(); TVaR = 2 × VaR"
+   ],
+   "correcta": 2,
+   "explicacion": "El VaR al 99 % es el percentil 99 de la distribución simulada. El TVaR es la pérdida media condicionada a superar el VaR: E[S | S > VaR].",
+   "por_que_no": [
+    "La media y el máximo no son esas medidas.",
+    "El percentil 1 está en la cola izquierda, la de pérdidas bajas.",
+    "",
+    "El desvío no es un cuantil."
+   ],
+   "referencia": "Clase 10, «Aplicación: medidas de riesgo»; Guía, Actividad 21"
+  },
+  {
+   "id": "CTL-29",
+   "tema": "CTL",
+   "subtema": "Bucles infinitos",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "Un fondo de 1.000.000 se capitaliza al 5 % anual y se retiran 40.000 al final de cada año. Sin ninguna red de seguridad, ¿qué ocurre con el ciclo?",
+   "opciones": [
+    "El ciclo nunca termina: el interés (50.000 el primer año) supera al retiro, el fondo crece y la condición nunca se vuelve falsa",
+    "Python detiene el ciclo automáticamente a las 100 iteraciones",
+    "El fondo se agota en unos 30 años",
+    "Da error de sintaxis"
+   ],
+   "correcta": 0,
+   "explicacion": "Con un retiro menor que el interés, el fondo crece todos los años: es un bucle infinito. Las defensas son verificar que la variable de control avance hacia la salida, poner un contador máximo con break o interrumpir con Ctrl + C o deteniendo el kernel.",
+   "por_que_no": [
+    "",
+    "Python no impone un límite: el límite de 100 en el código de clase es una red de seguridad agregada a mano.",
+    "El fondo crece; nunca se agota.",
+    "La sintaxis es válida; el problema es lógico."
+   ],
+   "referencia": "Clase 10, «Cuidado con los bucles infinitos»; Guía, Actividad 13",
+   "codigo": "fondo = 1_000_000\nwhile fondo > 0:\n    fondo = fondo * 1.05 - 40_000"
+  },
+  {
+   "id": "EDA-31",
+   "tema": "EDA",
+   "subtema": "Correlación",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "La edad casi no correlaciona con la cantidad de siniestros. ¿Significa que no hay relación?",
+   "opciones": [
+    "No: una correlación baja no implica ausencia de relación; la relación existe y tiene forma de U, que una correlación monótona no capta",
+    "Sí, porque la edad tiene faltantes",
+    "Sí, la correlación baja prueba que no hay relación",
+    "No se puede saber nunca"
+   ],
+   "correcta": 0,
+   "explicacion": "Los coeficientes miden asociación lineal (Pearson) o monótona (Spearman). Una relación en U puede tener correlación cercana a cero.",
+   "por_que_no": [
+    "",
+    "Los faltantes no explican la forma.",
+    "Es una conclusión errónea.",
+    "El EDA por franjas sí la muestra."
+   ],
+   "referencia": "Clase 14, «Matriz de correlaciones»"
+  },
+  {
+   "id": "CTL-37",
+   "tema": "CTL",
+   "subtema": "while True",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la simulación del «tiempo hasta el primer siniestro» (probabilidad anual 8 %) se usa while True con break. ¿Qué valor esperado tiene el año del primer siniestro?",
+   "opciones": [
+    "12,5 años",
+    "1 año",
+    "0,08 años",
+    "8 años"
+   ],
+   "correcta": 0,
+   "explicacion": "Cada corrida es una realización de una variable geométrica con E[T] = 1/p = 1/0,08 = 12,5. Repetida 10.000 veces, la guía obtiene un promedio de 12,40, cercano al teórico.",
+   "por_que_no": [
+    "",
+    "Sería el caso si p = 1.",
+    "Es la probabilidad, no el tiempo esperado.",
+    "Confunde el porcentaje con la cantidad de años."
+   ],
+   "referencia": "Clase 10, «Tiempo hasta el primer siniestro»; Guía, Actividades 14 y 15"
+  },
+  {
+   "id": "BD-28",
+   "tema": "BD",
+   "subtema": "Modelo relacional",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En el esquema mínimo de una cartera (asegurados, polizas, siniestros, pagos), ¿qué relación existe entre asegurados y pólizas?",
+   "opciones": [
+    "Ninguna: son tablas independientes",
+    "1 a 1: cada asegurado tiene exactamente una póliza",
+    "N a M sin tabla intermedia",
+    "1 a N: un asegurado puede tener muchas pólizas"
+   ],
+   "correcta": 3,
+   "explicacion": "El esquema de la clase indica que asegurados se relaciona 1 a N con pólizas, pólizas 1 a N con siniestros y siniestros 1 a N con pagos.",
+   "por_que_no": [
+    "Se vinculan mediante id_asegurado.",
+    "Un asegurado puede tener más de una póliza.",
+    "Las relaciones N:M siempre requieren una tabla intermedia.",
+    ""
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «El modelo relacional»"
+  },
+  {
+   "id": "PYB-33",
+   "tema": "PYB",
+   "subtema": "numpy",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Con montos = [0, 125000, 0, 840000, 0, 250000, 0] y exposición total 5,5, ¿cuánto vale el costo observado por unidad de exposición (montos.sum() / exposicion.sum())?",
+   "opciones": [
+    "220.909,09",
+    "405.000,00",
+    "173.571,43",
+    "1.215.000,00"
+   ],
+   "correcta": 0,
+   "explicacion": "1.215.000 / 5,5 ≈ 220.909,09. Es el monto de siniestros por año-póliza expuesto.",
+   "por_que_no": [
+    "",
+    "Es el promedio entre los positivos.",
+    "Es el promedio por póliza (dividido por 7).",
+    "Es el monto total."
+   ],
+   "referencia": "Guía práctica Python, Actividad 4 («costo observado por unidad de exposición»)"
+  },
+  {
+   "id": "SQL-49",
+   "tema": "SQL",
+   "subtema": "Filtros por fecha",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Para quedarse solo con las operaciones de mayo de 2025 se usa una condición sobre la fecha de operación. ¿Cuál es adecuada?",
+   "opciones": [
+    "HAVING FECHA_OPERACION = 'MAYO'",
+    "WHERE FECHA_OPERACION BETWEEN '2025-05-01' AND '2025-05-31'",
+    "ORDER BY FECHA_OPERACION LIMIT 31",
+    "WHERE FECHA_OPERACION = '2025-05'"
+   ],
+   "correcta": 1,
+   "explicacion": "Un rango de fechas con BETWEEN (inclusivo) entre el primer y el último día del mes filtra las operaciones de mayo, como en la resolución del ejercicio 1c.",
+   "por_que_no": [
+    "HAVING se usa con grupos y el valor no corresponde al tipo fecha.",
+    "",
+    "No filtra por mes; solo recorta filas.",
+    "Compara contra un texto que no es una fecha completa."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 1c"
+  },
+  {
+   "id": "EXC-20",
+   "tema": "EXC",
+   "subtema": "Tablas dinámicas",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Con una tabla dinámica se quiere responder: «¿qué combinación de tramo etario y sexo paga la prima promedio más alta?». ¿Qué configuración es adecuada?",
+   "opciones": [
+    "Filas: sexo; Valores: cuenta de tramo etario",
+    "Filtros: prima; Valores: cuenta de sexo",
+    "Filas: tramo etario; Columnas: sexo; Valores: prima resumida como Promedio",
+    "Filas: número de póliza; Valores: suma de prima"
+   ],
+   "correcta": 2,
+   "explicacion": "Cruzar tramo etario y sexo en filas y columnas, con la prima resumida como promedio, da una celda por combinación con su prima promedio. Así se identifica la mayor.",
+   "por_que_no": [
+    "No cruza ambas variables ni calcula la prima.",
+    "No calcula ninguna prima promedio.",
+    "",
+    "Lista póliza por póliza sin agrupar y usa la suma en lugar del promedio."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Tablas dinámicas»"
+  },
+  {
+   "id": "JOIN-31",
+   "tema": "JOIN",
+   "subtema": "DELETE y DROP",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Para qué sirve agregar RETURNING * a un DELETE, en los motores que lo soportan?",
+   "opciones": [
+    "Para borrar también la estructura",
+    "Para devolver la cantidad de tablas",
+    "Para deshacer el borrado",
+    "Para mostrar los registros afectados por la operación"
+   ],
+   "correcta": 3,
+   "explicacion": "RETURNING muestra los registros afectados. La clase aclara que su comportamiento puede variar entre motores de SQL.",
+   "por_que_no": [
+    "Eliminar la estructura es tarea de DROP TABLE.",
+    "No devuelve una cantidad de tablas.",
+    "Deshacer requiere transacciones y ROLLBACK.",
+    ""
+   ],
+   "referencia": "Clase 5 (CCA), «DELETE»; Joins, DML & DDL (cátedra)"
+  },
+  {
+   "id": "PC-17",
+   "tema": "PC",
+   "subtema": "Ejemplos cotidianos (Wing)",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Según Wing, ¿qué concepto computacional ilustra el hecho de que un teléfono siga funcionando durante un corte de luz?",
+   "opciones": [
+    "Backtracking",
+    "Explotar la dificultad de problemas de inteligencia artificial",
+    "Independencia de fallas y redundancia en el diseño",
+    "Algoritmos en línea"
+   ],
+   "correcta": 2,
+   "explicacion": "Wing lo presenta como ejemplo de independencia de fallas y de redundancia en el diseño.",
+   "por_que_no": [
+    "Backtracking corresponde a desandar los pasos para encontrar los guantes.",
+    "Ese concepto corresponde a los CAPTCHA.",
+    "",
+    "Los algoritmos en línea corresponden al dilema de alquilar o comprar esquís."
+   ],
+   "referencia": "Wing (2006), ejemplos cotidianos"
+  },
+  {
+   "id": "PYB-06",
+   "tema": "PYB",
+   "subtema": "Listas e índices",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime este código?",
+   "codigo": "edades = [31, 44, 52, 28, 67, 39, 48]\nprint(edades[1:4])",
+   "opciones": [
+    "[52, 28, 67]",
+    "[44, 52, 28]",
+    "[44, 52, 28, 67]",
+    "[31, 44, 52, 28]"
+   ],
+   "correcta": 1,
+   "explicacion": "La porción [1:4] incluye los índices 1, 2 y 3 y excluye el 4: [44, 52, 28].",
+   "por_que_no": [
+    "Empieza en el índice 2.",
+    "",
+    "Incluye el índice 4, que la porción excluye.",
+    "Empieza en el índice 0 e incluye el 3: sería edades[0:4]."
+   ],
+   "referencia": "Guía práctica Python, «Trabajo con índices»"
+  },
+  {
+   "id": "PC-43",
+   "tema": "PC",
+   "subtema": "Métodos numéricos",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál de los siguientes NO figura entre los métodos numéricos que la clase anuncia para la materia?",
+   "opciones": [
+    "Bootstrap y remuestreo",
+    "Compilación de programas a lenguaje de máquina",
+    "Resolución de raíces y calibración de parámetros",
+    "Simulación Monte Carlo"
+   ],
+   "correcta": 1,
+   "explicacion": "Los métodos anunciados son Monte Carlo, bootstrap, optimización numérica, resolución de raíces y calibración, integración numérica, vectorización y visualización. La compilación no figura.",
+   "por_que_no": [
+    "Figura en la lista.",
+    "",
+    "Figura en la lista.",
+    "Figura en la lista."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Métodos numéricos que veremos en la materia»"
+  },
+  {
+   "id": "EST-42",
+   "tema": "EST",
+   "subtema": "Bases NoSQL",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué tipo de base NoSQL es especialmente útil para detectar fraude encontrando vínculos entre denunciantes, talleres y peritos?",
+   "opciones": [
+    "Documental (MongoDB)",
+    "Columnar distribuida (Cassandra)",
+    "De grafos (Neo4j)",
+    "Clave-valor (Redis)"
+   ],
+   "correcta": 2,
+   "explicacion": "Las bases de grafos modelan relaciones entre entidades, ideales para descubrir redes de vínculos sospechosos.",
+   "por_que_no": [
+    "Es útil cuando cada póliza tiene una estructura distinta de coberturas.",
+    "Es útil para volúmenes enormes con escritura intensiva, como la telemática.",
+    "",
+    "Es útil para cotizaciones en tiempo real por acceso inmediato por clave."
+   ],
+   "referencia": "Clase 12, «Bases NoSQL»"
+  },
+  {
+   "id": "ALG-01",
+   "tema": "ALG",
+   "subtema": "VAN",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la función que calcula el VAN, ¿qué papel cumple t?",
+   "codigo": "def van(flujos, tasa):\n    valor = 0.0\n    for t, flujo in enumerate(flujos):\n        valor += flujo / (1 + tasa) ** t\n    return valor",
+   "opciones": [
+    "Es el período, que funciona como exponente del descuento: el flujo del período t se divide por (1 + tasa)^t",
+    "Es el monto del flujo",
+    "Es un contador de flujos negativos",
+    "Es la tasa de interés"
+   ],
+   "correcta": 0,
+   "explicacion": "enumerate entrega a la vez el período t (0, 1, 2…) y el flujo. El índice es el exponente del descuento, y el flujo del período 0 no se descuenta.",
+   "por_que_no": [
+    "",
+    "El monto es la variable flujo.",
+    "t cuenta todos los períodos, sin importar el signo del flujo.",
+    "La tasa es un parámetro de la función."
+   ],
+   "referencia": "Clase 10, «Aplicación: valor actual neto de un flujo»"
+  },
+  {
+   "id": "ALG-15",
+   "tema": "ALG",
+   "subtema": "Rentas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué ocurre con ä65 si aumenta la tasa de interés?",
+   "opciones": [
+    "Se vuelve negativa",
+    "Disminuye, porque los pagos futuros se descuentan con mayor intensidad",
+    "No cambia",
+    "Aumenta"
+   ],
+   "correcta": 1,
+   "explicacion": "Con una tasa mayor, v = 1/(1 + i) es menor y cada término v^k·kpx se achica. La guía grafica ä65 entre 1 % y 8 % y muestra una curva decreciente.",
+   "por_que_no": [
+    "Todos los términos son positivos.",
+    "",
+    "Depende de la tasa a través de v.",
+    "Sucede lo contrario."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 11 y discusión"
+  },
+  {
+   "id": "PC-16",
+   "tema": "PC",
+   "subtema": "Ejemplos cotidianos (Wing)",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "«¿En qué momento dejo de alquilar esquís y me compro un par?» Según Wing, esta pregunta corresponde a:",
+   "opciones": [
+    "Modelado de rendimiento",
+    "Caching",
+    "Independencia de fallas",
+    "Algoritmos en línea (online algorithms)"
+   ],
+   "correcta": 3,
+   "explicacion": "Wing asocia la decisión de alquilar o comprar sin conocer el futuro con los algoritmos en línea: decidir con información que llega de a poco.",
+   "por_que_no": [
+    "El modelado de rendimiento corresponde a elegir la fila del supermercado.",
+    "El caching aparece en el ejemplo de la mochila.",
+    "La independencia de fallas aparece en el ejemplo del teléfono durante un corte de luz.",
+    ""
+   ],
+   "referencia": "Wing (2006), ejemplos cotidianos"
+  },
+  {
+   "id": "CAL-36",
+   "tema": "CAL",
+   "subtema": "Valores extremos",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué sugiere que el monto 9.999.999 sea un centinela y no un siniestro real?",
+   "opciones": [
+    "Su forma: nueves repetidos hasta llenar el campo, un valor típico de relleno",
+    "Que está en el ramo Hogar",
+    "Que es mayor que el límite del IQR",
+    "Que es impar"
+   ],
+   "correcta": 0,
+   "explicacion": "Los valores con forma de centinela (nueves, ceros, redondos repetidos) suelen ser rellenos. Superar el límite del IQR solo indica que es extremo, no que sea un error.",
+   "por_que_no": [
+    "",
+    "El ramo por sí solo no lo indica.",
+    "Ser extremo no implica ser un error.",
+    "No es un criterio."
+   ],
+   "referencia": "Clase 13, «Valores extremos: detectar» y «decidir»"
+  },
+  {
+   "id": "JOIN-43",
+   "tema": "JOIN",
+   "subtema": "Elegir el join",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta encuentra los clientes que nunca hicieron un pedido (base W3Schools)?",
+   "opciones": [
+    "SELECT c.CustomerName FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID;",
+    "SELECT c.CustomerName FROM Customers c RIGHT JOIN Orders o ON c.CustomerID = o.CustomerID;",
+    "SELECT c.CustomerName FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID WHERE o.OrderID IS NULL;",
+    "SELECT CustomerName FROM Customers WHERE CustomerID IS NULL;"
+   ],
+   "correcta": 2,
+   "explicacion": "La guía lo plantea como LEFT JOIN + IS NULL: se conservan todos los clientes y se dejan solo los que no tienen pedido asociado.",
+   "por_que_no": [
+    "Devuelve los clientes que sí tienen pedidos.",
+    "Conserva los pedidos, no los clientes sin pedidos.",
+    "",
+    "Un cliente siempre tiene ID; además no cruza con pedidos."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 18"
+  },
+  {
+   "id": "EDA-23",
+   "tema": "EDA",
+   "subtema": "Indicadores técnicos",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Un segmento tiene frecuencia 0,2 siniestros por año-póliza y severidad de $2.500.000. ¿Cuál es la prima pura?",
+   "opciones": [
+    "$2.500.000,2",
+    "$500.000",
+    "$12.500.000",
+    "$2.500.000"
+   ],
+   "correcta": 1,
+   "explicacion": "Prima pura = frecuencia × severidad = 0,2 × 2.500.000 = 500.000. Equivale a monto total / exposición.",
+   "por_que_no": [
+    "Suma en lugar de multiplicar.",
+    "",
+    "Divide en lugar de multiplicar.",
+    "Es la severidad sola."
+   ],
+   "referencia": "Clase 14, «Indicadores técnicos por ramo»"
+  },
+  {
+   "id": "CAL-41",
+   "tema": "CAL",
+   "subtema": "Discretizar",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia hay entre pd.cut y pd.qcut?",
+   "opciones": [
+    "cut elimina los extremos",
+    "pd.cut corta por valores fijos; pd.qcut corta por cuantiles y genera grupos de tamaño similar",
+    "qcut solo sirve para fechas",
+    "Ninguna"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase advierte además que discretizar descarta información: es razonable para presentar o construir clases tarifarias, y suele ser innecesario para modelar.",
+   "por_que_no": [
+    "No elimina nada.",
+    "",
+    "Sirve para cualquier variable numérica.",
+    "Cortan con criterios distintos."
+   ],
+   "referencia": "Clase 13, «Discretizar»"
+  },
+  {
+   "id": "EDA-21",
+   "tema": "EDA",
+   "subtema": "Exposición",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Automotores tiene 10.978 pólizas, exposición 9.394,7 años-póliza y 1.877 siniestros. ¿Cuál es su frecuencia correcta?",
+   "opciones": [
+    "10.978 / 1.877 ≈ 5,85",
+    "1.877 / 10.978 ≈ 0,171",
+    "9.394,7 / 10.978 ≈ 0,856",
+    "1.877 / 9.394,7 ≈ 0,200"
+   ],
+   "correcta": 3,
+   "explicacion": "En seguros las frecuencias son tasas: siniestros sobre exposición, no sobre cantidad de pólizas. Dividir por pólizas (frecuencia «ingenua») subestima la frecuencia en torno a un 15 % en esta cartera.",
+   "por_que_no": [
+    "Está invertida.",
+    "Es la frecuencia ingenua: ignora que no todas las pólizas estuvieron vigentes todo el año.",
+    "Es la exposición media por póliza.",
+    ""
+   ],
+   "referencia": "Clase 14, «Tasas, no conteos: la exposición»"
+  },
+  {
+   "id": "EST-21",
+   "tema": "EST",
+   "subtema": "Tipos de columna",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En una tabla de 500.000 filas, convertir ramo a category, poliza a int32 y exposicion a float32 redujo la memoria de 18,2 MB a 8,5 MB. Además del ahorro, ¿qué otro beneficio menciona la clase sobre elegir bien los tipos?",
+   "opciones": [
+    "Que se eliminan los duplicados",
+    "La corrección: por ejemplo, un número de póliza como texto o categoría no admite operaciones aritméticas sin sentido",
+    "Que se ordenan las filas",
+    "Que los gráficos salen en color"
+   ],
+   "correcta": 1,
+   "explicacion": "El tipo previene errores: un identificador numérico permite sumarlo o promediarlo, algo absurdo. La clase 13 agrega que un identificador nunca es un número.",
+   "por_que_no": [
+    "Cambiar el tipo no deduplica.",
+    "",
+    "No ordena.",
+    "No tiene relación con los gráficos."
+   ],
+   "referencia": "Clase 12, «Tipos de columna y memoria»"
+  },
+  {
+   "id": "ALG-32",
+   "tema": "ALG",
+   "subtema": "Chain ladder",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "Con el triángulo de la clase, el primer factor de desarrollo usa las filas con columnas 0 y 1 observadas: columna 1 = 1450 + 1600 + 1730 + 1920 y columna 0 = 1000 + 1120 + 1210 + 1350. ¿Cuánto vale f0?",
+   "opciones": [
+    "≈ 1,4500",
+    "≈ 1,0535",
+    "≈ 1,4316",
+    "≈ 1,1339"
+   ],
+   "correcta": 2,
+   "explicacion": "f0 = 6.700 / 4.680 ≈ 1,4316. Solo se usan las filas con ambas celdas observadas, así que la fila 5 (1420) queda afuera.",
+   "por_que_no": [
+    "Es 1450/1000, el factor de una sola fila.",
+    "Es f2.",
+    "",
+    "Es f1."
+   ],
+   "referencia": "Clase 10, «Aplicación: triángulo run-off (II)»; Guía, Actividad 16"
+  },
+  {
+   "id": "EDA-30",
+   "tema": "EDA",
+   "subtema": "Correlación",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "Con dos variables independientes, agregar un solo punto extremo llevó Pearson de −0,06 a 0,78, mientras Spearman pasó de 0,04 a 0,10. ¿Por qué?",
+   "opciones": [
+    "Por azar",
+    "Porque Spearman ignora los datos",
+    "Porque Pearson es robusto",
+    "Porque Pearson mide asociación lineal y es muy sensible a valores extremos; Spearman es Pearson calculado sobre rangos, mide asociación monótona y es robusto"
+   ],
+   "correcta": 3,
+   "explicacion": "Con montos de siniestros, que siempre tienen extremos, Spearman es la opción por defecto para explorar. Y siempre conviene mirar el gráfico de dispersión antes de interpretar.",
+   "por_que_no": [
+    "Es un efecto sistemático del punto extremo.",
+    "Usa los rangos de los datos.",
+    "Es al revés.",
+    ""
+   ],
+   "referencia": "Clase 14, «Pearson frente a Spearman»"
+  },
+  {
+   "id": "JOIN-17",
+   "tema": "JOIN",
+   "subtema": "Construcción progresiva",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Para responder «¿qué cliente gastó más?», ¿en qué orden se incorporaron las tablas en el razonamiento de la clase?",
+   "opciones": [
+    "Orders → Customers → Products",
+    "Customers → Orders → Products → OrderDetails",
+    "OrderDetails → Products → Orders → Customers",
+    "Products → Customers → OrderDetails → Orders"
+   ],
+   "correcta": 2,
+   "explicacion": "Se parte de OrderDetails (pedido, producto, cantidad), se suma Products para el precio, luego Orders para el CustomerID y finalmente Customers para el nombre. Después se calcula Cantidad × Precio, se agrupa, se suma y se ordena.",
+   "por_que_no": [
+    "Le falta OrderDetails, que tiene las cantidades.",
+    "Es el orden inverso al razonamiento de la clase.",
+    "",
+    "Products no puede vincularse directamente con Customers."
+   ],
+   "referencia": "Clase 5 (CCA), «Idea general de resolución de consultas complejas»"
+  },
+  {
+   "id": "EDA-17",
+   "tema": "EDA",
+   "subtema": "Comparar grupos",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Por ramo, Hogar tiene la mediana de severidad más baja (0,47 M) y el coeficiente de variación más alto (2,81). ¿Cómo se interpreta?",
+   "opciones": [
+    "Que hay un error en los datos",
+    "Que Hogar tiene siniestros homogéneos",
+    "Siniestros chicos frecuentes y algunos muy grandes",
+    "Que Hogar no tiene siniestros grandes"
+   ],
+   "correcta": 2,
+   "explicacion": "Una mediana baja con alta dispersión relativa indica que la mayoría de los siniestros son chicos, pero unos pocos son muy grandes.",
+   "por_que_no": [
+    "Es un patrón plausible del negocio.",
+    "Un CV alto indica heterogeneidad.",
+    "",
+    "El máximo de Hogar es 36,5 M."
+   ],
+   "referencia": "Clase 14, «Comparar grupos: boxplots»"
+  },
+  {
+   "id": "CTL-18",
+   "tema": "CTL",
+   "subtema": "Franquicia",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Qué rol cumple max(X − d, 0) en la fórmula I(X) = min(max(X − d, 0), M)?",
+   "opciones": [
+    "Convierte el resultado en entero",
+    "Asegura que, si el siniestro no supera el deducible, el pago sea 0 y no un valor negativo",
+    "Asegura que la compañía nunca pague más que el tope",
+    "Suma el deducible al siniestro"
+   ],
+   "correcta": 1,
+   "explicacion": "Si X ≤ d, X − d es negativo o cero y max devuelve 0. Equivale a la rama «if siniestro <= deducible: return 0». El tope lo controla min(…, M).",
+   "por_que_no": [
+    "No modifica el tipo.",
+    "",
+    "Eso lo hace min(…, M).",
+    "Lo resta, no lo suma."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 5"
+  },
+  {
+   "id": "CAL-25",
+   "tema": "CAL",
+   "subtema": "Imputación",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "En el ramo Hogar las primas son [180000, NaN, 200000]. ¿Qué valor imputa este código en el NaN?",
+   "codigo": "g[\"prima_imp\"] = g[\"prima\"].fillna(\n    g.groupby(\"ramo\")[\"prima\"].transform(\"median\")\n)",
+   "opciones": [
+    "0",
+    "La mediana global de toda la base",
+    "425000",
+    "190000"
+   ],
+   "correcta": 3,
+   "explicacion": "La imputación condicionada usa el valor típico del grupo: mediana de Hogar = (180.000 + 200.000)/2 = 190.000. transform devuelve un resultado alineado fila por fila.",
+   "por_que_no": [
+    "fillna con la mediana del grupo no usa 0.",
+    "Se usa la mediana del ramo, no la global.",
+    "425.000 es la mediana de Automotores (Auto) en el ejemplo.",
+    ""
+   ],
+   "referencia": "Clase 13, «Imputación condicionada»"
+  },
+  {
+   "id": "ALG-34",
+   "tema": "ALG",
+   "subtema": "Chain ladder",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Qué supone implícitamente el método chain ladder al aplicar el mismo factor fj a todos los años de ocurrencia?",
+   "opciones": [
+    "Que todos los años tuvieron el mismo monto de siniestros",
+    "Que el patrón de desarrollo es el mismo para todos los años de ocurrencia",
+    "Que el triángulo está completo",
+    "Que no hay inflación de ningún tipo en ningún año"
+   ],
+   "correcta": 1,
+   "explicacion": "Usar un único factor por columna presupone que los siniestros de cada año se desarrollan de manera proporcional y estable en el tiempo.",
+   "por_que_no": [
+    "Los montos difieren entre filas; lo que se supone igual es la proporción de crecimiento.",
+    "",
+    "Justamente se aplica porque está incompleto.",
+    "Es una consecuencia posible, pero el supuesto central es el patrón común."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 17 («Preguntas para discutir»)"
+  },
+  {
+   "id": "SQL-19",
+   "tema": "SQL",
+   "subtema": "Subconsultas",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En el ejercicio «cliente que más gastó» se usa una subconsulta en el FROM. ¿Qué hace la consulta externa?",
+   "codigo": "SELECT CustomerName, SUM(Precio_Total) AS Total\nFROM (\n  SELECT c.CustomerName, od.Quantity * p.Price AS Precio_Total\n  FROM OrderDetails AS od\n  INNER JOIN Products AS p ON od.ProductID = p.ProductID\n  INNER JOIN Orders AS o ON od.OrderID = o.OrderID\n  LEFT JOIN Customers AS c ON o.CustomerID = c.CustomerID\n) AS subtabla1\nGROUP BY CustomerName\nORDER BY Total DESC;",
+   "opciones": [
+    "Cuenta cuántos productos distintos compró cada cliente",
+    "Calcula el precio promedio de cada producto",
+    "Suma el importe de todas las líneas de compra de cada cliente y los ordena de mayor a menor gasto",
+    "Lista las líneas de compra sin agrupar"
+   ],
+   "correcta": 2,
+   "explicacion": "La subconsulta calcula el importe de cada línea (Quantity × Price) con el nombre del cliente. La consulta externa suma esos importes por cliente y ordena de forma descendente: el primero es quien más gastó.",
+   "por_que_no": [
+    "Usa SUM sobre importes, no un conteo de productos.",
+    "No se calcula ningún promedio.",
+    "",
+    "GROUP BY agrupa las líneas por cliente."
+   ],
+   "referencia": "Clase 5 (CCA), «Ejercicio práctico: cliente que más dinero gastó»; apuntes C5"
+  }
+ ]
+}

@@ -1,0 +1,1059 @@
+[
+ {
+  "id": "PYB-01",
+  "tema": "PYB",
+  "subtema": "Tipos de datos",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué devuelve type(7.2)?",
+  "opciones": [
+   "int",
+   "decimal",
+   "float",
+   "number"
+  ],
+  "correcta": 2,
+  "explicacion": "Un número con parte decimal es de tipo float en Python. Por ejemplo, prima_anual = 185000.50 es float.",
+  "por_que_no": [
+   "int corresponde a enteros sin parte decimal.",
+   "decimal no es el tipo que asigna Python a un literal con punto.",
+   "",
+   "number no es un tipo de Python."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 28; Guía práctica Python, «Variables y tipos de datos»"
+ },
+ {
+  "id": "PYB-02",
+  "tema": "PYB",
+  "subtema": "Tipos de datos",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "Si cantidad_siniestros = 1, ¿de qué tipo es tuvo_siniestro = cantidad_siniestros > 0 y qué valor tiene?",
+  "opciones": [
+   "int, con valor 1",
+   "bool, con valor True",
+   "str, con valor \"True\"",
+   "float, con valor 1.0"
+  ],
+  "correcta": 1,
+  "explicacion": "Una comparación devuelve un booleano. 1 > 0 es True, así que tuvo_siniestro es de tipo bool.",
+  "por_que_no": [
+   "La comparación no devuelve un número.",
+   "",
+   "No es un texto: es el valor lógico True.",
+   "No es un número decimal."
+  ],
+  "referencia": "Guía práctica Python, Actividad 1"
+ },
+ {
+  "id": "PYB-03",
+  "tema": "PYB",
+  "subtema": "Tipos de datos",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia conceptual hay entre cantidad_siniestros (entero) y tuvo_siniestro (booleano)?",
+  "opciones": [
+   "Ninguna, representan lo mismo",
+   "La primera cuenta cuántos siniestros hubo; la segunda solo indica si hubo al menos uno, así que pierde información",
+   "El booleano permite hacer más cálculos",
+   "El entero no puede ser cero"
+  ],
+  "correcta": 1,
+  "explicacion": "Un conteo (0, 1, 2…) conserva cuántos eventos ocurrieron. El indicador True/False solo distingue «ninguno» de «al menos uno».",
+  "por_que_no": [
+   "Uno es más informativo que el otro.",
+   "",
+   "Con el conteo se puede calcular la frecuencia; con el indicador, no.",
+   "0 es un conteo válido."
+  ],
+  "referencia": "Guía práctica Python, «Preguntas para discutir» de la Actividad 1"
+ },
+ {
+  "id": "PYB-04",
+  "tema": "PYB",
+  "subtema": "Tipos de datos",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "La edad de un asegurado quedó cargada como texto (\"65\"). ¿Qué ocurre al evaluar \"65\" >= 65 en Python?",
+  "opciones": [
+   "Devuelve True",
+   "Devuelve False",
+   "Genera un error de tipos (TypeError) porque compara texto con número",
+   "Convierte automáticamente el texto en número"
+  ],
+  "correcta": 2,
+  "explicacion": "La clase lo marca como error frecuente: comparar números con textos genera un error de tipos. Por eso conviene almacenar cada variable con el tipo que le corresponde.",
+  "por_que_no": [
+   "Python no hace la conversión implícita.",
+   "Python no devuelve un resultado lógico en este caso.",
+   "",
+   "Python no convierte el texto en número automáticamente."
+  ],
+  "referencia": "Clase 10 – Estructuras de Control, «Errores frecuentes con condicionales»"
+ },
+ {
+  "id": "PYB-05",
+  "tema": "PYB",
+  "subtema": "Listas e índices",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime este código?",
+  "codigo": "edades = [31, 44, 52, 28, 67, 39, 48]\nprint(edades[0], edades[-1])",
+  "opciones": [
+   "31 48",
+   "44 39",
+   "31 67",
+   "Error"
+  ],
+  "correcta": 0,
+  "explicacion": "En Python los índices empiezan en 0: edades[0] es el primer elemento (31). El índice -1 recorre desde el final: edades[-1] es el último (48).",
+  "por_que_no": [
+   "",
+   "Corresponde a los índices 1 y -2.",
+   "67 no es el último elemento.",
+   "Ambos índices son válidos."
+  ],
+  "referencia": "Guía práctica Python, «Trabajo con índices»"
+ },
+ {
+  "id": "PYB-06",
+  "tema": "PYB",
+  "subtema": "Listas e índices",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime este código?",
+  "codigo": "edades = [31, 44, 52, 28, 67, 39, 48]\nprint(edades[1:4])",
+  "opciones": [
+   "[31, 44, 52, 28]",
+   "[44, 52, 28]",
+   "[44, 52, 28, 67]",
+   "[52, 28, 67]"
+  ],
+  "correcta": 1,
+  "explicacion": "La porción [1:4] incluye los índices 1, 2 y 3 y excluye el 4: [44, 52, 28].",
+  "por_que_no": [
+   "Empieza en el índice 0 e incluye el 3: sería edades[0:4].",
+   "",
+   "Incluye el índice 4, que la porción excluye.",
+   "Empieza en el índice 2."
+  ],
+  "referencia": "Guía práctica Python, «Trabajo con índices»"
+ },
+ {
+  "id": "PYB-07",
+  "tema": "PYB",
+  "subtema": "Listas e índices",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Cuál es el «costo promedio por póliza» que calcula este código?",
+  "codigo": "siniestros = [0, 125000, 0, 840000, 0, 250000, 0]\npromedio_cartera = sum(siniestros) / len(siniestros)",
+  "opciones": [
+   "405000.0",
+   "173571.43 (aprox.)",
+   "1215000",
+   "250000"
+  ],
+  "correcta": 1,
+  "explicacion": "La suma es 1.215.000 y hay 7 pólizas: 1.215.000 / 7 ≈ 173.571,43. Es un promedio sobre toda la cartera, con ceros incluidos.",
+  "por_que_no": [
+   "Ese sería el promedio solo entre las 3 pólizas con siniestro positivo.",
+   "",
+   "Es la suma total, no el promedio.",
+   "Es uno de los montos, no el promedio."
+  ],
+  "referencia": "Guía práctica Python, Actividad 2"
+ },
+ {
+  "id": "PYB-08",
+  "tema": "PYB",
+  "subtema": "Listas e índices",
+  "dificultad": "dificil",
+  "tipo": "diferencia",
+  "enunciado": "Con siniestros = [0, 125000, 0, 840000, 0, 250000, 0], el promedio sobre toda la cartera es ≈ 173.571 y el promedio entre pólizas con siniestro positivo es 405.000. ¿Por qué son conceptos distintos?",
+  "opciones": [
+   "Porque uno de los dos cálculos está mal",
+   "Porque el primero es un costo por póliza que incluye a quienes no tuvieron siniestros; el segundo describe el monto típico cuando ocurre un siniestro",
+   "Porque el segundo incluye los ceros",
+   "Porque Python redondea distinto"
+  ],
+  "correcta": 1,
+  "explicacion": "El desafío de la guía apunta a esta distinción. Promediar sobre toda la cartera da un costo por póliza (frecuencia y severidad juntas). Promediar solo los positivos describe la severidad, condicionada a que haya siniestro.",
+  "por_que_no": [
+   "Ambos cálculos son correctos; responden preguntas distintas.",
+   "",
+   "Es al revés: el segundo excluye los ceros.",
+   "La diferencia es conceptual, no de redondeo."
+  ],
+  "referencia": "Guía práctica Python, «Desafío» de la sección numpy"
+ },
+ {
+  "id": "PYB-09",
+  "tema": "PYB",
+  "subtema": "Listas",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "Una lista en Python es:",
+  "opciones": [
+   "Inmutable y ordenada",
+   "Ordenada y mutable",
+   "Desordenada e inmutable",
+   "Numérica únicamente"
+  ],
+  "correcta": 1,
+  "explicacion": "La lista es una secuencia ordenada y mutable cuyos elementos pueden ser de tipos distintos.",
+  "por_que_no": [
+   "Eso describe a la tupla.",
+   "",
+   "Una lista conserva el orden y puede modificarse.",
+   "Puede contener elementos de cualquier tipo."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 12; Clase 12, «Listas»"
+ },
+ {
+  "id": "PYB-10",
+  "tema": "PYB",
+  "subtema": "Estructuras nativas",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cuál de las siguientes estructuras es mutable?",
+  "opciones": [
+   "str",
+   "tuple",
+   "list",
+   "frozenset"
+  ],
+  "correcta": 2,
+  "explicacion": "La lista puede modificarse después de creada (append, asignación por posición). Las cadenas, las tuplas y los frozenset son inmutables.",
+  "por_que_no": [
+   "Las cadenas de texto son inmutables.",
+   "Las tuplas son inmutables.",
+   "",
+   "frozenset es la versión inmutable del conjunto."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 29; Clase 12, «Estructuras de datos en Python»"
+ },
+ {
+  "id": "PYB-11",
+  "tema": "PYB",
+  "subtema": "Diccionarios",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es un diccionario válido en Python?",
+  "opciones": [
+   "[1:\"a\", 2:\"b\"]",
+   "{1, 2, 3}",
+   "{\"id\": 10, \"edad\": 30}",
+   "(a=1, b=2)"
+  ],
+  "correcta": 2,
+  "explicacion": "Un diccionario se escribe entre llaves con pares clave: valor separados por comas.",
+  "por_que_no": [
+   "Los corchetes no forman un diccionario y esa sintaxis no es válida.",
+   "Llaves sin pares clave: valor forman un conjunto (set).",
+   "",
+   "Esa sintaxis no es válida en Python."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 13; Clase 12, «Diccionarios»"
+ },
+ {
+  "id": "PYB-12",
+  "tema": "PYB",
+  "subtema": "Tuplas",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué ocurre al ejecutar la última línea?",
+  "codigo": "poliza = (1002, \"Auto\", 450_000)\npoliza[2] = 500_000",
+  "opciones": [
+   "La prima pasa a ser 500.000",
+   "Se genera un TypeError porque las tuplas son inmutables",
+   "Se agrega un cuarto elemento",
+   "Se convierte en lista automáticamente"
+  ],
+  "correcta": 1,
+  "explicacion": "Las tuplas no pueden modificarse una vez creadas. Esa inmutabilidad es una garantía: sirven para registros que no deben cambiar.",
+  "por_que_no": [
+   "Eso ocurriría con una lista.",
+   "",
+   "No se agregan elementos.",
+   "Python no convierte tipos de esa forma."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Tuplas»"
+ },
+ {
+  "id": "PYB-13",
+  "tema": "PYB",
+  "subtema": "Tuplas",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "reservas = {(2023, 1): 1450, (2023, 2): 1650}\nprint(reservas[(2023, 2)])",
+  "opciones": [
+   "1450",
+   "1650",
+   "(2023, 2)",
+   "KeyError"
+  ],
+  "correcta": 1,
+  "explicacion": "Las tuplas, por ser inmutables, pueden usarse como clave de un diccionario (por ejemplo, una clave compuesta año-período). La clave (2023, 2) tiene el valor 1650.",
+  "por_que_no": [
+   "Es el valor de la clave (2023, 1).",
+   "",
+   "Imprime el valor, no la clave.",
+   "La clave existe."
+  ],
+  "referencia": "Clase 12, «Tuplas»"
+ },
+ {
+  "id": "PYB-14",
+  "tema": "PYB",
+  "subtema": "Tuplas",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "Después de ejecutar numero, ramo, prima = (1002, \"Auto\", 450_000), ¿cuánto vale ramo?",
+  "opciones": [
+   "1002",
+   "\"Auto\"",
+   "450000",
+   "(1002, \"Auto\", 450000)"
+  ],
+  "correcta": 1,
+  "explicacion": "Es un desempaquetado: cada variable recibe el elemento de la misma posición. ramo recibe el segundo, «Auto».",
+  "por_que_no": [
+   "Ese valor lo recibe numero.",
+   "",
+   "Ese valor lo recibe prima.",
+   "La tupla completa no se asigna a ramo."
+  ],
+  "referencia": "Clase 12, «Tuplas» (desempaquetado)"
+ },
+ {
+  "id": "PYB-15",
+  "tema": "PYB",
+  "subtema": "Diccionarios",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "poliza = {\"numero\": 1002, \"ramo\": \"Automotores\", \"prima\": 450_000}\nprint(poliza.get(\"provincia\", \"sin dato\"))",
+  "opciones": [
+   "None",
+   "KeyError",
+   "\"sin dato\"",
+   "\"provincia\""
+  ],
+  "correcta": 2,
+  "explicacion": ".get(clave, valor_por_defecto) devuelve el valor por defecto cuando la clave no existe, sin generar error.",
+  "por_que_no": [
+   "Devolvería None si no se indicara valor por defecto.",
+   "Ese error lo produce poliza[\"provincia\"], no .get.",
+   "",
+   "Devuelve el valor por defecto, no la clave."
+  ],
+  "referencia": "Clase 12, «Diccionarios»"
+ },
+ {
+  "id": "PYB-16",
+  "tema": "PYB",
+  "subtema": "Diccionarios",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al buscar la póliza 199.999 entre 200.000 registros, la clase midió unas 2.356 veces menos tiempo con un diccionario que con una lista. ¿Por qué?",
+  "opciones": [
+   "Porque los diccionarios ocupan menos memoria",
+   "Porque en la lista hay que recorrer los elementos hasta encontrarlo, mientras que en el diccionario el acceso por clave es directo",
+   "Porque las listas no admiten números grandes",
+   "Porque el diccionario está ordenado alfabéticamente"
+  ],
+  "correcta": 1,
+  "explicacion": "Buscar en una lista obliga a recorrerla; en un diccionario el acceso por clave es prácticamente inmediato. Si el algoritmo consulta identificadores dentro de un ciclo, la estructura elegida cambia el orden de magnitud del tiempo.",
+  "por_que_no": [
+   "La ventaja es el tipo de acceso, no la memoria.",
+   "",
+   "Las listas admiten cualquier número.",
+   "No se trata de orden alfabético."
+  ],
+  "referencia": "Clase 12, «¿Por qué importa el diccionario? Costo de búsqueda»"
+ },
+ {
+  "id": "PYB-17",
+  "tema": "PYB",
+  "subtema": "Conjuntos",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "polizas = [1001, 1002, 1003, 1002, 1004, 1001]\nprint(len(polizas), len(set(polizas)))",
+  "opciones": [
+   "6 6",
+   "6 4",
+   "4 6",
+   "6 3"
+  ],
+  "correcta": 1,
+  "explicacion": "La lista tiene 6 registros. set() elimina los repetidos y quedan 4 pólizas únicas (1001, 1002, 1003 y 1004).",
+  "por_que_no": [
+   "El set elimina duplicados, así que no puede quedar en 6.",
+   "",
+   "El orden de los valores está invertido.",
+   "Quedan 4 valores únicos, no 3."
+  ],
+  "referencia": "Clase 12, «Conjuntos»"
+ },
+ {
+  "id": "PYB-18",
+  "tema": "PYB",
+  "subtema": "Conjuntos",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Para conciliar bases se ejecuta lo siguiente. ¿Qué imprime?",
+  "codigo": "en_sistema = {1001, 1002, 1003, 1004}\nen_contabilidad = {1002, 1003, 1005}\nprint(en_sistema - en_contabilidad)",
+  "opciones": [
+   "{1001, 1004}",
+   "{1002, 1003}",
+   "{1005}",
+   "{1001, 1002, 1003, 1004, 1005}"
+  ],
+  "correcta": 0,
+  "explicacion": "La diferencia de conjuntos devuelve los elementos que están en el primero y no en el segundo: pólizas del sistema que no figuran en contabilidad.",
+  "por_que_no": [
+   "",
+   "Esa es la intersección (&).",
+   "Eso sería en_contabilidad - en_sistema.",
+   "Esa es la unión (|)."
+  ],
+  "referencia": "Clase 12, «Conjuntos» (operaciones para conciliar bases)"
+ },
+ {
+  "id": "PYB-19",
+  "tema": "PYB",
+  "subtema": "Conjuntos",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Dados en_sistema = {1001, 1002, 1003, 1004} y en_contabilidad = {1002, 1003, 1005}, ¿qué operación devuelve las pólizas presentes en ambas fuentes?",
+  "opciones": [
+   "en_sistema | en_contabilidad",
+   "en_sistema & en_contabilidad",
+   "en_sistema - en_contabilidad",
+   "en_sistema + en_contabilidad"
+  ],
+  "correcta": 1,
+  "explicacion": "& es la intersección: devuelve {1002, 1003}.",
+  "por_que_no": [
+   "| es la unión: devuelve todas.",
+   "",
+   "- es la diferencia.",
+   "Los conjuntos no admiten +."
+  ],
+  "referencia": "Clase 12, «Conjuntos»"
+ },
+ {
+  "id": "PYB-20",
+  "tema": "PYB",
+  "subtema": "Conjuntos",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuál de estas estructuras NO conserva el orden de los elementos, según la clase?",
+  "opciones": [
+   "list",
+   "tuple",
+   "set",
+   "np.ndarray"
+  ],
+  "correcta": 2,
+  "explicacion": "La clase señala que listas, tuplas y arreglos conservan el orden y los conjuntos no. El conjunto sirve para unicidad y pertenencia.",
+  "por_que_no": [
+   "La lista conserva el orden.",
+   "La tupla conserva el orden.",
+   "",
+   "El arreglo conserva el orden."
+  ],
+  "referencia": "Clase 12, «Estructuras de datos en Python: panorama»"
+ },
+ {
+  "id": "PYB-21",
+  "tema": "PYB",
+  "subtema": "Operadores lógicos",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué operador representa AND en Python?",
+  "opciones": [
+   "&&",
+   "&",
+   "AND",
+   "and"
+  ],
+  "correcta": 3,
+  "explicacion": "En Python los operadores lógicos son las palabras and, or y not, en minúscula. (& se usa, por ejemplo, para combinar máscaras booleanas en pandas o numpy.)",
+  "por_que_no": [
+   "&& es la sintaxis de otros lenguajes.",
+   "& es el operador elemento a elemento usado con arreglos y máscaras, no el operador lógico entre condiciones simples.",
+   "Python distingue mayúsculas: AND no es válido.",
+   ""
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 23; Clase 10, «Operadores lógicos»"
+ },
+ {
+  "id": "PYB-22",
+  "tema": "PYB",
+  "subtema": "Operadores lógicos",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Para qué se utiliza el operador not?",
+  "opciones": [
+   "Asignación",
+   "Negación lógica",
+   "Comparación estricta",
+   "Iteración"
+  ],
+  "correcta": 1,
+  "explicacion": "not niega un valor booleano: not True es False. Ejemplo de la clase: edad < 35 and not fumador.",
+  "por_que_no": [
+   "La asignación se hace con =.",
+   "",
+   "Las comparaciones usan ==, !=, <, >.",
+   "Para iterar se usan for y while."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 14; Clase 10, «Operadores lógicos y tablas de verdad»"
+ },
+ {
+  "id": "PYB-23",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es la palabra clave que se usa para iniciar la definición de una función en Python?",
+  "opciones": [
+   "func",
+   "define",
+   "def",
+   "function"
+  ],
+  "correcta": 2,
+  "explicacion": "Las funciones se definen con def nombre(parámetros): y un bloque indentado.",
+  "por_que_no": [
+   "func no es una palabra clave de Python.",
+   "define no es una palabra clave de Python.",
+   "",
+   "function se usa en otros lenguajes, como JavaScript."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 25; Clase 10, «Del pensamiento computacional al código»"
+ },
+ {
+  "id": "PYB-24",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime este código?",
+  "codigo": "def costo_actualizado(monto, factor=1.0):\n    return monto * factor\n\nprint(costo_actualizado(100000))\nprint(costo_actualizado(100000, factor=1.08))",
+  "opciones": [
+   "100000.0 y 108000.0",
+   "100000 y 100000",
+   "Error: falta el argumento factor",
+   "108000.0 y 108000.0"
+  ],
+  "correcta": 0,
+  "explicacion": "Si no se indica factor, se usa el valor por defecto 1.0 (100000 × 1.0 = 100000.0). En la segunda llamada factor = 1.08 (≈ 108000.0).",
+  "por_que_no": [
+   "",
+   "La segunda llamada usa factor 1.08.",
+   "Los parámetros con valor por defecto son opcionales.",
+   "La primera llamada usa el factor por defecto, 1.0."
+  ],
+  "referencia": "Guía práctica Python, «Funciones con parámetros por defecto»"
+ },
+ {
+  "id": "PYB-25",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve la llamada?",
+  "codigo": "def frecuencia_observada(conteos, exposiciones):\n    total_exposicion = sum(exposiciones)\n    if total_exposicion <= 0:\n        raise ValueError(\"La exposición total debe ser positiva.\")\n    return sum(conteos) / total_exposicion\n\nfrecuencia_observada([0, 1, 0, 2], [1, 1, 0.5, 1])",
+  "opciones": [
+   "0.75",
+   "0.857 (aprox.)",
+   "3",
+   "ValueError"
+  ],
+  "correcta": 1,
+  "explicacion": "La suma de conteos es 3 y la de exposiciones es 3,5: 3 / 3,5 ≈ 0,857.",
+  "por_que_no": [
+   "Sería dividir por la cantidad de pólizas (3/4), sin tener en cuenta la exposición.",
+   "",
+   "Es la cantidad de siniestros, no la frecuencia.",
+   "La exposición total es positiva, así que no se genera el error."
+  ],
+  "referencia": "Guía práctica Python, Actividad 9"
+ },
+ {
+  "id": "PYB-26",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Para qué sirve la línea raise ValueError(...) dentro de frecuencia_observada?",
+  "opciones": [
+   "Para que la función devuelva cero cuando no hay exposición",
+   "Para validar la entrada: si la exposición total no es positiva, se interrumpe con un mensaje claro en lugar de dividir por cero o devolver un resultado sin sentido",
+   "Para imprimir el resultado",
+   "Para convertir los datos a float"
+  ],
+  "correcta": 1,
+  "explicacion": "Una función bien diseñada incluye validaciones básicas. Sin exposición, la frecuencia no está definida, así que es mejor detener el cálculo con un error explícito.",
+  "por_que_no": [
+   "Devolver cero sería conceptualmente erróneo: la frecuencia no está definida.",
+   "",
+   "raise no imprime el resultado del cálculo.",
+   "raise no convierte tipos."
+  ],
+  "referencia": "Guía práctica Python, «Funciones – Discusión»"
+ },
+ {
+  "id": "PYB-27",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Según la guía, ¿cuál de las siguientes NO es una característica deseable de una función bien diseñada?",
+  "opciones": [
+   "Entradas claramente identificadas",
+   "Validaciones básicas",
+   "Nombres de variables comprensibles",
+   "Resultados distintos cada vez que se ejecuta con los mismos datos"
+  ],
+  "correcta": 3,
+  "explicacion": "La guía pide entradas claras, validaciones, un resultado interpretable, nombres comprensibles y comportamiento reproducible. Dar resultados distintos con los mismos datos contradice la reproducibilidad.",
+  "por_que_no": [
+   "Es una característica deseable.",
+   "Es una característica deseable.",
+   "Es una característica deseable.",
+   ""
+  ],
+  "referencia": "Guía práctica Python, «Funciones – Discusión»"
+ },
+ {
+  "id": "PYB-28",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es una característica fundamental de los arrays de NumPy?",
+  "opciones": [
+   "Pueden mezclar elementos de diferentes tipos (strings y números)",
+   "Todos los elementos de un array deben ser del mismo tipo",
+   "Solo pueden tener un máximo de dos dimensiones",
+   "Son más lentos que las listas porque consumen más memoria"
+  ],
+  "correcta": 1,
+  "explicacion": "Un ndarray almacena elementos del mismo tipo en memoria contigua, lo que habilita las operaciones vectorizadas.",
+  "por_que_no": [
+   "Esa es una característica de las listas.",
+   "",
+   "Los arrays pueden tener más de dos dimensiones.",
+   "Son más rápidos para cálculo numérico: es la ventaja de la vectorización."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 16; Clase 12, «numpy: el arreglo homogéneo»"
+ },
+ {
+  "id": "PYB-29",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "Según la clase, ¿cuál es la diferencia clave entre una lista de Python y un arreglo de numpy?",
+  "opciones": [
+   "La lista es más rápida para cálculos masivos",
+   "La lista es una colección de objetos independientes; el arreglo es un bloque de números del mismo tipo en memoria contigua",
+   "El arreglo no admite índices",
+   "La lista no puede contener números"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada elemento de una lista es un objeto independiente de Python, cómodo para volúmenes chicos. El arreglo es un bloque homogéneo pensado para cálculo numérico vectorizado.",
+  "por_que_no": [
+   "Es al revés: numpy es más eficiente.",
+   "",
+   "Los arreglos admiten índices y máscaras.",
+   "Las listas pueden contener números."
+  ],
+  "referencia": "Clase 12, «Listas» y «numpy: el arreglo homogéneo»"
+ },
+ {
+  "id": "PYB-30",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "import numpy as np\nmontos = np.array([0, 125000, 0, 840000, 0, 250000, 0])\nprint(montos > 0)",
+  "opciones": [
+   "[False  True False  True False  True False]",
+   "3",
+   "[125000 840000 250000]",
+   "True"
+  ],
+  "correcta": 0,
+  "explicacion": "Comparar un arreglo con un número se hace elemento a elemento y devuelve un arreglo booleano del mismo tamaño.",
+  "por_que_no": [
+   "",
+   "Eso sería (montos > 0).sum().",
+   "Eso sería montos[montos > 0], el filtrado por máscara.",
+   "No devuelve un único booleano."
+  ],
+  "referencia": "Guía práctica Python, «Introducción a numpy»; Clase 12"
+ },
+ {
+  "id": "PYB-31",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve montos[montos > 0]?",
+  "codigo": "import numpy as np\nmontos = np.array([0, 125000, 0, 840000, 0, 250000, 0])",
+  "opciones": [
+   "[125000 840000 250000]",
+   "[1 3 5]",
+   "[False True False True False True False]",
+   "3"
+  ],
+  "correcta": 0,
+  "explicacion": "Indexar con una máscara booleana filtra el arreglo: quedan solo los elementos donde la condición es True.",
+  "por_que_no": [
+   "",
+   "Esos son los índices de los montos positivos, no los valores.",
+   "Esa es la máscara, no el resultado de filtrar.",
+   "Esa es la cantidad de positivos."
+  ],
+  "referencia": "Clase 12, «numpy: el arreglo homogéneo» (filtrado por máscara)"
+ },
+ {
+  "id": "PYB-32",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Cuál es la frecuencia observada que calcula este código?",
+  "codigo": "exposicion = np.array([1.0, 1.0, 0.5, 1.0, 0.75, 1.0, 0.25])\nconteo = np.array([0, 1, 0, 2, 0, 1, 0])\nfrecuencia_observada = conteo.sum() / exposicion.sum()",
+  "opciones": [
+   "0.5714",
+   "0.7273",
+   "4",
+   "5.5"
+  ],
+  "correcta": 1,
+  "explicacion": "Hay 4 siniestros y la exposición total es 5,5: 4 / 5,5 ≈ 0,7273.",
+  "por_que_no": [
+   "Es 4/7: divide por la cantidad de pólizas en lugar de la exposición.",
+   "",
+   "Es la cantidad de siniestros.",
+   "Es la exposición total."
+  ],
+  "referencia": "Guía práctica Python, Actividad 4"
+ },
+ {
+  "id": "PYB-33",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Con montos = [0, 125000, 0, 840000, 0, 250000, 0] y exposición total 5,5, ¿cuánto vale el costo observado por unidad de exposición (montos.sum() / exposicion.sum())?",
+  "opciones": [
+   "173.571,43",
+   "220.909,09",
+   "405.000,00",
+   "1.215.000,00"
+  ],
+  "correcta": 1,
+  "explicacion": "1.215.000 / 5,5 ≈ 220.909,09. Es el monto de siniestros por año-póliza expuesto.",
+  "por_que_no": [
+   "Es el promedio por póliza (dividido por 7).",
+   "",
+   "Es el promedio entre los positivos.",
+   "Es el monto total."
+  ],
+  "referencia": "Guía práctica Python, Actividad 4 («costo observado por unidad de exposición»)"
+ },
+ {
+  "id": "PYB-34",
+  "tema": "PYB",
+  "subtema": "numpy",
+  "dificultad": "dificil",
+  "tipo": "examen",
+  "enunciado": "En un arreglo de NumPy de dos dimensiones (filas y columnas), ¿qué resultado da np.sum(a, axis=0)?",
+  "codigo": "a = np.array([[1, 2, 3],\n              [4, 5, 6]])",
+  "opciones": [
+   "[5 7 9]: suma a lo largo del eje 0 (las filas) y devuelve un total por columna",
+   "[6 15]: un total por fila",
+   "21: la suma de todo el arreglo",
+   "[1 4]: la primera columna"
+  ],
+  "correcta": 0,
+  "explicacion": "axis=0 es el eje de las filas (el primer índice). Sumar a lo largo de ese eje colapsa las filas y deja un resultado por columna: [1+4, 2+5, 3+6] = [5, 7, 9]. El parcial pregunta a qué se refiere axis=0: a las filas.",
+  "por_que_no": [
+   "",
+   "Eso corresponde a axis=1.",
+   "Eso es np.sum(a) sin indicar el eje.",
+   "No es una suma."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 17 (axis=0)"
+ },
+ {
+  "id": "PYB-35",
+  "tema": "PYB",
+  "subtema": "Decimales",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime print(0.1 + 0.2 == 0.3) en Python?",
+  "opciones": [
+   "True",
+   "False",
+   "Error",
+   "0.3"
+  ],
+  "correcta": 1,
+  "explicacion": "Por la representación binaria de los decimales, 0.1 + 0.2 da 0.30000000000000004. Por eso comparar decimales con == es riesgoso y conviene usar math.isclose.",
+  "por_que_no": [
+   "Matemáticamente sería cierto, pero en punto flotante no es exacto.",
+   "",
+   "La comparación es válida.",
+   "Imprime un booleano, no un número."
+  ],
+  "referencia": "Guía práctica – Estructuras de Control, Actividad 1 («Preguntas para discutir»)"
+ },
+ {
+  "id": "PYB-37",
+  "tema": "PYB",
+  "subtema": "Comparaciones",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "Con exposicion = 0.75, ¿qué devuelve 0 <= exposicion <= 1?",
+  "opciones": [
+   "True",
+   "False",
+   "Error de sintaxis",
+   "0.75"
+  ],
+  "correcta": 0,
+  "explicacion": "Python permite encadenar comparaciones: equivale a (0 <= exposicion) and (exposicion <= 1), y ambas se cumplen.",
+  "por_que_no": [
+   "",
+   "0,75 está dentro del intervalo [0, 1].",
+   "El encadenamiento es válido en Python.",
+   "Devuelve un booleano."
+  ],
+  "referencia": "Guía práctica – Estructuras de Control, Actividad 1"
+ },
+ {
+  "id": "PYB-38",
+  "tema": "PYB",
+  "subtema": "Asignación",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Cuál es el resultado del siguiente código?",
+  "codigo": "x = 1\ny = 2\nz = x\nx = y\ny = z\nprint(x, y)",
+  "opciones": [
+   "1 2",
+   "2 1",
+   "2 2",
+   "1 1"
+  ],
+  "correcta": 1,
+  "explicacion": "z guarda el valor original de x (1). Luego x toma el valor de y (2) e y toma el de z (1). Es un intercambio con variable auxiliar.",
+  "por_que_no": [
+   "Los valores sí se intercambian.",
+   "",
+   "y recibe z, que vale 1.",
+   "x recibe y, que vale 2."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 3b (i)"
+ },
+ {
+  "id": "PYB-39",
+  "tema": "PYB",
+  "subtema": "Listas",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "lst = [1, 2, 3, 4, 5]\nlst_2 = []\nadd = 0\nfor number in lst:\n    add += number\n    lst_2.append(add)\nprint(lst_2)",
+  "opciones": [
+   "[1, 2, 3, 4, 5]",
+   "[1, 3, 6, 10, 15]",
+   "[15]",
+   "[0, 1, 3, 6, 10]"
+  ],
+  "correcta": 1,
+  "explicacion": "add acumula la suma y en cada iteración se agrega el valor acumulado: 1, 3, 6, 10, 15 (sumas parciales).",
+  "por_que_no": [
+   "Se agregan las sumas acumuladas, no los números originales.",
+   "",
+   "append está dentro del for, así que se agrega en cada iteración.",
+   "Se suma antes de agregar, así que el primer elemento es 1."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 3b (ii)"
+ },
+ {
+  "id": "PYB-40",
+  "tema": "PYB",
+  "subtema": "Listas",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "lst = [1, [2, 3], 4]\nprint(lst[1])\nprint(len(lst))",
+  "opciones": [
+   "2 y 4",
+   "[2, 3] y 3",
+   "[2, 3] y 4",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "El elemento de índice 1 es la lista anidada [2, 3]. La lista externa tiene 3 elementos: 1, [2, 3] y 4.",
+  "por_que_no": [
+   "lst[1] es la lista completa, y la lista anidada cuenta como un solo elemento.",
+   "",
+   "La lista anidada cuenta como un único elemento.",
+   "El código es válido."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 3b (iii)"
+ },
+ {
+  "id": "PYB-41",
+  "tema": "PYB",
+  "subtema": "Listas",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código? (Wing menciona los riesgos del aliasing: darle más de un nombre a algo.)",
+  "codigo": "a = [100, 200, 300]\nb = a\nb[0] = 999\nprint(a)",
+  "opciones": [
+   "[100, 200, 300]",
+   "[999, 200, 300]",
+   "Error",
+   "[999]"
+  ],
+  "correcta": 1,
+  "explicacion": "b = a no copia la lista: crea otro nombre para el mismo objeto. Modificar b modifica a. Por eso la guía usa siniestros.copy() antes de corregir un dato.",
+  "por_que_no": [
+   "Ese sería el resultado si se hubiera usado b = a.copy().",
+   "",
+   "El código es válido.",
+   "Solo cambia el primer elemento; los demás se mantienen."
+  ],
+  "referencia": "Guía práctica Python, Actividad 3 (uso de .copy()); Wing (2006), aliasing"
+ },
+ {
+  "id": "PYB-42",
+  "tema": "PYB",
+  "subtema": "Condicionales",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Con la calculadora de impuestos del parcial, ¿cuánto impuesto paga un ingreso de $100.000?",
+  "codigo": "if ingreso <= 85528:\n    impuesto = 0.18 * ingreso - 556\nelse:\n    excedente = ingreso - 85528\n    impuesto = 14839.02 + 0.32 * excedente\nif impuesto < 0:\n    impuesto_final = 0\nelse:\n    impuesto_final = round(impuesto, 2)",
+  "opciones": [
+   "$17.444,00",
+   "$19.470,06",
+   "$32.000,00",
+   "$14.839,02"
+  ],
+  "correcta": 1,
+  "explicacion": "Como 100.000 > 85.528, el excedente es 14.472 y el impuesto es 14.839,02 + 0,32 × 14.472 = 14.839,02 + 4.631,04 = 19.470,06.",
+  "por_que_no": [
+   "Aplica la primera regla (0,18 × 100.000 − 556), que corresponde a ingresos menores o iguales a 85.528.",
+   "",
+   "Es 32 % del ingreso total, no del excedente.",
+   "Falta sumar el 32 % del excedente."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 4a y su resolución"
+ },
+ {
+  "id": "PYB-43",
+  "tema": "PYB",
+  "subtema": "Condicionales",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Con la calculadora de impuestos del parcial, ¿cuál es el impuesto final para un ingreso de $2.000?",
+  "opciones": [
+   "$360",
+   "−$196",
+   "$0",
+   "$556"
+  ],
+  "correcta": 2,
+  "explicacion": "0,18 × 2.000 − 556 = 360 − 556 = −196. Como el impuesto calculado es menor que cero, la regla indica que no hay impuesto: el final es 0.",
+  "por_que_no": [
+   "Falta restar los 556.",
+   "Es el impuesto calculado antes de aplicar la regla del cero.",
+   "",
+   "No corresponde a ninguna regla."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 4a",
+  "codigo": "if ingreso <= 85528:\n    impuesto = 0.18 * ingreso - 556\nelse:\n    excedente = ingreso - 85528\n    impuesto = 14839.02 + 0.32 * excedente\nif impuesto < 0:\n    impuesto_final = 0\nelse:\n    impuesto_final = round(impuesto, 2)"
+ },
+ {
+  "id": "PYB-44",
+  "tema": "PYB",
+  "subtema": "Formato de salida",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "poliza = 10025\nproducto = \"Automotor\"\nprima_anual = 185000.5\nprint(f\"La póliza {poliza} es de {producto}, prima ${prima_anual:.2f}.\")",
+  "opciones": [
+   "La póliza 10025 es de Automotor, prima $185000.50.",
+   "La póliza {poliza} es de {producto}, prima ${prima_anual:.2f}.",
+   "La póliza 10025 es de Automotor, prima $185000.5.",
+   "Error"
+  ],
+  "correcta": 0,
+  "explicacion": "Un f-string reemplaza cada {expresión} por su valor, y :.2f formatea el número con 2 decimales.",
+  "por_que_no": [
+   "",
+   "Sin la f delante se imprimiría el texto literal; con f se interpolan los valores.",
+   ":.2f fuerza dos decimales.",
+   "El código es válido."
+  ],
+  "referencia": "Guía práctica Python, Actividad 1"
+ },
+ {
+  "id": "PYB-45",
+  "tema": "PYB",
+  "subtema": "Funciones",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La función resumen_cartera(montos, exposiciones) de la guía empieza convirtiendo con np.asarray(..., dtype=float) y verifica len(montos) != len(exposiciones). ¿Por qué?",
+  "opciones": [
+   "Para que la función sea más lenta pero más legible",
+   "Para aceptar listas o arreglos indistintamente y asegurar que ambos vectores estén alineados (una exposición por cada monto) antes de dividir",
+   "Para redondear los montos",
+   "Para ordenar los datos"
+  ],
+  "correcta": 1,
+  "explicacion": "np.asarray convierte la entrada (lista o arreglo) en un arreglo numérico de float. La verificación de longitudes evita combinar vectores desalineados, lo que produciría resultados sin sentido.",
+  "por_que_no": [
+   "El objetivo es la robustez, no la velocidad.",
+   "",
+   "No redondea.",
+   "No ordena."
+  ],
+  "referencia": "Guía práctica Python, Actividad 10 (resumen_cartera)"
+ },
+ {
+  "id": "PYB-46",
+  "tema": "PYB",
+  "subtema": "Listas",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "primas = [120_000, 450_000, 380_000]\nprimas.append(200_000)\nprimas[0] = 125_000\nprint(primas)",
+  "opciones": [
+   "[125000, 450000, 380000, 200000]",
+   "[200000, 125000, 450000, 380000]",
+   "[120000, 450000, 380000]",
+   "[125000, 450000, 380000]"
+  ],
+  "correcta": 0,
+  "explicacion": "append agrega al final y primas[0] = … reemplaza el primer elemento. Los guiones bajos en los números solo mejoran la legibilidad.",
+  "por_que_no": [
+   "",
+   "append agrega al final, no al principio.",
+   "La lista sí se modifica: es mutable.",
+   "Falta el elemento agregado con append."
+  ],
+  "referencia": "Clase 12, «Listas»"
+ }
+]

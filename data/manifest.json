@@ -1,0 +1,330 @@
+{
+ "titulo": "Computación Científica Actuarial — Simulador de evaluaciones",
+ "temas": {
+  "PC": "Pensamiento computacional",
+  "EXC": "Excel",
+  "BD": "Bases de datos y modelo relacional",
+  "SQL": "SQL: consultas",
+  "JOIN": "SQL: joins, DML y DDL",
+  "PYB": "Python y NumPy básicos",
+  "CTL": "Estructuras de control",
+  "ALG": "Algoritmos y simulación actuarial",
+  "EST": "Estructuras de datos, pandas y almacenamiento",
+  "CAL": "Calidad y limpieza de datos",
+  "EDA": "Análisis exploratorio de datos"
+ },
+ "evaluaciones": [
+  {
+   "id": 1,
+   "titulo": "Evaluación 1",
+   "archivo": "ev01.json",
+   "cantidad": 40,
+   "temas": {
+    "PC": 3,
+    "SQL": 4,
+    "JOIN": 4,
+    "CTL": 5,
+    "PYB": 4,
+    "EST": 4,
+    "EXC": 2,
+    "BD": 3,
+    "ALG": 4,
+    "CAL": 4,
+    "EDA": 3
+   },
+   "dificultad": {
+    "facil": 10,
+    "media": 21,
+    "dificil": 9
+   }
+  },
+  {
+   "id": 2,
+   "titulo": "Evaluación 2",
+   "archivo": "ev02.json",
+   "cantidad": 40,
+   "temas": {
+    "PC": 4,
+    "PYB": 4,
+    "EST": 4,
+    "EDA": 5,
+    "CTL": 5,
+    "SQL": 4,
+    "BD": 2,
+    "JOIN": 3,
+    "ALG": 4,
+    "CAL": 4,
+    "EXC": 1
+   },
+   "dificultad": {
+    "facil": 10,
+    "media": 23,
+    "dificil": 7
+   }
+  },
+  {
+   "id": 3,
+   "titulo": "Evaluación 3",
+   "archivo": "ev03.json",
+   "cantidad": 40,
+   "temas": {
+    "CTL": 4,
+    "PYB": 3,
+    "BD": 3,
+    "EXC": 4,
+    "EST": 4,
+    "JOIN": 4,
+    "PC": 3,
+    "SQL": 5,
+    "ALG": 4,
+    "EDA": 3,
+    "CAL": 3
+   },
+   "dificultad": {
+    "facil": 12,
+    "media": 20,
+    "dificil": 8
+   }
+  },
+  {
+   "id": 4,
+   "titulo": "Evaluación 4",
+   "archivo": "ev04.json",
+   "cantidad": 40,
+   "temas": {
+    "CAL": 4,
+    "BD": 3,
+    "PC": 5,
+    "EST": 3,
+    "EXC": 2,
+    "CTL": 5,
+    "SQL": 4,
+    "PYB": 3,
+    "JOIN": 4,
+    "EDA": 3,
+    "ALG": 4
+   },
+   "dificultad": {
+    "facil": 11,
+    "media": 20,
+    "dificil": 9
+   }
+  },
+  {
+   "id": 5,
+   "titulo": "Evaluación 5",
+   "archivo": "ev05.json",
+   "cantidad": 40,
+   "temas": {
+    "ALG": 4,
+    "EDA": 4,
+    "CTL": 4,
+    "BD": 3,
+    "PYB": 5,
+    "JOIN": 3,
+    "EST": 4,
+    "SQL": 5,
+    "PC": 3,
+    "EXC": 1,
+    "CAL": 4
+   },
+   "dificultad": {
+    "facil": 11,
+    "media": 21,
+    "dificil": 8
+   }
+  },
+  {
+   "id": 6,
+   "titulo": "Evaluación 6",
+   "archivo": "ev06.json",
+   "cantidad": 40,
+   "temas": {
+    "JOIN": 4,
+    "PC": 4,
+    "EXC": 2,
+    "EST": 3,
+    "SQL": 4,
+    "PYB": 3,
+    "BD": 2,
+    "CTL": 5,
+    "ALG": 5,
+    "EDA": 5,
+    "CAL": 3
+   },
+   "dificultad": {
+    "facil": 9,
+    "media": 23,
+    "dificil": 8
+   }
+  },
+  {
+   "id": 7,
+   "titulo": "Evaluación 7",
+   "archivo": "ev07.json",
+   "cantidad": 40,
+   "temas": {
+    "CTL": 5,
+    "BD": 3,
+    "JOIN": 2,
+    "PC": 4,
+    "PYB": 3,
+    "SQL": 4,
+    "EST": 5,
+    "CAL": 5,
+    "EXC": 2,
+    "ALG": 4,
+    "EDA": 3
+   },
+   "dificultad": {
+    "facil": 9,
+    "media": 22,
+    "dificil": 9
+   }
+  },
+  {
+   "id": 8,
+   "titulo": "Evaluación 8",
+   "archivo": "ev08.json",
+   "cantidad": 40,
+   "temas": {
+    "CTL": 5,
+    "EXC": 3,
+    "SQL": 5,
+    "EST": 3,
+    "JOIN": 5,
+    "EDA": 3,
+    "PYB": 4,
+    "BD": 3,
+    "PC": 3,
+    "ALG": 3,
+    "CAL": 3
+   },
+   "dificultad": {
+    "facil": 14,
+    "media": 19,
+    "dificil": 7
+   }
+  },
+  {
+   "id": 9,
+   "titulo": "Evaluación 9",
+   "archivo": "ev09.json",
+   "cantidad": 40,
+   "temas": {
+    "PYB": 4,
+    "PC": 4,
+    "JOIN": 3,
+    "CTL": 5,
+    "SQL": 4,
+    "EXC": 2,
+    "BD": 2,
+    "EST": 4,
+    "EDA": 4,
+    "ALG": 5,
+    "CAL": 3
+   },
+   "dificultad": {
+    "facil": 10,
+    "media": 22,
+    "dificil": 8
+   }
+  },
+  {
+   "id": 10,
+   "titulo": "Evaluación 10",
+   "archivo": "ev10.json",
+   "cantidad": 40,
+   "temas": {
+    "PYB": 3,
+    "SQL": 4,
+    "JOIN": 4,
+    "CAL": 5,
+    "PC": 3,
+    "CTL": 4,
+    "BD": 4,
+    "EST": 4,
+    "EXC": 1,
+    "EDA": 4,
+    "ALG": 4
+   },
+   "dificultad": {
+    "facil": 8,
+    "media": 22,
+    "dificil": 10
+   }
+  },
+  {
+   "id": 11,
+   "titulo": "Evaluación 11",
+   "archivo": "ev11.json",
+   "cantidad": 40,
+   "temas": {
+    "EDA": 4,
+    "BD": 2,
+    "PYB": 4,
+    "JOIN": 3,
+    "CTL": 5,
+    "EXC": 3,
+    "PC": 3,
+    "SQL": 4,
+    "ALG": 4,
+    "EST": 4,
+    "CAL": 4
+   },
+   "dificultad": {
+    "facil": 12,
+    "media": 21,
+    "dificil": 7
+   }
+  },
+  {
+   "id": 12,
+   "titulo": "Evaluación 12",
+   "archivo": "ev12.json",
+   "cantidad": 40,
+   "temas": {
+    "SQL": 4,
+    "CTL": 5,
+    "PC": 5,
+    "EST": 5,
+    "PYB": 3,
+    "BD": 2,
+    "EXC": 2,
+    "JOIN": 4,
+    "CAL": 3,
+    "ALG": 4,
+    "EDA": 3
+   },
+   "dificultad": {
+    "facil": 11,
+    "media": 20,
+    "dificil": 9
+   }
+  },
+  {
+   "id": 13,
+   "titulo": "Evaluación 13 — Repaso integrador",
+   "archivo": "ev13.json",
+   "cantidad": 20,
+   "temas": {
+    "BD": 2,
+    "PYB": 2,
+    "CTL": 2,
+    "JOIN": 2,
+    "SQL": 3,
+    "CAL": 2,
+    "EXC": 1,
+    "ALG": 2,
+    "EDA": 2,
+    "EST": 1,
+    "PC": 1
+   },
+   "dificultad": {
+    "facil": 5,
+    "media": 11,
+    "dificil": 4
+   }
+  }
+ ]
+}

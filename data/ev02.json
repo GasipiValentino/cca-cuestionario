@@ -1,0 +1,933 @@
+{
+ "id": 2,
+ "titulo": "Evaluación 2",
+ "preguntas": [
+  {
+   "id": "PC-38",
+   "tema": "PC",
+   "subtema": "Ética y privacidad",
+   "dificultad": "facil",
+   "tipo": "caso",
+   "enunciado": "Un equipo actuarial va a compartir una base de asegurados con un área de modelización. Según las buenas prácticas de ética y privacidad de la clase, ¿qué deberían hacer?",
+   "opciones": [
+    "Enviar la base por correo personal para agilizar el trabajo",
+    "Anonimizar y minimizar los datos personales, y justificar técnicamente las variables usadas",
+    "Compartir la base completa con nombres y DNI para que no falte información",
+    "Eliminar todas las variables para evitar sesgos"
+   ],
+   "correcta": 1,
+   "explicacion": "La computación actuarial debe cuidar la anonimización y minimización de datos personales, la justificación técnica de las variables, los sesgos potenciales y la explicabilidad.",
+   "por_que_no": [
+    "Contradice el resguardo de la información sensible.",
+    "",
+    "Viola la minimización de datos personales.",
+    "Sin variables no hay modelo; se trata de justificarlas, no de eliminarlas todas."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Buenas prácticas: ética, privacidad y explicabilidad»"
+  },
+  {
+   "id": "PYB-05",
+   "tema": "PYB",
+   "subtema": "Listas e índices",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime este código?",
+   "codigo": "edades = [31, 44, 52, 28, 67, 39, 48]\nprint(edades[0], edades[-1])",
+   "opciones": [
+    "31 67",
+    "44 39",
+    "31 48",
+    "Error"
+   ],
+   "correcta": 2,
+   "explicacion": "En Python los índices empiezan en 0: edades[0] es el primer elemento (31). El índice -1 recorre desde el final: edades[-1] es el último (48).",
+   "por_que_no": [
+    "67 no es el último elemento.",
+    "Corresponde a los índices 1 y -2.",
+    "",
+    "Ambos índices son válidos."
+   ],
+   "referencia": "Guía práctica Python, «Trabajo con índices»"
+  },
+  {
+   "id": "EST-18",
+   "tema": "EST",
+   "subtema": "Lectura de archivos",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Cómo se lee un archivo CSV con pandas?",
+   "opciones": [
+    "pd.import_csv()",
+    "pd.open_csv()",
+    "pd.load_csv()",
+    "pd.read_csv()"
+   ],
+   "correcta": 3,
+   "explicacion": "pd.read_csv(\"archivo.csv\") lee el archivo y devuelve un DataFrame. Para escribir se usa df.to_csv().",
+   "por_que_no": [
+    "No existe en pandas.",
+    "No existe en pandas.",
+    "No existe en pandas.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 18; Clase 12, «Archivos planos: CSV»"
+  },
+  {
+   "id": "EDA-16",
+   "tema": "EDA",
+   "subtema": "Escala logarítmica",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "¿Por qué para montos monetarios suele ser preferible la escala logarítmica en un histograma?",
+   "opciones": [
+    "Porque los montos son negativos",
+    "Porque es obligatorio en pandas",
+    "Porque en escala lineal casi todo el gráfico muestra unos pocos siniestros grandes; en escala log se ve toda la distribución (cuerpo, moda y colas)",
+    "Porque elimina los montos grandes"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase concluye que para montos la escala logarítmica suele ser la escala natural.",
+   "por_que_no": [
+    "Los montos son positivos.",
+    "No es obligatorio.",
+    "",
+    "No elimina datos."
+   ],
+   "referencia": "Clase 14, «Escala logarítmica»"
+  },
+  {
+   "id": "CTL-38",
+   "tema": "CTL",
+   "subtema": "range",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué produce range(2, 6)?",
+   "opciones": [
+    "[2, 3, 4, 5, 6]",
+    "[2, 3, 4, 5]",
+    "[1, 2, 3, 4]",
+    "Error"
+   ],
+   "correcta": 1,
+   "explicacion": "range(inicio, fin) incluye el inicio y excluye el fin: 2, 3, 4, 5.",
+   "por_que_no": [
+    "El extremo superior no se incluye.",
+    "",
+    "Empieza en 2, no en 1.",
+    "Es una llamada válida."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 15; Clase 10, «El bucle for y la función range()»"
+  },
+  {
+   "id": "SQL-50",
+   "tema": "SQL",
+   "subtema": "SQL y pandas",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es el equivalente en pandas de WHERE x > 10?",
+   "opciones": [
+    "df.head(10)",
+    "df.groupby(\"x\")",
+    "df[df[\"x\"] > 10]",
+    "df.sort_values(\"x\")"
+   ],
+   "correcta": 2,
+   "explicacion": "Filtrar filas con una condición en pandas es indexar con una máscara booleana: df[df[\"x\"] > 10].",
+   "por_que_no": [
+    "Equivale a LIMIT 10.",
+    "Equivale a GROUP BY x.",
+    "",
+    "Equivale a ORDER BY x."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «SQL y pandas: el mismo razonamiento»"
+  },
+  {
+   "id": "BD-34",
+   "tema": "BD",
+   "subtema": "Arquitectura",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "En el esquema de la clase, varios clientes acceden por Internet a un servidor web que a su vez consulta un servidor de base de datos. ¿Qué ilustra este esquema?",
+   "opciones": [
+    "Que los usuarios no consultan la base directamente: lo hacen a través de una aplicación que se comunica con el servidor de base de datos",
+    "Que la base de datos se instala en cada cliente",
+    "Que Internet reemplaza a la base de datos",
+    "Que el servidor web guarda los datos en planillas"
+   ],
+   "correcta": 0,
+   "explicacion": "El diagrama muestra la arquitectura habitual: los clientes interactúan con un servidor web y este se comunica con el servidor de base de datos, que centraliza el almacenamiento.",
+   "por_que_no": [
+    "",
+    "La base está centralizada en un servidor.",
+    "Internet es solo el medio de comunicación.",
+    "El esquema no muestra planillas."
+   ],
+   "referencia": "Introducción a bases de datos, «¿Qué es una base de datos?» (diagrama cliente-servidor)"
+  },
+  {
+   "id": "JOIN-27",
+   "tema": "JOIN",
+   "subtema": "UPDATE",
+   "dificultad": "facil",
+   "tipo": "caso",
+   "enunciado": "¿Qué ocurre al ejecutar UPDATE Empleados SET Salario = 55000; (sin WHERE)?",
+   "opciones": [
+    "Todos los empleados de la tabla pasan a tener salario 55.000",
+    "Se actualiza solo el primer empleado",
+    "Da error de sintaxis",
+    "No pasa nada hasta que se agregue un SELECT"
+   ],
+   "correcta": 0,
+   "explicacion": "La cláusula WHERE determina qué registros se modifican. Sin ella, UPDATE afecta a todos los registros de la tabla.",
+   "por_que_no": [
+    "",
+    "No existe la noción de «primer registro» en un UPDATE sin WHERE.",
+    "Es sintaxis válida, y por eso es peligrosa.",
+    "El UPDATE se ejecuta directamente."
+   ],
+   "referencia": "Clase 5 (CCA), «UPDATE»"
+  },
+  {
+   "id": "CTL-53",
+   "tema": "CTL",
+   "subtema": "Conteo",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "conteos = [0, 1, 0, 2, 0, 1, 0]\ncon_siniestro = 0\nfor n in conteos:\n    if n > 0:\n        con_siniestro += 1\nprint(con_siniestro)",
+   "opciones": [
+    "7",
+    "3",
+    "2",
+    "4"
+   ],
+   "correcta": 1,
+   "explicacion": "Cuenta las pólizas con al menos un siniestro (1, 2 y 1): son 3. No suma los siniestros (que serían 4).",
+   "por_que_no": [
+    "7 es la cantidad de pólizas.",
+    "",
+    "Hay tres valores positivos.",
+    "4 es la cantidad total de siniestros, no de pólizas con siniestro."
+   ],
+   "referencia": "Guía práctica Python, Actividad 6"
+  },
+  {
+   "id": "ALG-39",
+   "tema": "ALG",
+   "subtema": "Monte Carlo",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuáles son los tres pasos de una simulación de Monte Carlo según la clase?",
+   "opciones": [
+    "Caso base, paso recursivo y retorno",
+    "Ensayo (generar una realización), éxito (ver si cumple el evento) y replicación (repetir n veces y promediar)",
+    "Media, mediana y moda",
+    "Importar, graficar y exportar"
+   ],
+   "correcta": 1,
+   "explicacion": "Toda simulación comparte esa estructura. En código, el ensayo y el éxito van dentro de un for que realiza las réplicas.",
+   "por_que_no": [
+    "Son elementos de la recursión.",
+    "",
+    "Son medidas de posición.",
+    "No son pasos de simulación."
+   ],
+   "referencia": "Clase 10, «Monte Carlo: los tres pasos»"
+  },
+  {
+   "id": "EDA-08",
+   "tema": "EDA",
+   "subtema": "Univariado cualitativo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cómo recomienda la clase graficar una variable cualitativa nominal como la provincia, y qué cambia si la variable es ordinal?",
+   "opciones": [
+    "Líneas",
+    "Histograma en ambos casos",
+    "Torta 3D en ambos casos",
+    "Barras horizontales ordenadas por frecuencia; en una ordinal se respeta el orden natural de las categorías"
+   ],
+   "correcta": 3,
+   "explicacion": "Las barras horizontales se leen sin girar la cabeza y el orden por frecuencia transmite información. En una ordinal (franja etaria) el orden natural es el que manda.",
+   "por_que_no": [
+    "Las líneas son para series temporales.",
+    "El histograma es para variables cuantitativas.",
+    "La clase desaconseja tortas y gráficos 3D.",
+    ""
+   ],
+   "referencia": "Clase 14, «Univariado: variables cualitativas»"
+  },
+  {
+   "id": "BD-35",
+   "tema": "BD",
+   "subtema": "Tipos de datos",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Un campo de identificación de cliente está definido como INTEGER en una tabla y como texto en otra. ¿Qué problema puede aparecer al relacionarlas?",
+   "opciones": [
+    "La tabla se elimina automáticamente",
+    "El join compara texto con entero, lo que puede provocar errores o requerir conversiones adicionales",
+    "Ninguno: SQL convierte siempre los tipos sin error",
+    "Se duplican las claves primarias"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase de joins advierte que, si un identificador pasa a ser texto en una tabla y sigue siendo entero en otra, el join intentaría comparar texto con entero.",
+   "por_que_no": [
+    "Un desajuste de tipos no elimina tablas.",
+    "",
+    "La clase advierte justamente lo contrario.",
+    "Las claves primarias no se duplican por esta causa."
+   ],
+   "referencia": "Clase 5 (CCA) – SQL: Joins, DML y DDL, «ALTER TABLE»"
+  },
+  {
+   "id": "CAL-31",
+   "tema": "CAL",
+   "subtema": "Validez",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la base aparecen una edad de 220 años, una de −3 y una exposición de 1,2. ¿Qué tratamiento NO es defendible según la clase?",
+   "opciones": [
+    "Convertirlos en faltantes y tratarlos como tales",
+    "Eliminar los registros",
+    "Corregir, eliminar o convertir el valor sin dejar constancia del criterio aplicado",
+    "Corregirlos si existe una fuente que lo permita"
+   ],
+   "correcta": 2,
+   "explicacion": "Las tres primeras opciones son defendibles. Lo que no es defendible es aplicarlas sin documentarlo en el registro de tratamiento.",
+   "por_que_no": [
+    "Es una opción defendible.",
+    "Es una opción defendible.",
+    "",
+    "Es una opción defendible."
+   ],
+   "referencia": "Clase 13, «Validez: dominios y rangos»"
+  },
+  {
+   "id": "EXC-11",
+   "tema": "EXC",
+   "subtema": "Búsqueda",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En =BUSCARV(N6;Tabla!$A$3:$C$7;2;0), ¿para qué sirven los signos $ en el rango?",
+   "opciones": [
+    "Para fijar el rango (referencia absoluta) y que no se desplace al copiar la fórmula a otras filas",
+    "Para indicar que los valores son monetarios",
+    "Para que el resultado se muestre con formato de moneda",
+    "Para que la búsqueda no distinga mayúsculas de minúsculas"
+   ],
+   "correcta": 0,
+   "explicacion": "El $ convierte la referencia en absoluta. Al copiar la fórmula hacia abajo, N6 cambia (N7, N8…) pero la tabla de búsqueda queda fija en $A$3:$C$7.",
+   "por_que_no": [
+    "",
+    "El $ en una referencia no tiene relación con el formato de moneda.",
+    "El formato de celda no depende del $ en la referencia.",
+    "Eso no depende del $."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Ramo (descripción)»"
+  },
+  {
+   "id": "PC-28",
+   "tema": "PC",
+   "subtema": "Aplicaciones actuariales",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "En el pricing de seguros generales, la clase define la prima pura como:",
+   "opciones": [
+    "E[N] × E[X], con N la cantidad de siniestros y X el costo individual del siniestro",
+    "E[N] + E[X]",
+    "El máximo siniestro observado dividido por la cantidad de pólizas",
+    "La prima comercial menos los impuestos"
+   ],
+   "correcta": 0,
+   "explicacion": "La prima pura es el producto de la frecuencia esperada (E[N]) y la severidad esperada (E[X]). La prima comercial agrega gastos, margen, impuestos, reaseguro y política comercial.",
+   "por_que_no": [
+    "",
+    "Frecuencia y severidad se multiplican, no se suman.",
+    "El máximo siniestro no representa el costo esperado.",
+    "La prima pura es el punto de partida; la comercial se construye agregándole recargos."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Aplicación 1: Pricing de seguros generales»"
+  },
+  {
+   "id": "EDA-39",
+   "tema": "EDA",
+   "subtema": "Automatizar y registrar",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Una función perfilar(df) muestra que la moda de la edad es 18. ¿Qué enseña la clase sobre herramientas automáticas como ydata-profiling?",
+   "opciones": [
+    "Que son útiles como punto de partida, pero no reemplazan las preguntas del analista",
+    "Que reemplazan al analista",
+    "Que no sirven",
+    "Que eliminan los faltantes"
+   ],
+   "correcta": 0,
+   "explicacion": "El perfilado automático encontró solo la anomalía de los 18 años, pero interpretarla (¿valor por defecto del formulario?) requiere criterio.",
+   "por_que_no": [
+    "",
+    "La clase lo niega explícitamente.",
+    "Son útiles como punto de partida.",
+    "Perfilan; no limpian."
+   ],
+   "referencia": "Clase 14, «Automatizar el primer vistazo»"
+  },
+  {
+   "id": "EST-44",
+   "tema": "EST",
+   "subtema": "Arquitecturas analíticas",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la diferencia entre un data warehouse y un data lake?",
+   "opciones": [
+    "El lake requiere decidir de antemano el esquema",
+    "El warehouse solo guarda imágenes",
+    "El warehouse es estructurado, con esquema definido y datos procesados; el lake guarda datos masivos en su formato original, estructurados o no, y sin gobierno se vuelve inutilizable",
+    "Son lo mismo"
+   ],
+   "correcta": 2,
+   "explicacion": "En una aseguradora, el warehouse suele alimentar el reporting regulatorio y de gestión, y el lake la exploración y la modelización avanzada. El lakehouse combina ambos enfoques.",
+   "por_que_no": [
+    "Eso describe al warehouse.",
+    "El warehouse guarda datos estructurados.",
+    "",
+    "Tienen propósitos distintos."
+   ],
+   "referencia": "Clase 12, «Data warehouse, data lake y lakehouse»"
+  },
+  {
+   "id": "EST-45",
+   "tema": "EST",
+   "subtema": "ETL y ELT",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la diferencia entre ETL y ELT, y qué regla se mantiene en ambos?",
+   "opciones": [
+    "Son idénticos; la regla es borrar el dato crudo",
+    "ETL no transforma nada",
+    "ELT no carga datos",
+    "ETL transforma antes de cargar; ELT carga el dato crudo y transforma después dentro del repositorio. En ambos, el dato crudo nunca se modifica: toda transformación se escribe como código reproducible"
+   ],
+   "correcta": 3,
+   "explicacion": "El orden de la T cambia entre ambos enfoques. La clase 13 se ubica íntegramente en la T: calidad, limpieza y transformación.",
+   "por_que_no": [
+    "Difieren en el orden, y la regla es conservar el dato crudo.",
+    "ETL transforma antes de cargar.",
+    "ELT carga primero.",
+    ""
+   ],
+   "referencia": "Clase 12, «ETL y ELT»"
+  },
+  {
+   "id": "CTL-28",
+   "tema": "CTL",
+   "subtema": "while",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Un fondo de 1.000.000 se capitaliza al 5 % y se retiran 120.000 al final de cada año. ¿En qué año se agota?",
+   "codigo": "fondo = 1_000_000\nanio = 0\nwhile fondo > 0:\n    fondo = fondo * 1.05 - 120_000\n    anio += 1\n    if anio > 100:\n        break\nprint(anio)",
+   "opciones": [
+    "8",
+    "Nunca se agota",
+    "12",
+    "10"
+   ],
+   "correcta": 2,
+   "explicacion": "El código de la clase informa que el fondo se agota en el año 12. El interés del primer año (50.000) es menor que el retiro, así que el saldo cae año tras año hasta volverse negativo.",
+   "por_que_no": [
+    "El fondo dura más de 8 años.",
+    "El retiro supera al interés, así que el fondo decrece y se agota.",
+    "",
+    "El fondo dura más de 10 años."
+   ],
+   "referencia": "Clase 10, «while: agotamiento de un fondo de retiro»"
+  },
+  {
+   "id": "ALG-19",
+   "tema": "ALG",
+   "subtema": "Recursividad",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "¿Qué ocurre al llamar factorial_mal(5)?",
+   "codigo": "def factorial_mal(n):\n    return n * factorial_mal(n - 1)",
+   "opciones": [
+    "Devuelve 5",
+    "Devuelve 0",
+    "Devuelve 120",
+    "Se produce un RecursionError: no hay caso base y la función se llama indefinidamente"
+   ],
+   "correcta": 3,
+   "explicacion": "Sin caso base, la función se sigue llamando con n − 1 (4, 3, …, −1, −2…) hasta exceder el límite de recursión. Es el equivalente recursivo del bucle infinito.",
+   "por_que_no": [
+    "Nunca llega a devolver un valor.",
+    "Nunca llega a devolver un valor.",
+    "Faltaría el caso base para devolver 120.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 27 (d); Clase 10"
+  },
+  {
+   "id": "ALG-02",
+   "tema": "ALG",
+   "subtema": "VAN",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Con flujos = [-500_000, 180_000, 180_000, 180_000, 180_000], ¿cuánto vale van(flujos, 0)?",
+   "opciones": [
+    "220000.0",
+    "-500000.0",
+    "720000.0",
+    "0"
+   ],
+   "correcta": 0,
+   "explicacion": "Con tasa 0 no hay descuento: (1 + 0)^t = 1. El VAN es la suma simple de los flujos: −500.000 + 4 × 180.000 = 220.000.",
+   "por_que_no": [
+    "",
+    "Es solo el flujo inicial.",
+    "Es la suma de los ingresos sin restar la inversión.",
+    "Sería la tasa que anula el VAN (la TIR), no tasa 0."
+   ],
+   "referencia": "Clase 10 y Guía – Estructuras de Control, Actividad 7"
+  },
+  {
+   "id": "PYB-26",
+   "tema": "PYB",
+   "subtema": "Funciones",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Para qué sirve la línea raise ValueError(...) dentro de frecuencia_observada?",
+   "opciones": [
+    "Para validar la entrada: si la exposición total no es positiva, se interrumpe con un mensaje claro en lugar de dividir por cero o devolver un resultado sin sentido",
+    "Para que la función devuelva cero cuando no hay exposición",
+    "Para imprimir el resultado",
+    "Para convertir los datos a float"
+   ],
+   "correcta": 0,
+   "explicacion": "Una función bien diseñada incluye validaciones básicas. Sin exposición, la frecuencia no está definida, así que es mejor detener el cálculo con un error explícito.",
+   "por_que_no": [
+    "",
+    "Devolver cero sería conceptualmente erróneo: la frecuencia no está definida.",
+    "raise no imprime el resultado del cálculo.",
+    "raise no convierte tipos."
+   ],
+   "referencia": "Guía práctica Python, «Funciones – Discusión»"
+  },
+  {
+   "id": "PC-11",
+   "tema": "PC",
+   "subtema": "PC y pensamiento matemático",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Según Wing, el pensamiento computacional se diferencia del pensamiento matemático porque:",
+   "opciones": [
+    "El pensamiento computacional considera las restricciones del dispositivo de cómputo y de su entorno",
+    "El pensamiento computacional ignora el mundo real",
+    "Son equivalentes",
+    "El pensamiento matemático no es formal"
+   ],
+   "correcta": 0,
+   "explicacion": "Wing afirma que las restricciones del dispositivo de cómputo subyacente obligan a los científicos de la computación a pensar computacionalmente y no solo matemáticamente (conjunto de instrucciones, recursos, entorno operativo).",
+   "por_que_no": [
+    "",
+    "Wing destaca que también se nutre del pensamiento ingenieril porque construye sistemas que interactúan con el mundo real.",
+    "Wing dice que lo complementa y lo combina, no que sean equivalentes.",
+    "Wing reconoce que la computación se apoya en fundamentos matemáticos formales."
+   ],
+   "referencia": "Wing (2006), «Complements and combines mathematical and engineering thinking»; 1er Parcial 1C 2026, pregunta 2"
+  },
+  {
+   "id": "CAL-16",
+   "tema": "CAL",
+   "subtema": "Faltantes",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "El peso corporal falta más en las pólizas emitidas por canal digital, y el canal está registrado en la base. ¿Qué mecanismo describe mejor la situación?",
+   "opciones": [
+    "Duplicado de clave",
+    "MNAR",
+    "MCAR",
+    "MAR"
+   ],
+   "correcta": 3,
+   "explicacion": "MAR (faltante al azar condicionado): la ausencia depende de otra variable observada (el canal). Es el ejemplo de la clase.",
+   "por_que_no": [
+    "No es un problema de duplicados.",
+    "No depende del valor del peso en sí, sino del canal.",
+    "Hay un patrón asociado al canal, así que no es completamente al azar.",
+    ""
+   ],
+   "referencia": "Clase 13, «Valores faltantes: los tres mecanismos»"
+  },
+  {
+   "id": "JOIN-25",
+   "tema": "JOIN",
+   "subtema": "INSERT",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "El último empleado cargado tiene ID = 1333 y el campo ID es autoincremental. Si se ejecuta INSERT INTO Empleados (Nombre, Cargo, Salario) VALUES ('Juan Perez', 'Analista', 50000), ¿qué ID recibe el nuevo registro?",
+   "opciones": [
+    "NULL, porque no se informó",
+    "1334, generado automáticamente",
+    "1333, porque se repite el último",
+    "0"
+   ],
+   "correcta": 1,
+   "explicacion": "Un campo autoincremental genera automáticamente un nuevo valor en cada inserción, por eso se omite en el INSERT.",
+   "por_que_no": [
+    "Al ser autoincremental, no queda nulo.",
+    "",
+    "Un identificador no puede repetirse.",
+    "El valor continúa la secuencia."
+   ],
+   "referencia": "Clase 5 (CCA), «INSERT»"
+  },
+  {
+   "id": "PYB-13",
+   "tema": "PYB",
+   "subtema": "Tuplas",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "reservas = {(2023, 1): 1450, (2023, 2): 1650}\nprint(reservas[(2023, 2)])",
+   "opciones": [
+    "KeyError",
+    "(2023, 2)",
+    "1450",
+    "1650"
+   ],
+   "correcta": 3,
+   "explicacion": "Las tuplas, por ser inmutables, pueden usarse como clave de un diccionario (por ejemplo, una clave compuesta año-período). La clave (2023, 2) tiene el valor 1650.",
+   "por_que_no": [
+    "La clave existe.",
+    "Imprime el valor, no la clave.",
+    "Es el valor de la clave (2023, 1).",
+    ""
+   ],
+   "referencia": "Clase 12, «Tuplas»"
+  },
+  {
+   "id": "EST-05",
+   "tema": "EST",
+   "subtema": "Escalas de medición",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué escala de medición corresponde a la categoría de riesgo (bajo, medio, alto)?",
+   "opciones": [
+    "Intervalo",
+    "Nominal",
+    "Razón",
+    "Ordinal"
+   ],
+   "correcta": 3,
+   "explicacion": "La ordinal admite orden: bajo < medio < alto. La clase da como ejemplos la categoría de riesgo y la franja etaria.",
+   "por_que_no": [
+    "La de intervalo admite diferencias (fecha de siniestro).",
+    "La nominal solo admite igualdad (ramo, provincia), no orden.",
+    "La de razón admite cocientes y cero (prima, monto, edad).",
+    ""
+   ],
+   "referencia": "Clase 12, «Escalas de medición»"
+  },
+  {
+   "id": "CTL-46",
+   "tema": "CTL",
+   "subtema": "Bucles anidados",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Si cada uno de dos bucles anidados tiene n iteraciones, ¿cuántas operaciones realiza el conjunto? ¿Y con tres niveles?",
+   "opciones": [
+    "n² y n³",
+    "2n y 3n",
+    "n² y 2n²",
+    "n y n"
+   ],
+   "correcta": 0,
+   "explicacion": "El costo se multiplica: n × n = n² con dos niveles y n³ con tres. Conviene tenerlo presente antes de simular, por ejemplo con triángulos mensuales de varios años.",
+   "por_que_no": [
+    "",
+    "Los costos se multiplican, no se suman.",
+    "Con tres niveles el costo es n³.",
+    "Subestima el costo."
+   ],
+   "referencia": "Clase 10, «Bucles anidados»"
+  },
+  {
+   "id": "CTL-50",
+   "tema": "CTL",
+   "subtema": "Comprensión de listas",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la guía, ¿cuándo una comprensión de listas deja de ser más legible que un bucle explícito?",
+   "opciones": [
+    "Cuando la lista tiene más de 10 elementos",
+    "Nunca: siempre es más legible",
+    "Cuando la lógica se complica, por ejemplo con una regla de tarifación de cinco condiciones",
+    "Cuando se usan números decimales"
+   ],
+   "correcta": 2,
+   "explicacion": "La comprensión es ideal para transformaciones y filtros simples. Con reglas de varias condiciones, el bucle explícito suele leerse mejor.",
+   "por_que_no": [
+    "La legibilidad no depende del tamaño de la lista.",
+    "La guía plantea justamente el límite de su legibilidad.",
+    "",
+    "El tipo de dato no tiene relación con la legibilidad."
+   ],
+   "referencia": "Guía – Estructuras de Control, «Comprensiones de listas – Pregunta conceptual»"
+  },
+  {
+   "id": "SQL-23",
+   "tema": "SQL",
+   "subtema": "CASE WHEN",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Con la versión correcta del CASE (WHEN PRECIO > 500 THEN 12 %, WHEN PRECIO > 200 THEN 10 %, ELSE 0), ¿qué descuento recibe un artículo de exactamente $500?",
+   "opciones": [
+    "0 %",
+    "Error, porque 500 no cumple ninguna condición",
+    "10 % ($50)",
+    "12 % ($60)"
+   ],
+   "correcta": 2,
+   "explicacion": "500 > 500 es falso, así que no entra en la primera rama. 500 > 200 es verdadero: descuento del 10 %, es decir ROUND(500 × 0,10; 2) = 50.",
+   "por_que_no": [
+    "Sí cumple la segunda condición.",
+    "Cumple la segunda condición y, además, existe el ELSE.",
+    "",
+    "El operador > es estricto: 500 no es mayor que 500."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 2c"
+  },
+  {
+   "id": "JOIN-30",
+   "tema": "JOIN",
+   "subtema": "DELETE y DROP",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia hay entre DELETE FROM Empleados; y DROP TABLE Empleados;?",
+   "opciones": [
+    "Ninguna",
+    "DROP TABLE solo elimina una columna",
+    "DELETE elimina todas las filas pero la tabla sigue existiendo con su estructura; DROP TABLE elimina la tabla completa: registros, columnas y estructura",
+    "DELETE elimina la tabla y DROP solo las filas"
+   ],
+   "correcta": 2,
+   "explicacion": "DELETE sin WHERE vacía la tabla, que sigue existiendo con sus columnas. DROP TABLE la elimina por completo y, según la cátedra, sin posibilidad de recuperación.",
+   "por_que_no": [
+    "Tienen efectos muy distintos.",
+    "Eliminar una columna es tarea de ALTER TABLE … DROP COLUMN.",
+    "",
+    "Los efectos están invertidos."
+   ],
+   "referencia": "Clase 5 (CCA), «DELETE» y «DROP TABLE»"
+  },
+  {
+   "id": "CAL-26",
+   "tema": "CAL",
+   "subtema": "Imputación",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "¿Qué diferencia hay entre groupby(...).agg(...) y groupby(...).transform(...)?",
+   "opciones": [
+    "agg cambia la granularidad (una fila por grupo); transform calcula por grupo pero devuelve un resultado con la misma longitud que el original, alineado fila por fila",
+    "agg solo funciona con texto",
+    "Ninguna",
+    "transform elimina grupos"
+   ],
+   "correcta": 0,
+   "explicacion": "transform es la herramienta central para cualquier cálculo «dentro del grupo» sin cambiar la granularidad, como imputar con la mediana del ramo.",
+   "por_que_no": [
+    "",
+    "agg funciona con cualquier función de agregación.",
+    "Producen formas distintas.",
+    "No elimina grupos."
+   ],
+   "referencia": "Clase 13, «Imputación condicionada» y «Reestructurar»"
+  },
+  {
+   "id": "SQL-31",
+   "tema": "SQL",
+   "subtema": "ORDER BY y LIMIT",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "La guía de ejercicios está escrita para T-SQL (SQL Server). ¿Cómo se piden allí los 5 productos más caros?",
+   "opciones": [
+    "SELECT ProductName, MAX(Price, 5) FROM Products;",
+    "SELECT FIRST 5 ProductName FROM Products;",
+    "SELECT TOP 5 ProductName, Price FROM Products ORDER BY Price DESC;",
+    "SELECT ProductName, Price FROM Products ORDER BY Price DESC LIMIT 5;"
+   ],
+   "correcta": 2,
+   "explicacion": "La guía aclara que en T-SQL se usa TOP N en lugar de LIMIT, combinado con ORDER BY para que los «primeros» sean los más caros.",
+   "por_que_no": [
+    "MAX no recibe esos argumentos ni devuelve varias filas.",
+    "FIRST no es la sintaxis indicada.",
+    "",
+    "Es la sintaxis con LIMIT de otros motores (la de los apuntes), pero la guía usa T-SQL."
+   ],
+   "referencia": "Guía de ejercicios SQL, encabezado («se usa TOP N en vez de LIMIT») y ejercicio 8"
+  },
+  {
+   "id": "EDA-19",
+   "tema": "EDA",
+   "subtema": "ECDF y concentración",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "En la cartera, el top 1 % de los siniestros explica el 12,1 % del monto y apenas el 11,8 % de los siniestros explica la mitad del monto total. ¿Qué implica?",
+   "opciones": [
+    "Que hay que eliminar el top 1 %",
+    "Que la distribución es uniforme",
+    "Que el resultado del año depende de lo que pase en la cola: unos pocos siniestros grandes pesan mucho en el total",
+    "Que los siniestros grandes son irrelevantes"
+   ],
+   "correcta": 2,
+   "explicacion": "La curva de concentración muestra cuánto pesan los valores grandes. Eliminarlos «por atípicos» bajaría la severidad media de forma indefendible.",
+   "por_que_no": [
+    "Detectar no es decidir que son errores.",
+    "Es muy concentrada, no uniforme.",
+    "",
+    "Son determinantes."
+   ],
+   "referencia": "Clase 14, «Concentración: ¿cuánto pesan los grandes?»"
+  },
+  {
+   "id": "SQL-43",
+   "tema": "SQL",
+   "subtema": "Subconsultas",
+   "dificultad": "dificil",
+   "tipo": "aplicacion",
+   "enunciado": "Se quieren los clientes que compraron algún producto de la categoría 'Seafood'. ¿Qué estructura propone la guía?",
+   "opciones": [
+    "Un único SELECT sobre Customers con WHERE Category = 'Seafood'",
+    "Un GROUP BY por CategoryName sin cruzar con clientes",
+    "Un DELETE de los clientes que no compraron Seafood",
+    "Una subconsulta con IN que recorre las tablas relacionadas (Orders, OrderDetails, Products y Categories) hasta llegar a la categoría"
+   ],
+   "correcta": 3,
+   "explicacion": "La categoría está en Categories, vinculada a Products, que se vincula con OrderDetails, luego Orders y finalmente Customers. La guía sugiere resolverlo con una subconsulta con IN sobre las tablas relacionadas.",
+   "por_que_no": [
+    "Customers no tiene una columna de categoría.",
+    "Sin cruzar con clientes no se sabe quién compró.",
+    "DELETE modifica datos; la consigna es consultar.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 23"
+  },
+  {
+   "id": "PYB-45",
+   "tema": "PYB",
+   "subtema": "Funciones",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "La función resumen_cartera(montos, exposiciones) de la guía empieza convirtiendo con np.asarray(..., dtype=float) y verifica len(montos) != len(exposiciones). ¿Por qué?",
+   "opciones": [
+    "Para aceptar listas o arreglos indistintamente y asegurar que ambos vectores estén alineados (una exposición por cada monto) antes de dividir",
+    "Para redondear los montos",
+    "Para que la función sea más lenta pero más legible",
+    "Para ordenar los datos"
+   ],
+   "correcta": 0,
+   "explicacion": "np.asarray convierte la entrada (lista o arreglo) en un arreglo numérico de float. La verificación de longitudes evita combinar vectores desalineados, lo que produciría resultados sin sentido.",
+   "por_que_no": [
+    "",
+    "No redondea.",
+    "El objetivo es la robustez, no la velocidad.",
+    "No ordena."
+   ],
+   "referencia": "Guía práctica Python, Actividad 10 (resumen_cartera)"
+  },
+  {
+   "id": "CAL-12",
+   "tema": "CAL",
+   "subtema": "Reglas de validación",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "La columna exposicion de la base sucia es [1.0, 0.5, 1.0, 1.0, 1.2, 0.75, 1.0, NaN]. ¿Cuántos incumplimientos reporta la regla?",
+   "codigo": "ok = sucia[\"exposicion\"].between(0, 1)\nprint((~ok).sum())",
+   "opciones": [
+    "2",
+    "8",
+    "0",
+    "1"
+   ],
+   "correcta": 0,
+   "explicacion": "1,2 está fuera de [0, 1], y between devuelve False para NaN, así que el faltante también cuenta como incumplimiento. La clase reporta 2.",
+   "por_que_no": [
+    "",
+    "No todos incumplen.",
+    "1,2 está fuera del rango.",
+    "No considera que NaN también da False."
+   ],
+   "referencia": "Clase 13, «Reglas de validación explícitas»"
+  },
+  {
+   "id": "PC-21",
+   "tema": "PC",
+   "subtema": "Influencia en otras disciplinas",
+   "dificultad": "dificil",
+   "tipo": "concepto",
+   "enunciado": "Según Wing, ¿qué disciplina está cambiando la forma de pensar de los economistas?",
+   "opciones": [
+    "La nanocomputación",
+    "La teoría de juegos computacional",
+    "La computación cuántica",
+    "El machine learning"
+   ],
+   "correcta": 1,
+   "explicacion": "Wing menciona que la teoría de juegos computacional cambia la forma de pensar de los economistas, la nanocomputación la de los químicos y la computación cuántica la de los físicos.",
+   "por_que_no": [
+    "La nanocomputación cambia la forma de pensar de los químicos.",
+    "",
+    "La computación cuántica cambia la forma de pensar de los físicos.",
+    "Según Wing, el machine learning transformó la estadística."
+   ],
+   "referencia": "Wing (2006), influencia en otras disciplinas"
+  },
+  {
+   "id": "EDA-09",
+   "tema": "EDA",
+   "subtema": "Univariado cualitativo",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Hay 1.236 pólizas con exactamente 18 años (siete veces más que con 19) y el 19,5 % de las pólizas del canal digital tiene 18 años, frente a ≈ 1 % en los otros canales. ¿Qué hipótesis plantea la clase?",
+   "opciones": [
+    "Que el canal digital vende solo a jóvenes",
+    "Que hay que eliminar a todos los menores de 20",
+    "Que la edad está bien cargada",
+    "Que podría ser un valor por defecto del formulario web: un posible problema de calidad que la limpieza no vio"
+   ],
+   "correcta": 3,
+   "explicacion": "El EDA detecta anomalías que la limpieza no captó. La acción propuesta (H1 de la bitácora) es consultar a sistemas y, hasta aclararlo, analizar con y sin esos casos.",
+   "por_que_no": [
+    "La concentración exacta en 18 es sospechosa.",
+    "Eliminar sin investigar no es la acción propuesta.",
+    "El patrón sugiere un problema.",
+    ""
+   ],
+   "referencia": "Clase 14, «Una variable, mirada con cuidado»; «Registrar los hallazgos»"
+  },
+  {
+   "id": "ALG-04",
+   "tema": "ALG",
+   "subtema": "TIR por bisección",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En la bisección, si van(flujos, a) * van(flujos, m) <= 0, el código hace b = m. ¿Por qué?",
+   "codigo": "while b - a > tol:\n    m = (a + b) / 2\n    if van(flujos, a) * van(flujos, m) <= 0:\n        b = m\n    else:\n        a = m",
+   "opciones": [
+    "Porque así el intervalo se agranda",
+    "Porque un producto ≤ 0 indica cambio de signo entre a y m, así que la raíz está en [a, m] y se descarta la mitad derecha",
+    "Porque el VAN es creciente",
+    "Porque m es la TIR exacta"
+   ],
+   "correcta": 1,
+   "explicacion": "Si el VAN tiene distinto signo en a y en m, la tasa que lo anula está en [a, m]. En cada paso el intervalo se reduce a la mitad hasta alcanzar la tolerancia.",
+   "por_que_no": [
+    "El intervalo se achica a la mitad en cada paso.",
+    "",
+    "El razonamiento no depende de la monotonía, sino del cambio de signo.",
+    "m es solo el punto medio; se sigue iterando."
+   ],
+   "referencia": "Clase 10, «Aplicación: TIR por bisección (for + while)»"
+  }
+ ]
+}

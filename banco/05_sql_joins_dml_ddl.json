@@ -1,0 +1,1038 @@
+[
+ {
+  "id": "JOIN-01",
+  "tema": "JOIN",
+  "subtema": "Concepto de join",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué es un join en SQL?",
+  "opciones": [
+   "Una operación que combina información de dos o más tablas según una condición lógica que vincula sus registros",
+   "Una función que suma columnas",
+   "Una sentencia que borra tablas",
+   "Un tipo de dato para unir textos"
+  ],
+  "correcta": 0,
+  "explicacion": "Un join combina información de varias tablas. Hace falta una condición, escrita en ON, que determine qué registros de una tabla se corresponden con los de la otra.",
+  "por_que_no": [
+   "",
+   "Sumar es tarea de SUM.",
+   "Borrar tablas es tarea de DROP TABLE.",
+   "No es un tipo de dato."
+  ],
+  "referencia": "Clase 5 (CCA) – SQL: Joins, DML y DDL, «Joins»"
+ },
+ {
+  "id": "JOIN-02",
+  "tema": "JOIN",
+  "subtema": "Concepto de join",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "En la condición Cliente.ID = Factura.Cliente_ID, ¿qué rol cumple cada campo?",
+  "opciones": [
+   "Ambos son claves primarias",
+   "Cliente.ID es la clave primaria de clientes y Factura.Cliente_ID es una clave foránea",
+   "Cliente.ID es foránea y Factura.Cliente_ID es primaria",
+   "Ninguno es una clave"
+  ],
+  "correcta": 1,
+  "explicacion": "El ID de la tabla de clientes es su clave primaria. En facturas, Cliente_ID referencia a ese ID y por eso es una clave foránea. La condición se introduce con ON.",
+  "por_que_no": [
+   "Factura.Cliente_ID puede repetirse (un cliente tiene muchas facturas), así que no es PK.",
+   "",
+   "Los roles están invertidos.",
+   "Ambos son claves del modelo relacional."
+  ],
+  "referencia": "Clase 5 (CCA), «Joins»"
+ },
+ {
+  "id": "JOIN-03",
+  "tema": "JOIN",
+  "subtema": "INNER JOIN",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Si en una consulta se escribe simplemente JOIN, sin indicar el tipo, ¿qué join se ejecuta?",
+  "opciones": [
+   "LEFT JOIN",
+   "RIGHT JOIN",
+   "INNER JOIN",
+   "FULL OUTER JOIN"
+  ],
+  "correcta": 2,
+  "explicacion": "JOIN sin especificar equivale por defecto a INNER JOIN, la opción predeterminada.",
+  "por_que_no": [
+   "LEFT hay que escribirlo explícitamente.",
+   "RIGHT hay que escribirlo explícitamente.",
+   "",
+   "FULL OUTER hay que escribirlo explícitamente."
+  ],
+  "referencia": "Clase 5 (CCA), «INNER JOIN»; Joins, DML & DDL (cátedra)"
+ },
+ {
+  "id": "JOIN-04",
+  "tema": "JOIN",
+  "subtema": "INNER JOIN",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué JOIN devuelve solo las filas con coincidencia en ambas tablas?",
+  "opciones": [
+   "LEFT JOIN",
+   "RIGHT JOIN",
+   "FULL JOIN",
+   "INNER JOIN"
+  ],
+  "correcta": 3,
+  "explicacion": "INNER JOIN devuelve únicamente los registros que cumplen la condición del ON en ambas tablas.",
+  "por_que_no": [
+   "Conserva todos los registros de la tabla izquierda.",
+   "Conserva todos los registros de la tabla derecha.",
+   "Conserva todos los registros de ambas tablas.",
+   ""
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 10"
+ },
+ {
+  "id": "JOIN-05",
+  "tema": "JOIN",
+  "subtema": "INNER JOIN",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Cuántas filas devuelve el INNER JOIN ON cliente.id = factura.cliente_id?",
+  "opciones": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "correcta": 0,
+  "explicacion": "Solo coinciden la factura 11 con Clara y la 13 con Juan. Marta no tiene factura y la factura 12 no tiene cliente: ambas quedan fuera.",
+  "por_que_no": [
+   "",
+   "Sería 3 con un LEFT o un RIGHT JOIN.",
+   "Sería 4 con un FULL OUTER JOIN.",
+   "6 no corresponde a ningún join con condición; serían todas las combinaciones posibles (3 × 3 = 9)."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), ejemplo cliente/factura con INNER JOIN"
+ },
+ {
+  "id": "JOIN-06",
+  "tema": "JOIN",
+  "subtema": "LEFT JOIN",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Qué devuelve FROM cliente LEFT JOIN factura ON cliente.id = factura.cliente_id?",
+  "opciones": [
+   "Clara (11) y Juan (13)",
+   "Clara (11), Juan (13) y Marta con factura NULL",
+   "Clara (11), Juan (13) y la factura 12 con cliente NULL",
+   "Solo Marta"
+  ],
+  "correcta": 1,
+  "explicacion": "El LEFT JOIN conserva todos los registros de la tabla izquierda (cliente). Marta aparece aunque no tenga factura, con NULL en las columnas de factura.",
+  "por_que_no": [
+   "Ese es el resultado del INNER JOIN.",
+   "",
+   "Ese es el resultado del RIGHT JOIN.",
+   "Ese es el resultado del LEFT JOIN excluyente."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «LEFT JOIN»"
+ },
+ {
+  "id": "JOIN-07",
+  "tema": "JOIN",
+  "subtema": "RIGHT JOIN",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Qué devuelve FROM cliente RIGHT JOIN factura ON cliente.id = factura.cliente_id?",
+  "opciones": [
+   "Las facturas 11, 12 y 13; la 12 con apellido y nombre NULL",
+   "Solo las facturas 11 y 13",
+   "Los tres clientes con sus facturas",
+   "Solo la factura 12"
+  ],
+  "correcta": 0,
+  "explicacion": "El RIGHT JOIN conserva todos los registros de la tabla derecha (factura). La factura 12 aparece aunque no tenga cliente, con NULL en las columnas de cliente.",
+  "por_que_no": [
+   "",
+   "Ese es el INNER JOIN.",
+   "Eso describe el LEFT JOIN, que además no incluye la factura 12.",
+   "Ese es el RIGHT JOIN excluyente."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «RIGHT JOIN»"
+ },
+ {
+  "id": "JOIN-08",
+  "tema": "JOIN",
+  "subtema": "Joins excluyentes",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta devuelve solo los clientes que no tienen ninguna factura?",
+  "opciones": [
+   "SELECT cliente.* FROM cliente INNER JOIN factura ON cliente.id = factura.cliente_id;",
+   "SELECT cliente.* FROM cliente LEFT JOIN factura ON cliente.id = factura.cliente_id WHERE factura.id IS NULL;",
+   "SELECT cliente.* FROM cliente RIGHT JOIN factura ON cliente.id = factura.cliente_id WHERE cliente.id IS NULL;",
+   "SELECT cliente.* FROM cliente WHERE id = NULL;"
+  ],
+  "correcta": 1,
+  "explicacion": "El LEFT JOIN excluyente conserva todos los clientes y luego WHERE factura.id IS NULL deja solo los que no encontraron coincidencia. Sirve para detectar registros faltantes.",
+  "por_que_no": [
+   "Devuelve los clientes con factura.",
+   "",
+   "Devuelve las facturas sin cliente (RIGHT excluyente).",
+   "Compara con = NULL en lugar de IS NULL, no cruza con facturas y además el id de cliente nunca es nulo."
+  ],
+  "referencia": "Clase 5 (CCA), «LEFT JOIN excluyente»; apuntes C5"
+ },
+ {
+  "id": "JOIN-09",
+  "tema": "JOIN",
+  "subtema": "Joins excluyentes",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué devuelve la siguiente consulta con el ejemplo de clientes (Juan, Clara, Marta) y facturas (11→2, 12→null, 13→1)?",
+  "codigo": "SELECT factura.id AS nro_factura, apellido, nombre, fecha\nFROM cliente\nRIGHT JOIN factura ON cliente.id = factura.cliente_id\nWHERE cliente.id IS NULL;",
+  "opciones": [
+   "La factura 12, con apellido y nombre NULL",
+   "Marta García, con factura NULL",
+   "Las facturas 11 y 13",
+   "Ninguna fila"
+  ],
+  "correcta": 0,
+  "explicacion": "Es un RIGHT JOIN excluyente: conserva todas las facturas y se queda solo con las que no tienen cliente asociado, en este caso la 12.",
+  "por_que_no": [
+   "",
+   "Marta saldría con un LEFT JOIN excluyente.",
+   "Esas facturas sí tienen cliente.",
+   "La factura 12 cumple la condición."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «RIGHT JOIN Excluyente»"
+ },
+ {
+  "id": "JOIN-10",
+  "tema": "JOIN",
+  "subtema": "FULL OUTER JOIN",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Clientes: 1 Juan Perez, 2 Clara Sanchez, 3 Marta García. Facturas: 11 (cliente_id 2), 12 (cliente_id null), 13 (cliente_id 1). ¿Cuántas filas devuelve un FULL OUTER JOIN ON cliente.id = factura.cliente_id?",
+  "opciones": [
+   "2",
+   "3",
+   "4",
+   "9"
+  ],
+  "correcta": 2,
+  "explicacion": "El FULL OUTER JOIN conserva todo: los 2 pares coincidentes (Clara-11 y Juan-13), Marta sin factura y la factura 12 sin cliente. Son 4 filas.",
+  "por_que_no": [
+   "Eso es el INNER JOIN.",
+   "Eso es el LEFT o el RIGHT JOIN.",
+   "",
+   "9 serían todas las combinaciones posibles, sin condición."
+  ],
+  "referencia": "Clase 5 (CCA), «FULL OUTER JOIN»"
+ },
+ {
+  "id": "JOIN-11",
+  "tema": "JOIN",
+  "subtema": "FULL OUTER JOIN",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según el profesor, ¿cuáles son los dos tipos de join más importantes en la práctica?",
+  "opciones": [
+   "RIGHT JOIN y FULL OUTER JOIN",
+   "INNER JOIN y LEFT JOIN",
+   "LEFT JOIN excluyente y RIGHT JOIN excluyente",
+   "FULL OUTER JOIN e INNER JOIN"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase remarca que INNER JOIN y LEFT JOIN cubren la gran mayoría de los casos de uso. Lo central es entender qué registros se quieren conservar.",
+  "por_que_no": [
+   "El FULL OUTER genera muchos nulos y se usa mucho menos.",
+   "",
+   "Son variantes útiles pero menos frecuentes.",
+   "El FULL OUTER se usa mucho menos."
+  ],
+  "referencia": "Clase 5 (CCA), «FULL OUTER JOIN»"
+ },
+ {
+  "id": "JOIN-12",
+  "tema": "JOIN",
+  "subtema": "Ambigüedad y alias",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Las tablas Cliente y Factura tienen ambas una columna ID. ¿Qué problema tiene SELECT ID FROM Cliente INNER JOIN Factura ON Cliente.ID = Factura.Cliente_ID?",
+  "opciones": [
+   "Ninguno",
+   "Es ambiguo: SQL no sabe a qué ID se refiere; hay que escribir Cliente.ID o usar alias (c.ID, f.ID)",
+   "El INNER JOIN no admite columnas ID",
+   "Falta un GROUP BY"
+  ],
+  "correcta": 1,
+  "explicacion": "Cuando dos tablas comparten un nombre de columna, la referencia sin prefijo es ambigua. Se resuelve indicando la tabla o un alias, lo cual además mejora la legibilidad.",
+  "por_que_no": [
+   "La consulta es ambigua.",
+   "",
+   "El problema es la ambigüedad, no el nombre de la columna.",
+   "No hay agregaciones."
+  ],
+  "referencia": "Clase 5 (CCA), «Identificación de columnas»; guía SQL, ejercicio 11 (resolución)"
+ },
+ {
+  "id": "JOIN-13",
+  "tema": "JOIN",
+  "subtema": "LEFT JOIN",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "En un LEFT JOIN, ¿qué tabla funciona como «tabla de partida» cuyos registros se conservan?",
+  "opciones": [
+   "La que aparece inmediatamente después del FROM",
+   "La que aparece después del LEFT JOIN",
+   "La que tenga más filas",
+   "La que tenga la clave primaria"
+  ],
+  "correcta": 0,
+  "explicacion": "La tabla que sigue al FROM es la tabla de partida: el LEFT JOIN conserva todos sus registros y agrega la información coincidente de la derecha.",
+  "por_que_no": [
+   "",
+   "Esa es la tabla derecha, cuyos registros sin coincidencia se pierden.",
+   "El tamaño de las tablas no tiene relación.",
+   "La posición en la consulta es lo que importa."
+  ],
+  "referencia": "Clase 5 (CCA), «LEFT JOIN»"
+ },
+ {
+  "id": "JOIN-14",
+  "tema": "JOIN",
+  "subtema": "Elegir el join",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Se pide un listado de clientes con sus datos y los de su asesor financiero, aclarando que deben aparecer los clientes «tengan o no asesor asignado». ¿Qué join corresponde entre datos_clientes y asesores?",
+  "opciones": [
+   "INNER JOIN, porque solo interesan las coincidencias",
+   "LEFT JOIN desde datos_clientes, para conservar a todos los clientes aunque no tengan asesor",
+   "RIGHT JOIN desde datos_clientes",
+   "Ningún join; alcanza con datos_clientes"
+  ],
+  "correcta": 1,
+  "explicacion": "Hay que conservar todos los clientes y enriquecerlos con el asesor cuando exista: eso es un LEFT JOIN con la tabla de clientes a la izquierda. Ojo: la resolución publicada del parcial usa INNER JOIN, lo cual es un error porque deja fuera a los clientes sin asesor.",
+  "por_que_no": [
+   "El INNER descartaría a los clientes sin asesor, contra lo pedido.",
+   "",
+   "El RIGHT conservaría todos los asesores, no todos los clientes.",
+   "Se necesitan los datos del asesor, que están en otra tabla."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 1a (enunciado y análisis crítico de la resolución)"
+ },
+ {
+  "id": "JOIN-15",
+  "tema": "JOIN",
+  "subtema": "Elegir el join",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Dadas Clientes(id, nombre), Pedidos(id, cliente_id, fecha) y Pagos(id, pedido_id, monto), ¿qué joins aseguran obtener solo los clientes que tienen pedidos con pago registrado?",
+  "opciones": [
+   "Clientes LEFT JOIN Pedidos LEFT JOIN Pagos",
+   "Clientes INNER JOIN Pedidos INNER JOIN Pagos",
+   "Clientes RIGHT JOIN Pedidos RIGHT JOIN Pagos",
+   "Clientes FULL OUTER JOIN Pedidos"
+  ],
+  "correcta": 1,
+  "explicacion": "Encadenar INNER JOIN exige coincidencia en cada paso: cliente con pedido y pedido con pago. Así quedan solo los clientes con pedidos pagados.",
+  "por_que_no": [
+   "Con LEFT JOIN aparecen también clientes sin pedidos o pedidos sin pago (con NULL).",
+   "",
+   "El RIGHT conserva todos los pagos y pedidos aunque no tengan cliente.",
+   "Conserva todo; no filtra por pago."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 34"
+ },
+ {
+  "id": "JOIN-16",
+  "tema": "JOIN",
+  "subtema": "Elegir el join",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En el ejercicio «cliente que más gastó», ¿por qué se considera razonable un INNER JOIN entre OrderDetails y Products?",
+  "opciones": [
+   "Porque INNER JOIN es más rápido",
+   "Porque si no puede determinarse el producto o su precio, ese registro no sirve para calcular cuánto gastó el cliente",
+   "Porque Products tiene más filas que OrderDetails",
+   "Porque el LEFT JOIN no puede usarse con más de dos tablas"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase justifica la elección por el negocio: una línea de compra sin precio no aporta al cálculo del importe, así que descartarla con un INNER JOIN es coherente.",
+  "por_que_no": [
+   "La justificación de la clase es de negocio, no de velocidad.",
+   "",
+   "La cantidad de filas no determina el tipo de join.",
+   "Se pueden encadenar LEFT JOIN sin problema."
+  ],
+  "referencia": "Clase 5 (CCA), «Primera etapa: información de cada producto comprado»"
+ },
+ {
+  "id": "JOIN-17",
+  "tema": "JOIN",
+  "subtema": "Construcción progresiva",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Para responder «¿qué cliente gastó más?», ¿en qué orden se incorporaron las tablas en el razonamiento de la clase?",
+  "opciones": [
+   "Customers → Orders → Products → OrderDetails",
+   "OrderDetails → Products → Orders → Customers",
+   "Products → Customers → OrderDetails → Orders",
+   "Orders → Customers → Products"
+  ],
+  "correcta": 1,
+  "explicacion": "Se parte de OrderDetails (pedido, producto, cantidad), se suma Products para el precio, luego Orders para el CustomerID y finalmente Customers para el nombre. Después se calcula Cantidad × Precio, se agrupa, se suma y se ordena.",
+  "por_que_no": [
+   "Es el orden inverso al razonamiento de la clase.",
+   "",
+   "Products no puede vincularse directamente con Customers.",
+   "Le falta OrderDetails, que tiene las cantidades."
+  ],
+  "referencia": "Clase 5 (CCA), «Idea general de resolución de consultas complejas»"
+ },
+ {
+  "id": "JOIN-18",
+  "tema": "JOIN",
+  "subtema": "Construcción progresiva",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿cuál es la idea central para resolver consultas que requieren información distribuida en varias tablas?",
+  "opciones": [
+   "Memorizar todos los tipos de join",
+   "Dividir el problema en etapas: identificar qué información se necesita, en qué tabla está, cómo se relacionan las tablas, y recién después calcular, agrupar y ordenar",
+   "Usar siempre FULL OUTER JOIN para no perder nada",
+   "Escribir toda la consulta de una vez y corregir los errores"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase propone entender SQL como una herramienta para construir progresivamente una respuesta a partir de distintas fuentes, dividiendo el problema en etapas.",
+  "por_que_no": [
+   "La clase dice que lo central no es memorizar, sino entender qué registros conservar.",
+   "",
+   "Usar siempre FULL OUTER genera nulos innecesarios.",
+   "Es lo contrario de construir la consulta de forma progresiva."
+  ],
+  "referencia": "Clase 5 (CCA), «Introducción» e «Idea general de resolución»"
+ },
+ {
+  "id": "JOIN-19",
+  "tema": "JOIN",
+  "subtema": "Joins como decisión de negocio",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Al cruzar pólizas con el padrón de asegurados con un inner join, la póliza 1004 desaparece porque su asegurado no figura en el padrón. Si esa póliza tenía siniestros, ¿qué consecuencia tiene?",
+  "opciones": [
+   "Ninguna: el inner join no pierde información",
+   "Se subestima la siniestralidad; por eso hay que comparar la cantidad de filas antes y después de todo cruce y explicar la diferencia",
+   "Se duplica la póliza 1004",
+   "Se sobrestima la exposición"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase 12 advierte que el join es una decisión de negocio: el inner descartó la póliza en silencio y, con ella, sus siniestros. Regla: comparar filas antes y después del cruce.",
+  "por_que_no": [
+   "Precisamente descarta registros sin coincidencia.",
+   "",
+   "No se duplica: se pierde.",
+   "Se pierde exposición, no se gana."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Los joins y por qué importan»"
+ },
+ {
+  "id": "JOIN-20",
+  "tema": "JOIN",
+  "subtema": "Granularidad",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "Se cruza la tabla de pólizas (una fila por póliza, con su prima) con la de siniestros (una fila por siniestro) y luego se suma la prima. ¿Qué error puede aparecer?",
+  "opciones": [
+   "Ninguno",
+   "Las pólizas con varios siniestros se repiten, así que la prima se suma varias veces y se infla; antes de cruzar hay que llevar ambas tablas a la misma granularidad",
+   "La prima se convierte en texto",
+   "Se pierden todas las pólizas sin siniestros siempre, sea cual sea el join"
+  ],
+  "correcta": 1,
+  "explicacion": "Si una tabla tiene una fila por póliza y la otra una por siniestro, el cruce repite cada póliza tantas veces como siniestros tenga. La clase recomienda agregar primero (por ejemplo, siniestros por póliza) y después cruzar.",
+  "por_que_no": [
+   "Hay un error de granularidad.",
+   "",
+   "El tipo de dato no cambia por el cruce.",
+   "Con un LEFT JOIN desde pólizas no se pierden; el problema principal es la duplicación."
+  ],
+  "referencia": "Clase 12, «Granularidad y agregación»"
+ },
+ {
+  "id": "JOIN-21",
+  "tema": "JOIN",
+  "subtema": "DML y DDL",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la diferencia entre DML y DDL?",
+  "opciones": [
+   "DML modifica el contenido de las tablas (registros); DDL crea, modifica o elimina la estructura de las tablas",
+   "DML crea tablas; DDL consulta datos",
+   "Son sinónimos",
+   "DML solo funciona en Python; DDL en SQL"
+  ],
+  "correcta": 0,
+  "explicacion": "DML (Data Manipulation Language) incluye INSERT, UPDATE y DELETE. DDL (Data Definition Language) incluye CREATE TABLE, ALTER TABLE y DROP TABLE.",
+  "por_que_no": [
+   "",
+   "Los roles están invertidos y la descripción es incorrecta.",
+   "Afectan cosas distintas: contenido frente a estructura.",
+   "Ambos son sublenguajes de SQL."
+  ],
+  "referencia": "Clase 5 (CCA), «DML» y «DDL»"
+ },
+ {
+  "id": "JOIN-22",
+  "tema": "JOIN",
+  "subtema": "DML y DDL",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Cuál de estas sentencias pertenece al DDL?",
+  "opciones": [
+   "INSERT",
+   "UPDATE",
+   "ALTER TABLE",
+   "DELETE"
+  ],
+  "correcta": 2,
+  "explicacion": "ALTER TABLE modifica la estructura de una tabla existente, por eso es DDL. INSERT, UPDATE y DELETE son DML.",
+  "por_que_no": [
+   "Es DML: agrega registros.",
+   "Es DML: modifica registros.",
+   "",
+   "Es DML: elimina registros."
+  ],
+  "referencia": "Clase 5 (CCA), «Data Definition Language»"
+ },
+ {
+  "id": "JOIN-23",
+  "tema": "JOIN",
+  "subtema": "INSERT",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué agrega la sentencia INSERT a una tabla?",
+  "opciones": [
+   "Columnas nuevas",
+   "Filas (registros) nuevos con valores para las columnas existentes",
+   "Una tabla nueva",
+   "Una clave primaria"
+  ],
+  "correcta": 1,
+  "explicacion": "INSERT agrega filas, no columnas: las columnas ya forman parte de la estructura de la tabla. Para agregar columnas se usa ALTER TABLE ADD.",
+  "por_que_no": [
+   "Agregar columnas es tarea de ALTER TABLE.",
+   "",
+   "Crear tablas es tarea de CREATE TABLE.",
+   "Las claves se definen en la estructura (DDL)."
+  ],
+  "referencia": "Clase 5 (CCA), «INSERT»"
+ },
+ {
+  "id": "JOIN-24",
+  "tema": "JOIN",
+  "subtema": "INSERT",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cómo se añade a la tabla ARTICULOS el producto «Medias» de $70 del fabricante 2?",
+  "opciones": [
+   "INSERT INTO ARTICULOS (nombre, precio, fabricante) VALUES ('Medias', 70, 2);",
+   "UPDATE ARTICULOS SET nombre = 'Medias', precio = 70, fabricante = 2;",
+   "ALTER TABLE ARTICULOS ADD Medias 70;",
+   "INSERT ARTICULOS VALUES nombre = 'Medias';"
+  ],
+  "correcta": 0,
+  "explicacion": "INSERT INTO tabla (columnas) VALUES (valores) agrega un registro. El código se omite porque suele ser autoincremental.",
+  "por_que_no": [
+   "",
+   "UPDATE modifica registros existentes; además, sin WHERE los modificaría a todos.",
+   "ALTER TABLE cambia la estructura; no agrega datos.",
+   "Sintaxis inválida."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2d"
+ },
+ {
+  "id": "JOIN-25",
+  "tema": "JOIN",
+  "subtema": "INSERT",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "El último empleado cargado tiene ID = 1333 y el campo ID es autoincremental. Si se ejecuta INSERT INTO Empleados (Nombre, Cargo, Salario) VALUES ('Juan Perez', 'Analista', 50000), ¿qué ID recibe el nuevo registro?",
+  "opciones": [
+   "NULL, porque no se informó",
+   "1334, generado automáticamente",
+   "1333, porque se repite el último",
+   "0"
+  ],
+  "correcta": 1,
+  "explicacion": "Un campo autoincremental genera automáticamente un nuevo valor en cada inserción, por eso se omite en el INSERT.",
+  "por_que_no": [
+   "Al ser autoincremental, no queda nulo.",
+   "",
+   "Un identificador no puede repetirse.",
+   "El valor continúa la secuencia."
+  ],
+  "referencia": "Clase 5 (CCA), «INSERT»"
+ },
+ {
+  "id": "JOIN-26",
+  "tema": "JOIN",
+  "subtema": "INSERT",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Un INSERT falla al cargar un empleado sin informar la columna «cargo», definida como NOT NULL y sin valor por defecto. ¿Por qué?",
+  "opciones": [
+   "Porque INSERT no admite cadenas de texto",
+   "Porque las columnas NOT NULL necesariamente deben recibir un valor (salvo excepciones como los autoincrementales)",
+   "Porque falta un WHERE",
+   "Porque la tabla debe borrarse antes"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase advierte que no se pueden omitir columnas NOT NULL sin un valor definido. Además, el orden y el tipo de los valores deben coincidir con las columnas.",
+  "por_que_no": [
+   "INSERT admite texto entre comillas simples.",
+   "",
+   "INSERT no lleva WHERE.",
+   "No hace falta borrar la tabla."
+  ],
+  "referencia": "Clase 5 (CCA), «INSERT»; Joins, DML & DDL (cátedra), «INSERT»"
+ },
+ {
+  "id": "JOIN-27",
+  "tema": "JOIN",
+  "subtema": "UPDATE",
+  "dificultad": "facil",
+  "tipo": "caso",
+  "enunciado": "¿Qué ocurre al ejecutar UPDATE Empleados SET Salario = 55000; (sin WHERE)?",
+  "opciones": [
+   "Se actualiza solo el primer empleado",
+   "Todos los empleados de la tabla pasan a tener salario 55.000",
+   "Da error de sintaxis",
+   "No pasa nada hasta que se agregue un SELECT"
+  ],
+  "correcta": 1,
+  "explicacion": "La cláusula WHERE determina qué registros se modifican. Sin ella, UPDATE afecta a todos los registros de la tabla.",
+  "por_que_no": [
+   "No existe la noción de «primer registro» en un UPDATE sin WHERE.",
+   "",
+   "Es sintaxis válida, y por eso es peligrosa.",
+   "El UPDATE se ejecuta directamente."
+  ],
+  "referencia": "Clase 5 (CCA), «UPDATE»"
+ },
+ {
+  "id": "JOIN-28",
+  "tema": "JOIN",
+  "subtema": "UPDATE",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Antes de ejecutar UPDATE Empleados SET Salario = 55000 WHERE ID = 1, ¿qué buena práctica recomienda la clase?",
+  "opciones": [
+   "Hacer un DROP TABLE de respaldo",
+   "Ejecutar primero SELECT * FROM Empleados WHERE ID = 1 para verificar qué registros se verán afectados",
+   "Quitar el WHERE para que sea más rápido",
+   "Convertir el salario a texto"
+  ],
+  "correcta": 1,
+  "explicacion": "Correr un SELECT con la misma condición permite ver de antemano qué filas se modificarán. En bases transaccionales también se recomienda BEGIN TRANSACTION y ROLLBACK.",
+  "por_que_no": [
+   "DROP TABLE elimina la tabla; no es un respaldo.",
+   "",
+   "Quitar el WHERE modificaría todos los registros.",
+   "Cambiar el tipo de la columna no tiene relación con la verificación."
+  ],
+  "referencia": "Clase 5 (CCA), «UPDATE»; Joins, DML & DDL (cátedra)"
+ },
+ {
+  "id": "JOIN-29",
+  "tema": "JOIN",
+  "subtema": "UPDATE",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Cómo se asigna el nombre «Roberto» al fabricante con código 20?",
+  "opciones": [
+   "UPDATE FABRICANTES SET nombre = 'Roberto' WHERE codigo = 20;",
+   "INSERT INTO FABRICANTES VALUES (20, 'Roberto');",
+   "ALTER TABLE FABRICANTES SET nombre = 'Roberto';",
+   "UPDATE FABRICANTES SET nombre = 'Roberto';"
+  ],
+  "correcta": 0,
+  "explicacion": "UPDATE con SET modifica el valor y WHERE codigo = 20 restringe el cambio a ese fabricante.",
+  "por_que_no": [
+   "",
+   "Insertaría un fabricante nuevo (y fallaría si el código 20 ya existe).",
+   "ALTER TABLE modifica la estructura, no los valores.",
+   "Sin WHERE renombraría a todos los fabricantes."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2e"
+ },
+ {
+  "id": "JOIN-30",
+  "tema": "JOIN",
+  "subtema": "DELETE y DROP",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia hay entre DELETE FROM Empleados; y DROP TABLE Empleados;?",
+  "opciones": [
+   "Ninguna",
+   "DELETE elimina todas las filas pero la tabla sigue existiendo con su estructura; DROP TABLE elimina la tabla completa: registros, columnas y estructura",
+   "DELETE elimina la tabla y DROP solo las filas",
+   "DROP TABLE solo elimina una columna"
+  ],
+  "correcta": 1,
+  "explicacion": "DELETE sin WHERE vacía la tabla, que sigue existiendo con sus columnas. DROP TABLE la elimina por completo y, según la cátedra, sin posibilidad de recuperación.",
+  "por_que_no": [
+   "Tienen efectos muy distintos.",
+   "",
+   "Los efectos están invertidos.",
+   "Eliminar una columna es tarea de ALTER TABLE … DROP COLUMN."
+  ],
+  "referencia": "Clase 5 (CCA), «DELETE» y «DROP TABLE»"
+ },
+ {
+  "id": "JOIN-31",
+  "tema": "JOIN",
+  "subtema": "DELETE y DROP",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Para qué sirve agregar RETURNING * a un DELETE, en los motores que lo soportan?",
+  "opciones": [
+   "Para deshacer el borrado",
+   "Para mostrar los registros afectados por la operación",
+   "Para borrar también la estructura",
+   "Para devolver la cantidad de tablas"
+  ],
+  "correcta": 1,
+  "explicacion": "RETURNING muestra los registros afectados. La clase aclara que su comportamiento puede variar entre motores de SQL.",
+  "por_que_no": [
+   "Deshacer requiere transacciones y ROLLBACK.",
+   "",
+   "Eliminar la estructura es tarea de DROP TABLE.",
+   "No devuelve una cantidad de tablas."
+  ],
+  "referencia": "Clase 5 (CCA), «DELETE»; Joins, DML & DDL (cátedra)"
+ },
+ {
+  "id": "JOIN-32",
+  "tema": "JOIN",
+  "subtema": "DROP TABLE",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué ventaja tiene DROP TABLE IF EXISTS pedidos; frente a DROP TABLE pedidos;?",
+  "opciones": [
+   "Permite recuperar la tabla después",
+   "Evita un error si la tabla no existe",
+   "Borra solo las filas",
+   "Pide confirmación al usuario"
+  ],
+  "correcta": 1,
+  "explicacion": "IF EXISTS hace que la sentencia no falle cuando la tabla no existe. Si existe, igual la elimina de forma permanente.",
+  "por_que_no": [
+   "La eliminación sigue siendo irreversible.",
+   "",
+   "DROP elimina la tabla completa, con o sin IF EXISTS.",
+   "No incorpora ninguna confirmación."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «DROP TABLE – Ejemplo seguro»"
+ },
+ {
+  "id": "JOIN-33",
+  "tema": "JOIN",
+  "subtema": "DROP TABLE",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Se quiere eliminar una tabla referenciada por claves foráneas de otras tablas. ¿Qué indica la cátedra?",
+  "opciones": [
+   "Que se puede borrar sin consecuencias",
+   "Que primero hay que eliminar o modificar esas relaciones",
+   "Que hay que usar DELETE en vez de DROP",
+   "Que hay que convertirla a texto"
+  ],
+  "correcta": 1,
+  "explicacion": "Si la tabla tiene relaciones (FOREIGN KEYS), primero hay que eliminar o modificar esas relaciones antes del DROP TABLE.",
+  "por_que_no": [
+   "Romper relaciones afecta la integridad del sistema.",
+   "",
+   "DELETE vacía la tabla pero no la elimina; no resuelve lo pedido.",
+   "El tipo de dato no tiene relación con esto."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «DROP TABLE – Precaución»"
+ },
+ {
+  "id": "JOIN-34",
+  "tema": "JOIN",
+  "subtema": "ALTER TABLE",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Cómo se agrega a la tabla clientes una columna telefono con valor por defecto 'Desconocido' para los registros existentes?",
+  "opciones": [
+   "ALTER TABLE clientes ADD telefono VARCHAR(20) DEFAULT 'Desconocido';",
+   "INSERT INTO clientes (telefono) VALUES ('Desconocido');",
+   "UPDATE clientes ADD telefono;",
+   "CREATE TABLE telefono DEFAULT 'Desconocido';"
+  ],
+  "correcta": 0,
+  "explicacion": "ALTER TABLE … ADD agrega una columna a una tabla existente, y DEFAULT asigna un valor por defecto a los registros anteriores.",
+  "por_que_no": [
+   "",
+   "INSERT agregaría una fila nueva, no una columna.",
+   "Sintaxis inválida: UPDATE no agrega columnas.",
+   "Crearía una tabla nueva."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «ALTER TABLE»; Clase 5 (CCA)"
+ },
+ {
+  "id": "JOIN-35",
+  "tema": "JOIN",
+  "subtema": "ALTER TABLE",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué hay que tener cuidado al ejecutar ALTER TABLE clientes DROP COLUMN telefono;?",
+  "opciones": [
+   "Porque borra la tabla entera",
+   "Porque la eliminación de la columna es irreversible y puede afectar consultas o tablas que dependan de ella",
+   "Porque solo funciona si la columna está vacía",
+   "Porque convierte la columna en NULL"
+  ],
+  "correcta": 1,
+  "explicacion": "La cátedra marca esta acción como irreversible. Además, modificar la estructura puede afectar otras consultas o tablas dependientes.",
+  "por_que_no": [
+   "Solo elimina esa columna.",
+   "",
+   "La columna puede tener datos; se pierden.",
+   "La elimina; no la vuelve nula."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «ALTER TABLE»; Clase 5 (CCA)"
+ },
+ {
+  "id": "JOIN-36",
+  "tema": "JOIN",
+  "subtema": "CREATE TABLE",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué hace CREATE TABLE CopiaClientes AS SELECT * FROM Clientes;?",
+  "opciones": [
+   "Vincula dos tablas existentes",
+   "Crea una tabla nueva a partir del resultado de una consulta (útil para tablas intermedias o auxiliares)",
+   "Renombra la tabla Clientes",
+   "Borra la tabla Clientes"
+  ],
+  "correcta": 1,
+  "explicacion": "CREATE TABLE … AS SELECT crea una tabla a partir del resultado de la consulta. El profesor señaló que es útil para tablas temporales o auxiliares de análisis. La resolución del parcial 2025 usa CREATE TABLE CONSULTA_A AS SELECT ….",
+  "por_que_no": [
+   "No establece relaciones.",
+   "",
+   "No renombra: crea otra tabla.",
+   "Clientes se mantiene intacta."
+  ],
+  "referencia": "Clase 5 (CCA), «CREATE TABLE»; 1er Parcial 1C 2025, resolución 1a"
+ },
+ {
+  "id": "JOIN-37",
+  "tema": "JOIN",
+  "subtema": "CREATE TABLE",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Al ejecutar CREATE TABLE Clientes (ID INTEGER, Nombre VARCHAR(50), Telefono VARCHAR(20)); ¿qué se define?",
+  "opciones": [
+   "Los registros iniciales de la tabla",
+   "El nombre de la tabla, sus columnas y el tipo de dato de cada una",
+   "Un índice sobre Clientes",
+   "Una consulta guardada"
+  ],
+  "correcta": 1,
+  "explicacion": "CREATE TABLE define la estructura: el nombre, las columnas y sus tipos. La cátedra sugiere además definir claves primarias y restricciones.",
+  "por_que_no": [
+   "Los registros se agregan después con INSERT.",
+   "",
+   "No crea índices.",
+   "No es una consulta."
+  ],
+  "referencia": "Clase 5 (CCA), «CREATE TABLE»"
+ },
+ {
+  "id": "JOIN-38",
+  "tema": "JOIN",
+  "subtema": "DML",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿cuál de las operaciones DML es la más sencilla de revertir?",
+  "opciones": [
+   "UPDATE, porque se puede volver a ejecutar",
+   "INSERT, porque si se conocen los registros agregados por error pueden eliminarse después",
+   "DELETE, porque los datos quedan en una papelera",
+   "Ninguna es reversible"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase indica que INSERT es la más sencilla de revertir: los registros agregados por error se identifican y se eliminan.",
+  "por_que_no": [
+   "Un UPDATE pisa los valores anteriores; sin respaldo se pierden.",
+   "",
+   "DELETE no tiene papelera; los datos se pierden.",
+   "INSERT puede revertirse con relativa facilidad."
+  ],
+  "referencia": "Clase 5 (CCA), «INSERT»"
+ },
+ {
+  "id": "JOIN-39",
+  "tema": "JOIN",
+  "subtema": "DML",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Qué efecto tiene DELETE FROM empleados WHERE true;?",
+  "opciones": [
+   "Elimina la tabla empleados",
+   "Elimina todos los registros pero conserva la tabla",
+   "No elimina nada porque WHERE true no es válido",
+   "Elimina solo el primer registro"
+  ],
+  "correcta": 1,
+  "explicacion": "WHERE true se cumple para todas las filas. La cátedra lo muestra como forma de limpiar una tabla sin borrarla.",
+  "por_que_no": [
+   "Eliminar la tabla es tarea de DROP TABLE.",
+   "",
+   "Es una condición válida y siempre verdadera.",
+   "Afecta a todas las filas."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «DELETE – Eliminar registros»"
+ },
+ {
+  "id": "JOIN-40",
+  "tema": "JOIN",
+  "subtema": "DML",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Además de usar WHERE y hacer un SELECT previo, ¿qué otra precaución sugiere la cátedra al usar DML en bases que lo soportan?",
+  "opciones": [
+   "Usar TRANSACTION y ROLLBACK",
+   "Desactivar las claves primarias",
+   "Convertir todas las columnas a texto",
+   "Ejecutar DROP TABLE antes"
+  ],
+  "correcta": 0,
+  "explicacion": "Abrir una transacción (BEGIN TRANSACTION) permite deshacer los cambios con ROLLBACK si algo salió mal, antes de confirmarlos.",
+  "por_que_no": [
+   "",
+   "Desactivar claves pone en riesgo la integridad.",
+   "No tiene sentido y rompería operaciones.",
+   "DROP TABLE eliminaría la tabla."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «DML – Precaución»"
+ },
+ {
+  "id": "JOIN-41",
+  "tema": "JOIN",
+  "subtema": "Joins y filtros",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "Se escribe asesores LEFT JOIN datos_clientes LEFT JOIN operaciones y luego WHERE O.FECHA_OPERACION BETWEEN '2025-05-01' AND '2025-05-31'. ¿Qué efecto tiene ese WHERE sobre el LEFT JOIN?",
+  "opciones": [
+   "Ninguno: se siguen conservando todos los asesores",
+   "Descarta las filas sin operaciones (con fecha NULL), así que los asesores sin operaciones en mayo desaparecen y el resultado se comporta como un INNER JOIN",
+   "Agrega filas nuevas",
+   "Convierte el LEFT JOIN en RIGHT JOIN"
+  ],
+  "correcta": 1,
+  "explicacion": "El WHERE se aplica después del join (FROM, JOIN y ON se procesan antes que WHERE). Una fecha NULL no cumple el BETWEEN, así que esas filas se descartan. Es la misma lógica del LEFT JOIN excluyente, pero al revés.",
+  "por_que_no": [
+   "El WHERE filtra filas del resultado del join, incluidas las conservadas por el LEFT.",
+   "",
+   "WHERE nunca agrega filas.",
+   "No cambia la tabla de partida; elimina filas con NULL."
+  ],
+  "referencia": "1er Parcial 1C 2025, resolución 1c; SQL Básico, orden de ejecución"
+ },
+ {
+  "id": "JOIN-42",
+  "tema": "JOIN",
+  "subtema": "Elegir el join",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "Para listar los artículos con su nombre, precio y el nombre de su fabricante (ARTICULOS.fabricante → FABRICANTES.codigo), ¿qué consulta corresponde?",
+  "opciones": [
+   "SELECT A.NOMBRE, A.PRECIO, F.NOMBRE FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.FABRICANTE = F.CODIGO;",
+   "SELECT NOMBRE, PRECIO FROM ARTICULOS, FABRICANTES;",
+   "SELECT A.NOMBRE, F.NOMBRE FROM ARTICULOS A INNER JOIN FABRICANTES F ON A.CODIGO = F.CODIGO;",
+   "SELECT * FROM FABRICANTES WHERE PRECIO > 0;"
+  ],
+  "correcta": 0,
+  "explicacion": "Se unen ambas tablas por la clave foránea ARTICULOS.FABRICANTE = FABRICANTES.CODIGO y se usan alias para distinguir los dos campos NOMBRE.",
+  "por_que_no": [
+   "",
+   "No tiene condición de vínculo (combina todo con todo) y el NOMBRE es ambiguo.",
+   "Une el código del artículo con el código del fabricante, que no se corresponden.",
+   "FABRICANTES no tiene precio."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 2a"
+ },
+ {
+  "id": "JOIN-43",
+  "tema": "JOIN",
+  "subtema": "Elegir el join",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué consulta encuentra los clientes que nunca hicieron un pedido (base W3Schools)?",
+  "opciones": [
+   "SELECT c.CustomerName FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID;",
+   "SELECT c.CustomerName FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID WHERE o.OrderID IS NULL;",
+   "SELECT CustomerName FROM Customers WHERE CustomerID IS NULL;",
+   "SELECT c.CustomerName FROM Customers c RIGHT JOIN Orders o ON c.CustomerID = o.CustomerID;"
+  ],
+  "correcta": 1,
+  "explicacion": "La guía lo plantea como LEFT JOIN + IS NULL: se conservan todos los clientes y se dejan solo los que no tienen pedido asociado.",
+  "por_que_no": [
+   "Devuelve los clientes que sí tienen pedidos.",
+   "",
+   "Un cliente siempre tiene ID; además no cruza con pedidos.",
+   "Conserva los pedidos, no los clientes sin pedidos."
+  ],
+  "referencia": "Guía de ejercicios SQL, ejercicio 18"
+ },
+ {
+  "id": "JOIN-44",
+  "tema": "JOIN",
+  "subtema": "Múltiples joins",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Para listar los pedidos con el nombre del empleado que los gestionó y el transportista usado, ¿qué uniones se necesitan?",
+  "opciones": [
+   "Orders con Employees (EmployeeID) y Orders con Shippers (ShipperID)",
+   "Orders con Products y Categories",
+   "Customers con Suppliers",
+   "OrderDetails con Employees"
+  ],
+  "correcta": 0,
+  "explicacion": "Según las relaciones de la guía, Orders.EmployeeID → Employees.EmployeeID y Orders.ShipperID → Shippers.ShipperID. Se necesitan dos joins desde Orders.",
+  "por_que_no": [
+   "",
+   "Esas tablas no tienen el empleado ni el transportista.",
+   "No hay relación directa entre ellas.",
+   "OrderDetails no tiene EmployeeID."
+  ],
+  "referencia": "Guía de ejercicios SQL, «Relaciones clave» y ejercicio 16"
+ },
+ {
+  "id": "JOIN-45",
+  "tema": "JOIN",
+  "subtema": "ALTER TABLE",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La cátedra muestra ALTER TABLE clientes ALTER COLUMN telefono TYPE BIGINT USING telefono::BIGINT. ¿Qué precaución corresponde antes de ejecutarlo?",
+  "opciones": [
+   "Ninguna, el cambio de tipo es siempre seguro",
+   "Verificar que los datos existentes sean compatibles con el nuevo tipo, porque si la columna tiene valores no convertibles la operación puede fallar",
+   "Borrar la tabla antes",
+   "Agregar un WHERE"
+  ],
+  "correcta": 1,
+  "explicacion": "Si la columna tiene datos, hay que verificar que el nuevo tipo sea compatible: por ejemplo, un teléfono con guiones o letras no se convierte en BIGINT.",
+  "por_que_no": [
+   "La cátedra advierte lo contrario.",
+   "",
+   "Borrar la tabla haría perder todos los datos.",
+   "ALTER TABLE no lleva WHERE."
+  ],
+  "referencia": "Joins, DML & DDL (cátedra), «ALTER TABLE – Modificar el tipo de dato»"
+ }
+]

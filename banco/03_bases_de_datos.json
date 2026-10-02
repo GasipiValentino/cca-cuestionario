@@ -1,0 +1,784 @@
+[
+ {
+  "id": "BD-01",
+  "tema": "BD",
+  "subtema": "Definición",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Según la clase de introducción a bases de datos, una base de datos es:",
+  "opciones": [
+   "Una planilla de cálculo con muchas filas",
+   "Un conjunto organizado de datos estructurados que permite su almacenamiento, gestión y recuperación eficiente mediante un DBMS",
+   "Un lenguaje de programación para consultar información",
+   "Un servidor web que muestra páginas a los clientes"
+  ],
+  "correcta": 1,
+  "explicacion": "Una base de datos es un conjunto organizado de datos estructurados que permite almacenarlos, gestionarlos y recuperarlos eficientemente mediante un sistema de gestión de bases de datos (DBMS). Se diseña para modelar aspectos del mundo real.",
+  "por_que_no": [
+   "Una planilla no es una base de datos; de hecho, la clase 12 advierte que Excel es una mala base de datos.",
+   "",
+   "El lenguaje es SQL; la base de datos es el conjunto de datos que se consulta.",
+   "El servidor web es otro componente de la arquitectura cliente-servidor."
+  ],
+  "referencia": "Introducción a bases de datos, «¿Qué es una base de datos?»"
+ },
+ {
+  "id": "BD-02",
+  "tema": "BD",
+  "subtema": "ACID",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué propiedad ACID establece que todos los cambios de una transacción se realizan como si fueran una sola operación, de modo que si falla una parte se cancela por completo?",
+  "opciones": [
+   "Atomicidad",
+   "Consistencia",
+   "Aislamiento",
+   "Durabilidad"
+  ],
+  "correcta": 0,
+  "explicacion": "La atomicidad garantiza el «todo o nada»: si una parte de la transacción falla, se cancela entera.",
+  "por_que_no": [
+   "",
+   "La consistencia garantiza que se mantenga la integridad de los datos.",
+   "El aislamiento permite que varias transacciones ocurran simultáneamente sin interferirse.",
+   "La durabilidad garantiza que los cambios confirmados se conserven aunque haya fallas."
+  ],
+  "referencia": "Introducción a bases de datos, «Propiedades clave (ACID)»; apuntes C3"
+ },
+ {
+  "id": "BD-03",
+  "tema": "BD",
+  "subtema": "ACID",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué propiedad ACID garantiza que los cambios de una transacción exitosa se guarden permanentemente, aun si el sistema falla después?",
+  "opciones": [
+   "Atomicidad",
+   "Consistencia",
+   "Aislamiento",
+   "Durabilidad"
+  ],
+  "correcta": 3,
+  "explicacion": "La durabilidad asegura que, una vez confirmada la transacción, sus cambios persisten aunque luego haya fallas del sistema.",
+  "por_que_no": [
+   "La atomicidad se refiere al «todo o nada».",
+   "La consistencia se refiere a mantener la integridad de los datos.",
+   "El aislamiento se refiere a la independencia entre transacciones simultáneas.",
+   ""
+  ],
+  "referencia": "Introducción a bases de datos, «Propiedades clave (ACID)»"
+ },
+ {
+  "id": "BD-04",
+  "tema": "BD",
+  "subtema": "ACID",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Dos cajeros registran pagos de distintas pólizas al mismo tiempo en el mismo sistema y ninguna operación interfiere con la otra. ¿Qué propiedad ACID describe esta situación?",
+  "opciones": [
+   "Atomicidad",
+   "Durabilidad",
+   "Aislamiento",
+   "Consistencia"
+  ],
+  "correcta": 2,
+  "explicacion": "El aislamiento (isolation) permite que muchas transacciones ocurran simultáneamente, cada una de forma independiente de las otras.",
+  "por_que_no": [
+   "La atomicidad se refiere a que cada transacción se ejecute completa o no se ejecute.",
+   "La durabilidad se refiere a conservar los cambios ante fallas.",
+   "",
+   "La consistencia se refiere a mantener la integridad de los datos."
+  ],
+  "referencia": "Introducción a bases de datos, «Propiedades clave (ACID)»"
+ },
+ {
+  "id": "BD-05",
+  "tema": "BD",
+  "subtema": "ACID",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Una transferencia debita $10.000 de una cuenta, pero falla antes de acreditarlos en la otra. El sistema revierte el débito y ambas cuentas quedan como antes. ¿Qué propiedad se está aplicando?",
+  "opciones": [
+   "Atomicidad",
+   "Durabilidad",
+   "Aislamiento",
+   "Escalabilidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Como una parte falló, la operación completa se cancela: es la atomicidad.",
+  "por_que_no": [
+   "",
+   "La durabilidad se refiere a transacciones exitosas que persisten; aquí la transacción no se completó.",
+   "El aislamiento se refiere a transacciones simultáneas, no a la reversión de una operación incompleta.",
+   "La escalabilidad es un impacto de las bases de datos, no una propiedad ACID."
+  ],
+  "referencia": "Introducción a bases de datos, «Propiedades clave (ACID)»"
+ },
+ {
+  "id": "BD-06",
+  "tema": "BD",
+  "subtema": "Impacto y casos de uso",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuál de los siguientes NO figura entre los impactos de las bases de datos mencionados en clase?",
+  "opciones": [
+   "Escalabilidad y eficiencia",
+   "Automatización y reducción de errores",
+   "Análisis y predicción con Big Data",
+   "Eliminación de la necesidad de seguridad informática"
+  ],
+  "correcta": 3,
+  "explicacion": "Los impactos mencionados son escalabilidad y eficiencia, automatización y reducción de errores, análisis y predicción con Big Data, y seguridad y protección de datos. Las bases de datos incorporan seguridad; no la vuelven innecesaria.",
+  "por_que_no": [
+   "Figura en la lista.",
+   "Figura en la lista.",
+   "Figura en la lista.",
+   ""
+  ],
+  "referencia": "Introducción a bases de datos, «Impacto y casos de uso»"
+ },
+ {
+  "id": "BD-07",
+  "tema": "BD",
+  "subtema": "Entidades y atributos",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "En el modelo de datos, una entidad es:",
+  "opciones": [
+   "Un objeto, real o abstracto, acerca del cual se recoge información de interés para la base de datos",
+   "Una columna de una tabla",
+   "Un tipo de dato numérico",
+   "Una consulta SQL guardada"
+  ],
+  "correcta": 0,
+  "explicacion": "La clase define la entidad como un objeto real o abstracto sobre el que se recoge información. Sus propiedades particulares son los atributos.",
+  "por_que_no": [
+   "",
+   "La columna representa un atributo de la entidad.",
+   "Los tipos de datos describen los atributos; no son entidades.",
+   "Una consulta no es una entidad del modelo."
+  ],
+  "referencia": "Introducción a bases de datos, «Entidades»"
+ },
+ {
+  "id": "BD-08",
+  "tema": "BD",
+  "subtema": "Entidades y atributos",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Para la entidad Estudiante se registran registro, DNI, nombre, apellido y carrera. Estos elementos son:",
+  "opciones": [
+   "Entidades relacionadas",
+   "Atributos que describen las características de la entidad",
+   "Claves foráneas",
+   "Relaciones N:M"
+  ],
+  "correcta": 1,
+  "explicacion": "Los atributos describen las características de una entidad. En una tabla aparecen como columnas.",
+  "por_que_no": [
+   "Son propiedades de una sola entidad, no entidades distintas.",
+   "",
+   "Una clave foránea referencia a otra tabla; estos son datos propios del estudiante.",
+   "Una relación vincula entidades; no es una lista de características."
+  ],
+  "referencia": "Introducción a bases de datos, «Entidades»"
+ },
+ {
+  "id": "BD-09",
+  "tema": "BD",
+  "subtema": "Tipos de datos",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Al diseñar la tabla de estudiantes, ¿qué tipo de dato corresponde al número de registro y cuál al nombre?",
+  "opciones": [
+   "Registro: texto; nombre: entero",
+   "Registro: numérico entero; nombre: texto",
+   "Registro: fecha; nombre: decimal",
+   "Ambos: numérico decimal"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase indica que el número de registro será un entero y el nombre será texto. Cada atributo tiene un tipo adaptado a su contenido y no puede salir de ese tipo.",
+  "por_que_no": [
+   "Los tipos están invertidos.",
+   "",
+   "Ni el registro es una fecha ni el nombre es un número.",
+   "El nombre no es numérico."
+  ],
+  "referencia": "Introducción a bases de datos, «Tipos de datos»; apuntes C3"
+ },
+ {
+  "id": "BD-10",
+  "tema": "BD",
+  "subtema": "Cardinalidad",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Un usuario tiene una sola dirección y una dirección pertenece a un solo usuario. Según el ejemplo de clase, ¿cómo se establece la relación?",
+  "opciones": [
+   "Con una tabla intermedia (pivot) con dos claves foráneas",
+   "Colocando la clave primaria de la dirección como clave foránea (direccion_id) en la tabla de usuarios",
+   "Repitiendo todos los datos de la dirección en cada fila de usuarios",
+   "No hace falta relacionarlas"
+  ],
+  "correcta": 1,
+  "explicacion": "En la relación 1:1 del ejemplo se agrega direccion_id (FK) en USUARIOS, que referencia el id (PK) de DIRECCIONES.",
+  "por_que_no": [
+   "La tabla pivot es propia de las relaciones N:M.",
+   "",
+   "Repetir datos es desnormalizar, no establecer una relación con claves.",
+   "Sin una clave no hay forma de saber qué dirección corresponde a cada usuario."
+  ],
+  "referencia": "Introducción a bases de datos, «Uno a uno (1:1)»"
+ },
+ {
+  "id": "BD-11",
+  "tema": "BD",
+  "subtema": "Cardinalidad",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Un cliente puede tener muchas tarjetas y cada tarjeta pertenece a un solo cliente. ¿Dónde debe ubicarse la clave foránea?",
+  "opciones": [
+   "En la tabla CLIENTES, como tarjeta_id",
+   "En la tabla TARJETAS, como cliente_id",
+   "En ambas tablas",
+   "En una tabla intermedia con su propia PK"
+  ],
+  "correcta": 1,
+  "explicacion": "En una relación 1:N la clave primaria del lado «uno» (cliente) se coloca como clave foránea en la tabla del lado «muchos» (tarjetas).",
+  "por_que_no": [
+   "Un cliente tiene muchas tarjetas, así que un único tarjeta_id en CLIENTES no alcanzaría para representarlas.",
+   "",
+   "No es necesario y genera redundancia.",
+   "La tabla intermedia se usa en relaciones N:M."
+  ],
+  "referencia": "Introducción a bases de datos, «Uno a muchos (1:N)»"
+ },
+ {
+  "id": "BD-12",
+  "tema": "BD",
+  "subtema": "Cardinalidad",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo se implementa en la base de datos una relación muchos a muchos (N:M), por ejemplo clientes y productos?",
+  "opciones": [
+   "Agregando product_id en la tabla de clientes",
+   "La relación pasa a ser una tabla intermedia (pivot) con una PK y dos FK, una hacia cada tabla",
+   "Uniendo ambas tablas en una sola",
+   "Con una clave única en cada tabla"
+  ],
+  "correcta": 1,
+  "explicacion": "En las relaciones N:M la relación misma se convierte en una tabla (por ejemplo CLIENTE_PRODUCTO) con id (PK), producto_id (FK) y cliente_id (FK).",
+  "por_que_no": [
+   "Un cliente compra muchos productos; una sola columna no alcanza.",
+   "",
+   "Fusionar las tablas generaría repetición masiva de datos.",
+   "La clave única evita duplicados, pero no modela la relación."
+  ],
+  "referencia": "Introducción a bases de datos, «Muchos a muchos (N:M)»; apuntes C3"
+ },
+ {
+  "id": "BD-13",
+  "tema": "BD",
+  "subtema": "Cardinalidad",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "En una facultad, un estudiante cursa muchas materias y cada materia tiene muchos estudiantes. ¿Qué cardinalidad tiene la relación?",
+  "opciones": [
+   "1:1",
+   "1:N",
+   "N:M",
+   "No es una relación"
+  ],
+  "correcta": 2,
+  "explicacion": "Ambos lados admiten «muchos», así que es muchos a muchos. Se implementaría con una tabla intermedia, por ejemplo una de inscripciones.",
+  "por_que_no": [
+   "Ni el estudiante tiene una sola materia ni la materia un solo estudiante.",
+   "Sería 1:N si cada materia tuviera un único estudiante, o al revés.",
+   "",
+   "Hay un vínculo claro entre ambas entidades."
+  ],
+  "referencia": "Introducción a bases de datos, «Cardinalidad»"
+ },
+ {
+  "id": "BD-14",
+  "tema": "BD",
+  "subtema": "Cardinalidad",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "En los diagramas aparecen notaciones como «1 a N» y «1 a M». ¿Qué diferencia hay entre ellas?",
+  "opciones": [
+   "1:N es obligatoria y 1:M es opcional",
+   "Ninguna: la letra solo representa «muchos»",
+   "1:M significa uno a mil",
+   "1:N se usa solo en SQL Server"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase lo aclara: 1:N y 1:M son lo mismo; la letra se usa para representar «muchos».",
+  "por_que_no": [
+   "La letra no expresa obligatoriedad.",
+   "",
+   "M no es un número.",
+   "Es notación de modelado, independiente del motor."
+  ],
+  "referencia": "Introducción a bases de datos, «Cardinalidad – Nota»"
+ },
+ {
+  "id": "BD-15",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué característica define a la clave primaria (PK)?",
+  "opciones": [
+   "Identifica unívocamente cada fila; no puede ser nula ni estar duplicada",
+   "Hace referencia a la clave primaria de otra tabla",
+   "Evita duplicados pero permite nulos",
+   "Es cualquier campo que podría llegar a ser clave"
+  ],
+  "correcta": 0,
+  "explicacion": "La PK identifica de forma única cada fila. Por eso no admite valores nulos ni duplicados.",
+  "por_que_no": [
+   "",
+   "Eso describe a la clave foránea.",
+   "Eso describe a la clave única.",
+   "Eso describe a la clave candidata."
+  ],
+  "referencia": "Introducción a bases de datos, «Claves»; apuntes C3"
+ },
+ {
+  "id": "BD-16",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Para qué sirve una clave foránea?",
+  "opciones": [
+   "Para identificar filas únicas",
+   "Para asegurar la integridad referencial, vinculando una tabla con la clave primaria de otra",
+   "Para aumentar la performance",
+   "Para reemplazar a la clave primaria"
+  ],
+  "correcta": 1,
+  "explicacion": "La FK relaciona tablas haciendo referencia a una PK. Así garantiza integridad referencial: no puede cargarse, por ejemplo, un siniestro de una póliza inexistente.",
+  "por_que_no": [
+   "Eso lo hace la clave primaria.",
+   "",
+   "No es su propósito; la eficiencia en las búsquedas la aportan los índices.",
+   "Una tabla puede tener ambas claves; la FK no reemplaza a la PK."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 8; Introducción a bases de datos, «Claves»"
+ },
+ {
+  "id": "BD-17",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la diferencia entre una clave única (Unique Key) y una clave primaria?",
+  "opciones": [
+   "La clave única permite valores nulos; la primaria no",
+   "La clave única permite duplicados; la primaria no",
+   "La clave única siempre es autoincremental",
+   "No hay diferencia"
+  ],
+  "correcta": 0,
+  "explicacion": "Ambas evitan valores duplicados, pero la clave única permite nulos y la primaria no.",
+  "por_que_no": [
+   "",
+   "La clave única justamente evita duplicados.",
+   "El autoincremento corresponde a las claves surrogadas.",
+   "Difieren en la admisión de nulos."
+  ],
+  "referencia": "Introducción a bases de datos, «Claves»; apuntes C3"
+ },
+ {
+  "id": "BD-18",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "En la tabla de asegurados tanto el DNI como el CUIT identifican unívocamente a cada persona. Se elige el DNI como clave primaria. ¿Cómo se clasifica el CUIT?",
+  "opciones": [
+   "Clave foránea",
+   "Clave candidata",
+   "Clave surrogada",
+   "Clave compuesta"
+  ],
+  "correcta": 1,
+  "explicacion": "Una clave candidata es un campo (o conjunto de campos) que podría ser clave primaria. El CUIT cumple esa condición aunque no haya sido elegido.",
+  "por_que_no": [
+   "No referencia a otra tabla.",
+   "",
+   "No es un ID artificial generado por el sistema.",
+   "Está formado por un solo campo."
+  ],
+  "referencia": "Introducción a bases de datos, «Claves»"
+ },
+ {
+  "id": "BD-19",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "En una tabla de cuotas, ninguna columna por sí sola identifica cada fila, pero la combinación (número de póliza, número de cuota) sí lo hace. ¿Qué tipo de clave es?",
+  "opciones": [
+   "Clave compuesta",
+   "Clave surrogada",
+   "Clave única",
+   "Clave foránea"
+  ],
+  "correcta": 0,
+  "explicacion": "Una clave compuesta se forma con más de un campo. Lo mismo ocurre con los datos de panel, identificados por (id_asegurado, año).",
+  "por_que_no": [
+   "",
+   "Una surrogada es un ID artificial de un solo campo.",
+   "Una clave única es un campo que no admite duplicados y puede ser nulo; aquí se necesita la combinación de dos campos.",
+   "Aunque el número de póliza podría ser FK hacia pólizas, la combinación que identifica la fila es una clave compuesta."
+  ],
+  "referencia": "Introducción a bases de datos, «Claves»"
+ },
+ {
+  "id": "BD-20",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Una clave surrogada es:",
+  "opciones": [
+   "Un ID artificial, generalmente autoincremental",
+   "Un campo de texto con el nombre del cliente",
+   "La combinación de dos claves foráneas",
+   "Una clave que puede repetirse"
+  ],
+  "correcta": 0,
+  "explicacion": "La clave surrogada es un identificador artificial, sin significado de negocio, que suele generarse automáticamente (1, 2, 3…).",
+  "por_que_no": [
+   "",
+   "Un nombre es un dato de negocio y puede repetirse.",
+   "Eso describe una clave compuesta.",
+   "Ninguna clave identificadora admite repetidos."
+  ],
+  "referencia": "Introducción a bases de datos, «Claves»"
+ },
+ {
+  "id": "BD-21",
+  "tema": "BD",
+  "subtema": "Claves",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuántos tipos de claves se presentan en la clase y para qué sirven en conjunto?",
+  "opciones": [
+   "Dos (primaria y foránea), para ordenar los datos",
+   "Seis (primaria, foránea, única, candidata, compuesta y surrogada), para garantizar unicidad, integridad y relaciones entre tablas",
+   "Tres (primaria, secundaria y terciaria), para acelerar consultas",
+   "Cuatro (una por cada propiedad ACID)"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase enumera seis tipos de claves y explica que las claves garantizan la unicidad, la integridad y las relaciones entre tablas.",
+  "por_que_no": [
+   "Se presentan seis tipos, y su función no es ordenar.",
+   "",
+   "Esos nombres no corresponden a los tipos vistos.",
+   "Las claves no se corresponden con las propiedades ACID."
+  ],
+  "referencia": "Introducción a bases de datos, «Relaciones y claves»"
+ },
+ {
+  "id": "BD-22",
+  "tema": "BD",
+  "subtema": "Modelado",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué es un DER?",
+  "opciones": [
+   "Un Diagrama Entidad-Relación, que representa las entidades y cómo se relacionan entre sí",
+   "Un Documento de Especificación de Requisitos",
+   "Un tipo de JOIN",
+   "Un lenguaje para definir datos"
+  ],
+  "correcta": 0,
+  "explicacion": "El DER es el Diagrama Entidad-Relación, la representación gráfica del modelo entidad-relación que usan las bases relacionales.",
+  "por_que_no": [
+   "",
+   "No es un documento de requisitos.",
+   "Los JOIN son operaciones de consulta.",
+   "El lenguaje de definición de datos es DDL."
+  ],
+  "referencia": "Introducción a bases de datos, «DER – Diagrama Entidad-Relación»"
+ },
+ {
+  "id": "BD-24",
+  "tema": "BD",
+  "subtema": "DBMS",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "¿Cuál de las siguientes opciones representa una función fundamental de un Sistema de Gestión de Bases de Datos (DBMS)?",
+  "opciones": [
+   "Diseñar automáticamente el modelo entidad-relación",
+   "Garantizar seguridad, integridad, control de concurrencia y recuperación ante fallos",
+   "Eliminar la necesidad de claves primarias en las tablas",
+   "Reemplazar completamente a los sistemas operativos"
+  ],
+  "correcta": 1,
+  "explicacion": "Un DBMS administra tablas, claves, restricciones de integridad, concurrencia, transacciones y permisos, y permite recuperarse ante fallos. La clase 12 lo resume en integridad, concurrencia, transacciones, seguridad y eficiencia.",
+  "por_que_no": [
+   "El modelo lo diseña quien modela los datos; el DBMS lo administra.",
+   "",
+   "Las claves son centrales en un DBMS relacional.",
+   "Un DBMS funciona sobre un sistema operativo; no lo reemplaza."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 9 (Connolly y Begg); Clase 12, «Bases de datos relacionales»"
+ },
+ {
+  "id": "BD-25",
+  "tema": "BD",
+  "subtema": "DBMS",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "En una base relacional no se puede cargar un siniestro asociado a una póliza que no existe. ¿Qué aporte de la base de datos ilustra esto?",
+  "opciones": [
+   "Integridad",
+   "Concurrencia",
+   "Eficiencia por índices",
+   "Seguridad por permisos"
+  ],
+  "correcta": 0,
+  "explicacion": "La clase 12 usa este ejemplo para la integridad, que se implementa mediante claves foráneas y restricciones.",
+  "por_que_no": [
+   "",
+   "La concurrencia permite que muchos usuarios escriban a la vez sin corromper datos.",
+   "Los índices evitan recorrer toda la tabla.",
+   "Los permisos controlan quién accede a qué."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+ },
+ {
+  "id": "BD-26",
+  "tema": "BD",
+  "subtema": "DBMS",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "Según la clase 12, ¿qué significa que una base relacional ofrezca «transacciones»?",
+  "opciones": [
+   "Que permite cobrar las primas en línea",
+   "Que un conjunto de operaciones se aplica completo o no se aplica",
+   "Que cada consulta se guarda en un archivo CSV",
+   "Que los datos se replican en la nube"
+  ],
+  "correcta": 1,
+  "explicacion": "Una transacción agrupa operaciones que se aplican todas o ninguna, lo que se vincula con la atomicidad de ACID.",
+  "por_que_no": [
+   "«Transacción» no se refiere aquí a una operación comercial.",
+   "",
+   "Las transacciones no consisten en exportar archivos.",
+   "La replicación es otra cuestión."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+ },
+ {
+  "id": "BD-27",
+  "tema": "BD",
+  "subtema": "Motores",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué motor relacional mencionado en clase funciona como un archivo único, sin servidor?",
+  "opciones": [
+   "PostgreSQL",
+   "SQLite",
+   "Oracle",
+   "SQL Server"
+  ],
+  "correcta": 1,
+  "explicacion": "SQLite guarda toda la base en un único archivo y no requiere un servidor. Por eso se usa desde Python con sqlite3.connect(\"cartera.db\").",
+  "por_que_no": [
+   "PostgreSQL funciona con un servidor.",
+   "",
+   "Oracle funciona con un servidor.",
+   "SQL Server funciona con un servidor."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+ },
+ {
+  "id": "BD-28",
+  "tema": "BD",
+  "subtema": "Modelo relacional",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En el esquema mínimo de una cartera (asegurados, polizas, siniestros, pagos), ¿qué relación existe entre asegurados y pólizas?",
+  "opciones": [
+   "1 a 1: cada asegurado tiene exactamente una póliza",
+   "1 a N: un asegurado puede tener muchas pólizas",
+   "N a M sin tabla intermedia",
+   "Ninguna: son tablas independientes"
+  ],
+  "correcta": 1,
+  "explicacion": "El esquema de la clase indica que asegurados se relaciona 1 a N con pólizas, pólizas 1 a N con siniestros y siniestros 1 a N con pagos.",
+  "por_que_no": [
+   "Un asegurado puede tener más de una póliza.",
+   "",
+   "Las relaciones N:M siempre requieren una tabla intermedia.",
+   "Se vinculan mediante id_asegurado."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «El modelo relacional»"
+ },
+ {
+  "id": "BD-29",
+  "tema": "BD",
+  "subtema": "Normalización",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿En qué consiste normalizar una base de datos y qué ventaja aporta?",
+  "opciones": [
+   "En repetir información para acelerar las consultas analíticas",
+   "En evitar la repetición: el dato de un asegurado se guarda una sola vez y se referencia desde las pólizas, lo que da consistencia y actualización en un único lugar",
+   "En convertir todos los campos a texto",
+   "En eliminar las claves foráneas"
+  ],
+  "correcta": 1,
+  "explicacion": "Normalizar evita la repetición de información. Las ventajas son consistencia, menor espacio y actualización en un único lugar.",
+  "por_que_no": [
+   "Eso describe la desnormalización.",
+   "",
+   "Los tipos de datos no tienen relación con normalizar.",
+   "La normalización se apoya en claves foráneas para referenciar datos."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «Normalización y desnormalización»"
+ },
+ {
+  "id": "BD-30",
+  "tema": "BD",
+  "subtema": "Normalización",
+  "dificultad": "dificil",
+  "tipo": "diferencia",
+  "enunciado": "¿Por qué los sistemas transaccionales tienden a estar normalizados y los repositorios analíticos, desnormalizados?",
+  "opciones": [
+   "Porque es una contradicción de diseño que conviene corregir",
+   "Porque responden a preguntas distintas: registrar operaciones de forma consistente frente a consultar y agregar rápido sin muchos cruces",
+   "Porque los repositorios analíticos no usan SQL",
+   "Porque los sistemas transaccionales no tienen claves"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase aclara que no es una contradicción. Los sistemas OLTP registran operaciones y priorizan la consistencia; los repositorios OLAP responden preguntas agregando millones de filas y priorizan consultas simples y rápidas.",
+  "por_que_no": [
+   "La clase dice explícitamente que no es una contradicción.",
+   "",
+   "Los repositorios analíticos suelen consultarse con SQL.",
+   "Los sistemas transaccionales usan claves intensamente."
+  ],
+  "referencia": "Clase 12, «Normalización y desnormalización» y «OLTP y OLAP»"
+ },
+ {
+  "id": "BD-31",
+  "tema": "BD",
+  "subtema": "OLTP y OLAP",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Cuál de las siguientes es una operación típica de un sistema OLTP?",
+  "opciones": [
+   "Calcular la siniestralidad por ramo y año sobre millones de filas",
+   "Emitir una póliza insertando pocas filas",
+   "Construir un tablero de gestión trimestral",
+   "Entrenar un modelo predictivo de fraude"
+  ],
+  "correcta": 1,
+  "explicacion": "OLTP (transaccional) registra operaciones (inserta y actualiza pocas filas por vez) y está normalizado. El ejemplo de la clase es la emisión de una póliza.",
+  "por_que_no": [
+   "Es el ejemplo de OLAP: leer y agregar millones de filas.",
+   "",
+   "Un tablero de gestión es una consulta analítica (OLAP).",
+   "El modelado se hace sobre datos analíticos, no sobre el sistema transaccional."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «OLTP y OLAP»"
+ },
+ {
+  "id": "BD-32",
+  "tema": "BD",
+  "subtema": "OLTP y OLAP",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿por qué es importante que el actuario entienda el pasaje de los datos de OLTP a OLAP?",
+  "opciones": [
+   "Porque el actuario suele administrar el sistema transaccional",
+   "Porque el actuario trabaja casi siempre del lado OLAP, pero los datos nacen en OLTP, y de ese pasaje provienen la mayoría de las inconsistencias",
+   "Porque OLAP no admite consultas SQL",
+   "Porque OLTP está desnormalizado"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase lo resume así: el actuario trabaja del lado analítico, pero los datos se generan en los sistemas transaccionales. Entender ese pasaje es entender de dónde vienen la mayoría de las inconsistencias.",
+  "por_que_no": [
+   "La clase ubica al actuario del lado OLAP.",
+   "",
+   "OLAP se consulta habitualmente con SQL.",
+   "Es al revés: OLTP suele estar normalizado."
+  ],
+  "referencia": "Clase 12 – Estructuras y Almacenamiento, «OLTP y OLAP»"
+ },
+ {
+  "id": "BD-33",
+  "tema": "BD",
+  "subtema": "Modelado",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "En el ejemplo de clase, la tabla ESTUDIANTES tiene la columna materia_id = 746, que coincide con el id de la tabla MATERIAS. ¿Qué rol cumple materia_id en ESTUDIANTES?",
+  "opciones": [
+   "Clave primaria de ESTUDIANTES",
+   "Clave foránea que vincula al estudiante con una materia",
+   "Atributo calculado",
+   "Clave surrogada de MATERIAS"
+  ],
+  "correcta": 1,
+  "explicacion": "materia_id referencia la clave primaria (id) de MATERIAS, así que funciona como clave foránea y modela la relación entre ambas entidades.",
+  "por_que_no": [
+   "La PK de ESTUDIANTES es el registro.",
+   "",
+   "No se calcula: es una referencia a otra tabla.",
+   "Pertenece a ESTUDIANTES y referencia la PK de MATERIAS."
+  ],
+  "referencia": "Introducción a bases de datos, «Modelado de datos y estructura»"
+ },
+ {
+  "id": "BD-34",
+  "tema": "BD",
+  "subtema": "Arquitectura",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "En el esquema de la clase, varios clientes acceden por Internet a un servidor web que a su vez consulta un servidor de base de datos. ¿Qué ilustra este esquema?",
+  "opciones": [
+   "Que la base de datos se instala en cada cliente",
+   "Que los usuarios no consultan la base directamente: lo hacen a través de una aplicación que se comunica con el servidor de base de datos",
+   "Que Internet reemplaza a la base de datos",
+   "Que el servidor web guarda los datos en planillas"
+  ],
+  "correcta": 1,
+  "explicacion": "El diagrama muestra la arquitectura habitual: los clientes interactúan con un servidor web y este se comunica con el servidor de base de datos, que centraliza el almacenamiento.",
+  "por_que_no": [
+   "La base está centralizada en un servidor.",
+   "",
+   "Internet es solo el medio de comunicación.",
+   "El esquema no muestra planillas."
+  ],
+  "referencia": "Introducción a bases de datos, «¿Qué es una base de datos?» (diagrama cliente-servidor)"
+ },
+ {
+  "id": "BD-35",
+  "tema": "BD",
+  "subtema": "Tipos de datos",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Un campo de identificación de cliente está definido como INTEGER en una tabla y como texto en otra. ¿Qué problema puede aparecer al relacionarlas?",
+  "opciones": [
+   "Ninguno: SQL convierte siempre los tipos sin error",
+   "El join compara texto con entero, lo que puede provocar errores o requerir conversiones adicionales",
+   "Se duplican las claves primarias",
+   "La tabla se elimina automáticamente"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase de joins advierte que, si un identificador pasa a ser texto en una tabla y sigue siendo entero en otra, el join intentaría comparar texto con entero.",
+  "por_que_no": [
+   "La clase advierte justamente lo contrario.",
+   "",
+   "Las claves primarias no se duplican por esta causa.",
+   "Un desajuste de tipos no elimina tablas."
+  ],
+  "referencia": "Clase 5 (CCA) – SQL: Joins, DML y DDL, «ALTER TABLE»"
+ }
+]

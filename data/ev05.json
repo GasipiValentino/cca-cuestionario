@@ -1,0 +1,935 @@
+{
+ "id": 5,
+ "titulo": "Evaluación 5",
+ "preguntas": [
+  {
+   "id": "ALG-17",
+   "tema": "ALG",
+   "subtema": "Recursividad",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuáles son los dos ingredientes obligatorios de un algoritmo recursivo?",
+   "opciones": [
+    "Un caso base, que se resuelve sin volver a llamarse, y un paso recursivo, que expresa el problema en términos de una instancia más chica",
+    "Un for y un while",
+    "Un break y un continue",
+    "Una lista y un diccionario"
+   ],
+   "correcta": 0,
+   "explicacion": "Sin caso base la recursión no termina y se produce un RecursionError, el equivalente del bucle infinito.",
+   "por_que_no": [
+    "",
+    "Esas son estructuras iterativas.",
+    "Son instrucciones de control de ciclos.",
+    "Son estructuras de datos."
+   ],
+   "referencia": "Clase 10, «Algoritmos recursivos»"
+  },
+  {
+   "id": "EDA-22",
+   "tema": "EDA",
+   "subtema": "Exposición",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Cuánta exposición aporta una póliza que estuvo vigente tres meses en el año?",
+   "opciones": [
+    "3 años",
+    "0,25 años",
+    "1 año",
+    "0,75 años"
+   ],
+   "correcta": 1,
+   "explicacion": "La exposición mide cuánto tiempo estuvo cubierto el riesgo: 3/12 = 0,25 años-póliza.",
+   "por_que_no": [
+    "Confunde meses con años.",
+    "",
+    "Sobrestima la exposición.",
+    "Corresponde a nueve meses."
+   ],
+   "referencia": "Clase 14, «Tasas, no conteos: la exposición»"
+  },
+  {
+   "id": "CTL-04",
+   "tema": "CTL",
+   "subtema": "Sintaxis",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "¿Qué error se produce si la indentación de un bloque es inconsistente?",
+   "opciones": [
+    "IndentationError",
+    "RecursionError",
+    "KeyError",
+    "ZeroDivisionError"
+   ],
+   "correcta": 0,
+   "explicacion": "La indentación no es un detalle estético: un espacio de más o de menos cambia el significado del programa o genera un IndentationError.",
+   "por_que_no": [
+    "",
+    "Aparece con una recursión sin caso base.",
+    "Aparece al buscar una clave inexistente en un diccionario.",
+    "Aparece al dividir por cero."
+   ],
+   "referencia": "Clase 10, «La indentación»; Guía – Estructuras de Control, «Errores frecuentes»"
+  },
+  {
+   "id": "CTL-02",
+   "tema": "CTL",
+   "subtema": "Concepto",
+   "dificultad": "facil",
+   "tipo": "comprension",
+   "enunciado": "La clase traduce los pilares del pensamiento computacional a código. ¿Qué correspondencia es correcta?",
+   "opciones": [
+    "Decidir → if/elif/else; Repetir → for/while; Interrumpir → break/continue; Reutilizar → def",
+    "Decidir → for; Repetir → if",
+    "Interrumpir → def; Reutilizar → while",
+    "Repetir → return; Decidir → pass"
+   ],
+   "correcta": 0,
+   "explicacion": "Un algoritmo actuarial combina casi siempre cuatro piezas: decidir (if), repetir (for, while), interrumpir (break, continue) y encapsular para reutilizar (def).",
+   "por_que_no": [
+    "",
+    "Los roles están invertidos.",
+    "def encapsula y while repite.",
+    "return sale de una función y pass no hace nada."
+   ],
+   "referencia": "Clase 10, «Del pensamiento computacional al código»"
+  },
+  {
+   "id": "BD-16",
+   "tema": "BD",
+   "subtema": "Claves",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Para qué sirve una clave foránea?",
+   "opciones": [
+    "Para asegurar la integridad referencial, vinculando una tabla con la clave primaria de otra",
+    "Para aumentar la performance",
+    "Para reemplazar a la clave primaria",
+    "Para identificar filas únicas"
+   ],
+   "correcta": 0,
+   "explicacion": "La FK relaciona tablas haciendo referencia a una PK. Así garantiza integridad referencial: no puede cargarse, por ejemplo, un siniestro de una póliza inexistente.",
+   "por_que_no": [
+    "",
+    "No es su propósito; la eficiencia en las búsquedas la aportan los índices.",
+    "Una tabla puede tener ambas claves; la FK no reemplaza a la PK.",
+    "Eso lo hace la clave primaria."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 8; Introducción a bases de datos, «Claves»"
+  },
+  {
+   "id": "PYB-44",
+   "tema": "PYB",
+   "subtema": "Formato de salida",
+   "dificultad": "facil",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "poliza = 10025\nproducto = \"Automotor\"\nprima_anual = 185000.5\nprint(f\"La póliza {poliza} es de {producto}, prima ${prima_anual:.2f}.\")",
+   "opciones": [
+    "Error",
+    "La póliza 10025 es de Automotor, prima $185000.50.",
+    "La póliza 10025 es de Automotor, prima $185000.5.",
+    "La póliza {poliza} es de {producto}, prima ${prima_anual:.2f}."
+   ],
+   "correcta": 1,
+   "explicacion": "Un f-string reemplaza cada {expresión} por su valor, y :.2f formatea el número con 2 decimales.",
+   "por_que_no": [
+    "El código es válido.",
+    "",
+    ":.2f fuerza dos decimales.",
+    "Sin la f delante se imprimiría el texto literal; con f se interpolan los valores."
+   ],
+   "referencia": "Guía práctica Python, Actividad 1"
+  },
+  {
+   "id": "JOIN-29",
+   "tema": "JOIN",
+   "subtema": "UPDATE",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Cómo se asigna el nombre «Roberto» al fabricante con código 20?",
+   "opciones": [
+    "UPDATE FABRICANTES SET nombre = 'Roberto';",
+    "INSERT INTO FABRICANTES VALUES (20, 'Roberto');",
+    "ALTER TABLE FABRICANTES SET nombre = 'Roberto';",
+    "UPDATE FABRICANTES SET nombre = 'Roberto' WHERE codigo = 20;"
+   ],
+   "correcta": 3,
+   "explicacion": "UPDATE con SET modifica el valor y WHERE codigo = 20 restringe el cambio a ese fabricante.",
+   "por_que_no": [
+    "Sin WHERE renombraría a todos los fabricantes.",
+    "Insertaría un fabricante nuevo (y fallaría si el código 20 ya existe).",
+    "ALTER TABLE modifica la estructura, no los valores.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 2e"
+  },
+  {
+   "id": "EST-14",
+   "tema": "EST",
+   "subtema": "Inspección",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué método permite conocer los tipos de datos y la cantidad de valores no nulos de cada columna?",
+   "opciones": [
+    "df.describe()",
+    "df.shape()",
+    "df.info()",
+    "df.types()"
+   ],
+   "correcta": 2,
+   "explicacion": "info() muestra la estructura del DataFrame: columnas, cantidad de valores no nulos y tipo de cada una.",
+   "por_que_no": [
+    "describe() da un resumen estadístico.",
+    "shape es un atributo (sin paréntesis) que devuelve (filas, columnas).",
+    "",
+    "No es un método de pandas."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 21; Clase 12"
+  },
+  {
+   "id": "SQL-06",
+   "tema": "SQL",
+   "subtema": "WHERE y HAVING",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Para qué se utiliza HAVING en SQL?",
+   "opciones": [
+    "Para ordenar resultados",
+    "Para limitar columnas",
+    "Para filtrar registros antes del GROUP BY",
+    "Para filtrar resultados agregados (grupos)"
+   ],
+   "correcta": 3,
+   "explicacion": "HAVING es similar a WHERE, pero filtra los resultados del GROUP BY, por eso se ejecuta después de agrupar.",
+   "por_que_no": [
+    "Eso lo hace ORDER BY.",
+    "Las columnas se eligen en SELECT.",
+    "Eso lo hace WHERE.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 24; SQL Básico, «HAVING»"
+  },
+  {
+   "id": "PYB-22",
+   "tema": "PYB",
+   "subtema": "Operadores lógicos",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Para qué se utiliza el operador not?",
+   "opciones": [
+    "Comparación estricta",
+    "Asignación",
+    "Negación lógica",
+    "Iteración"
+   ],
+   "correcta": 2,
+   "explicacion": "not niega un valor booleano: not True es False. Ejemplo de la clase: edad < 35 and not fumador.",
+   "por_que_no": [
+    "Las comparaciones usan ==, !=, <, >.",
+    "La asignación se hace con =.",
+    "",
+    "Para iterar se usan for y while."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 14; Clase 10, «Operadores lógicos y tablas de verdad»"
+  },
+  {
+   "id": "PC-07",
+   "tema": "PC",
+   "subtema": "Pilares aplicados",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "En un modelo actuarial se representa el comportamiento de un asegurado mediante una distribución de Poisson, sin modelar todos sus detalles personales. ¿Qué pilar del pensamiento computacional se aplica?",
+   "opciones": [
+    "Algoritmos",
+    "Abstracción",
+    "Automatización",
+    "Descomposición"
+   ],
+   "correcta": 1,
+   "explicacion": "Abstraer es identificar patrones y simplificar la información irrelevante. La clase usa este mismo ejemplo: abstraer el comportamiento del asegurado con distribuciones como la Poisson o la Normal.",
+   "por_que_no": [
+    "No se describe una secuencia de pasos para resolver el problema.",
+    "",
+    "No se describe la ejecución masiva de un proceso repetitivo.",
+    "No se está dividiendo el problema en partes, sino simplificando la representación."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional, «Abstracción»"
+  },
+  {
+   "id": "CTL-35",
+   "tema": "CTL",
+   "subtema": "break, continue, pass",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "for i in range(5):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(i, end=\" \")",
+   "opciones": [
+    "0 1 3",
+    "0 1 3 4",
+    "0 1",
+    "0 1 2 3"
+   ],
+   "correcta": 0,
+   "explicacion": "i = 0 y 1 se imprimen. En i = 2, continue saltea la impresión. En i = 3 se imprime. En i = 4, break corta antes de imprimir.",
+   "por_que_no": [
+    "",
+    "El ciclo se corta antes de imprimir el 4.",
+    "El 3 sí se imprime.",
+    "El 2 se saltea."
+   ],
+   "referencia": "Clase 10, «break, continue y pass»"
+  },
+  {
+   "id": "SQL-13",
+   "tema": "SQL",
+   "subtema": "Funciones de agregado",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué devuelve esta consulta?",
+   "codigo": "SELECT COUNT(DISTINCT ProductID) AS qty_dist_prod,\n       SUM(Quantity) AS total_qty\nFROM OrderDetails\nGROUP BY OrderID;",
+   "opciones": [
+    "Una fila por cliente",
+    "Una sola fila con totales generales",
+    "Una fila por producto, con la cantidad de pedidos en que aparece",
+    "Una fila por pedido, con la cantidad de productos distintos y el total de unidades del pedido"
+   ],
+   "correcta": 3,
+   "explicacion": "GROUP BY OrderID genera una fila por pedido. COUNT(DISTINCT ProductID) cuenta los productos diferentes del pedido y SUM(Quantity) suma las unidades.",
+   "por_que_no": [
+    "OrderDetails no tiene el cliente; para eso habría que cruzar con Orders.",
+    "Con GROUP BY hay una fila por grupo.",
+    "Se agrupa por OrderID, no por ProductID.",
+    ""
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, ejemplos con OrderDetails"
+  },
+  {
+   "id": "PYB-40",
+   "tema": "PYB",
+   "subtema": "Listas",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "lst = [1, [2, 3], 4]\nprint(lst[1])\nprint(len(lst))",
+   "opciones": [
+    "2 y 4",
+    "[2, 3] y 4",
+    "[2, 3] y 3",
+    "Error"
+   ],
+   "correcta": 2,
+   "explicacion": "El elemento de índice 1 es la lista anidada [2, 3]. La lista externa tiene 3 elementos: 1, [2, 3] y 4.",
+   "por_que_no": [
+    "lst[1] es la lista completa, y la lista anidada cuenta como un solo elemento.",
+    "La lista anidada cuenta como un único elemento.",
+    "",
+    "El código es válido."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 3b (iii)"
+  },
+  {
+   "id": "EXC-03",
+   "tema": "EXC",
+   "subtema": "Funciones de texto",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Con B3 = «SAL-2024-00001-M», ¿qué fórmula extrae el año de emisión «2024»?",
+   "opciones": [
+    "=EXTRAE(B3;5;4)",
+    "=EXTRAE(B3;4;4)",
+    "=EXTRAE(B3;5;8)",
+    "=IZQUIERDA(B3;8)"
+   ],
+   "correcta": 0,
+   "explicacion": "El año empieza en la posición 5 (3 letras del ramo y un guion) y ocupa 4 caracteres, así que EXTRAE(B3;5;4) devuelve «2024». Esto funciona porque todos los ramos tienen 3 letras.",
+   "por_que_no": [
+    "",
+    "Empieza en el guion (posición 4) y devolvería «-202».",
+    "Toma 8 caracteres desde la posición 5 y devolvería «2024-000». Atención: así figura en los apuntes, probablemente por un error de transcripción.",
+    "Devuelve «SAL-2024», que incluye el ramo."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Año emisión (extraído)»"
+  },
+  {
+   "id": "SQL-10",
+   "tema": "SQL",
+   "subtema": "GROUP BY",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "¿Qué hace exactamente esta consulta?",
+   "codigo": "SELECT category, COUNT(*) AS total\nFROM products\nGROUP BY category\nORDER BY total DESC\nLIMIT 1;",
+   "opciones": [
+    "Muestra la categoría cuyo precio promedio es mayor",
+    "Muestra la categoría con mayor cantidad de productos",
+    "Muestra todas las categorías ordenadas",
+    "Muestra la categoría que aparece primero alfabéticamente"
+   ],
+   "correcta": 1,
+   "explicacion": "Cuenta los productos por categoría, ordena de mayor a menor por ese conteo y LIMIT 1 deja solo la primera fila: la categoría con más productos.",
+   "por_que_no": [
+    "No se calcula ningún promedio de precio.",
+    "",
+    "LIMIT 1 deja una sola fila.",
+    "El orden es por total, no alfabético."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 32"
+  },
+  {
+   "id": "EST-35",
+   "tema": "EST",
+   "subtema": "concat",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Para unir horizontalmente tres columnas de variaciones de distintos activos (AMZN, SPY, QQQ) que comparten el mismo índice, ¿qué comando se usa?",
+   "opciones": [
+    "pd.append([df1, df2, df3])",
+    "data.join_horizontal([df1, df2, df3])",
+    "pd.concat([df1, df2, df3], axis=0)",
+    "pd.concat([df1, df2, df3], axis=1)"
+   ],
+   "correcta": 3,
+   "explicacion": "concat con axis=1 pone los objetos uno al lado del otro, alineados por índice. Con axis=0 se apilan filas, como al juntar archivos mensuales.",
+   "por_que_no": [
+    "No es la forma de unir horizontalmente.",
+    "No existe ese método.",
+    "axis=0 apila verticalmente.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 31; Clase 13, «Apilar períodos: concat»"
+  },
+  {
+   "id": "JOIN-39",
+   "tema": "JOIN",
+   "subtema": "DML",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Qué efecto tiene DELETE FROM empleados WHERE true;?",
+   "opciones": [
+    "Elimina la tabla empleados",
+    "No elimina nada porque WHERE true no es válido",
+    "Elimina solo el primer registro",
+    "Elimina todos los registros pero conserva la tabla"
+   ],
+   "correcta": 3,
+   "explicacion": "WHERE true se cumple para todas las filas. La cátedra lo muestra como forma de limpiar una tabla sin borrarla.",
+   "por_que_no": [
+    "Eliminar la tabla es tarea de DROP TABLE.",
+    "Es una condición válida y siempre verdadera.",
+    "Afecta a todas las filas.",
+    ""
+   ],
+   "referencia": "Joins, DML & DDL (cátedra), «DELETE – Eliminar registros»"
+  },
+  {
+   "id": "EST-07",
+   "tema": "EST",
+   "subtema": "Granularidad",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿Qué es la granularidad de una tabla y por qué conviene identificarla primero?",
+   "opciones": [
+    "La precisión decimal de los montos",
+    "La cantidad de columnas",
+    "Qué representa una fila (por ejemplo, una póliza por período, un siniestro o un pago); es el primer paso antes de escribir cualquier línea de código",
+    "El tamaño en MB de la tabla"
+   ],
+   "correcta": 2,
+   "explicacion": "Reconocer qué representa una fila evita duplicar o inflar montos al cruzar o agregar.",
+   "por_que_no": [
+    "No se refiere a los decimales.",
+    "No se refiere a la cantidad de columnas.",
+    "",
+    "No se refiere al tamaño en disco."
+   ],
+   "referencia": "Clase 12, «Los datos del mundo actuarial»"
+  },
+  {
+   "id": "JOIN-15",
+   "tema": "JOIN",
+   "subtema": "Elegir el join",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "Dadas Clientes(id, nombre), Pedidos(id, cliente_id, fecha) y Pagos(id, pedido_id, monto), ¿qué joins aseguran obtener solo los clientes que tienen pedidos con pago registrado?",
+   "opciones": [
+    "Clientes FULL OUTER JOIN Pedidos",
+    "Clientes LEFT JOIN Pedidos LEFT JOIN Pagos",
+    "Clientes RIGHT JOIN Pedidos RIGHT JOIN Pagos",
+    "Clientes INNER JOIN Pedidos INNER JOIN Pagos"
+   ],
+   "correcta": 3,
+   "explicacion": "Encadenar INNER JOIN exige coincidencia en cada paso: cliente con pedido y pedido con pago. Así quedan solo los clientes con pedidos pagados.",
+   "por_que_no": [
+    "Conserva todo; no filtra por pago.",
+    "Con LEFT JOIN aparecen también clientes sin pedidos o pedidos sin pago (con NULL).",
+    "El RIGHT conserva todos los pagos y pedidos aunque no tengan cliente.",
+    ""
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 34"
+  },
+  {
+   "id": "ALG-49",
+   "tema": "ALG",
+   "subtema": "Probabilidad de ruina",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "Con capital inicial u = 300.000, la probabilidad de ruina a 20 años fue ≈ 0,73 con prima c = 250.000 y ≈ 0,26 con c = 350.000. ¿Qué se concluye?",
+   "opciones": [
+    "La prima no influye en la ruina",
+    "Una prima mayor aumenta la ruina",
+    "La diferencia se debe solo a la semilla",
+    "Aumentar la prima recaudada por período reduce marcadamente la probabilidad de ruina"
+   ],
+   "correcta": 3,
+   "explicacion": "En Ut = u + c·t − St, una mayor c hace crecer la reserva más rápido frente a las pérdidas y reduce la chance de que se vuelva negativa.",
+   "por_que_no": [
+    "La diferencia es muy grande.",
+    "Es al revés.",
+    "Una diferencia de 0,73 a 0,26 con miles de réplicas no se explica por azar.",
+    ""
+   ],
+   "referencia": "Clase 10, «Aplicación: probabilidad de ruina»"
+  },
+  {
+   "id": "EDA-06",
+   "tema": "EDA",
+   "subtema": "Primer vistazo",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En el describe() de la cartera, la suma asegurada tiene media ≈ 39,5 millones y mediana ≈ 26,8 millones. ¿Qué se lee de inmediato?",
+   "opciones": [
+    "Que la distribución es asimétrica a derecha: unos pocos valores grandes empujan la media por encima de la mediana",
+    "Que la mediana está mal calculada",
+    "Que hay un error en los datos",
+    "Que la distribución es simétrica"
+   ],
+   "correcta": 0,
+   "explicacion": "Cuando la media supera ampliamente a la mediana, hay una cola larga hacia valores altos. El mismo describe() muestra que la exposición media es 0,86 y que la mediana de siniestros es 0.",
+   "por_que_no": [
+    "",
+    "No hay evidencia de error.",
+    "Es una característica de la distribución, no un error.",
+    "En una distribución simétrica media y mediana se parecen."
+   ],
+   "referencia": "Clase 14, «Resumen numérico»"
+  },
+  {
+   "id": "PYB-04",
+   "tema": "PYB",
+   "subtema": "Tipos de datos",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "La edad de un asegurado quedó cargada como texto (\"65\"). ¿Qué ocurre al evaluar \"65\" >= 65 en Python?",
+   "opciones": [
+    "Convierte automáticamente el texto en número",
+    "Genera un error de tipos (TypeError) porque compara texto con número",
+    "Devuelve True",
+    "Devuelve False"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase lo marca como error frecuente: comparar números con textos genera un error de tipos. Por eso conviene almacenar cada variable con el tipo que le corresponde.",
+   "por_que_no": [
+    "Python no convierte el texto en número automáticamente.",
+    "",
+    "Python no hace la conversión implícita.",
+    "Python no devuelve un resultado lógico en este caso."
+   ],
+   "referencia": "Clase 10 – Estructuras de Control, «Errores frecuentes con condicionales»"
+  },
+  {
+   "id": "CAL-05",
+   "tema": "CAL",
+   "subtema": "Dimensiones",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Una regla verifica que la fecha de siniestro sea posterior a la fecha de inicio de vigencia. ¿Qué dimensión mide?",
+   "opciones": [
+    "Exactitud",
+    "Validez",
+    "Completitud",
+    "Consistencia"
+   ],
+   "correcta": 3,
+   "explicacion": "La consistencia evalúa si los campos son coherentes entre sí. Un valor puede ser válido de forma aislada y aun así imposible en conjunto.",
+   "por_que_no": [
+    "La exactitud compara con la realidad y requiere una fuente externa.",
+    "La validez evalúa un campo contra su dominio (por ejemplo, edad entre 18 y 110).",
+    "No se pregunta si falta el dato.",
+    ""
+   ],
+   "referencia": "Clase 13, «Cómo se miden» y «Consistencia entre campos»"
+  },
+  {
+   "id": "CAL-33",
+   "tema": "CAL",
+   "subtema": "Estandarización",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Tras aplicar el siguiente código a la columna ramo con los valores [\"AUTO\", \"Automotor\", \" auto \", \" auto \", \"Hogar\", \"HOGAR\", \"Vida\", None], ¿cuántas categorías reales quedan, sin contar los faltantes?",
+   "codigo": "limpia[\"ramo\"] = limpia[\"ramo\"].str.strip().str.upper()\nmapa = {\"AUTO\": \"Automotores\", \"AUTOMOTOR\": \"Automotores\",\n        \"HOGAR\": \"Hogar\", \"VIDA\": \"Vida\"}\nlimpia[\"ramo\"] = limpia[\"ramo\"].map(mapa)",
+   "opciones": [
+    "3",
+    "1",
+    "6",
+    "4"
+   ],
+   "correcta": 0,
+   "explicacion": "Quedan Automotores (4), Hogar (2) y Vida (1), más un NaN. strip elimina espacios, upper unifica mayúsculas y el diccionario explícito documenta las equivalencias.",
+   "por_que_no": [
+    "",
+    "Hay tres ramos distintos.",
+    "Son las variantes antes de limpiar.",
+    "AUTO y AUTOMOTOR se unifican."
+   ],
+   "referencia": "Clase 13, «Estandarización de texto»"
+  },
+  {
+   "id": "CTL-44",
+   "tema": "CTL",
+   "subtema": "Patrón acumulador",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "¿Cuál es el error de esta función que debería calcular la probabilidad de supervivencia npx?",
+   "codigo": "def prob_acum(x, n):\n    p = 0\n    for k in range(n):\n        p *= (1 - qx(x + k))\n    return p",
+   "opciones": [
+    "Falta un break",
+    "El acumulador multiplicativo debe inicializarse en 1; con p = 0 el resultado es siempre 0",
+    "range debería empezar en 1",
+    "Debería usarse += en lugar de *="
+   ],
+   "correcta": 1,
+   "explicacion": "En un producto acumulado el valor neutro es 1. Multiplicar cualquier cosa por 0 da 0, así que la función siempre devolvería 0. Además, con 1 se cumple que 0px = 1.",
+   "por_que_no": [
+    "No hace falta interrumpir el ciclo.",
+    "",
+    "k debe empezar en 0 para incluir qx(x).",
+    "npx es un producto, no una suma."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 27 (c)"
+  },
+  {
+   "id": "BD-29",
+   "tema": "BD",
+   "subtema": "Normalización",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "¿En qué consiste normalizar una base de datos y qué ventaja aporta?",
+   "opciones": [
+    "En repetir información para acelerar las consultas analíticas",
+    "En convertir todos los campos a texto",
+    "En eliminar las claves foráneas",
+    "En evitar la repetición: el dato de un asegurado se guarda una sola vez y se referencia desde las pólizas, lo que da consistencia y actualización en un único lugar"
+   ],
+   "correcta": 3,
+   "explicacion": "Normalizar evita la repetición de información. Las ventajas son consistencia, menor espacio y actualización en un único lugar.",
+   "por_que_no": [
+    "Eso describe la desnormalización.",
+    "Los tipos de datos no tienen relación con normalizar.",
+    "La normalización se apoya en claves foráneas para referenciar datos.",
+    ""
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Normalización y desnormalización»"
+  },
+  {
+   "id": "PC-04",
+   "tema": "PC",
+   "subtema": "Conceptos asociados (Barr et al.)",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Según Barr, Harrison y Conery (2011), el pensamiento computacional involucra conceptos conocidos y otros «no tan conocidos». ¿Cuál de los siguientes pertenece al segundo grupo?",
+   "opciones": [
+    "Modelos",
+    "Representación de datos",
+    "Recursión",
+    "Descomposición de problemas"
+   ],
+   "correcta": 2,
+   "explicacion": "Los conceptos «no tan conocidos» son búsquedas binarias, recursión y paralelización. Descomposición, representación de datos y modelos figuran entre los conocidos.",
+   "por_que_no": [
+    "Los modelos son uno de los conceptos conocidos.",
+    "La representación de datos es uno de los conceptos conocidos.",
+    "",
+    "La descomposición es uno de los conceptos conocidos."
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional (Barr, Harrison y Conery, 2011)"
+  },
+  {
+   "id": "PC-22",
+   "tema": "PC",
+   "subtema": "Influencia en otras disciplinas",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Según Wing, ¿qué transformó a la estadística, permitiendo trabajar con volúmenes de datos y dimensiones antes inimaginables?",
+   "opciones": [
+    "Los CAPTCHA",
+    "Las hojas de cálculo",
+    "El machine learning (aprendizaje estadístico)",
+    "La computación cuántica"
+   ],
+   "correcta": 2,
+   "explicacion": "Wing afirma que el machine learning transformó la estadística y que el aprendizaje estadístico se usa en problemas de una escala inimaginable pocos años antes.",
+   "por_que_no": [
+    "Los CAPTCHA son un ejemplo de autenticación, no una influencia sobre la estadística.",
+    "Wing no menciona las hojas de cálculo.",
+    "",
+    "Wing asocia la computación cuántica con la física."
+   ],
+   "referencia": "Wing (2006)"
+  },
+  {
+   "id": "EDA-26",
+   "tema": "EDA",
+   "subtema": "Bivariado",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "La frecuencia de Automotores por edad muestra la típica «curva en U». ¿Qué significa y por qué se informa la exposición junto a cada punto?",
+   "opciones": [
+    "Que la edad no influye",
+    "Que los jóvenes y los mayores tienen más frecuencia que las edades intermedias; la exposición indica cuánto creerle a cada tasa",
+    "Que la exposición es decorativa",
+    "Que la frecuencia es constante con la edad"
+   ],
+   "correcta": 1,
+   "explicacion": "Los conductores jóvenes duplican la frecuencia de los de 51 a 65 y vuelve a subir en los mayores. Sin la exposición no se sabe cuán estable es cada tasa.",
+   "por_que_no": [
+    "Influye fuertemente.",
+    "",
+    "Es esencial para juzgar la confiabilidad.",
+    "Varía en forma de U."
+   ],
+   "referencia": "Clase 14, «Bivariado: frecuencia por edad»"
+  },
+  {
+   "id": "ALG-03",
+   "tema": "ALG",
+   "subtema": "VAN y TIR",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Para el flujo [-500.000, 180.000, 180.000, 180.000, 180.000], el VAN al 10 % es 70.575,78 y al 20 % es −34.027,78. ¿Qué se puede afirmar sobre la TIR?",
+   "opciones": [
+    "No existe",
+    "Es menor al 10 %",
+    "Está entre el 10 % y el 20 %, porque el VAN cambia de signo en ese intervalo",
+    "Es mayor al 20 %"
+   ],
+   "correcta": 2,
+   "explicacion": "La TIR es la tasa que anula el VAN. Si el VAN pasa de positivo a negativo entre 10 % y 20 %, la raíz está en ese intervalo. La clase obtiene TIR ≈ 16,37 %.",
+   "por_que_no": [
+    "Hay un cambio de signo, así que existe.",
+    "Al 10 % el VAN todavía es positivo.",
+    "",
+    "Al 20 % el VAN ya es negativo."
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 7 y Desafío; Clase 10, «TIR por bisección»"
+  },
+  {
+   "id": "BD-26",
+   "tema": "BD",
+   "subtema": "DBMS",
+   "dificultad": "media",
+   "tipo": "concepto",
+   "enunciado": "Según la clase 12, ¿qué significa que una base relacional ofrezca «transacciones»?",
+   "opciones": [
+    "Que un conjunto de operaciones se aplica completo o no se aplica",
+    "Que permite cobrar las primas en línea",
+    "Que cada consulta se guarda en un archivo CSV",
+    "Que los datos se replican en la nube"
+   ],
+   "correcta": 0,
+   "explicacion": "Una transacción agrupa operaciones que se aplican todas o ninguna, lo que se vincula con la atomicidad de ACID.",
+   "por_que_no": [
+    "",
+    "«Transacción» no se refiere aquí a una operación comercial.",
+    "Las transacciones no consisten en exportar archivos.",
+    "La replicación es otra cuestión."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Bases de datos relacionales»"
+  },
+  {
+   "id": "SQL-16",
+   "tema": "SQL",
+   "subtema": "Agregados en WHERE",
+   "dificultad": "dificil",
+   "tipo": "error",
+   "enunciado": "Se quieren los productos con precio por encima del promedio general. ¿Cuál es el problema de esta consulta?",
+   "codigo": "SELECT ProductName, Price\nFROM Products\nWHERE Price > AVG(Price);",
+   "opciones": [
+    "Ninguno, es correcta",
+    "AVG solo funciona con GROUP BY ProductName",
+    "No se puede usar una función de agregado en WHERE, porque WHERE se evalúa fila por fila antes de agrupar; hay que usar una subconsulta",
+    "Falta ORDER BY"
+   ],
+   "correcta": 2,
+   "explicacion": "WHERE filtra filas antes de cualquier agregación, así que AVG no puede usarse ahí. La solución de la guía es una subconsulta: WHERE Price > (SELECT AVG(Price) FROM Products).",
+   "por_que_no": [
+    "La consulta es inválida tal como está escrita.",
+    "Agrupar por ProductName daría el promedio de cada producto, no el promedio general.",
+    "",
+    "ORDER BY es opcional y no resuelve el problema."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 21; SQL Básico, «WHERE»"
+  },
+  {
+   "id": "SQL-22",
+   "tema": "SQL",
+   "subtema": "CASE WHEN",
+   "dificultad": "dificil",
+   "tipo": "error",
+   "enunciado": "Se debe aplicar un 10 % de descuento a los productos de más de $200 y un 12 % a los de más de $500. ¿Qué problema tiene esta versión?",
+   "codigo": "CASE\n  WHEN PRECIO > 200 THEN ROUND(PRECIO * 0.10, 2)\n  WHEN PRECIO > 500 THEN ROUND(PRECIO * 0.12, 2)\n  ELSE 0\nEND AS DESCUENTO_PESOS",
+   "opciones": [
+    "Falta el ELSE",
+    "Un producto de $800 recibe 10 % porque la primera condición verdadera corta la evaluación; la condición > 500 debe ir primero",
+    "Ninguno",
+    "ROUND no admite dos argumentos"
+   ],
+   "correcta": 1,
+   "explicacion": "CASE devuelve el resultado de la primera condición verdadera. Como todo precio > 500 también es > 200, la segunda rama nunca se usa. La resolución del parcial pone primero WHEN PRECIO > 500.",
+   "por_que_no": [
+    "El ELSE 0 está presente.",
+    "",
+    "Los productos de más de $500 quedan mal calculados.",
+    "ROUND(valor, 2) redondea a 2 decimales y es válido."
+   ],
+   "referencia": "1er Parcial 1C 2025, ejercicio 2c"
+  },
+  {
+   "id": "EDA-14",
+   "tema": "EDA",
+   "subtema": "Forma",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "El monto tiene asimetría 7,26 y curtosis en exceso 101,72, mientras que log(monto) tiene asimetría −0,07 y curtosis 0,37. ¿Qué pista de modelado da esto?",
+   "opciones": [
+    "Que hay que usar una Poisson para el monto",
+    "Que una lognormal podría ser un buen punto de partida para la severidad, porque el logaritmo es casi simétrico y cercano a la normal",
+    "Que no hay que modelar",
+    "Que la severidad es normal"
+   ],
+   "correcta": 1,
+   "explicacion": "Si log(X) es aproximadamente normal, X es aproximadamente lognormal. La clase lo verifica después con un QQ-plot.",
+   "por_que_no": [
+    "La Poisson es para conteos.",
+    "",
+    "El EDA busca justamente pistas para modelar.",
+    "En escala original es extremadamente asimétrica."
+   ],
+   "referencia": "Clase 14, «Forma: asimetría y curtosis»"
+  },
+  {
+   "id": "EST-30",
+   "tema": "EST",
+   "subtema": "Datos de panel",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Qué devuelve panel.loc[1] si panel = datos.set_index([\"id_asegurado\", \"anio\"])?",
+   "opciones": [
+    "La primera fila de la tabla",
+    "El año 1",
+    "Un error, porque el índice es doble",
+    "La historia completa del asegurado 1 (todas sus filas por año)"
+   ],
+   "correcta": 3,
+   "explicacion": "Con un índice múltiple (asegurado, año), .loc[1] selecciona todas las filas cuyo primer nivel es 1: la evolución del asegurado 1 en el tiempo.",
+   "por_que_no": [
+    ".loc selecciona por etiqueta, no por posición.",
+    "El primer nivel del índice es el asegurado, no el año.",
+    "El índice múltiple admite esta selección.",
+    ""
+   ],
+   "referencia": "Clase 12, «Datos de panel»"
+  },
+  {
+   "id": "CAL-44",
+   "tema": "CAL",
+   "subtema": "Cruces con control",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Para qué sirven indicator=True y validate=\"many_to_one\" en un merge?",
+   "opciones": [
+    "Para acelerar el cruce",
+    "indicator informa de dónde vino cada fila (both, left_only, right_only); validate verifica la cardinalidad esperada y falla si el padrón tiene claves repetidas, en lugar de duplicar filas en silencio",
+    "Para ordenar y deduplicar",
+    "Para convertir tipos"
+   ],
+   "correcta": 1,
+   "explicacion": "Son controles del cruce: uno permite contar las filas sin pareja y el otro garantiza la relación declarada (muchas pólizas a un asegurado).",
+   "por_que_no": [
+    "Su objetivo es el control, no la velocidad.",
+    "",
+    "No ordenan ni deduplican.",
+    "No convierten tipos."
+   ],
+   "referencia": "Clase 13, «Cruzar con control»"
+  },
+  {
+   "id": "ALG-41",
+   "tema": "ALG",
+   "subtema": "Monte Carlo",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Para estimar P(D1 = 2 | D1 + D2 = 7) se calcula favorables.sum() / condicion.sum(). ¿Por qué el denominador es la cantidad de réplicas que cumplen la condición y no el total?",
+   "opciones": [
+    "Porque el total es desconocido",
+    "Porque así el resultado es mayor",
+    "Por convención",
+    "Porque una probabilidad condicional se calcula dentro del subconjunto donde ocurre la condición (suma 7), no sobre todas las réplicas"
+   ],
+   "correcta": 3,
+   "explicacion": "P(A | B) = P(A ∩ B) / P(B). En la simulación se cuentan los casos favorables dentro de los que cumplen B. El valor analítico es 1/6.",
+   "por_que_no": [
+    "El total es n = 200.000.",
+    "No es un ajuste arbitrario.",
+    "Es la definición de probabilidad condicional.",
+    ""
+   ],
+   "referencia": "Guía – Estructuras de Control, Actividad 20 («Pregunta conceptual»)"
+  },
+  {
+   "id": "CAL-37",
+   "tema": "CAL",
+   "subtema": "Valores extremos",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Un analista elimina automáticamente todos los siniestros que superan el límite del IQR «por ser atípicos». ¿Por qué es problemático en seguros?",
+   "opciones": [
+    "Porque detectar un valor extremo y decidir que es un error son tareas distintas: la cola de la distribución de siniestros es el objeto de estudio y un siniestro catastrófico es extremo y completamente real",
+    "Porque el IQR está mal calculado",
+    "Porque hay que eliminar también los menores",
+    "No es problemático"
+   ],
+   "correcta": 0,
+   "explicacion": "Eliminar extremos por comodidad estadística subestima severidad, primas y capital. Antes hay que preguntarse si el valor es imposible o solo infrecuente; si no puede responderse, se conserva y se documenta.",
+   "por_que_no": [
+    "",
+    "El problema no es el cálculo.",
+    "Eliminar más datos agrava el error.",
+    "Es uno de los errores frecuentes."
+   ],
+   "referencia": "Clase 13, «Valores extremos: decidir»; Guía práctica Python, Actividad 14"
+  },
+  {
+   "id": "PYB-08",
+   "tema": "PYB",
+   "subtema": "Listas e índices",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "Con siniestros = [0, 125000, 0, 840000, 0, 250000, 0], el promedio sobre toda la cartera es ≈ 173.571 y el promedio entre pólizas con siniestro positivo es 405.000. ¿Por qué son conceptos distintos?",
+   "opciones": [
+    "Porque uno de los dos cálculos está mal",
+    "Porque el primero es un costo por póliza que incluye a quienes no tuvieron siniestros; el segundo describe el monto típico cuando ocurre un siniestro",
+    "Porque el segundo incluye los ceros",
+    "Porque Python redondea distinto"
+   ],
+   "correcta": 1,
+   "explicacion": "El desafío de la guía apunta a esta distinción. Promediar sobre toda la cartera da un costo por póliza (frecuencia y severidad juntas). Promediar solo los positivos describe la severidad, condicionada a que haya siniestro.",
+   "por_que_no": [
+    "Ambos cálculos son correctos; responden preguntas distintas.",
+    "",
+    "Es al revés: el segundo excluye los ceros.",
+    "La diferencia es conceptual, no de redondeo."
+   ],
+   "referencia": "Guía práctica Python, «Desafío» de la sección numpy"
+  }
+ ]
+}

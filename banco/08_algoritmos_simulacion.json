@@ -1,0 +1,1188 @@
+[
+ {
+  "id": "ALG-01",
+  "tema": "ALG",
+  "subtema": "VAN",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la función que calcula el VAN, ¿qué papel cumple t?",
+  "codigo": "def van(flujos, tasa):\n    valor = 0.0\n    for t, flujo in enumerate(flujos):\n        valor += flujo / (1 + tasa) ** t\n    return valor",
+  "opciones": [
+   "Es el monto del flujo",
+   "Es el período, que funciona como exponente del descuento: el flujo del período t se divide por (1 + tasa)^t",
+   "Es la tasa de interés",
+   "Es un contador de flujos negativos"
+  ],
+  "correcta": 1,
+  "explicacion": "enumerate entrega a la vez el período t (0, 1, 2…) y el flujo. El índice es el exponente del descuento, y el flujo del período 0 no se descuenta.",
+  "por_que_no": [
+   "El monto es la variable flujo.",
+   "",
+   "La tasa es un parámetro de la función.",
+   "t cuenta todos los períodos, sin importar el signo del flujo."
+  ],
+  "referencia": "Clase 10, «Aplicación: valor actual neto de un flujo»"
+ },
+ {
+  "id": "ALG-02",
+  "tema": "ALG",
+  "subtema": "VAN",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Con flujos = [-500_000, 180_000, 180_000, 180_000, 180_000], ¿cuánto vale van(flujos, 0)?",
+  "opciones": [
+   "0",
+   "220000.0",
+   "720000.0",
+   "-500000.0"
+  ],
+  "correcta": 1,
+  "explicacion": "Con tasa 0 no hay descuento: (1 + 0)^t = 1. El VAN es la suma simple de los flujos: −500.000 + 4 × 180.000 = 220.000.",
+  "por_que_no": [
+   "Sería la tasa que anula el VAN (la TIR), no tasa 0.",
+   "",
+   "Es la suma de los ingresos sin restar la inversión.",
+   "Es solo el flujo inicial."
+  ],
+  "referencia": "Clase 10 y Guía – Estructuras de Control, Actividad 7"
+ },
+ {
+  "id": "ALG-03",
+  "tema": "ALG",
+  "subtema": "VAN y TIR",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Para el flujo [-500.000, 180.000, 180.000, 180.000, 180.000], el VAN al 10 % es 70.575,78 y al 20 % es −34.027,78. ¿Qué se puede afirmar sobre la TIR?",
+  "opciones": [
+   "Es menor al 10 %",
+   "Está entre el 10 % y el 20 %, porque el VAN cambia de signo en ese intervalo",
+   "Es mayor al 20 %",
+   "No existe"
+  ],
+  "correcta": 1,
+  "explicacion": "La TIR es la tasa que anula el VAN. Si el VAN pasa de positivo a negativo entre 10 % y 20 %, la raíz está en ese intervalo. La clase obtiene TIR ≈ 16,37 %.",
+  "por_que_no": [
+   "Al 10 % el VAN todavía es positivo.",
+   "",
+   "Al 20 % el VAN ya es negativo.",
+   "Hay un cambio de signo, así que existe."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 7 y Desafío; Clase 10, «TIR por bisección»"
+ },
+ {
+  "id": "ALG-04",
+  "tema": "ALG",
+  "subtema": "TIR por bisección",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la bisección, si van(flujos, a) * van(flujos, m) <= 0, el código hace b = m. ¿Por qué?",
+  "codigo": "while b - a > tol:\n    m = (a + b) / 2\n    if van(flujos, a) * van(flujos, m) <= 0:\n        b = m\n    else:\n        a = m",
+  "opciones": [
+   "Porque el VAN es creciente",
+   "Porque un producto ≤ 0 indica cambio de signo entre a y m, así que la raíz está en [a, m] y se descarta la mitad derecha",
+   "Porque m es la TIR exacta",
+   "Porque así el intervalo se agranda"
+  ],
+  "correcta": 1,
+  "explicacion": "Si el VAN tiene distinto signo en a y en m, la tasa que lo anula está en [a, m]. En cada paso el intervalo se reduce a la mitad hasta alcanzar la tolerancia.",
+  "por_que_no": [
+   "El razonamiento no depende de la monotonía, sino del cambio de signo.",
+   "",
+   "m es solo el punto medio; se sigue iterando.",
+   "El intervalo se achica a la mitad en cada paso."
+  ],
+  "referencia": "Clase 10, «Aplicación: TIR por bisección (for + while)»"
+ },
+ {
+  "id": "ALG-05",
+  "tema": "ALG",
+  "subtema": "TIR por bisección",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la TIR se busca con un while y una tolerancia, en lugar de una fórmula directa?",
+  "opciones": [
+   "Porque Python no tiene la función potencia",
+   "Porque la TIR no tiene solución cerrada: se busca numéricamente, repitiendo hasta alcanzar la tolerancia deseada",
+   "Porque así siempre da un número entero",
+   "Porque el for no admite decimales"
+  ],
+  "correcta": 1,
+  "explicacion": "No hay una fórmula general para despejar la tasa que anula el VAN, así que se aproxima con un método numérico. Es el uso típico de while como criterio de convergencia.",
+  "por_que_no": [
+   "Python tiene el operador **.",
+   "",
+   "El resultado es un número real.",
+   "La elección del while se debe a que no se sabe cuántas iteraciones harán falta."
+  ],
+  "referencia": "Clase 10, «TIR por bisección»; Guía, «Búsqueda numérica»"
+ },
+ {
+  "id": "ALG-06",
+  "tema": "ALG",
+  "subtema": "TIR por bisección",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la versión de la guía, el ciclo es while b - a > tol and iteraciones < max_iter. ¿Por qué tiene dos condiciones de salida?",
+  "opciones": [
+   "Por redundancia estética",
+   "Una corta cuando se alcanza la precisión pedida y la otra es una red de seguridad que evita un ciclo infinito si no converge",
+   "Porque Python exige dos condiciones",
+   "Para calcular dos TIR a la vez"
+  ],
+  "correcta": 1,
+  "explicacion": "La tolerancia define la precisión. El máximo de iteraciones protege contra situaciones en que el método no converge, la misma idea que la «red de seguridad» del fondo de retiro.",
+  "por_que_no": [
+   "Cada condición cumple una función distinta.",
+   "",
+   "while acepta cualquier expresión lógica.",
+   "Se busca una única TIR."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Búsqueda numérica: la TIR por bisección»"
+ },
+ {
+  "id": "ALG-07",
+  "tema": "ALG",
+  "subtema": "TIR por bisección",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La guía informa «VAN evaluado en la TIR: −0.000217». ¿Por qué no da exactamente cero?",
+  "opciones": [
+   "Porque el código está mal",
+   "Porque la bisección se detiene al alcanzar una tolerancia: la TIR hallada es una aproximación",
+   "Porque el VAN nunca puede ser cero",
+   "Porque se usó un for en vez de un while"
+  ],
+  "correcta": 1,
+  "explicacion": "El método numérico entrega una aproximación tan precisa como la tolerancia indicada; un error residual pequeño es esperable.",
+  "por_que_no": [
+   "Es el comportamiento esperado de un método aproximado.",
+   "",
+   "En la TIR exacta el VAN vale cero por definición.",
+   "El tipo de bucle no tiene relación con el residuo."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Preguntas para discutir» de la TIR"
+ },
+ {
+  "id": "ALG-08",
+  "tema": "ALG",
+  "subtema": "TIR por bisección",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La función tir de la guía lanza ValueError si van(flujos, a) * van(flujos, b) > 0 al inicio. ¿Qué situación detecta?",
+  "opciones": [
+   "Que la tolerancia es muy chica",
+   "Que el intervalo inicial no encierra un cambio de signo, así que la bisección no puede garantizar una raíz en él",
+   "Que el flujo tiene más de 4 períodos",
+   "Que la tasa es negativa"
+  ],
+  "correcta": 1,
+  "explicacion": "La bisección necesita que la función tenga signos opuestos en los extremos. Si el producto es positivo, no hay garantía de que la raíz esté en el intervalo.",
+  "por_que_no": [
+   "La tolerancia no se verifica en esa condición.",
+   "",
+   "La cantidad de períodos no importa.",
+   "El intervalo puede incluir tasas negativas (a = −0,99)."
+  ],
+  "referencia": "Guía – Estructuras de Control, «La TIR por bisección»"
+ },
+ {
+  "id": "ALG-09",
+  "tema": "ALG",
+  "subtema": "Mortalidad",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "En la ley de Makeham usada en clase, ¿cómo se obtiene qx a partir de la fuerza de mortalidad μx = A + B·c^x?",
+  "opciones": [
+   "qx = μx",
+   "qx = 1 − e^(−μx)",
+   "qx = e^(μx)",
+   "qx = 1 / μx"
+  ],
+  "correcta": 1,
+  "explicacion": "La función qx(x) calcula mu = A + B * c ** x y devuelve 1 - math.exp(-mu).",
+  "por_que_no": [
+   "μx es una fuerza (tasa instantánea), no una probabilidad anual.",
+   "",
+   "e^μ es mayor que 1, así que no puede ser una probabilidad.",
+   "No es la relación usada."
+  ],
+  "referencia": "Clase 10, «Aplicación: tabla de mortalidad»"
+ },
+ {
+  "id": "ALG-10",
+  "tema": "ALG",
+  "subtema": "Mortalidad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué npx (probabilidad de sobrevivir n años) se calcula con un producto acumulado y no con una suma?",
+  "opciones": [
+   "Por convención de Python",
+   "Porque sobrevivir n años exige sobrevivir cada año sucesivo; la probabilidad conjunta es el producto de las probabilidades de supervivencia anuales (1 − qx+k)",
+   "Porque la suma da números negativos",
+   "Porque el producto es más rápido"
+  ],
+  "correcta": 1,
+  "explicacion": "npx = ∏(1 − qx+k): cada año hay que sobrevivir, y esos factores se multiplican. En código es un for con acumulador multiplicativo inicializado en 1.",
+  "por_que_no": [
+   "Es una propiedad de la probabilidad, no del lenguaje.",
+   "",
+   "Una suma de probabilidades no da negativos, pero podría superar 1, lo cual no tiene sentido.",
+   "La razón es conceptual, no de velocidad."
+  ],
+  "referencia": "Clase 10, «Probabilidad de supervivencia»; Guía, «Preguntas para discutir» de la Actividad 10"
+ },
+ {
+  "id": "ALG-11",
+  "tema": "ALG",
+  "subtema": "Mortalidad",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve p_n(40, 0)?",
+  "codigo": "def p_n(x, n):\n    p = 1.0\n    for k in range(n):\n        p *= (1 - qx(x + k))\n    return p",
+  "opciones": [
+   "0.0",
+   "1.0",
+   "qx(40)",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "range(0) está vacío, así que el ciclo no se ejecuta y devuelve el valor inicial 1.0. Coincide con la propiedad 0px = 1.",
+  "por_que_no": [
+   "El acumulador empieza en 1, no en 0.",
+   "",
+   "No se llega a llamar a qx.",
+   "range(0) es válido."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 9"
+ },
+ {
+  "id": "ALG-12",
+  "tema": "ALG",
+  "subtema": "Mortalidad",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Si en la ley de Makeham se aumenta el parámetro c, ¿qué ocurre con la curva de supervivencia desde los 40 años?",
+  "opciones": [
+   "Se mantiene igual",
+   "Cae más rápido, porque la mortalidad crece más aceleradamente con la edad",
+   "Sube por encima de 1",
+   "Se vuelve constante"
+  ],
+  "correcta": 1,
+  "explicacion": "μx = A + B·c^x: un c mayor hace crecer más rápido la componente exponencial de la mortalidad. Los qx son mayores a edades altas y la supervivencia acumulada decrece más rápido.",
+  "por_que_no": [
+   "c afecta directamente a qx.",
+   "",
+   "Una probabilidad nunca supera 1.",
+   "Sigue siendo decreciente con la edad."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 10 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-13",
+  "tema": "ALG",
+  "subtema": "Mortalidad",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia conceptual hay entre una tabla de mortalidad generada por una ley paramétrica (como Makeham) y una construida con la experiencia observada?",
+  "opciones": [
+   "Ninguna",
+   "La paramétrica se deriva de una fórmula con pocos parámetros (suave, ficticia en la guía); la observada surge de datos reales de fallecimientos y exposición",
+   "La observada siempre es más suave",
+   "La paramétrica no permite calcular qx"
+  ],
+  "correcta": 1,
+  "explicacion": "La guía aclara que su tabla es ficticia, generada por una ley con parámetros A, B y c. Una tabla de experiencia proviene de datos observados y puede tener irregularidades.",
+  "por_que_no": [
+   "Tienen orígenes distintos.",
+   "",
+   "Suele ser al revés: la paramétrica es la más suave.",
+   "La paramétrica permite calcular qx para cualquier edad."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 10 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-14",
+  "tema": "ALG",
+  "subtema": "Rentas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La renta vitalicia anticipada es äx = Σ v^k · kpx, con v = 1/(1 + i). La guía obtiene ä40 = 21,47 y ä65 = 15,05 al 4 %. ¿Por qué ä65 < ä40?",
+  "opciones": [
+   "Porque la tasa es distinta",
+   "Porque a los 65 quedan menos años esperados de pago, es decir, menos términos con probabilidad de supervivencia relevante",
+   "Porque v es mayor a los 65",
+   "Por un error de redondeo"
+  ],
+  "correcta": 1,
+  "explicacion": "La renta es una suma de pagos descontados y ponderados por la probabilidad de estar vivo. A mayor edad, menos años esperados de supervivencia.",
+  "por_que_no": [
+   "Ambas se calculan al 4 %.",
+   "",
+   "v depende solo de la tasa.",
+   "La diferencia es grande y tiene explicación actuarial."
+  ],
+  "referencia": "Clase 10, «Renta vitalicia anticipada»; Guía, Actividad 11"
+ },
+ {
+  "id": "ALG-15",
+  "tema": "ALG",
+  "subtema": "Rentas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué ocurre con ä65 si aumenta la tasa de interés?",
+  "opciones": [
+   "Aumenta",
+   "Disminuye, porque los pagos futuros se descuentan con mayor intensidad",
+   "No cambia",
+   "Se vuelve negativa"
+  ],
+  "correcta": 1,
+  "explicacion": "Con una tasa mayor, v = 1/(1 + i) es menor y cada término v^k·kpx se achica. La guía grafica ä65 entre 1 % y 8 % y muestra una curva decreciente.",
+  "por_que_no": [
+   "Sucede lo contrario.",
+   "",
+   "Depende de la tasa a través de v.",
+   "Todos los términos son positivos."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 11 y discusión"
+ },
+ {
+  "id": "ALG-16",
+  "tema": "ALG",
+  "subtema": "Rentas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La guía señala que anualidad_vitalicia (versión iterativa) «realiza mucho trabajo redundante». ¿Cuál?",
+  "codigo": "for k in range(0, w - x + 1):\n    valor += v ** k * p_n(x, k)",
+  "opciones": [
+   "Calcula v en cada iteración",
+   "Recalcula desde cero el producto acumulado kpx en cada término, en lugar de arrastrarlo del paso anterior",
+   "Suma dos veces el primer término",
+   "Usa range en vez de while"
+  ],
+  "correcta": 1,
+  "explicacion": "p_n(x, k) vuelve a multiplicar k factores en cada iteración. Conviene ir actualizando la supervivencia de un paso al siguiente, como hace la versión recursiva.",
+  "por_que_no": [
+   "v se calcula una sola vez, antes del ciclo.",
+   "",
+   "Cada término se suma una vez.",
+   "El tipo de bucle no es la fuente de la redundancia."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Renta vitalicia anticipada – Discusión»"
+ },
+ {
+  "id": "ALG-17",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuáles son los dos ingredientes obligatorios de un algoritmo recursivo?",
+  "opciones": [
+   "Un for y un while",
+   "Un caso base, que se resuelve sin volver a llamarse, y un paso recursivo, que expresa el problema en términos de una instancia más chica",
+   "Una lista y un diccionario",
+   "Un break y un continue"
+  ],
+  "correcta": 1,
+  "explicacion": "Sin caso base la recursión no termina y se produce un RecursionError, el equivalente del bucle infinito.",
+  "por_que_no": [
+   "Esas son estructuras iterativas.",
+   "",
+   "Son estructuras de datos.",
+   "Son instrucciones de control de ciclos."
+  ],
+  "referencia": "Clase 10, «Algoritmos recursivos»"
+ },
+ {
+  "id": "ALG-18",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve factorial(6)?",
+  "codigo": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)",
+  "opciones": [
+   "6",
+   "120",
+   "720",
+   "Error"
+  ],
+  "correcta": 2,
+  "explicacion": "6! = 6 × 5 × 4 × 3 × 2 × 1 = 720. El caso base factorial(0) = 1 corta la recursión.",
+  "por_que_no": [
+   "Es el argumento, no el resultado.",
+   "120 es 5!.",
+   "",
+   "Hay caso base, así que la recursión termina."
+  ],
+  "referencia": "Clase 10, «Recursividad: factorial y suma»"
+ },
+ {
+  "id": "ALG-19",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "¿Qué ocurre al llamar factorial_mal(5)?",
+  "codigo": "def factorial_mal(n):\n    return n * factorial_mal(n - 1)",
+  "opciones": [
+   "Devuelve 120",
+   "Devuelve 0",
+   "Se produce un RecursionError: no hay caso base y la función se llama indefinidamente",
+   "Devuelve 5"
+  ],
+  "correcta": 2,
+  "explicacion": "Sin caso base, la función se sigue llamando con n − 1 (4, 3, …, −1, −2…) hasta exceder el límite de recursión. Es el equivalente recursivo del bucle infinito.",
+  "por_que_no": [
+   "Faltaría el caso base para devolver 120.",
+   "Nunca llega a devolver un valor.",
+   "",
+   "Nunca llega a devolver un valor."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 27 (d); Clase 10"
+ },
+ {
+  "id": "ALG-20",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve producto(7, 6)?",
+  "codigo": "def producto(n, m):\n    if n == 0:\n        return 0\n    return producto(n - 1, m) + m",
+  "opciones": [
+   "13",
+   "42",
+   "36",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "Se aprovecha que n·m = (n − 1)·m + m: suma 6 siete veces hasta llegar al caso base n = 0. Resultado: 42.",
+  "por_que_no": [
+   "Sería 7 + 6.",
+   "",
+   "Sería 6 × 6.",
+   "Tiene caso base."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 23"
+ },
+ {
+  "id": "ALG-21",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "La relación äx = 1 + v·px·äx+1 se programa recursivamente. ¿Cuál es el caso base en anualidad_rec?",
+  "codigo": "def anualidad_rec(x, i, w=110):\n    if x >= w:\n        return 1.0\n    v = 1 / (1 + i)\n    return 1 + v * (1 - qx(x)) * anualidad_rec(x + 1, i, w)",
+  "opciones": [
+   "x == 0",
+   "Alcanzar la edad límite de la tabla (x >= w), donde se devuelve 1.0",
+   "i == 0",
+   "No tiene caso base"
+  ],
+  "correcta": 1,
+  "explicacion": "La recursión avanza en edad hasta la edad límite ω, donde se corta. Da el mismo resultado que la versión con for (ä65 = 15,0533).",
+  "por_que_no": [
+   "La edad crece en cada llamada; no baja hasta 0.",
+   "",
+   "La tasa no cambia entre llamadas.",
+   "El if x >= w es el caso base."
+  ],
+  "referencia": "Clase 10, «La recursividad es natural en lo actuarial»"
+ },
+ {
+  "id": "ALG-22",
+  "tema": "ALG",
+  "subtema": "Recursividad",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Al comparar la renta recursiva con la iterativa de la guía, la recursiva resultó tan o más eficiente. ¿Qué lección extrae la guía?",
+  "opciones": [
+   "La recursión siempre es más rápida",
+   "La eficiencia no depende del estilo elegido, sino del trabajo redundante que el algoritmo evite",
+   "La iteración siempre es más rápida",
+   "Python optimiza las funciones recursivas"
+  ],
+  "correcta": 1,
+  "explicacion": "La recursiva arrastra la probabilidad de supervivencia de un paso al siguiente, mientras que la iterativa recalcula kpx desde cero. La diferencia está en el trabajo redundante, no en la forma de escribirlo.",
+  "por_que_no": [
+   "Fibonacci recursivo es un contraejemplo.",
+   "",
+   "En este caso no lo fue.",
+   "No es la explicación que da la guía."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 24 («Discusión»)"
+ },
+ {
+  "id": "ALG-23",
+  "tema": "ALG",
+  "subtema": "Fibonacci",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "fib_rec(30) tardó 0,055 s y fib_iter(30) 0,00001 s, con el mismo resultado. ¿Por qué el recursivo es tan costoso?",
+  "codigo": "def fib_rec(n):\n    if n <= 2:\n        return 1\n    return fib_rec(n-1) + fib_rec(n-2)",
+  "opciones": [
+   "Porque usa números grandes",
+   "Porque recalcula los mismos valores miles de veces: su costo crece exponencialmente",
+   "Porque Python no admite recursión",
+   "Porque el iterativo usa numpy"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada llamada se divide en dos y los mismos subproblemas se recalculan una y otra vez. «Elegante para leer, costoso para ejecutar.»",
+  "por_que_no": [
+   "El tamaño de los números no explica la diferencia.",
+   "",
+   "Python admite recursión.",
+   "fib_iter no usa numpy."
+  ],
+  "referencia": "Clase 10, «Iterativo vs. recursivo: Fibonacci»"
+ },
+ {
+  "id": "ALG-24",
+  "tema": "ALG",
+  "subtema": "Fibonacci",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿Cuántas llamadas a fib_rec (contando la inicial) genera fib_rec(5)?",
+  "codigo": "def fib_rec(n):\n    if n <= 2:\n        return 1\n    return fib_rec(n-1) + fib_rec(n-2)",
+  "opciones": [
+   "5",
+   "7",
+   "9",
+   "15"
+  ],
+  "correcta": 2,
+  "explicacion": "fib(5) llama a fib(4) y fib(3); fib(4) a fib(3) y fib(2); cada fib(3) a fib(2) y fib(1). Total: 1 + 2 + 2 + 4 = 9 llamadas. fib(3) se calcula dos veces: es el trabajo redundante.",
+  "por_que_no": [
+   "Sería una llamada por valor de n, sin repetición.",
+   "Faltan llamadas repetidas.",
+   "",
+   "Sobrestima el árbol de llamadas."
+  ],
+  "referencia": "Clase 10, «Iterativo vs. recursivo: Fibonacci»"
+ },
+ {
+  "id": "ALG-25",
+  "tema": "ALG",
+  "subtema": "Fibonacci",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En el desafío de la guía, fib_memo guarda en un diccionario los valores ya calculados. ¿Qué logra esta técnica (memorización)?",
+  "opciones": [
+   "Que la función ya no sea recursiva",
+   "Evitar recalcular subproblemas: cada fib(k) se calcula una sola vez y luego se consulta en el diccionario",
+   "Usar menos memoria que la versión iterativa",
+   "Que el resultado sea aproximado"
+  ],
+  "correcta": 1,
+  "explicacion": "Al consultar primero «if n in memoria», se elimina el trabajo redundante que hace exponencial al recursivo simple.",
+  "por_que_no": [
+   "Sigue llamándose a sí misma.",
+   "",
+   "Usa memoria adicional para el diccionario.",
+   "El resultado es exacto."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Fibonacci – Desafío»"
+ },
+ {
+  "id": "ALG-26",
+  "tema": "ALG",
+  "subtema": "Iterativo vs. recursivo",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "Según la tabla de la clase, ¿qué diferencia hay en memoria y riesgo típico entre una solución iterativa y una recursiva?",
+  "opciones": [
+   "Iterativa: memoria constante, riesgo de bucle infinito. Recursiva: una entrada en la pila por cada llamada, riesgo de RecursionError",
+   "Ambas usan la misma memoria",
+   "La recursiva no tiene riesgos",
+   "La iterativa produce RecursionError"
+  ],
+  "correcta": 0,
+  "explicacion": "El iterativo reutiliza las mismas variables. El recursivo apila una llamada por nivel; si la recursión es muy profunda o no tiene caso base, aparece un RecursionError.",
+  "por_que_no": [
+   "",
+   "La recursiva consume pila.",
+   "Puede fallar por falta de caso base o por profundidad excesiva.",
+   "Eso corresponde a la recursiva."
+  ],
+  "referencia": "Clase 10, «¿Cuándo usar cada uno?»"
+ },
+ {
+  "id": "ALG-27",
+  "tema": "ALG",
+  "subtema": "Iterativo vs. recursivo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué recomienda la clase para la práctica actuarial respecto de recursión e iteración?",
+  "opciones": [
+   "Usar siempre recursión en producción",
+   "Escribir la recursión para entender y validar el modelo, e implementar la versión iterativa (o vectorizada) para producción",
+   "No usar nunca recursión",
+   "Elegir al azar"
+  ],
+  "correcta": 1,
+  "explicacion": "La recursión suele reflejar la fórmula teórica y facilita validar. Para correr a escala conviene la versión iterativa o vectorizada.",
+  "por_que_no": [
+   "La recursión puede ser costosa y tener límites de profundidad.",
+   "",
+   "La clase la valora para entender el modelo.",
+   "La elección es razonada."
+  ],
+  "referencia": "Clase 10, «¿Cuándo usar cada uno?»"
+ },
+ {
+  "id": "ALG-28",
+  "tema": "ALG",
+  "subtema": "Reservas",
+  "dificultad": "dificil",
+  "tipo": "concepto",
+  "enunciado": "La recursión de Fackler es (Vt + P)(1 + i) = qx+t·S + px+t·Vt+1. ¿Cómo se despeja la reserva del año siguiente en el código?",
+  "opciones": [
+   "V[t+1] = (V[t] + P) * (1 + i)",
+   "V[t+1] = ((V[t] + P) * (1 + i) - qx(x+t) * S) / (1 - qx(x+t))",
+   "V[t+1] = V[t] + P - S",
+   "V[t+1] = qx(x+t) * S"
+  ],
+  "correcta": 1,
+  "explicacion": "Se despeja Vt+1 dividiendo por px+t = 1 − qx+t, después de restar el costo esperado de fallecimiento qx+t·S a la reserva más la prima capitalizada.",
+  "por_que_no": [
+   "Omite el costo de los fallecimientos y la división por px+t.",
+   "",
+   "No capitaliza ni pondera por probabilidades.",
+   "Es solo el costo esperado de fallecimiento."
+  ],
+  "referencia": "Clase 10, «Recursión de reservas (Fackler)»; Guía, Actividad 25"
+ },
+ {
+  "id": "ALG-29",
+  "tema": "ALG",
+  "subtema": "Reservas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En el seguro temporario a 10 años de la guía, la reserva parte de 0, crece hasta ≈ 1.292 en t = 6 y vuelve a 0 en t = 10. ¿Qué indica esto?",
+  "opciones": [
+   "Que hay un error en la recursión",
+   "Que el código reproduce la teoría: la reserva de un temporario crece, alcanza un máximo y vuelve a cero al vencimiento",
+   "Que la prima está mal calculada",
+   "Que la tasa es cero"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase destaca que el código reproduce exactamente lo que dice la teoría para un temporario con prima neta nivelada.",
+  "por_que_no": [
+   "Es el comportamiento esperado.",
+   "",
+   "Volver a cero en t = n confirma que la prima es la neta.",
+   "La tasa usada es 4 %."
+  ],
+  "referencia": "Clase 10, «Recursión de reservas»; Guía, Actividad 25"
+ },
+ {
+  "id": "ALG-30",
+  "tema": "ALG",
+  "subtema": "Reservas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la recursión de reservas, ¿qué significaría que Vn (al vencimiento) resulte distinto de cero?",
+  "opciones": [
+   "Que la recursión es correcta",
+   "Que la prima usada no es la prima neta nivelada que equilibra beneficios y primas, o que hay un error en el cálculo",
+   "Que el asegurado falleció",
+   "Que la tasa es negativa"
+  ],
+  "correcta": 1,
+  "explicacion": "Con la prima neta correcta (P = S·A/ä), la reserva vuelve a cero en t = n. Un Vn ≠ 0 indica que P no equilibra las obligaciones (por ejemplo, una prima un 10 % mayor) o un error de implementación.",
+  "por_que_no": [
+   "Con la prima neta correcta, Vn = 0.",
+   "",
+   "La reserva es un valor esperado sobre la cartera, no un caso individual.",
+   "No se deduce de Vn ≠ 0."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 25 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-31",
+  "tema": "ALG",
+  "subtema": "Reservas",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo se obtiene la prima neta nivelada P de un temporario de n años en la guía?",
+  "opciones": [
+   "P = S · ä / A",
+   "P = S · A¹x:n / äx:n",
+   "P = S / n",
+   "P = A + ä"
+  ],
+  "correcta": 1,
+  "explicacion": "La prima neta iguala valores actuales: P · äx:n = S · A¹x:n, de donde P = S · A / ä. En el ejemplo, P ≈ 1.071,52 para S = 1.000.000, x = 45, n = 10 e i = 4 %.",
+  "por_que_no": [
+   "Los roles de A y ä están invertidos.",
+   "",
+   "Ignora mortalidad e intereses.",
+   "No es una relación de equivalencia."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Recursión de reservas»"
+ },
+ {
+  "id": "ALG-32",
+  "tema": "ALG",
+  "subtema": "Chain ladder",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Con el triángulo de la clase, el primer factor de desarrollo usa las filas con columnas 0 y 1 observadas: columna 1 = 1450 + 1600 + 1730 + 1920 y columna 0 = 1000 + 1120 + 1210 + 1350. ¿Cuánto vale f0?",
+  "opciones": [
+   "≈ 1,4316",
+   "≈ 1,1339",
+   "≈ 1,0535",
+   "≈ 1,4500"
+  ],
+  "correcta": 0,
+  "explicacion": "f0 = 6.700 / 4.680 ≈ 1,4316. Solo se usan las filas con ambas celdas observadas, así que la fila 5 (1420) queda afuera.",
+  "por_que_no": [
+   "",
+   "Es f1.",
+   "Es f2.",
+   "Es 1450/1000, el factor de una sola fila."
+  ],
+  "referencia": "Clase 10, «Aplicación: triángulo run-off (II)»; Guía, Actividad 16"
+ },
+ {
+  "id": "ALG-33",
+  "tema": "ALG",
+  "subtema": "Chain ladder",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué el bucle interno de los factores verifica que triangulo[i][j] y triangulo[i][j+1] no sean None?",
+  "opciones": [
+   "Por estilo",
+   "Para usar solo pares de celdas efectivamente observadas: None marca desarrollo que todavía no ocurrió",
+   "Porque None vale cero",
+   "Para ordenar el triángulo"
+  ],
+  "correcta": 1,
+  "explicacion": "El factor compara montos de dos columnas consecutivas en las mismas filas. Incluir celdas no observadas distorsionaría el cociente (o daría error).",
+  "por_que_no": [
+   "Es una condición necesaria para el cálculo.",
+   "",
+   "None no es cero: es ausencia de dato.",
+   "No ordena nada."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 17 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-34",
+  "tema": "ALG",
+  "subtema": "Chain ladder",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Qué supone implícitamente el método chain ladder al aplicar el mismo factor fj a todos los años de ocurrencia?",
+  "opciones": [
+   "Que todos los años tuvieron el mismo monto de siniestros",
+   "Que el patrón de desarrollo es el mismo para todos los años de ocurrencia",
+   "Que no hay inflación de ningún tipo en ningún año",
+   "Que el triángulo está completo"
+  ],
+  "correcta": 1,
+  "explicacion": "Usar un único factor por columna presupone que los siniestros de cada año se desarrollan de manera proporcional y estable en el tiempo.",
+  "por_que_no": [
+   "Los montos difieren entre filas; lo que se supone igual es la proporción de crecimiento.",
+   "",
+   "Es una consecuencia posible, pero el supuesto central es el patrón común.",
+   "Justamente se aplica porque está incompleto."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 17 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-35",
+  "tema": "ALG",
+  "subtema": "Chain ladder",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "La fila 2 del triángulo es [1120, 1600, 1810, 1905, None] y f3 = 1,0230. ¿Qué valor completa la celda faltante?",
+  "opciones": [
+   "1905,0",
+   "≈ 1948,8",
+   "≈ 1862,2",
+   "≈ 3810,0"
+  ],
+  "correcta": 1,
+  "explicacion": "La celda se proyecta multiplicando la última observada por el factor de esa columna: 1905 × 1,0230 ≈ 1948,8.",
+  "por_que_no": [
+   "No proyecta el desarrollo restante.",
+   "",
+   "Divide en lugar de multiplicar.",
+   "Suma la celda dos veces."
+  ],
+  "referencia": "Clase 10, «Triángulo run-off (III)»"
+ },
+ {
+  "id": "ALG-36",
+  "tema": "ALG",
+  "subtema": "Chain ladder",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Cómo se calcula la reserva estimada con el triángulo completado?",
+  "opciones": [
+   "Sumando la primera columna",
+   "Siniestros últimos estimados (suma de la última columna completada) menos siniestros acumulados a hoy (suma de la diagonal: la última celda observada de cada fila)",
+   "Promediando los factores",
+   "Multiplicando todos los factores"
+  ],
+  "correcta": 1,
+  "explicacion": "En la guía: último = 10.671,4 y acumulado a hoy = 8.985,0, así que la reserva es ≈ 1.686,4. Es lo que falta pagar.",
+  "por_que_no": [
+   "La primera columna es el desarrollo inicial.",
+   "",
+   "El promedio de factores no es una reserva.",
+   "El producto de factores es un factor acumulado, no un monto."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 17; Clase 10"
+ },
+ {
+  "id": "ALG-37",
+  "tema": "ALG",
+  "subtema": "Vectorización",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "La clase compara la suma de cuadrados de 2.000.000 de valores con un bucle (0,118 s) y con np.dot(x, x) (0,0014 s). ¿Cuál es la moraleja?",
+  "opciones": [
+   "Nunca hay que escribir bucles",
+   "Entender el bucle es imprescindible para pensar el algoritmo; vectorizar es imprescindible para que corra a tiempo en producción",
+   "np.dot da un resultado distinto",
+   "Los bucles son siempre más precisos"
+  ],
+  "correcta": 1,
+  "explicacion": "Ambos dan el mismo resultado. La guía sugiere escribir primero la versión explícita, verificarla con un caso chico y luego vectorizarla.",
+  "por_que_no": [
+   "La clase valora entender el bucle.",
+   "",
+   "Coinciden (math.isclose → True).",
+   "La precisión es la misma."
+  ],
+  "referencia": "Clase 10, «Bucles vs. vectorización»; Guía, Bloque 5"
+ },
+ {
+  "id": "ALG-39",
+  "tema": "ALG",
+  "subtema": "Monte Carlo",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuáles son los tres pasos de una simulación de Monte Carlo según la clase?",
+  "opciones": [
+   "Importar, graficar y exportar",
+   "Ensayo (generar una realización), éxito (ver si cumple el evento) y replicación (repetir n veces y promediar)",
+   "Media, mediana y moda",
+   "Caso base, paso recursivo y retorno"
+  ],
+  "correcta": 1,
+  "explicacion": "Toda simulación comparte esa estructura. En código, el ensayo y el éxito van dentro de un for que realiza las réplicas.",
+  "por_que_no": [
+   "No son pasos de simulación.",
+   "",
+   "Son medidas de posición.",
+   "Son elementos de la recursión."
+  ],
+  "referencia": "Clase 10, «Monte Carlo: los tres pasos»"
+ },
+ {
+  "id": "ALG-40",
+  "tema": "ALG",
+  "subtema": "Monte Carlo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al simular 10.000 veces tres lanzamientos de una moneda equilibrada, la probabilidad estimada de «tres caras» fue 0,1292 y la teórica es 1/8 = 0,125. ¿Qué explica la diferencia?",
+  "opciones": [
+   "Un error en el código",
+   "La variabilidad aleatoria de una estimación por simulación; con más réplicas, la frecuencia relativa tiende a la probabilidad (ley de los grandes números)",
+   "Que la moneda está sesgada",
+   "Que 1/8 es incorrecto"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada simulación es una muestra. La ley de los grandes números garantiza la convergencia de la frecuencia relativa a la probabilidad a medida que aumentan las réplicas.",
+  "por_que_no": [
+   "Una diferencia pequeña es esperable.",
+   "",
+   "Se usó p = 0,5.",
+   "(1/2)³ = 1/8."
+  ],
+  "referencia": "Clase 10, «Simulación: repaso del experimento aleatorio» y «Monte Carlo»"
+ },
+ {
+  "id": "ALG-41",
+  "tema": "ALG",
+  "subtema": "Monte Carlo",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Para estimar P(D1 = 2 | D1 + D2 = 7) se calcula favorables.sum() / condicion.sum(). ¿Por qué el denominador es la cantidad de réplicas que cumplen la condición y no el total?",
+  "opciones": [
+   "Por convención",
+   "Porque una probabilidad condicional se calcula dentro del subconjunto donde ocurre la condición (suma 7), no sobre todas las réplicas",
+   "Porque así el resultado es mayor",
+   "Porque el total es desconocido"
+  ],
+  "correcta": 1,
+  "explicacion": "P(A | B) = P(A ∩ B) / P(B). En la simulación se cuentan los casos favorables dentro de los que cumplen B. El valor analítico es 1/6.",
+  "por_que_no": [
+   "Es la definición de probabilidad condicional.",
+   "",
+   "No es un ajuste arbitrario.",
+   "El total es n = 200.000."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 20 («Pregunta conceptual»)"
+ },
+ {
+  "id": "ALG-42",
+  "tema": "ALG",
+  "subtema": "Monte Carlo",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En la estimación de una probabilidad condicional por simulación, ¿qué problema aparece si la condición es muy poco frecuente?",
+  "opciones": [
+   "Ninguno",
+   "Pocas réplicas cumplen la condición, así que la estimación se basa en una muestra chica y resulta muy inestable",
+   "La estimación siempre da cero",
+   "El código entra en un bucle infinito"
+  ],
+  "correcta": 1,
+  "explicacion": "El denominador efectivo es la cantidad de réplicas que cumplen la condición. Si es chico, la variabilidad de la estimación es grande y hacen falta muchas más réplicas.",
+  "por_que_no": [
+   "Afecta la precisión.",
+   "",
+   "No necesariamente; puede dar valores muy variables.",
+   "No hay bucle infinito."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 20 («Pregunta conceptual»)"
+ },
+ {
+  "id": "ALG-43",
+  "tema": "ALG",
+  "subtema": "Pérdida agregada",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En el modelo colectivo S = Σ Xk con N ~ Poisson(3) y Xk ~ Lognormal, el código usa if N[k] > 0 dentro del for. ¿Por qué?",
+  "codigo": "for k in range(n_sim):\n    if N[k] > 0:\n        total[k] = np.random.lognormal(mu, sigma, N[k]).sum()",
+  "opciones": [
+   "Para descartar los escenarios con muchos siniestros",
+   "Para contemplar el caso sin siniestros: si N = 0 la pérdida agregada queda en 0 (valor inicial de total)",
+   "Para ordenar las pérdidas",
+   "Para calcular el VaR"
+  ],
+  "correcta": 1,
+  "explicacion": "El if contempla el caso sin siniestros y el for recorre las réplicas. Con λ = 3, la proporción de años sin siniestros es ≈ e^(−3) ≈ 0,05 (la guía obtiene 0,0505).",
+  "por_que_no": [
+   "No descarta escenarios.",
+   "",
+   "No ordena.",
+   "El VaR se calcula después, sobre total."
+  ],
+  "referencia": "Clase 10, «Aplicación: modelo de pérdida agregada»; Guía, Actividad 21"
+ },
+ {
+  "id": "ALG-44",
+  "tema": "ALG",
+  "subtema": "Medidas de riesgo",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Cómo se calculan el VaR 99 % y el TVaR 99 % a partir de las pérdidas simuladas total?",
+  "opciones": [
+   "VaR = total.mean(); TVaR = total.max()",
+   "VaR = np.percentile(total, 99); TVaR = total[total > VaR].mean()",
+   "VaR = total.std(); TVaR = 2 × VaR",
+   "VaR = np.percentile(total, 1); TVaR = total.min()"
+  ],
+  "correcta": 1,
+  "explicacion": "El VaR al 99 % es el percentil 99 de la distribución simulada. El TVaR es la pérdida media condicionada a superar el VaR: E[S | S > VaR].",
+  "por_que_no": [
+   "La media y el máximo no son esas medidas.",
+   "",
+   "El desvío no es un cuantil.",
+   "El percentil 1 está en la cola izquierda, la de pérdidas bajas."
+  ],
+  "referencia": "Clase 10, «Aplicación: medidas de riesgo»; Guía, Actividad 21"
+ },
+ {
+  "id": "ALG-45",
+  "tema": "ALG",
+  "subtema": "Medidas de riesgo",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Qué información aporta el TVaR que el VaR no captura?",
+  "opciones": [
+   "Ninguna",
+   "El tamaño promedio de las pérdidas en la cola, más allá del umbral: el VaR solo indica dónde empieza la cola",
+   "La pérdida mínima",
+   "La frecuencia de siniestros"
+  ],
+  "correcta": 1,
+  "explicacion": "El VaR es un cuantil: no dice cuán grandes son las pérdidas que lo superan. El TVaR promedia esa cola, por eso TVaR ≥ VaR (en la guía, 1.314.842 frente a 1.056.402).",
+  "por_que_no": [
+   "Mide la severidad de la cola.",
+   "",
+   "Mira la cola superior, no el mínimo.",
+   "Es una medida sobre montos agregados."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 21 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-46",
+  "tema": "ALG",
+  "subtema": "Medidas de riesgo",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cómo cambia la estimación del percentil 99 si se usan 1.000 réplicas en lugar de 50.000?",
+  "opciones": [
+   "No cambia",
+   "Se vuelve más inestable: con 1.000 réplicas solo unas 10 observaciones superan el percentil 99",
+   "Se vuelve exacta",
+   "Siempre da el doble"
+  ],
+  "correcta": 1,
+  "explicacion": "Los cuantiles extremos se estiman con pocas observaciones de la cola. Con menos réplicas la estimación varía mucho de una corrida a otra.",
+  "por_que_no": [
+   "La precisión depende del número de réplicas.",
+   "",
+   "Ninguna simulación finita es exacta.",
+   "No hay una relación fija."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 21 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-47",
+  "tema": "ALG",
+  "subtema": "Pérdida agregada",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la distribución simulada de la pérdida agregada resulta asimétrica hacia la derecha?",
+  "opciones": [
+   "Por un error de la semilla",
+   "Porque la pérdida no puede ser negativa, la severidad lognormal es asimétrica y algunos años combinan muchos siniestros o siniestros grandes",
+   "Porque se usó la normal",
+   "Porque λ es entero"
+  ],
+  "correcta": 1,
+  "explicacion": "Hay una masa de años con pérdidas bajas o nulas y una cola larga de años con pérdidas muy grandes. Las pérdidas están acotadas en 0 por izquierda y no tienen tope por derecha.",
+  "por_que_no": [
+   "La semilla no determina la forma de la distribución.",
+   "",
+   "No se usa la normal.",
+   "No tiene relación con la asimetría."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 21 («Preguntas para discutir»)"
+ },
+ {
+  "id": "ALG-48",
+  "tema": "ALG",
+  "subtema": "Probabilidad de ruina",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En prob_ruina hay dos for anidados: réplicas y años. ¿Qué hace el break dentro del for de años?",
+  "codigo": "for _ in range(n_sim):\n    reserva = u\n    for t in range(T):\n        N = np.random.poisson(lam)\n        S = np.random.lognormal(mu, sigma, N).sum() if N > 0 else 0.0\n        reserva += c - S\n        if reserva < 0:\n            ruinas += 1\n            break",
+  "opciones": [
+   "Termina todas las simulaciones",
+   "Corta la trayectoria actual en cuanto ocurre la ruina (para no contarla dos veces) y pasa a la siguiente réplica",
+   "Reinicia la reserva",
+   "Salta un año"
+  ],
+  "correcta": 1,
+  "explicacion": "break interrumpe solo el bucle más interno (años). La réplica ya se contó como ruina y el for externo continúa con la siguiente.",
+  "por_que_no": [
+   "Solo sale del for interno.",
+   "",
+   "La reserva se reinicia al comienzo de cada réplica.",
+   "No saltea: corta la trayectoria."
+  ],
+  "referencia": "Clase 10, «Aplicación: probabilidad de ruina»; Guía, Actividad 22"
+ },
+ {
+  "id": "ALG-49",
+  "tema": "ALG",
+  "subtema": "Probabilidad de ruina",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Con capital inicial u = 300.000, la probabilidad de ruina a 20 años fue ≈ 0,73 con prima c = 250.000 y ≈ 0,26 con c = 350.000. ¿Qué se concluye?",
+  "opciones": [
+   "La prima no influye en la ruina",
+   "Aumentar la prima recaudada por período reduce marcadamente la probabilidad de ruina",
+   "Una prima mayor aumenta la ruina",
+   "La diferencia se debe solo a la semilla"
+  ],
+  "correcta": 1,
+  "explicacion": "En Ut = u + c·t − St, una mayor c hace crecer la reserva más rápido frente a las pérdidas y reduce la chance de que se vuelva negativa.",
+  "por_que_no": [
+   "La diferencia es muy grande.",
+   "",
+   "Es al revés.",
+   "Una diferencia de 0,73 a 0,26 con miles de réplicas no se explica por azar."
+  ],
+  "referencia": "Clase 10, «Aplicación: probabilidad de ruina»"
+ },
+ {
+  "id": "ALG-50",
+  "tema": "ALG",
+  "subtema": "Probabilidad de ruina",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Según la nota metodológica de la guía, ¿con qué debería acompañarse una probabilidad estimada por simulación?",
+  "opciones": [
+   "Con un gráfico de torta",
+   "Con alguna medida de su propia incertidumbre, porque depende de la semilla, del número de réplicas y de los parámetros supuestos",
+   "Con el código fuente impreso",
+   "Con nada: el número es exacto"
+  ],
+  "correcta": 1,
+  "explicacion": "Una estimación Monte Carlo es aleatoria. Informar su incertidumbre (por ejemplo, un intervalo) permite juzgar cuánto creerle.",
+  "por_que_no": [
+   "No aporta información sobre la incertidumbre.",
+   "",
+   "No cuantifica la incertidumbre.",
+   "Es una estimación, no un valor exacto."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Nota metodológica» (sección 19)"
+ },
+ {
+  "id": "ALG-51",
+  "tema": "ALG",
+  "subtema": "Variabilidad muestral",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Se simula 1.000 veces la frecuencia observada de una cartera de pólizas con λ = 0,10. ¿Qué ocurre con la dispersión de las frecuencias simuladas si la cartera pasa de 1.000 a 100 pólizas?",
+  "opciones": [
+   "Disminuye",
+   "Aumenta: con menos pólizas la frecuencia observada varía más de una muestra a otra",
+   "No cambia",
+   "Todas las simulaciones dan 0,10"
+  ],
+  "correcta": 1,
+  "explicacion": "La frecuencia es un promedio: cuanto menor la cartera, mayor su variabilidad muestral. Por eso comparar dos carteras chicas con una única observación es riesgoso.",
+  "por_que_no": [
+   "Ocurriría al aumentar la cartera.",
+   "",
+   "El tamaño influye en la variabilidad.",
+   "Hay variabilidad aleatoria en cualquier tamaño."
+  ],
+  "referencia": "Guía práctica Python, «Desafío opcional: simulación muy sencilla»"
+ },
+ {
+  "id": "ALG-52",
+  "tema": "ALG",
+  "subtema": "Valor actual actuarial",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "En el código de valor presente esperado de la clase 1, ¿qué representa prob_fallece_t?",
+  "codigo": "qx = np.linspace(0.0015, 0.0100, T)\npx_acum = np.cumprod(np.r_[1, 1 - qx[:-1]])\nprob_fallece_t = px_acum * qx",
+  "opciones": [
+   "La probabilidad de sobrevivir todos los años",
+   "La probabilidad de sobrevivir hasta el inicio del año t y fallecer durante ese año",
+   "La tasa de descuento",
+   "El beneficio pagado"
+  ],
+  "correcta": 1,
+  "explicacion": "px_acum es la supervivencia acumulada hasta el comienzo de cada año (empieza en 1) y se multiplica por qx de ese año. Después se descuenta con v^t y se multiplica por el beneficio.",
+  "por_que_no": [
+   "Eso sería solo px_acum.",
+   "",
+   "El descuento es v ** t.",
+   "El beneficio es una constante aparte."
+  ],
+  "referencia": "Clase 1 – PC aplicado, «Código Colab: valor presente esperado»"
+ }
+]

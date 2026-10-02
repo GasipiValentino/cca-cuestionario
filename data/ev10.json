@@ -1,0 +1,935 @@
+{
+ "id": 10,
+ "titulo": "Evaluación 10",
+ "preguntas": [
+  {
+   "id": "PYB-01",
+   "tema": "PYB",
+   "subtema": "Tipos de datos",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué devuelve type(7.2)?",
+   "opciones": [
+    "float",
+    "number",
+    "decimal",
+    "int"
+   ],
+   "correcta": 0,
+   "explicacion": "Un número con parte decimal es de tipo float en Python. Por ejemplo, prima_anual = 185000.50 es float.",
+   "por_que_no": [
+    "",
+    "number no es un tipo de Python.",
+    "decimal no es el tipo que asigna Python a un literal con punto.",
+    "int corresponde a enteros sin parte decimal."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 28; Guía práctica Python, «Variables y tipos de datos»"
+  },
+  {
+   "id": "SQL-55",
+   "tema": "SQL",
+   "subtema": "Consultas básicas",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "¿Qué consulta calcula el precio promedio de todos los productos?",
+   "opciones": [
+    "SELECT MEAN(Price) FROM Products;",
+    "SELECT Price FROM Products GROUP BY Price;",
+    "SELECT AVG(Price) FROM Products;",
+    "SELECT SUM(Price) FROM Products;"
+   ],
+   "correcta": 2,
+   "explicacion": "AVG es la función de agregado que calcula el promedio en SQL.",
+   "por_que_no": [
+    "MEAN no es la función de SQL vista en clase (es un nombre propio de pandas).",
+    "Agrupa por precio y no promedia.",
+    "",
+    "Calcula la suma, no el promedio."
+   ],
+   "referencia": "Guía de ejercicios SQL, ejercicio 9"
+  },
+  {
+   "id": "JOIN-21",
+   "tema": "JOIN",
+   "subtema": "DML y DDL",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cuál es la diferencia entre DML y DDL?",
+   "opciones": [
+    "DML crea tablas; DDL consulta datos",
+    "DML solo funciona en Python; DDL en SQL",
+    "DML modifica el contenido de las tablas (registros); DDL crea, modifica o elimina la estructura de las tablas",
+    "Son sinónimos"
+   ],
+   "correcta": 2,
+   "explicacion": "DML (Data Manipulation Language) incluye INSERT, UPDATE y DELETE. DDL (Data Definition Language) incluye CREATE TABLE, ALTER TABLE y DROP TABLE.",
+   "por_que_no": [
+    "Los roles están invertidos y la descripción es incorrecta.",
+    "Ambos son sublenguajes de SQL.",
+    "",
+    "Afectan cosas distintas: contenido frente a estructura."
+   ],
+   "referencia": "Clase 5 (CCA), «DML» y «DDL»"
+  },
+  {
+   "id": "CAL-01",
+   "tema": "CAL",
+   "subtema": "Concepto de calidad",
+   "dificultad": "facil",
+   "tipo": "concepto",
+   "enunciado": "Según la clase 13, ¿qué es la calidad de datos?",
+   "opciones": [
+    "La ausencia total de valores faltantes",
+    "La cantidad de filas de una base",
+    "Una propiedad absoluta del dato: está limpio o sucio",
+    "La aptitud del dato para el uso previsto"
+   ],
+   "correcta": 3,
+   "explicacion": "La misma base puede ser suficiente para un tablero de gestión e insuficiente para un cálculo de reservas. La pregunta correcta no es «¿está limpia?», sino «¿es suficiente para lo que necesito hacer?».",
+   "por_que_no": [
+    "Una base con faltantes identificados puede ser apta para el uso.",
+    "El volumen no define la calidad.",
+    "La clase rechaza esa visión absoluta.",
+    ""
+   ],
+   "referencia": "Clase 13 – Calidad, Limpieza y Transformación, «Qué es la calidad de datos»"
+  },
+  {
+   "id": "PC-14",
+   "tema": "PC",
+   "subtema": "Ejemplos cotidianos (Wing)",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Una estudiante pone en su mochila, por la mañana, todo lo que necesitará durante el día. Según Wing, este comportamiento es un ejemplo de:",
+   "opciones": [
+    "Backtracking",
+    "Modelado de rendimiento para sistemas multiservidor",
+    "Prefetching y caching",
+    "Algoritmos en línea"
+   ],
+   "correcta": 2,
+   "explicacion": "Wing usa este ejemplo: anticipar lo que se va a necesitar y tenerlo a mano es prefetching y caching.",
+   "por_que_no": [
+    "Backtracking es desandar los pasos para encontrar algo perdido, como unos guantes.",
+    "Ese ejemplo corresponde a elegir la fila en el supermercado.",
+    "",
+    "Los algoritmos en línea aparecen con la decisión de cuándo dejar de alquilar esquís y comprarlos."
+   ],
+   "referencia": "Wing (2006), ejemplos cotidianos"
+  },
+  {
+   "id": "CTL-03",
+   "tema": "CTL",
+   "subtema": "Sintaxis",
+   "dificultad": "facil",
+   "tipo": "diferencia",
+   "enunciado": "¿Cómo delimita Python los bloques de código, a diferencia de R?",
+   "opciones": [
+    "Con paréntesis",
+    "Con indentación (4 espacios por convención) y la línea de encabezado termina en dos puntos",
+    "Con llaves { }, igual que R",
+    "Con la palabra end al final del bloque"
+   ],
+   "correcta": 1,
+   "explicacion": "En R los bloques se delimitan con llaves. En Python se usa la indentación, que es parte del lenguaje, y el encabezado termina con «:».",
+   "por_que_no": [
+    "Los paréntesis agrupan expresiones; no delimitan bloques.",
+    "",
+    "Python no usa llaves para los bloques.",
+    "Python no usa end."
+   ],
+   "referencia": "Clase 10, «La indentación: la sintaxis de Python»"
+  },
+  {
+   "id": "BD-09",
+   "tema": "BD",
+   "subtema": "Tipos de datos",
+   "dificultad": "facil",
+   "tipo": "aplicacion",
+   "enunciado": "Al diseñar la tabla de estudiantes, ¿qué tipo de dato corresponde al número de registro y cuál al nombre?",
+   "opciones": [
+    "Registro: numérico entero; nombre: texto",
+    "Registro: fecha; nombre: decimal",
+    "Registro: texto; nombre: entero",
+    "Ambos: numérico decimal"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase indica que el número de registro será un entero y el nombre será texto. Cada atributo tiene un tipo adaptado a su contenido y no puede salir de ese tipo.",
+   "por_que_no": [
+    "",
+    "Ni el registro es una fecha ni el nombre es un número.",
+    "Los tipos están invertidos.",
+    "El nombre no es numérico."
+   ],
+   "referencia": "Introducción a bases de datos, «Tipos de datos»; apuntes C3"
+  },
+  {
+   "id": "EST-13",
+   "tema": "EST",
+   "subtema": "Inspección",
+   "dificultad": "facil",
+   "tipo": "examen",
+   "enunciado": "¿Qué devuelve df.head()?",
+   "opciones": [
+    "Las primeras filas",
+    "Los tipos de datos",
+    "Estadísticas básicas",
+    "Las últimas filas"
+   ],
+   "correcta": 0,
+   "explicacion": "head() muestra las primeras filas (5 por defecto) y es uno de los primeros pasos al inspeccionar una base.",
+   "por_que_no": [
+    "",
+    "Eso lo hace dtypes o info().",
+    "Eso lo hace describe().",
+    "Eso lo hace tail()."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 19; Clase 12, «Inspeccionar un DataFrame»"
+  },
+  {
+   "id": "EXC-16",
+   "tema": "EXC",
+   "subtema": "Conteo y suma condicional",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Para el detalle por ramo hay que contar las pólizas del ramo Vida que están vigentes. ¿Qué fórmula corresponde?",
+   "opciones": [
+    "=CONTAR.SI.CONJUNTO(Ramo;\"Vida\";Estado;\"Vigente\")",
+    "=SUMAR.SI.CONJUNTO(Ramo;\"Vida\";Estado;\"Vigente\")",
+    "=CONTAR.SI(Estado;\"Vigente\")*CONTAR.SI(Ramo;\"Vida\")",
+    "=CONTAR.SI(Ramo;\"Vida\")"
+   ],
+   "correcta": 0,
+   "explicacion": "CONTAR.SI.CONJUNTO admite varios pares rango-criterio y cuenta las filas que cumplen todos a la vez: ramo Vida y estado Vigente.",
+   "por_que_no": [
+    "",
+    "SUMAR.SI.CONJUNTO necesita como primer argumento el rango a sumar; así escrita no cuenta pólizas.",
+    "Multiplicar dos conteos no da la cantidad que cumple ambas condiciones a la vez.",
+    "Cuenta todas las pólizas de Vida, estén o no vigentes."
+   ],
+   "referencia": "Apuntes C2 – Excel, «Detalle por Ramo»"
+  },
+  {
+   "id": "BD-04",
+   "tema": "BD",
+   "subtema": "ACID",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "Dos cajeros registran pagos de distintas pólizas al mismo tiempo en el mismo sistema y ninguna operación interfiere con la otra. ¿Qué propiedad ACID describe esta situación?",
+   "opciones": [
+    "Aislamiento",
+    "Consistencia",
+    "Atomicidad",
+    "Durabilidad"
+   ],
+   "correcta": 0,
+   "explicacion": "El aislamiento (isolation) permite que muchas transacciones ocurran simultáneamente, cada una de forma independiente de las otras.",
+   "por_que_no": [
+    "",
+    "La consistencia se refiere a mantener la integridad de los datos.",
+    "La atomicidad se refiere a que cada transacción se ejecute completa o no se ejecute.",
+    "La durabilidad se refiere a conservar los cambios ante fallas."
+   ],
+   "referencia": "Introducción a bases de datos, «Propiedades clave (ACID)»"
+  },
+  {
+   "id": "CTL-27",
+   "tema": "CTL",
+   "subtema": "while",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "Un capital de 100.000 se capitaliza al 7 % anual. ¿Qué imprime el código?",
+   "codigo": "capital = 100_000\nobjetivo = 200_000\ni = 0.07\nt = 0\nwhile capital < objetivo:\n    capital = capital * (1 + i)\n    t += 1\nprint(\"Años necesarios:\", t)",
+   "opciones": [
+    "Años necesarios: 10",
+    "Años necesarios: 14",
+    "Años necesarios: 7",
+    "Años necesarios: 11"
+   ],
+   "correcta": 3,
+   "explicacion": "Analíticamente t = ln(2) / ln(1,07) ≈ 10,24. Como se cuentan años completos, el capital supera los 200.000 recién en el año 11 (≈ 210.485).",
+   "por_que_no": [
+    "Al cabo de 10 años el capital todavía es menor que 200.000.",
+    "Sobrestima: 1,07^11 ya supera 2.",
+    "Subestima mucho.",
+    ""
+   ],
+   "referencia": "Clase 10, «while: ¿en cuántos años duplico el capital?»"
+  },
+  {
+   "id": "CTL-41",
+   "tema": "CTL",
+   "subtema": "enumerate y zip",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime el código?",
+   "codigo": "ramos = [\"Vida\", \"Automotores\", \"Riesgos del Trabajo\"]\nfor j, ramo in enumerate(ramos):\n    print(j, ramo)",
+   "opciones": [
+    "0 Vida / 1 Automotores / 2 Riesgos del Trabajo",
+    "Vida 0 / Automotores 1 / Riesgos del Trabajo 2",
+    "1 Vida / 2 Automotores / 3 Riesgos del Trabajo",
+    "Solo los nombres de los ramos"
+   ],
+   "correcta": 0,
+   "explicacion": "enumerate devuelve pares (índice, valor) y el índice empieza en 0.",
+   "por_que_no": [
+    "",
+    "El orden del par es (índice, valor) y así se imprime.",
+    "Por defecto enumerate empieza en 0.",
+    "También imprime el índice j."
+   ],
+   "referencia": "Clase 10, «for: recorrer secuencias»"
+  },
+  {
+   "id": "CAL-46",
+   "tema": "CAL",
+   "subtema": "Reconciliación",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Antes de limpiar, el monto total era 10.634.999; después, 10.574.999. ¿Qué pide la clase hacer con esa diferencia?",
+   "opciones": [
+    "Cuantificarla y explicarla: aquí son 60.000 que corresponden a la fila duplicada eliminada",
+    "Ajustar los montos para que coincidan",
+    "Volver a cargar la base",
+    "Ignorarla"
+   ],
+   "correcta": 0,
+   "explicacion": "Toda limpieza cambia los datos y hay que reconciliar: filas, totales monetarios, nulos y categorías antes y después, con cada diferencia explicada.",
+   "por_que_no": [
+    "",
+    "Forzar la coincidencia oculta el cambio.",
+    "No es necesario si la diferencia está explicada.",
+    "Toda diferencia debe explicarse."
+   ],
+   "referencia": "Clase 13, «Reconciliar después de limpiar»"
+  },
+  {
+   "id": "PYB-25",
+   "tema": "PYB",
+   "subtema": "Funciones",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué devuelve la llamada?",
+   "codigo": "def frecuencia_observada(conteos, exposiciones):\n    total_exposicion = sum(exposiciones)\n    if total_exposicion <= 0:\n        raise ValueError(\"La exposición total debe ser positiva.\")\n    return sum(conteos) / total_exposicion\n\nfrecuencia_observada([0, 1, 0, 2], [1, 1, 0.5, 1])",
+   "opciones": [
+    "0.857 (aprox.)",
+    "3",
+    "0.75",
+    "ValueError"
+   ],
+   "correcta": 0,
+   "explicacion": "La suma de conteos es 3 y la de exposiciones es 3,5: 3 / 3,5 ≈ 0,857.",
+   "por_que_no": [
+    "",
+    "Es la cantidad de siniestros, no la frecuencia.",
+    "Sería dividir por la cantidad de pólizas (3/4), sin tener en cuenta la exposición.",
+    "La exposición total es positiva, así que no se genera el error."
+   ],
+   "referencia": "Guía práctica Python, Actividad 9"
+  },
+  {
+   "id": "EDA-38",
+   "tema": "EDA",
+   "subtema": "Gráficos",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cuál de las siguientes NO es una buena práctica para gráficos según la clase?",
+   "opciones": [
+    "Un mensaje por gráfico, con un título que lo diga",
+    "Generarlo por código y guardarlo con savefig",
+    "Ejes rotulados con unidades",
+    "Usar dos ejes verticales con escalas distintas para sugerir relaciones"
+   ],
+   "correcta": 3,
+   "explicacion": "La clase recomienda un solo eje vertical: dos escalas en el mismo gráfico permiten sugerir cualquier relación. También pide color con propósito y mostrar n o la exposición.",
+   "por_que_no": [
+    "Es una buena práctica.",
+    "Es una buena práctica de reproducibilidad.",
+    "Es una buena práctica.",
+    ""
+   ],
+   "referencia": "Clase 14, «Buenas prácticas para un gráfico»"
+  },
+  {
+   "id": "JOIN-26",
+   "tema": "JOIN",
+   "subtema": "INSERT",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "Un INSERT falla al cargar un empleado sin informar la columna «cargo», definida como NOT NULL y sin valor por defecto. ¿Por qué?",
+   "opciones": [
+    "Porque INSERT no admite cadenas de texto",
+    "Porque falta un WHERE",
+    "Porque las columnas NOT NULL necesariamente deben recibir un valor (salvo excepciones como los autoincrementales)",
+    "Porque la tabla debe borrarse antes"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase advierte que no se pueden omitir columnas NOT NULL sin un valor definido. Además, el orden y el tipo de los valores deben coincidir con las columnas.",
+   "por_que_no": [
+    "INSERT admite texto entre comillas simples.",
+    "INSERT no lleva WHERE.",
+    "",
+    "No hace falta borrar la tabla."
+   ],
+   "referencia": "Clase 5 (CCA), «INSERT»; Joins, DML & DDL (cátedra), «INSERT»"
+  },
+  {
+   "id": "BD-24",
+   "tema": "BD",
+   "subtema": "DBMS",
+   "dificultad": "media",
+   "tipo": "examen",
+   "enunciado": "¿Cuál de las siguientes opciones representa una función fundamental de un Sistema de Gestión de Bases de Datos (DBMS)?",
+   "opciones": [
+    "Diseñar automáticamente el modelo entidad-relación",
+    "Garantizar seguridad, integridad, control de concurrencia y recuperación ante fallos",
+    "Reemplazar completamente a los sistemas operativos",
+    "Eliminar la necesidad de claves primarias en las tablas"
+   ],
+   "correcta": 1,
+   "explicacion": "Un DBMS administra tablas, claves, restricciones de integridad, concurrencia, transacciones y permisos, y permite recuperarse ante fallos. La clase 12 lo resume en integridad, concurrencia, transacciones, seguridad y eficiencia.",
+   "por_que_no": [
+    "El modelo lo diseña quien modela los datos; el DBMS lo administra.",
+    "",
+    "Un DBMS funciona sobre un sistema operativo; no lo reemplaza.",
+    "Las claves son centrales en un DBMS relacional."
+   ],
+   "referencia": "1er Parcial 1C 2026, pregunta 9 (Connolly y Begg); Clase 12, «Bases de datos relacionales»"
+  },
+  {
+   "id": "EST-46",
+   "tema": "EST",
+   "subtema": "Criterios de elección",
+   "dificultad": "media",
+   "tipo": "aplicacion",
+   "enunciado": "Según la tabla «¿Dónde guardo cada cosa?», ¿qué formato es razonable para una base intermedia de un proyecto?",
+   "opciones": [
+    "Excel",
+    "Data lake",
+    "Parquet",
+    "JSON"
+   ],
+   "correcta": 2,
+   "explicacion": "La clase sugiere CSV para tablas chicas a compartir, Excel para resultados del área comercial, JSON para respuestas de APIs, Parquet para bases intermedias y una base relacional para datos operativos con integridad.",
+   "por_que_no": [
+    "Excel se sugiere para resultados destinados al área comercial.",
+    "El lake se sugiere para datos crudos heterogéneos.",
+    "",
+    "JSON se sugiere para respuestas de APIs."
+   ],
+   "referencia": "Clase 12, «¿Dónde guardo cada cosa?»"
+  },
+  {
+   "id": "PC-35",
+   "tema": "PC",
+   "subtema": "Lectura actuarial del código",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "En la simulación frecuencia-severidad de la clase, la cantidad de siniestros se genera con una Poisson y el costo de cada siniestro con una lognormal. ¿Por qué se elige la lognormal para la severidad?",
+   "opciones": [
+    "Porque es una distribución discreta, adecuada para contar siniestros",
+    "Porque puede tomar valores negativos que representan recuperos",
+    "Porque es una distribución positiva y asimétrica, adecuada para montos",
+    "Porque es simétrica alrededor de la media"
+   ],
+   "correcta": 2,
+   "explicacion": "La lectura actuarial del código indica que la frecuencia se modela con una distribución discreta y la severidad con una distribución positiva y asimétrica.",
+   "por_que_no": [
+    "La discreta es la Poisson, usada para la frecuencia.",
+    "La lognormal solo toma valores positivos.",
+    "",
+    "Los montos de siniestros son asimétricos; una distribución simétrica no los representa bien."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Lectura actuarial del código»"
+  },
+  {
+   "id": "JOIN-38",
+   "tema": "JOIN",
+   "subtema": "DML",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Según la clase, ¿cuál de las operaciones DML es la más sencilla de revertir?",
+   "opciones": [
+    "Ninguna es reversible",
+    "INSERT, porque si se conocen los registros agregados por error pueden eliminarse después",
+    "DELETE, porque los datos quedan en una papelera",
+    "UPDATE, porque se puede volver a ejecutar"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase indica que INSERT es la más sencilla de revertir: los registros agregados por error se identifican y se eliminan.",
+   "por_que_no": [
+    "INSERT puede revertirse con relativa facilidad.",
+    "",
+    "DELETE no tiene papelera; los datos se pierden.",
+    "Un UPDATE pisa los valores anteriores; sin respaldo se pierden."
+   ],
+   "referencia": "Clase 5 (CCA), «INSERT»"
+  },
+  {
+   "id": "SQL-28",
+   "tema": "SQL",
+   "subtema": "ORDER BY y LIMIT",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Cómo queda ordenado el resultado con ORDER BY year_date DESC, month_date ASC?",
+   "opciones": [
+    "Primero los años más recientes y, dentro de cada año, los meses de menor a mayor",
+    "Todo de forma descendente",
+    "Solo por año; el mes se ignora",
+    "Por mes ascendente y, dentro de cada mes, por año descendente"
+   ],
+   "correcta": 0,
+   "explicacion": "El primer criterio manda (año descendente) y el segundo desempata dentro de cada año (mes ascendente).",
+   "por_que_no": [
+    "",
+    "El mes está indicado ASC.",
+    "El mes desempata dentro de cada año.",
+    "Invierte la prioridad de los criterios."
+   ],
+   "referencia": "Apuntes C4 – SQL Básico, «ORDER BY»"
+  },
+  {
+   "id": "PC-23",
+   "tema": "PC",
+   "subtema": "Definición operativa ISTE/CSTA",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "Según ISTE y CSTA (2011), el pensamiento computacional es un proceso de resolución de problemas que incluye varias características. ¿Cuál NO figura entre ellas?",
+   "opciones": [
+    "Representar los datos de forma abstracta mediante modelos y simulaciones",
+    "Analizar y organizar los datos de forma lógica",
+    "Automatizar la solución mediante pensamiento algorítmico",
+    "Memorizar la sintaxis de varios lenguajes de programación"
+   ],
+   "correcta": 3,
+   "explicacion": "ISTE y CSTA incluyen formular problemas para que una computadora ayude a resolverlos, organizar datos, representarlos con modelos, automatizar con algoritmos, buscar la combinación más eficaz y eficiente, y generalizar. Memorizar sintaxis no figura.",
+   "por_que_no": [
+    "Figura en la lista.",
+    "Figura en la lista.",
+    "Figura en la lista.",
+    ""
+   ],
+   "referencia": "Clase 1 – Pensamiento Computacional (ISTE y CSTA, 2011)"
+  },
+  {
+   "id": "CAL-09",
+   "tema": "CAL",
+   "subtema": "Perfilado",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "Al perfilar la base sucia, sucia.dtypes muestra que prima y f_vigencia quedaron como texto (str). ¿Qué indica eso?",
+   "opciones": [
+    "Que la base no tiene filas",
+    "Que pandas no pudo interpretarlas como número ni como fecha: es una señal de valores con formatos problemáticos («120.000,50», «S/D»)",
+    "Que hay duplicados",
+    "Nada relevante"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase lo marca como el primer hallazgo importante: si una columna que debería ser numérica queda como texto, contiene valores no interpretables.",
+   "por_que_no": [
+    "Es un problema de tipos, no de filas.",
+    "",
+    "El tipo de dato no indica duplicados.",
+    "Es un hallazgo importante."
+   ],
+   "referencia": "Clase 13, «Perfilado: las primeras preguntas»"
+  },
+  {
+   "id": "SQL-04",
+   "tema": "SQL",
+   "subtema": "Alias",
+   "dificultad": "media",
+   "tipo": "error",
+   "enunciado": "La siguiente consulta da error. ¿Por qué?",
+   "codigo": "SELECT ProductName, Price * 1.21 AS precio_iva\nFROM Products\nWHERE precio_iva > 100;",
+   "opciones": [
+    "Porque no se puede multiplicar una columna por un número",
+    "Porque los alias solo se pueden usar en HAVING",
+    "Porque WHERE se procesa antes que SELECT, así que el alias precio_iva todavía no existe",
+    "Porque falta GROUP BY"
+   ],
+   "correcta": 2,
+   "explicacion": "Usar en WHERE el alias de una columna del SELECT es un error frecuente: esa columna se crea en la fase SELECT, que todavía no se ejecutó. Se puede repetir la expresión: WHERE Price * 1.21 > 100.",
+   "por_que_no": [
+    "Las operaciones aritméticas en el SELECT son válidas.",
+    "HAVING también se procesa antes que SELECT; la única fase que admite alias es ORDER BY.",
+    "",
+    "No hay ninguna función de agregado que requiera agrupar."
+   ],
+   "referencia": "SQL Básico, «WHERE»; apuntes C4"
+  },
+  {
+   "id": "CTL-05",
+   "tema": "CTL",
+   "subtema": "Sintaxis",
+   "dificultad": "media",
+   "tipo": "diferencia",
+   "enunciado": "Según la tabla de la clase, ¿cuál es el equivalente en R de continue de Python?",
+   "opciones": [
+    "return()",
+    "break",
+    "pass",
+    "next"
+   ],
+   "correcta": 3,
+   "explicacion": "La lógica es idéntica y cambia la sintaxis: el continue de Python se escribe next en R. pass no tiene equivalente en la tabla.",
+   "por_que_no": [
+    "return() sale de una función.",
+    "break existe en ambos lenguajes con el mismo nombre e interrumpe el ciclo.",
+    "La tabla indica que pass no tiene equivalente en R.",
+    ""
+   ],
+   "referencia": "Clase 10, «Operadores estructurales: panorama»"
+  },
+  {
+   "id": "ALG-23",
+   "tema": "ALG",
+   "subtema": "Fibonacci",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "fib_rec(30) tardó 0,055 s y fib_iter(30) 0,00001 s, con el mismo resultado. ¿Por qué el recursivo es tan costoso?",
+   "codigo": "def fib_rec(n):\n    if n <= 2:\n        return 1\n    return fib_rec(n-1) + fib_rec(n-2)",
+   "opciones": [
+    "Porque usa números grandes",
+    "Porque recalcula los mismos valores miles de veces: su costo crece exponencialmente",
+    "Porque el iterativo usa numpy",
+    "Porque Python no admite recursión"
+   ],
+   "correcta": 1,
+   "explicacion": "Cada llamada se divide en dos y los mismos subproblemas se recalculan una y otra vez. «Elegante para leer, costoso para ejecutar.»",
+   "por_que_no": [
+    "El tamaño de los números no explica la diferencia.",
+    "",
+    "fib_iter no usa numpy.",
+    "Python admite recursión."
+   ],
+   "referencia": "Clase 10, «Iterativo vs. recursivo: Fibonacci»"
+  },
+  {
+   "id": "ALG-51",
+   "tema": "ALG",
+   "subtema": "Variabilidad muestral",
+   "dificultad": "media",
+   "tipo": "caso",
+   "enunciado": "Se simula 1.000 veces la frecuencia observada de una cartera de pólizas con λ = 0,10. ¿Qué ocurre con la dispersión de las frecuencias simuladas si la cartera pasa de 1.000 a 100 pólizas?",
+   "opciones": [
+    "No cambia",
+    "Disminuye",
+    "Todas las simulaciones dan 0,10",
+    "Aumenta: con menos pólizas la frecuencia observada varía más de una muestra a otra"
+   ],
+   "correcta": 3,
+   "explicacion": "La frecuencia es un promedio: cuanto menor la cartera, mayor su variabilidad muestral. Por eso comparar dos carteras chicas con una única observación es riesgoso.",
+   "por_que_no": [
+    "El tamaño influye en la variabilidad.",
+    "Ocurriría al aumentar la cartera.",
+    "Hay variabilidad aleatoria en cualquier tamaño.",
+    ""
+   ],
+   "referencia": "Guía práctica Python, «Desafío opcional: simulación muy sencilla»"
+  },
+  {
+   "id": "PYB-35",
+   "tema": "PYB",
+   "subtema": "Decimales",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime print(0.1 + 0.2 == 0.3) en Python?",
+   "opciones": [
+    "Error",
+    "False",
+    "True",
+    "0.3"
+   ],
+   "correcta": 1,
+   "explicacion": "Por la representación binaria de los decimales, 0.1 + 0.2 da 0.30000000000000004. Por eso comparar decimales con == es riesgoso y conviene usar math.isclose.",
+   "por_que_no": [
+    "La comparación es válida.",
+    "",
+    "Matemáticamente sería cierto, pero en punto flotante no es exacto.",
+    "Imprime un booleano, no un número."
+   ],
+   "referencia": "Guía práctica – Estructuras de Control, Actividad 1 («Preguntas para discutir»)"
+  },
+  {
+   "id": "EST-09",
+   "tema": "EST",
+   "subtema": "pandas: Series",
+   "dificultad": "media",
+   "tipo": "codigo",
+   "enunciado": "¿Qué imprime s.loc[1002]?",
+   "codigo": "s = pd.Series([120_000, 450_000, 380_000],\n              index=[1001, 1002, 1003], name=\"prima\")",
+   "opciones": [
+    "380000",
+    "120000",
+    "KeyError",
+    "450000"
+   ],
+   "correcta": 3,
+   "explicacion": "Una Series es un arreglo unidimensional con índice etiquetado. .loc accede por etiqueta: la etiqueta 1002 corresponde a 450.000.",
+   "por_que_no": [
+    "Esa es la etiqueta 1003.",
+    "Esa es la etiqueta 1001.",
+    "La etiqueta existe.",
+    ""
+   ],
+   "referencia": "Clase 12, «pandas: la Series»"
+  },
+  {
+   "id": "EDA-18",
+   "tema": "EDA",
+   "subtema": "ECDF y concentración",
+   "dificultad": "media",
+   "tipo": "comprension",
+   "enunciado": "¿Qué ventaja tiene la función de distribución empírica (ECDF) frente al histograma?",
+   "opciones": [
+    "Es más colorida",
+    "Muestra la media",
+    "Solo sirve para variables cualitativas",
+    "No depende de elecciones arbitrarias como los intervalos y permite leer cuantiles directamente"
+   ],
+   "correcta": 3,
+   "explicacion": "La ECDF muestra, para cada x, la proporción de observaciones ≤ x. Por ejemplo, el 1 % de los siniestros supera 20,2 millones: un cuantil empírico, primer paso hacia el VaR.",
+   "por_que_no": [
+    "No es una cuestión estética.",
+    "Muestra proporciones acumuladas, no la media.",
+    "Es para variables cuantitativas.",
+    ""
+   ],
+   "referencia": "Clase 14, «La función de distribución empírica»"
+  },
+  {
+   "id": "CAL-40",
+   "tema": "CAL",
+   "subtema": "Discretizar",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "¿En qué franja queda una persona de exactamente 30 años?",
+   "codigo": "franjas = pd.cut(edades, bins=[17, 30, 45, 60, 120],\n                 labels=[\"18-30\", \"31-45\", \"46-60\", \"60+\"])",
+   "opciones": [
+    "NaN",
+    "\"60+\"",
+    "\"31-45\"",
+    "\"18-30\""
+   ],
+   "correcta": 3,
+   "explicacion": "pd.cut arma por defecto intervalos cerrados a la derecha: (17, 30], (30, 45], … Así, 30 pertenece a (17, 30], etiquetado «18-30».",
+   "por_que_no": [
+    "30 está dentro del rango total.",
+    "No corresponde.",
+    "30 no está en (30, 45].",
+    ""
+   ],
+   "referencia": "Clase 13, «Discretizar»"
+  },
+  {
+   "id": "ALG-52",
+   "tema": "ALG",
+   "subtema": "Valor actual actuarial",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "En el código de valor presente esperado de la clase 1, ¿qué representa prob_fallece_t?",
+   "codigo": "qx = np.linspace(0.0015, 0.0100, T)\npx_acum = np.cumprod(np.r_[1, 1 - qx[:-1]])\nprob_fallece_t = px_acum * qx",
+   "opciones": [
+    "El beneficio pagado",
+    "La probabilidad de sobrevivir hasta el inicio del año t y fallecer durante ese año",
+    "La probabilidad de sobrevivir todos los años",
+    "La tasa de descuento"
+   ],
+   "correcta": 1,
+   "explicacion": "px_acum es la supervivencia acumulada hasta el comienzo de cada año (empieza en 1) y se multiplica por qx de ese año. Después se descuenta con v^t y se multiplica por el beneficio.",
+   "por_que_no": [
+    "El beneficio es una constante aparte.",
+    "",
+    "Eso sería solo px_acum.",
+    "El descuento es v ** t."
+   ],
+   "referencia": "Clase 1 – PC aplicado, «Código Colab: valor presente esperado»"
+  },
+  {
+   "id": "ALG-24",
+   "tema": "ALG",
+   "subtema": "Fibonacci",
+   "dificultad": "dificil",
+   "tipo": "codigo",
+   "enunciado": "¿Cuántas llamadas a fib_rec (contando la inicial) genera fib_rec(5)?",
+   "codigo": "def fib_rec(n):\n    if n <= 2:\n        return 1\n    return fib_rec(n-1) + fib_rec(n-2)",
+   "opciones": [
+    "5",
+    "15",
+    "9",
+    "7"
+   ],
+   "correcta": 2,
+   "explicacion": "fib(5) llama a fib(4) y fib(3); fib(4) a fib(3) y fib(2); cada fib(3) a fib(2) y fib(1). Total: 1 + 2 + 2 + 4 = 9 llamadas. fib(3) se calcula dos veces: es el trabajo redundante.",
+   "por_que_no": [
+    "Sería una llamada por valor de n, sin repetición.",
+    "Sobrestima el árbol de llamadas.",
+    "",
+    "Faltan llamadas repetidas."
+   ],
+   "referencia": "Clase 10, «Iterativo vs. recursivo: Fibonacci»"
+  },
+  {
+   "id": "EDA-35",
+   "tema": "EDA",
+   "subtema": "Cola de la severidad",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Los cinco siniestros más grandes de Automotores son menores que los que predice la lognormal ajustada, y 52 siniestros alcanzan la suma asegurada. ¿Cuál es la explicación?",
+   "opciones": [
+    "Que faltan datos",
+    "Contractual: hay pérdidas totales topeadas por la suma asegurada; la severidad observada está censurada por el contrato, y un modelo que ignore esa masa en el tope sobreestimará la cola",
+    "Un error estadístico del QQ-plot",
+    "Que la lognormal es siempre mala"
+   ],
+   "correcta": 1,
+   "explicacion": "Un buen EDA conecta el patrón estadístico con la mecánica del negocio. Acción (H3): modelar la severidad con censura en el tope.",
+   "por_que_no": [
+    "Los datos están; están topeados.",
+    "",
+    "El QQ-plot muestra un fenómeno real.",
+    "Ajusta bien en el cuerpo."
+   ],
+   "referencia": "Clase 14, «Lo que el QQ-plot estaba mostrando»"
+  },
+  {
+   "id": "SQL-07",
+   "tema": "SQL",
+   "subtema": "WHERE y HAVING",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "Se pide el precio promedio de los productos por categoría, solo para categorías con precio promedio mayor a 20. ¿Qué diferencia hay entre usar WHERE Price > 20 y HAVING AVG(Price) > 20?",
+   "opciones": [
+    "WHERE da error porque Price no existe",
+    "HAVING descarta productos individuales antes de agrupar",
+    "Ninguna: ambas devuelven el mismo resultado",
+    "WHERE descarta productos baratos antes de promediar (cambia los promedios); HAVING calcula el promedio con todos los productos y luego descarta las categorías"
+   ],
+   "correcta": 3,
+   "explicacion": "WHERE filtra filas antes del GROUP BY, así que el promedio se calcularía solo con productos de más de 20 (inflado). HAVING filtra grupos después de agregar, que es lo que pide el ejercicio.",
+   "por_que_no": [
+    "Price existe en Products; WHERE Price > 20 es válido.",
+    "HAVING actúa sobre grupos, no sobre filas individuales.",
+    "Filtran en momentos distintos y en general dan resultados distintos.",
+    ""
+   ],
+   "referencia": "Guía de ejercicios SQL (W3Schools), ejercicio 17; SQL Básico, «WHERE» y «HAVING»"
+  },
+  {
+   "id": "EST-40",
+   "tema": "EST",
+   "subtema": "Formatos de almacenamiento",
+   "dificultad": "dificil",
+   "tipo": "diferencia",
+   "enunciado": "¿Por qué Parquet es más eficiente que CSV para consultas analíticas?",
+   "opciones": [
+    "Porque guarda los datos columna por columna, con compresión por columna y el esquema y los tipos dentro del archivo; las consultas analíticas suelen pedir pocas columnas de muchas filas",
+    "Porque es texto plano",
+    "Porque no requiere instalar nada",
+    "Porque se puede editar con el Bloc de notas"
+   ],
+   "correcta": 0,
+   "explicacion": "En la comparación de la clase, el CSV ocupó 13,9 MB y el Parquet 6,2 MB, y leer una sola columna desde Parquet fue mucho más rápido. A cambio, requiere pyarrow y no es legible con un editor de texto.",
+   "por_que_no": [
+    "",
+    "Parquet es binario.",
+    "Requiere instalar pyarrow.",
+    "No es legible con un editor de texto."
+   ],
+   "referencia": "Clase 12, «Orientación a filas y a columnas» y «Parquet: comparación medida»"
+  },
+  {
+   "id": "JOIN-19",
+   "tema": "JOIN",
+   "subtema": "Joins como decisión de negocio",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Al cruzar pólizas con el padrón de asegurados con un inner join, la póliza 1004 desaparece porque su asegurado no figura en el padrón. Si esa póliza tenía siniestros, ¿qué consecuencia tiene?",
+   "opciones": [
+    "Se duplica la póliza 1004",
+    "Se subestima la siniestralidad; por eso hay que comparar la cantidad de filas antes y después de todo cruce y explicar la diferencia",
+    "Ninguna: el inner join no pierde información",
+    "Se sobrestima la exposición"
+   ],
+   "correcta": 1,
+   "explicacion": "La clase 12 advierte que el join es una decisión de negocio: el inner descartó la póliza en silencio y, con ella, sus siniestros. Regla: comparar filas antes y después del cruce.",
+   "por_que_no": [
+    "No se duplica: se pierde.",
+    "",
+    "Precisamente descarta registros sin coincidencia.",
+    "Se pierde exposición, no se gana."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «Los joins y por qué importan»"
+  },
+  {
+   "id": "BD-32",
+   "tema": "BD",
+   "subtema": "OLTP y OLAP",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "Según la clase, ¿por qué es importante que el actuario entienda el pasaje de los datos de OLTP a OLAP?",
+   "opciones": [
+    "Porque el actuario trabaja casi siempre del lado OLAP, pero los datos nacen en OLTP, y de ese pasaje provienen la mayoría de las inconsistencias",
+    "Porque OLAP no admite consultas SQL",
+    "Porque OLTP está desnormalizado",
+    "Porque el actuario suele administrar el sistema transaccional"
+   ],
+   "correcta": 0,
+   "explicacion": "La clase lo resume así: el actuario trabaja del lado analítico, pero los datos se generan en los sistemas transaccionales. Entender ese pasaje es entender de dónde vienen la mayoría de las inconsistencias.",
+   "por_que_no": [
+    "",
+    "OLAP se consulta habitualmente con SQL.",
+    "Es al revés: OLTP suele estar normalizado.",
+    "La clase ubica al actuario del lado OLAP."
+   ],
+   "referencia": "Clase 12 – Estructuras y Almacenamiento, «OLTP y OLAP»"
+  },
+  {
+   "id": "CAL-23",
+   "tema": "CAL",
+   "subtema": "Tratamiento de faltantes",
+   "dificultad": "dificil",
+   "tipo": "comprension",
+   "enunciado": "¿Cuál es la estrategia de tratamiento de faltantes «más subestimada», según la clase?",
+   "opciones": [
+    "Imputar con la media",
+    "Eliminar la columna",
+    "Agregar un indicador de faltante: una columna booleana que registra si el dato faltaba, para conservar esa información y verificar luego si la ausencia se asocia al resultado",
+    "Reemplazar por cero"
+   ],
+   "correcta": 2,
+   "explicacion": "El indicador no tiene un riesgo relevante y preserva la información de que el dato faltaba, lo que permite estudiar si la ausencia es informativa.",
+   "por_que_no": [
+    "La imputación reduce la variabilidad.",
+    "Eliminar la columna pierde información.",
+    "",
+    "Reemplazar por cero crea un faltante disfrazado."
+   ],
+   "referencia": "Clase 13, «Tratamiento de faltantes»"
+  },
+  {
+   "id": "EDA-34",
+   "tema": "EDA",
+   "subtema": "Faltantes",
+   "dificultad": "dificil",
+   "tipo": "caso",
+   "enunciado": "Los faltantes de edad son el 8,2 % en el canal Banco y menos del 1 % en los demás, y las pólizas sin edad tienen menos siniestros por póliza (0,097 frente a 0,121). ¿Qué se concluye?",
+   "opciones": [
+    "Que el canal Banco no tiene clientes",
+    "Que los faltantes son MCAR y pueden eliminarse sin problema",
+    "Que hay que imputar 18 años",
+    "Que no son MCAR: eliminarlos cambiaría la composición por canal de la base. Además surge una pregunta para sistemas: ¿el canal bancario tiene la edad como campo opcional?"
+   ],
+   "correcta": 3,
+   "explicacion": "El EDA es el momento de investigar qué mecanismo de faltante opera. Si se concentran en un canal, la ausencia depende de una variable observada.",
+   "por_que_no": [
+    "Tiene clientes; les falta un dato.",
+    "La concentración por canal muestra que no son completamente al azar.",
+    "Imputar 18 agravaría la anomalía detectada.",
+    ""
+   ],
+   "referencia": "Clase 14, «Los faltantes también se exploran»"
+  }
+ ]
+}

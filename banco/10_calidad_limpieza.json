@@ -1,0 +1,1088 @@
+[
+ {
+  "id": "CAL-01",
+  "tema": "CAL",
+  "subtema": "Concepto de calidad",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "Según la clase 13, ¿qué es la calidad de datos?",
+  "opciones": [
+   "Una propiedad absoluta del dato: está limpio o sucio",
+   "La aptitud del dato para el uso previsto",
+   "La cantidad de filas de una base",
+   "La ausencia total de valores faltantes"
+  ],
+  "correcta": 1,
+  "explicacion": "La misma base puede ser suficiente para un tablero de gestión e insuficiente para un cálculo de reservas. La pregunta correcta no es «¿está limpia?», sino «¿es suficiente para lo que necesito hacer?».",
+  "por_que_no": [
+   "La clase rechaza esa visión absoluta.",
+   "",
+   "El volumen no define la calidad.",
+   "Una base con faltantes identificados puede ser apta para el uso."
+  ],
+  "referencia": "Clase 13 – Calidad, Limpieza y Transformación, «Qué es la calidad de datos»"
+ },
+ {
+  "id": "CAL-02",
+  "tema": "CAL",
+  "subtema": "Concepto de calidad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué consecuencias prácticas extrae la clase de definir la calidad como aptitud para el uso?",
+  "opciones": [
+   "Que no hace falta medir nada",
+   "Que los criterios de calidad se definen antes de mirar los datos, a partir del uso, y que la evaluación se expresa en indicadores, no en impresiones",
+   "Que la calidad la define el área de sistemas",
+   "Que siempre hay que eliminar los faltantes"
+  ],
+  "correcta": 1,
+  "explicacion": "Si la calidad depende del uso, los criterios se fijan primero y se miden con indicadores reproducibles.",
+  "por_que_no": [
+   "Justamente hay que medirla con indicadores.",
+   "",
+   "Depende del uso previsto, no de quién la defina.",
+   "El tratamiento de faltantes depende del caso."
+  ],
+  "referencia": "Clase 13, «Qué es la calidad de datos»"
+ },
+ {
+  "id": "CAL-03",
+  "tema": "CAL",
+  "subtema": "Concepto de calidad",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la clase dice que un modelo correcto alimentado con datos defectuosos es especialmente peligroso?",
+  "opciones": [
+   "Porque no produce ningún resultado",
+   "Porque produce resultados defectuosos con apariencia de rigor: salen números, gráficos y decimales",
+   "Porque el código da error",
+   "Porque se borra la base"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase menciona primas mal calibradas, reservas subestimadas, reportes regulatorios rechazados y pérdida de confianza. Regla: ningún número se reporta sin verificar los datos que lo produjeron.",
+  "por_que_no": [
+   "El problema es que sí produce resultados, que parecen válidos.",
+   "",
+   "El código puede correr sin errores.",
+   "No borra nada."
+  ],
+  "referencia": "Clase 13, «¿Por qué importa la calidad de datos?»"
+ },
+ {
+  "id": "CAL-04",
+  "tema": "CAL",
+  "subtema": "Dimensiones",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué dimensión de la calidad responde la pregunta «¿hay registros repetidos?»?",
+  "opciones": [
+   "Completitud",
+   "Unicidad",
+   "Validez",
+   "Oportunidad"
+  ],
+  "correcta": 1,
+  "explicacion": "La unicidad mide si hay registros o claves repetidas. Se calcula como valores únicos sobre el total de filas.",
+  "por_que_no": [
+   "La completitud responde si faltan valores.",
+   "",
+   "La validez responde si los valores respetan su dominio.",
+   "La oportunidad responde si el dato está disponible a tiempo."
+  ],
+  "referencia": "Clase 13, «Dimensiones de la calidad»"
+ },
+ {
+  "id": "CAL-05",
+  "tema": "CAL",
+  "subtema": "Dimensiones",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Una regla verifica que la fecha de siniestro sea posterior a la fecha de inicio de vigencia. ¿Qué dimensión mide?",
+  "opciones": [
+   "Completitud",
+   "Validez",
+   "Consistencia",
+   "Exactitud"
+  ],
+  "correcta": 2,
+  "explicacion": "La consistencia evalúa si los campos son coherentes entre sí. Un valor puede ser válido de forma aislada y aun así imposible en conjunto.",
+  "por_que_no": [
+   "No se pregunta si falta el dato.",
+   "La validez evalúa un campo contra su dominio (por ejemplo, edad entre 18 y 110).",
+   "",
+   "La exactitud compara con la realidad y requiere una fuente externa."
+  ],
+  "referencia": "Clase 13, «Cómo se miden» y «Consistencia entre campos»"
+ },
+ {
+  "id": "CAL-06",
+  "tema": "CAL",
+  "subtema": "Dimensiones",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Cuál es la única dimensión de la calidad que no puede verificarse desde la propia base?",
+  "opciones": [
+   "Completitud",
+   "Unicidad",
+   "Exactitud",
+   "Validez"
+  ],
+  "correcta": 2,
+  "explicacion": "La exactitud pregunta si el valor refleja la realidad. Para saberlo hace falta una fuente externa de contraste; las demás se calculan con los propios datos.",
+  "por_que_no": [
+   "Se mide contando nulos.",
+   "Se mide contando valores distintos.",
+   "",
+   "Se mide aplicando reglas de dominio."
+  ],
+  "referencia": "Clase 13, «Dimensiones de la calidad»"
+ },
+ {
+  "id": "CAL-07",
+  "tema": "CAL",
+  "subtema": "Indicadores",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "En una base de 8 pólizas, el campo ramo tiene 1 valor nulo. ¿Cuál es su completitud Cj = 1 − nulos/n?",
+  "opciones": [
+   "0,125",
+   "0,875",
+   "1",
+   "7"
+  ],
+  "correcta": 1,
+  "explicacion": "1 − 1/8 = 0,875, como en el informe de calidad de la clase. Todas las medidas se expresan entre 0 y 1 para seguirlas en el tiempo y fijar umbrales.",
+  "por_que_no": [
+   "Es la proporción de nulos, no la completitud.",
+   "",
+   "Habría completitud 1 sin nulos.",
+   "7 es la cantidad de no nulos, no una proporción."
+  ],
+  "referencia": "Clase 13, «Cómo se miden» e «Informe de calidad reproducible»"
+ },
+ {
+  "id": "CAL-08",
+  "tema": "CAL",
+  "subtema": "Indicadores",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "La base de 8 filas tiene 7 números de póliza distintos (la 1003 aparece dos veces). ¿Cuánto vale la unicidad de la clave?",
+  "opciones": [
+   "0,875",
+   "1",
+   "0,125",
+   "8"
+  ],
+  "correcta": 0,
+  "explicacion": "U = valores únicos / n = 7/8 = 0,875. Una clave sin repetidos tendría unicidad 1.",
+  "por_que_no": [
+   "",
+   "Hay una clave repetida.",
+   "Es la proporción de repetidos.",
+   "No es una proporción."
+  ],
+  "referencia": "Clase 13, «Cómo se miden»"
+ },
+ {
+  "id": "CAL-09",
+  "tema": "CAL",
+  "subtema": "Perfilado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al perfilar la base sucia, sucia.dtypes muestra que prima y f_vigencia quedaron como texto (str). ¿Qué indica eso?",
+  "opciones": [
+   "Nada relevante",
+   "Que pandas no pudo interpretarlas como número ni como fecha: es una señal de valores con formatos problemáticos («120.000,50», «S/D»)",
+   "Que la base no tiene filas",
+   "Que hay duplicados"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase lo marca como el primer hallazgo importante: si una columna que debería ser numérica queda como texto, contiene valores no interpretables.",
+  "por_que_no": [
+   "Es un hallazgo importante.",
+   "",
+   "Es un problema de tipos, no de filas.",
+   "El tipo de dato no indica duplicados."
+  ],
+  "referencia": "Clase 13, «Perfilado: las primeras preguntas»"
+ },
+ {
+  "id": "CAL-10",
+  "tema": "CAL",
+  "subtema": "Perfilado",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En el informe de calidad, la columna ramo tiene 6 valores distintos para 3 ramos reales («AUTO», «Automotor», « auto », «Hogar», «HOGAR», «Vida»). ¿Qué problema revela?",
+  "opciones": [
+   "Que faltan ramos",
+   "Categorías mal escritas o sin estandarizar: cualquier groupby por ramo trataría AUTO, Automotor y auto como ramos distintos",
+   "Que la clave no es única",
+   "Que hay fechas inválidas"
+  ],
+  "correcta": 1,
+  "explicacion": "value_counts y nunique exponen variantes de escritura. Se corrige con strip, upper y un mapa explícito de equivalencias.",
+  "por_que_no": [
+   "Sobran variantes; no faltan ramos.",
+   "",
+   "La unicidad de la clave es otro indicador.",
+   "No tiene relación con las fechas."
+  ],
+  "referencia": "Clase 13, «Un informe de calidad reproducible» y «Estandarización de texto»"
+ },
+ {
+  "id": "CAL-12",
+  "tema": "CAL",
+  "subtema": "Reglas de validación",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "La columna exposicion de la base sucia es [1.0, 0.5, 1.0, 1.0, 1.2, 0.75, 1.0, NaN]. ¿Cuántos incumplimientos reporta la regla?",
+  "codigo": "ok = sucia[\"exposicion\"].between(0, 1)\nprint((~ok).sum())",
+  "opciones": [
+   "0",
+   "1",
+   "2",
+   "8"
+  ],
+  "correcta": 2,
+  "explicacion": "1,2 está fuera de [0, 1], y between devuelve False para NaN, así que el faltante también cuenta como incumplimiento. La clase reporta 2.",
+  "por_que_no": [
+   "1,2 está fuera del rango.",
+   "No considera que NaN también da False.",
+   "",
+   "No todos incumplen."
+  ],
+  "referencia": "Clase 13, «Reglas de validación explícitas»"
+ },
+ {
+  "id": "CAL-13",
+  "tema": "CAL",
+  "subtema": "Reglas de validación",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué ventaja tiene declarar las reglas de validación en código (por ejemplo, un diccionario de máscaras) en lugar de revisar la base a ojo?",
+  "opciones": [
+   "Ninguna",
+   "Las reglas pasan a ser parte del código y se ejecutan cada vez que llega una base nueva, contando incumplimientos de forma reproducible",
+   "Corrigen los errores automáticamente",
+   "Hacen que la base ocupe menos memoria"
+  ],
+  "correcta": 1,
+  "explicacion": "«Mejor que mirar: declarar las reglas y contar cuántos registros las incumplen.» Es reproducible y auditable.",
+  "por_que_no": [
+   "Es una de las ideas centrales de la clase.",
+   "",
+   "Detectan; no corrigen.",
+   "No tiene efecto sobre la memoria."
+  ],
+  "referencia": "Clase 13, «Reglas de validación explícitas»"
+ },
+ {
+  "id": "CAL-14",
+  "tema": "CAL",
+  "subtema": "Reglas de validación",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "El ejercicio de clase propone dos reglas: «si hay fecha de siniestro, el monto debe ser > 0» y «si el monto es > 0, debe existir fecha de siniestro». ¿Es redundante escribir ambas?",
+  "opciones": [
+   "Sí, son idénticas",
+   "No: son la misma regla vista desde los dos lados, pero detectan errores de carga distintos (fecha sin monto frente a monto sin fecha)",
+   "Sí, porque una implica la otra",
+   "No, porque una es de completitud y otra de exactitud"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada dirección atrapa un tipo de error distinto: siniestros fechados sin monto y montos cargados sin fecha.",
+  "por_que_no": [
+   "Detectan casos distintos.",
+   "",
+   "Ninguna implica a la otra.",
+   "Ambas son reglas de consistencia."
+  ],
+  "referencia": "Clase 13, «Ejercicio en clase»"
+ },
+ {
+  "id": "CAL-15",
+  "tema": "CAL",
+  "subtema": "Faltantes",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Falta el monto de siniestro justamente en los siniestros más grandes, porque siguen en litigio. ¿Qué mecanismo de faltante es?",
+  "opciones": [
+   "MCAR",
+   "MAR",
+   "MNAR",
+   "No es un faltante"
+  ],
+  "correcta": 2,
+  "explicacion": "MNAR (faltante no al azar): la ausencia depende del propio valor no observado. Bajo MNAR, eliminar los registros es siempre peligroso.",
+  "por_que_no": [
+   "MCAR es una ausencia que no depende de nada, como un error de transmisión.",
+   "MAR depende de otras variables observadas, no del valor faltante.",
+   "",
+   "El dato falta."
+  ],
+  "referencia": "Clase 13, «Valores faltantes: los tres mecanismos»"
+ },
+ {
+  "id": "CAL-16",
+  "tema": "CAL",
+  "subtema": "Faltantes",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "El peso corporal falta más en las pólizas emitidas por canal digital, y el canal está registrado en la base. ¿Qué mecanismo describe mejor la situación?",
+  "opciones": [
+   "MCAR",
+   "MAR",
+   "MNAR",
+   "Duplicado de clave"
+  ],
+  "correcta": 1,
+  "explicacion": "MAR (faltante al azar condicionado): la ausencia depende de otra variable observada (el canal). Es el ejemplo de la clase.",
+  "por_que_no": [
+   "Hay un patrón asociado al canal, así que no es completamente al azar.",
+   "",
+   "No depende del valor del peso en sí, sino del canal.",
+   "No es un problema de duplicados."
+  ],
+  "referencia": "Clase 13, «Valores faltantes: los tres mecanismos»"
+ },
+ {
+  "id": "CAL-17",
+  "tema": "CAL",
+  "subtema": "Faltantes",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la distinción entre MCAR, MAR y MNAR no es solo teórica?",
+  "opciones": [
+   "Porque cambia el tipo de dato",
+   "Porque determina si eliminar los registros incompletos sesga el análisis",
+   "Porque define el formato del archivo",
+   "Porque solo importa en Excel"
+  ],
+  "correcta": 1,
+  "explicacion": "Si el faltante es MCAR, eliminar pocos casos no introduce sesgo. Si es MAR o MNAR, eliminar cambia la composición de la base; bajo MNAR siempre es peligroso.",
+  "por_que_no": [
+   "El tipo de dato no depende del mecanismo.",
+   "",
+   "No tiene relación con el formato del archivo.",
+   "Aplica a cualquier herramienta."
+  ],
+  "referencia": "Clase 13, «Valores faltantes: los tres mecanismos»"
+ },
+ {
+  "id": "CAL-18",
+  "tema": "CAL",
+  "subtema": "Faltantes disfrazados",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la clase, ¿cuál es el problema más frecuente con los faltantes?",
+  "opciones": [
+   "El NaN explícito",
+   "El faltante disfrazado de valor: 0, −1, 999, 9999, «S/D», «NA», «-», «» o 01/01/1900",
+   "Que los faltantes ocupan memoria",
+   "Que no se pueden graficar"
+  ],
+  "correcta": 1,
+  "explicacion": "El NaN es visible; el faltante disfrazado pasa desapercibido y contamina promedios y conteos. Por eso se declara con na_values o se reemplaza explícitamente.",
+  "por_que_no": [
+   "El NaN es fácil de detectar con isna().",
+   "",
+   "No es el problema principal.",
+   "No es el problema principal."
+  ],
+  "referencia": "Clase 13, «Faltantes disfrazados»"
+ },
+ {
+  "id": "CAL-19",
+  "tema": "CAL",
+  "subtema": "Conversión de tipos",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "La prima viene como texto con formato local: \"120.000,50\". ¿Qué secuencia la convierte correctamente en 120000.5?",
+  "opciones": [
+   "Reemplazar \",\" por \".\" y luego \".\" por \"\"",
+   "Reemplazar \".\" por \"\" (miles) y luego \",\" por \".\" (decimal), y aplicar pd.to_numeric",
+   "Aplicar int() directamente",
+   "Aplicar pd.to_numeric sin transformar"
+  ],
+  "correcta": 1,
+  "explicacion": "Primero se quita el separador de miles (\"120000,50\") y luego la coma decimal pasa a punto (\"120000.50\"). Recién ahí se convierte a número.",
+  "por_que_no": [
+   "Con ese orden queda «120.000.50» y luego «12000050»: un valor erróneo.",
+   "",
+   "int() no interpreta ese formato.",
+   "Con errors=\"coerce\" daría NaN y, sin él, un error."
+  ],
+  "referencia": "Clase 13, «Convertir y declarar los faltantes»"
+ },
+ {
+  "id": "CAL-20",
+  "tema": "CAL",
+  "subtema": "Conversión de tipos",
+  "dificultad": "media",
+  "tipo": "concepto",
+  "enunciado": "¿Qué hace pd.to_numeric(serie, errors=\"coerce\")?",
+  "opciones": [
+   "Detiene el programa ante el primer valor no numérico",
+   "Convierte en NaN lo que no puede interpretarse como número, en lugar de interrumpir el programa, lo que permite contar los casos problemáticos",
+   "Reemplaza los valores no numéricos por 0",
+   "Elimina las filas no numéricas"
+  ],
+  "correcta": 1,
+  "explicacion": "«S/D» pasa a NaN. Después de cada conversión conviene contar cuántos valores quedaron nulos: ese número es el diagnóstico.",
+  "por_que_no": [
+   "Ese es el comportamiento sin coerce.",
+   "",
+   "No imputa ceros.",
+   "No elimina filas."
+  ],
+  "referencia": "Clase 13, «Convertir y declarar los faltantes» y «Tipos y conversiones seguras»"
+ },
+ {
+  "id": "CAL-21",
+  "tema": "CAL",
+  "subtema": "Faltantes disfrazados",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la limpieza de la prima se ejecuta limpia.loc[limpia[\"prima\"] == 0, \"prima\"] = np.nan. ¿Por qué?",
+  "opciones": [
+   "Para eliminar las primas grandes",
+   "Porque en esa base el 0 no es una prima real sino «no informado»: se lo declara faltante para que no distorsione promedios",
+   "Porque NaN ocupa menos memoria",
+   "Por error"
+  ],
+  "correcta": 1,
+  "explicacion": "Interpretar el cero como valor cuando significa «no informado» (o al revés) es un error frecuente de la lista de la clase.",
+  "por_que_no": [
+   "Afecta solo los ceros.",
+   "",
+   "No es una razón de memoria.",
+   "Es una decisión deliberada y documentada."
+  ],
+  "referencia": "Clase 13, «Convertir y declarar los faltantes»; «Errores frecuentes»"
+ },
+ {
+  "id": "CAL-22",
+  "tema": "CAL",
+  "subtema": "Tratamiento de faltantes",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla de tratamiento de faltantes, ¿cuándo es razonable eliminar las filas incompletas y cuál es su riesgo?",
+  "opciones": [
+   "Siempre; no tiene riesgo",
+   "Con pocos casos y faltantes MCAR; el riesgo es introducir sesgo si no son MCAR",
+   "Nunca",
+   "Cuando el campo está casi vacío; el riesgo es aumentar la dimensión"
+  ],
+  "correcta": 1,
+  "explicacion": "Eliminar filas sirve con pocos casos MCAR. Si el faltante tiene un patrón (MAR o MNAR), eliminar sesga el análisis.",
+  "por_que_no": [
+   "Tiene riesgo de sesgo.",
+   "",
+   "Hay casos en que es razonable.",
+   "Con un campo casi vacío lo que se elimina es la columna, y el riesgo es perder información."
+  ],
+  "referencia": "Clase 13, «Tratamiento de faltantes»"
+ },
+ {
+  "id": "CAL-23",
+  "tema": "CAL",
+  "subtema": "Tratamiento de faltantes",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Cuál es la estrategia de tratamiento de faltantes «más subestimada», según la clase?",
+  "opciones": [
+   "Imputar con la media",
+   "Agregar un indicador de faltante: una columna booleana que registra si el dato faltaba, para conservar esa información y verificar luego si la ausencia se asocia al resultado",
+   "Eliminar la columna",
+   "Reemplazar por cero"
+  ],
+  "correcta": 1,
+  "explicacion": "El indicador no tiene un riesgo relevante y preserva la información de que el dato faltaba, lo que permite estudiar si la ausencia es informativa.",
+  "por_que_no": [
+   "La imputación reduce la variabilidad.",
+   "",
+   "Eliminar la columna pierde información.",
+   "Reemplazar por cero crea un faltante disfrazado."
+  ],
+  "referencia": "Clase 13, «Tratamiento de faltantes»"
+ },
+ {
+  "id": "CAL-24",
+  "tema": "CAL",
+  "subtema": "Imputación",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Al imputar los faltantes de prima con la mediana, el desvío estándar bajó de 141.049 a 118.477 (un 16 %). ¿Qué consecuencia actuarial señala la clase?",
+  "opciones": [
+   "Ninguna: la base quedó más limpia",
+   "La base es artificialmente menos variable; si la variable alimenta un cálculo de capital o un percentil alto, la imputación ingenua subestima el riesgo",
+   "Que la media aumentó",
+   "Que hay que imputar con cero"
+  ],
+  "correcta": 1,
+  "explicacion": "«Imputar reduce la variabilidad: nunca es gratis.» Al rellenar con un valor central, la dispersión disminuye artificialmente.",
+  "por_que_no": [
+   "Parece más limpia, pero es engañoso.",
+   "",
+   "La media bajó (de 267.000 a 250.714).",
+   "Imputar con cero crearía faltantes disfrazados."
+  ],
+  "referencia": "Clase 13, «El costo de imputar»"
+ },
+ {
+  "id": "CAL-25",
+  "tema": "CAL",
+  "subtema": "Imputación",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "En el ramo Hogar las primas son [180000, NaN, 200000]. ¿Qué valor imputa este código en el NaN?",
+  "codigo": "g[\"prima_imp\"] = g[\"prima\"].fillna(\n    g.groupby(\"ramo\")[\"prima\"].transform(\"median\")\n)",
+  "opciones": [
+   "0",
+   "190000",
+   "425000",
+   "La mediana global de toda la base"
+  ],
+  "correcta": 1,
+  "explicacion": "La imputación condicionada usa el valor típico del grupo: mediana de Hogar = (180.000 + 200.000)/2 = 190.000. transform devuelve un resultado alineado fila por fila.",
+  "por_que_no": [
+   "fillna con la mediana del grupo no usa 0.",
+   "",
+   "425.000 es la mediana de Automotores (Auto) en el ejemplo.",
+   "Se usa la mediana del ramo, no la global."
+  ],
+  "referencia": "Clase 13, «Imputación condicionada»"
+ },
+ {
+  "id": "CAL-26",
+  "tema": "CAL",
+  "subtema": "Imputación",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia hay entre groupby(...).agg(...) y groupby(...).transform(...)?",
+  "opciones": [
+   "Ninguna",
+   "agg cambia la granularidad (una fila por grupo); transform calcula por grupo pero devuelve un resultado con la misma longitud que el original, alineado fila por fila",
+   "transform elimina grupos",
+   "agg solo funciona con texto"
+  ],
+  "correcta": 1,
+  "explicacion": "transform es la herramienta central para cualquier cálculo «dentro del grupo» sin cambiar la granularidad, como imputar con la mediana del ramo.",
+  "por_que_no": [
+   "Producen formas distintas.",
+   "",
+   "No elimina grupos.",
+   "agg funciona con cualquier función de agregación."
+  ],
+  "referencia": "Clase 13, «Imputación condicionada» y «Reestructurar»"
+ },
+ {
+  "id": "CAL-27",
+  "tema": "CAL",
+  "subtema": "Duplicados",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia hay entre un duplicado exacto y un duplicado de clave?",
+  "opciones": [
+   "Son lo mismo",
+   "En el exacto toda la fila se repite (casi siempre error de carga); en el de clave se repite el identificador con contenido distinto (puede ser error o legítimo si la granularidad no es la supuesta)",
+   "El de clave siempre es un error",
+   "El exacto siempre es legítimo"
+  ],
+  "correcta": 1,
+  "explicacion": "Antes de deduplicar hay que preguntarse si la tabla tiene, en realidad, una fila por póliza y por período.",
+  "por_que_no": [
+   "Son situaciones distintas.",
+   "",
+   "Puede ser legítimo.",
+   "Casi siempre es un error."
+  ],
+  "referencia": "Clase 13, «Duplicados»"
+ },
+ {
+  "id": "CAL-28",
+  "tema": "CAL",
+  "subtema": "Duplicados",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Un analista ejecuta drop_duplicates(subset=\"poliza\") sobre una tabla que tiene una fila por póliza y por mes. ¿Qué error comete?",
+  "opciones": [
+   "Ninguno",
+   "Elimina filas legítimas de otros meses, porque no verificó la granularidad real de la tabla",
+   "Duplica las filas",
+   "Cambia el tipo de la columna"
+  ],
+  "correcta": 1,
+  "explicacion": "«Deduplicar sin verificar cuál es la granularidad real de la tabla» figura entre los errores frecuentes. Aquí la clave real sería (póliza, mes).",
+  "por_que_no": [
+   "Pierde información válida.",
+   "",
+   "Elimina filas; no las duplica.",
+   "No cambia el tipo."
+  ],
+  "referencia": "Clase 13, «Duplicados» y «Errores frecuentes»"
+ },
+ {
+  "id": "CAL-29",
+  "tema": "CAL",
+  "subtema": "Duplicados",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "«Gómez, Ana», «ANA GOMEZ» y «Ana Gómez» son la misma persona. ¿Qué propone la clase para detectar estos duplicados aproximados?",
+  "opciones": [
+   "Borrar los registros con acentos",
+   "Construir una clave normalizada que ignore acentos, mayúsculas, puntuación y orden de las palabras, y deduplicar sobre esa clave sin destruir el dato original",
+   "Usar solo el primer carácter del nombre",
+   "Ordenar alfabéticamente"
+  ],
+  "correcta": 1,
+  "explicacion": "La función clave() normaliza (unicodedata), quita lo que no es letra, pasa a mayúsculas y ordena las palabras. Las tres variantes dan «ANA GOMEZ».",
+  "por_que_no": [
+   "Perdería datos válidos.",
+   "",
+   "Generaría falsos duplicados.",
+   "Ordenar no unifica las variantes."
+  ],
+  "referencia": "Clase 13, «Duplicados aproximados»"
+ },
+ {
+  "id": "CAL-30",
+  "tema": "CAL",
+  "subtema": "Identificadores",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿Cuántos valores únicos quedan después de normalizar?",
+  "codigo": "ids = pd.Series([\"20-12345678-3\", \"20123456783\",\n                 \"CUIT 20.12345678/3\", \" 20-12345678-3 \"])\nnorm = ids.str.replace(r\"\\D\", \"\", regex=True)\nprint(norm.nunique())",
+  "opciones": [
+   "4",
+   "3",
+   "2",
+   "1"
+  ],
+  "correcta": 3,
+  "explicacion": "\\D coincide con cualquier carácter que no sea dígito, así que se eliminan guiones, puntos, barras, espacios y «CUIT». Todas quedan como «20123456783»: cuatro claves aparentes eran una sola.",
+  "por_que_no": [
+   "Sería el resultado antes de normalizar.",
+   "Todas quedan iguales.",
+   "Todas quedan iguales.",
+   ""
+  ],
+  "referencia": "Clase 13, «Identificadores: expresiones regulares»"
+ },
+ {
+  "id": "CAL-31",
+  "tema": "CAL",
+  "subtema": "Validez",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la base aparecen una edad de 220 años, una de −3 y una exposición de 1,2. ¿Qué tratamiento NO es defendible según la clase?",
+  "opciones": [
+   "Convertirlos en faltantes y tratarlos como tales",
+   "Corregirlos si existe una fuente que lo permita",
+   "Eliminar los registros",
+   "Corregir, eliminar o convertir el valor sin dejar constancia del criterio aplicado"
+  ],
+  "correcta": 3,
+  "explicacion": "Las tres primeras opciones son defendibles. Lo que no es defendible es aplicarlas sin documentarlo en el registro de tratamiento.",
+  "por_que_no": [
+   "Es una opción defendible.",
+   "Es una opción defendible.",
+   "Es una opción defendible.",
+   ""
+  ],
+  "referencia": "Clase 13, «Validez: dominios y rangos»"
+ },
+ {
+  "id": "CAL-32",
+  "tema": "CAL",
+  "subtema": "Fechas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué indica, según la clase, un pico inusual de fechas en enero en la distribución mensual?",
+  "opciones": [
+   "Estacionalidad real siempre",
+   "Que probablemente hay fechas imputadas (por ejemplo, completadas con el 1 de enero)",
+   "Que el formato es anglosajón",
+   "Que faltan datos de diciembre"
+  ],
+  "correcta": 1,
+  "explicacion": "Entre las verificaciones mínimas sobre fechas figura revisar la distribución por mes: un pico en enero suele delatar fechas imputadas. También hay que controlar el rango razonable, las fechas centinela y el orden entre fechas.",
+  "por_que_no": [
+   "Hay que descartar primero el problema de calidad.",
+   "",
+   "El formato no genera picos en un mes.",
+   "No se deduce de ese patrón."
+  ],
+  "referencia": "Clase 13, «Fechas: el problema más subestimado»"
+ },
+ {
+  "id": "CAL-33",
+  "tema": "CAL",
+  "subtema": "Estandarización",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Tras aplicar el siguiente código a la columna ramo con los valores [\"AUTO\", \"Automotor\", \" auto \", \" auto \", \"Hogar\", \"HOGAR\", \"Vida\", None], ¿cuántas categorías reales quedan, sin contar los faltantes?",
+  "codigo": "limpia[\"ramo\"] = limpia[\"ramo\"].str.strip().str.upper()\nmapa = {\"AUTO\": \"Automotores\", \"AUTOMOTOR\": \"Automotores\",\n        \"HOGAR\": \"Hogar\", \"VIDA\": \"Vida\"}\nlimpia[\"ramo\"] = limpia[\"ramo\"].map(mapa)",
+  "opciones": [
+   "6",
+   "4",
+   "3",
+   "1"
+  ],
+  "correcta": 2,
+  "explicacion": "Quedan Automotores (4), Hogar (2) y Vida (1), más un NaN. strip elimina espacios, upper unifica mayúsculas y el diccionario explícito documenta las equivalencias.",
+  "por_que_no": [
+   "Son las variantes antes de limpiar.",
+   "AUTO y AUTOMOTOR se unifican.",
+   "",
+   "Hay tres ramos distintos."
+  ],
+  "referencia": "Clase 13, «Estandarización de texto»"
+ },
+ {
+  "id": "CAL-34",
+  "tema": "CAL",
+  "subtema": "Estandarización",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué la clase prefiere un diccionario explícito de equivalencias antes que una corrección automática?",
+  "opciones": [
+   "Porque es más rápido",
+   "Porque queda documentado qué se unificó con qué",
+   "Porque elimina los nulos",
+   "Porque no requiere pandas"
+  ],
+  "correcta": 1,
+  "explicacion": "La trazabilidad es central: el mapa explícito deja constancia de cada unificación y puede revisarse o auditarse.",
+  "por_que_no": [
+   "La razón es la documentación, no la velocidad.",
+   "",
+   "No tiene relación con los nulos.",
+   "Se usa con .map de pandas."
+  ],
+  "referencia": "Clase 13, «Estandarización de texto»"
+ },
+ {
+  "id": "CAL-35",
+  "tema": "CAL",
+  "subtema": "Valores extremos",
+  "dificultad": "dificil",
+  "tipo": "aplicacion",
+  "enunciado": "Para los montos positivos, Q1 = 67.500 y Q3 = 220.000. ¿Cuál es el límite superior del criterio del rango intercuartílico?",
+  "opciones": [
+   "220.000",
+   "287.500",
+   "448.750",
+   "372.500"
+  ],
+  "correcta": 2,
+  "explicacion": "IQR = 220.000 − 67.500 = 152.500. Límite superior = Q3 + 1,5 × IQR = 220.000 + 228.750 = 448.750. El monto 9.999.999 queda señalado.",
+  "por_que_no": [
+   "Es Q3, no el límite.",
+   "Suma solo medio IQR (Q3 + 0,5 × IQR).",
+   "",
+   "Suma un IQR (Q3 + 1 × IQR), no 1,5."
+  ],
+  "referencia": "Clase 13, «Valores extremos: detectar»; Guía práctica Python, «Rango intercuartílico»"
+ },
+ {
+  "id": "CAL-36",
+  "tema": "CAL",
+  "subtema": "Valores extremos",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué sugiere que el monto 9.999.999 sea un centinela y no un siniestro real?",
+  "opciones": [
+   "Que es mayor que el límite del IQR",
+   "Su forma: nueves repetidos hasta llenar el campo, un valor típico de relleno",
+   "Que es impar",
+   "Que está en el ramo Hogar"
+  ],
+  "correcta": 1,
+  "explicacion": "Los valores con forma de centinela (nueves, ceros, redondos repetidos) suelen ser rellenos. Superar el límite del IQR solo indica que es extremo, no que sea un error.",
+  "por_que_no": [
+   "Ser extremo no implica ser un error.",
+   "",
+   "No es un criterio.",
+   "El ramo por sí solo no lo indica."
+  ],
+  "referencia": "Clase 13, «Valores extremos: detectar» y «decidir»"
+ },
+ {
+  "id": "CAL-37",
+  "tema": "CAL",
+  "subtema": "Valores extremos",
+  "dificultad": "dificil",
+  "tipo": "caso",
+  "enunciado": "Un analista elimina automáticamente todos los siniestros que superan el límite del IQR «por ser atípicos». ¿Por qué es problemático en seguros?",
+  "opciones": [
+   "Porque el IQR está mal calculado",
+   "Porque detectar un valor extremo y decidir que es un error son tareas distintas: la cola de la distribución de siniestros es el objeto de estudio y un siniestro catastrófico es extremo y completamente real",
+   "Porque hay que eliminar también los menores",
+   "No es problemático"
+  ],
+  "correcta": 1,
+  "explicacion": "Eliminar extremos por comodidad estadística subestima severidad, primas y capital. Antes hay que preguntarse si el valor es imposible o solo infrecuente; si no puede responderse, se conserva y se documenta.",
+  "por_que_no": [
+   "El problema no es el cálculo.",
+   "",
+   "Eliminar más datos agrava el error.",
+   "Es uno de los errores frecuentes."
+  ],
+  "referencia": "Clase 13, «Valores extremos: decidir»; Guía práctica Python, Actividad 14"
+ },
+ {
+  "id": "CAL-38",
+  "tema": "CAL",
+  "subtema": "Tipos",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué «un identificador nunca es un número», según la clase?",
+  "opciones": [
+   "Porque ocupa más memoria",
+   "Porque no se promedia ni se suma, y no debe perder ceros a la izquierda; por eso se guarda como string",
+   "Porque pandas no admite enteros",
+   "Porque los números no pueden repetirse"
+  ],
+  "correcta": 1,
+  "explicacion": "Guardar un identificador como entero habilita operaciones absurdas y puede perder ceros iniciales (por ejemplo, «00123» pasa a 123).",
+  "por_que_no": [
+   "La razón es conceptual, no de memoria.",
+   "",
+   "pandas admite enteros.",
+   "No es la razón."
+  ],
+  "referencia": "Clase 13, «Tipos y conversiones seguras»"
+ },
+ {
+  "id": "CAL-39",
+  "tema": "CAL",
+  "subtema": "Variables derivadas",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Al calcular la severidad por ramo se usa resumen[\"siniestros\"].replace(0, np.nan) en el denominador. ¿Por qué no devolver 0 cuando un ramo no tuvo siniestros?",
+  "opciones": [
+   "Por estética",
+   "Porque si no hubo siniestros la severidad no es cero: no está definida. Devolver cero sería un error conceptual (y dividir por cero, un error técnico)",
+   "Porque NaN es más rápido",
+   "Porque la frecuencia también sería NaN"
+  ],
+  "correcta": 1,
+  "explicacion": "La severidad es monto/siniestros. Sin siniestros el cociente no tiene sentido. NaN expresa «indefinido» y evita la división por cero.",
+  "por_que_no": [
+   "Es una cuestión conceptual.",
+   "",
+   "No es una razón de rendimiento.",
+   "La frecuencia sí está definida: es 0/exposición = 0."
+  ],
+  "referencia": "Clase 13, «Transformar: crear variables derivadas»"
+ },
+ {
+  "id": "CAL-40",
+  "tema": "CAL",
+  "subtema": "Discretizar",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿En qué franja queda una persona de exactamente 30 años?",
+  "codigo": "franjas = pd.cut(edades, bins=[17, 30, 45, 60, 120],\n                 labels=[\"18-30\", \"31-45\", \"46-60\", \"60+\"])",
+  "opciones": [
+   "\"18-30\"",
+   "\"31-45\"",
+   "NaN",
+   "\"60+\""
+  ],
+  "correcta": 0,
+  "explicacion": "pd.cut arma por defecto intervalos cerrados a la derecha: (17, 30], (30, 45], … Así, 30 pertenece a (17, 30], etiquetado «18-30».",
+  "por_que_no": [
+   "",
+   "30 no está en (30, 45].",
+   "30 está dentro del rango total.",
+   "No corresponde."
+  ],
+  "referencia": "Clase 13, «Discretizar»"
+ },
+ {
+  "id": "CAL-41",
+  "tema": "CAL",
+  "subtema": "Discretizar",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia hay entre pd.cut y pd.qcut?",
+  "opciones": [
+   "Ninguna",
+   "pd.cut corta por valores fijos; pd.qcut corta por cuantiles y genera grupos de tamaño similar",
+   "qcut solo sirve para fechas",
+   "cut elimina los extremos"
+  ],
+  "correcta": 1,
+  "explicacion": "La clase advierte además que discretizar descarta información: es razonable para presentar o construir clases tarifarias, y suele ser innecesario para modelar.",
+  "por_que_no": [
+   "Cortan con criterios distintos.",
+   "",
+   "Sirve para cualquier variable numérica.",
+   "No elimina nada."
+  ],
+  "referencia": "Clase 13, «Discretizar»"
+ },
+ {
+  "id": "CAL-42",
+  "tema": "CAL",
+  "subtema": "Reestructurar",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "Al armar el triángulo con pivot desde el registro en formato largo, algunas celdas quedan NaN. ¿Cómo deben interpretarse?",
+  "opciones": [
+   "Como datos faltantes que hay que imputar",
+   "Como información que todavía no ocurrió (desarrollo futuro); confundirlos con faltantes es uno de los errores más caros en el cálculo de reservas",
+   "Como ceros",
+   "Como errores de carga"
+  ],
+  "correcta": 1,
+  "explicacion": "En un triángulo, la parte inferior derecha corresponde a desarrollos futuros: no son faltantes, sino lo que se va a estimar.",
+  "por_que_no": [
+   "Imputarlos distorsionaría la reserva.",
+   "",
+   "Tratarlos como cero subestimaría la reserva.",
+   "No son errores."
+  ],
+  "referencia": "Clase 13, «Reestructurar: del registro al triángulo»"
+ },
+ {
+  "id": "CAL-43",
+  "tema": "CAL",
+  "subtema": "Reestructurar",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Al apilar archivos mensuales con pd.concat([enero, febrero], ignore_index=True), ¿qué tres verificaciones recomienda la clase?",
+  "opciones": [
+   "Que estén ordenados, que tengan índice y que no tengan nulos",
+   "Que tengan las mismas columnas con el mismo nombre, que los tipos coincidan y que la suma de filas parciales sea igual al total resultante",
+   "Que pesen lo mismo, que sean CSV y que tengan fecha",
+   "Ninguna"
+  ],
+  "correcta": 1,
+  "explicacion": "merge agrega columnas y concat agrega filas. Si una columna cambia de nombre o de tipo entre meses, el resultado se rompe en silencio (por ejemplo, la columna se vuelve texto).",
+  "por_que_no": [
+   "No son las verificaciones propuestas.",
+   "",
+   "No son las verificaciones propuestas.",
+   "La clase recomienda verificar."
+  ],
+  "referencia": "Clase 13, «Apilar períodos: concat»"
+ },
+ {
+  "id": "CAL-44",
+  "tema": "CAL",
+  "subtema": "Cruces con control",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Para qué sirven indicator=True y validate=\"many_to_one\" en un merge?",
+  "opciones": [
+   "Para ordenar y deduplicar",
+   "indicator informa de dónde vino cada fila (both, left_only, right_only); validate verifica la cardinalidad esperada y falla si el padrón tiene claves repetidas, en lugar de duplicar filas en silencio",
+   "Para convertir tipos",
+   "Para acelerar el cruce"
+  ],
+  "correcta": 1,
+  "explicacion": "Son controles del cruce: uno permite contar las filas sin pareja y el otro garantiza la relación declarada (muchas pólizas a un asegurado).",
+  "por_que_no": [
+   "No ordenan ni deduplican.",
+   "",
+   "No convierten tipos.",
+   "Su objetivo es el control, no la velocidad."
+  ],
+  "referencia": "Clase 13, «Cruzar con control»"
+ },
+ {
+  "id": "CAL-45",
+  "tema": "CAL",
+  "subtema": "Pipeline",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué ventaja tiene encadenar la limpieza con .pipe(...) usando funciones con nombre?",
+  "opciones": [
+   "Ninguna",
+   "Cada paso se prueba por separado, la cadena describe el proceso completo y, si llega una base nueva con los mismos problemas, se ejecuta la misma cadena",
+   "Elimina la necesidad de documentar",
+   "Modifica el archivo original"
+  ],
+  "correcta": 1,
+  "explicacion": "Es la ventaja decisiva sobre la limpieza manual: un proceso reproducible y legible de arriba hacia abajo.",
+  "por_que_no": [
+   "Es una práctica recomendada.",
+   "",
+   "La documentación sigue siendo necesaria.",
+   "El original nunca se modifica."
+  ],
+  "referencia": "Clase 13, «Encadenar las transformaciones»"
+ },
+ {
+  "id": "CAL-46",
+  "tema": "CAL",
+  "subtema": "Reconciliación",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Antes de limpiar, el monto total era 10.634.999; después, 10.574.999. ¿Qué pide la clase hacer con esa diferencia?",
+  "opciones": [
+   "Ignorarla",
+   "Cuantificarla y explicarla: aquí son 60.000 que corresponden a la fila duplicada eliminada",
+   "Ajustar los montos para que coincidan",
+   "Volver a cargar la base"
+  ],
+  "correcta": 1,
+  "explicacion": "Toda limpieza cambia los datos y hay que reconciliar: filas, totales monetarios, nulos y categorías antes y después, con cada diferencia explicada.",
+  "por_que_no": [
+   "Toda diferencia debe explicarse.",
+   "",
+   "Forzar la coincidencia oculta el cambio.",
+   "No es necesario si la diferencia está explicada."
+  ],
+  "referencia": "Clase 13, «Reconciliar después de limpiar»"
+ },
+ {
+  "id": "CAL-47",
+  "tema": "CAL",
+  "subtema": "Documentación",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Qué diferencia hay entre el diccionario de datos y el registro de tratamiento?",
+  "opciones": [
+   "Son lo mismo",
+   "El diccionario describe cada campo (nombre, tipo, unidad, valores admitidos, significado, fuente); el registro documenta cada transformación (qué regla, a cuántos registros afectó y con qué criterio)",
+   "El diccionario es un objeto de Python",
+   "El registro solo lista los errores de código"
+  ],
+  "correcta": 1,
+  "explicacion": "Ambos acompañan a toda base limpia. Ejemplo de línea del registro: «Se convirtieron en faltantes las edades fuera de 18–110: 2 de 8 registros (25 %). No se imputaron.»",
+  "por_que_no": [
+   "Documentan cosas distintas.",
+   "",
+   "Es un documento, no necesariamente un dict.",
+   "Documenta transformaciones de datos, no errores de código."
+  ],
+  "referencia": "Clase 13, «Documentar el proceso»"
+ },
+ {
+  "id": "CAL-48",
+  "tema": "CAL",
+  "subtema": "Cuándo detenerse",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Cuándo debe detenerse la limpieza de una base, según la clase?",
+  "opciones": [
+   "Cuando no quede ningún faltante",
+   "Cuando la base es suficiente para el uso previsto, criterio que se fija antes de empezar; si tratar un problema de otra forma razonable no cambia el resultado, no vale la pena seguir",
+   "Nunca",
+   "Cuando se acaba el tiempo"
+  ],
+  "correcta": 1,
+  "explicacion": "Una alternativa honesta es cuantificar el problema remanente y declararlo como limitación, o analizar por separado el subconjunto problemático y reportar ambos resultados.",
+  "por_que_no": [
+   "Una base sin faltantes puede ser imposible e innecesaria.",
+   "",
+   "Hay un criterio de suficiencia.",
+   "El criterio se fija en función del uso."
+  ],
+  "referencia": "Clase 13, «¿Cuándo detenerse?»"
+ }
+]

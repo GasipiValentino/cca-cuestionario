@@ -1,0 +1,1392 @@
+[
+ {
+  "id": "CTL-01",
+  "tema": "CTL",
+  "subtema": "Concepto",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué son las estructuras de control?",
+  "opciones": [
+   "Instrucciones que permiten controlar el flujo de ejecución de un programa según condiciones evaluadas en tiempo de ejecución",
+   "Tipos de datos especiales para guardar condiciones",
+   "Librerías para graficar resultados",
+   "Comentarios que documentan el código"
+  ],
+  "correcta": 0,
+  "explicacion": "Las estructuras de control permiten que un programa se comporte distinto según los datos, repita cálculos y se detenga cuando se cumple un criterio. Sin ellas, sería una lista de instrucciones que se ejecutan una vez y en orden.",
+  "por_que_no": [
+   "",
+   "Los booleanos son un tipo de dato; las estructuras de control usan esas condiciones para decidir el flujo.",
+   "Graficar es tarea de librerías como matplotlib.",
+   "Los comentarios no se ejecutan."
+  ],
+  "referencia": "Clase 10 – Estructuras de Control, «¿Qué es una estructura de control?»"
+ },
+ {
+  "id": "CTL-02",
+  "tema": "CTL",
+  "subtema": "Concepto",
+  "dificultad": "facil",
+  "tipo": "comprension",
+  "enunciado": "La clase traduce los pilares del pensamiento computacional a código. ¿Qué correspondencia es correcta?",
+  "opciones": [
+   "Decidir → for; Repetir → if",
+   "Decidir → if/elif/else; Repetir → for/while; Interrumpir → break/continue; Reutilizar → def",
+   "Interrumpir → def; Reutilizar → while",
+   "Repetir → return; Decidir → pass"
+  ],
+  "correcta": 1,
+  "explicacion": "Un algoritmo actuarial combina casi siempre cuatro piezas: decidir (if), repetir (for, while), interrumpir (break, continue) y encapsular para reutilizar (def).",
+  "por_que_no": [
+   "Los roles están invertidos.",
+   "",
+   "def encapsula y while repite.",
+   "return sale de una función y pass no hace nada."
+  ],
+  "referencia": "Clase 10, «Del pensamiento computacional al código»"
+ },
+ {
+  "id": "CTL-03",
+  "tema": "CTL",
+  "subtema": "Sintaxis",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cómo delimita Python los bloques de código, a diferencia de R?",
+  "opciones": [
+   "Con llaves { }, igual que R",
+   "Con indentación (4 espacios por convención) y la línea de encabezado termina en dos puntos",
+   "Con la palabra end al final del bloque",
+   "Con paréntesis"
+  ],
+  "correcta": 1,
+  "explicacion": "En R los bloques se delimitan con llaves. En Python se usa la indentación, que es parte del lenguaje, y el encabezado termina con «:».",
+  "por_que_no": [
+   "Python no usa llaves para los bloques.",
+   "",
+   "Python no usa end.",
+   "Los paréntesis agrupan expresiones; no delimitan bloques."
+  ],
+  "referencia": "Clase 10, «La indentación: la sintaxis de Python»"
+ },
+ {
+  "id": "CTL-04",
+  "tema": "CTL",
+  "subtema": "Sintaxis",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué error se produce si la indentación de un bloque es inconsistente?",
+  "opciones": [
+   "RecursionError",
+   "IndentationError",
+   "ZeroDivisionError",
+   "KeyError"
+  ],
+  "correcta": 1,
+  "explicacion": "La indentación no es un detalle estético: un espacio de más o de menos cambia el significado del programa o genera un IndentationError.",
+  "por_que_no": [
+   "Aparece con una recursión sin caso base.",
+   "",
+   "Aparece al dividir por cero.",
+   "Aparece al buscar una clave inexistente en un diccionario."
+  ],
+  "referencia": "Clase 10, «La indentación»; Guía – Estructuras de Control, «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-05",
+  "tema": "CTL",
+  "subtema": "Sintaxis",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "Según la tabla de la clase, ¿cuál es el equivalente en R de continue de Python?",
+  "opciones": [
+   "break",
+   "next",
+   "pass",
+   "return()"
+  ],
+  "correcta": 1,
+  "explicacion": "La lógica es idéntica y cambia la sintaxis: el continue de Python se escribe next en R. pass no tiene equivalente en la tabla.",
+  "por_que_no": [
+   "break existe en ambos lenguajes con el mismo nombre e interrumpe el ciclo.",
+   "",
+   "La tabla indica que pass no tiene equivalente en R.",
+   "return() sale de una función."
+  ],
+  "referencia": "Clase 10, «Operadores estructurales: panorama»"
+ },
+ {
+  "id": "CTL-06",
+  "tema": "CTL",
+  "subtema": "Operadores lógicos",
+  "dificultad": "facil",
+  "tipo": "aplicacion",
+  "enunciado": "Si p = True y q = False, ¿qué valen p and q, p or q y not p?",
+  "opciones": [
+   "False, True, False",
+   "True, True, False",
+   "False, False, True",
+   "True, False, True"
+  ],
+  "correcta": 0,
+  "explicacion": "and exige ambas (False), or exige al menos una (True) y not niega (not True = False).",
+  "por_que_no": [
+   "",
+   "p and q es False porque q es False.",
+   "p or q es True porque p es True.",
+   "Los tres valores son incorrectos."
+  ],
+  "referencia": "Clase 10, «Operadores lógicos y tablas de verdad»"
+ },
+ {
+  "id": "CTL-07",
+  "tema": "CTL",
+  "subtema": "Condiciones compuestas",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve tarifa_preferencial(28, True, 0)?",
+  "codigo": "def tarifa_preferencial(edad, fumador, siniestros_previos):\n    return edad < 35 and not fumador and siniestros_previos == 0",
+  "opciones": [
+   "True",
+   "False",
+   "None",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "edad < 35 es True y siniestros_previos == 0 es True, pero not fumador es not True = False. Con and, basta un False para que el resultado sea False.",
+  "por_que_no": [
+   "Falla la condición de no fumar.",
+   "",
+   "La función devuelve un booleano.",
+   "El código es válido."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 3"
+ },
+ {
+  "id": "CTL-08",
+  "tema": "CTL",
+  "subtema": "if/elif/else",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué segmento se asigna?",
+  "codigo": "suma_asegurada = 62_000_000\nif suma_asegurada >= 100_000_000:\n    segmento = \"Corporativa\"\nelif suma_asegurada >= 50_000_000:\n    segmento = \"Premium\"\nelif suma_asegurada >= 10_000_000:\n    segmento = \"Intermedia\"\nelse:\n    segmento = \"Estándar\"",
+  "opciones": [
+   "Corporativa",
+   "Premium",
+   "Intermedia",
+   "Estándar"
+  ],
+  "correcta": 1,
+  "explicacion": "La primera condición (≥ 100 M) es falsa y la segunda (≥ 50 M) es verdadera, así que asigna «Premium» y corta la evaluación.",
+  "por_que_no": [
+   "62 M no alcanza 100 M.",
+   "",
+   "También se cumple ≥ 10 M, pero la evaluación ya se cortó en la rama anterior.",
+   "Solo se llega al else si ninguna condición se cumple."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Segmentación descriptiva de una póliza»"
+ },
+ {
+  "id": "CTL-09",
+  "tema": "CTL",
+  "subtema": "if/elif/else",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Alguien reescribe la segmentación con las condiciones en orden inverso. ¿Qué pasa con una póliza de 120 millones?",
+  "codigo": "if suma_asegurada >= 10_000_000:\n    segmento = \"Intermedia\"\nelif suma_asegurada >= 50_000_000:\n    segmento = \"Premium\"\nelif suma_asegurada >= 100_000_000:\n    segmento = \"Corporativa\"",
+  "opciones": [
+   "Se clasifica como «Corporativa»",
+   "Se clasifica como «Intermedia»: la primera condición, demasiado amplia, se cumple y corta la cadena",
+   "Se clasifica en las tres categorías",
+   "Da error"
+  ],
+  "correcta": 1,
+  "explicacion": "El orden importa: la primera condición que se cumple corta la evaluación. Hay que ir de la condición más restrictiva a la más amplia.",
+  "por_que_no": [
+   "Nunca llega a evaluar la rama «Corporativa».",
+   "",
+   "if/elif asigna un solo camino.",
+   "El código es válido; el error es lógico."
+  ],
+  "referencia": "Clase 10, «Estructura de decisión: if / elif / else»; Guía, «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-10",
+  "tema": "CTL",
+  "subtema": "Condiciones compuestas",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve clasificar_riesgo(44, True, 5)?",
+  "codigo": "def clasificar_riesgo(edad, fumador, siniestros_previos):\n    if edad >= 65 or siniestros_previos >= 3:\n        return \"Riesgo alto\"\n    elif fumador and edad >= 45:\n        return \"Riesgo medio\"\n    else:\n        return \"Riesgo estándar\"",
+  "opciones": [
+   "Riesgo alto",
+   "Riesgo medio",
+   "Riesgo estándar",
+   "None"
+  ],
+  "correcta": 0,
+  "explicacion": "La primera condición usa or: aunque la edad sea menor a 65, siniestros_previos >= 3 es True (5 ≥ 3). Devuelve «Riesgo alto».",
+  "por_que_no": [
+   "",
+   "No llega a evaluarse la segunda rama y, además, 44 no es ≥ 45.",
+   "La primera condición ya se cumplió.",
+   "Todas las ramas devuelven un valor."
+  ],
+  "referencia": "Clase 10, «Ejemplo actuarial: clasificación de riesgo»"
+ },
+ {
+  "id": "CTL-11",
+  "tema": "CTL",
+  "subtema": "Condiciones compuestas",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué devuelve clasificar_riesgo(45, True, 0)?",
+  "opciones": [
+   "Riesgo alto",
+   "Riesgo medio",
+   "Riesgo estándar",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "45 < 65 y 0 < 3, así que la primera rama es False. fumador and edad >= 45 es True and True. Devuelve «Riesgo medio».",
+  "por_que_no": [
+   "No cumple edad ≥ 65 ni siniestros ≥ 3.",
+   "",
+   "Cumple la segunda condición.",
+   "El código es válido."
+  ],
+  "referencia": "Clase 10, «Ejemplo actuarial: clasificación de riesgo»",
+  "codigo": "def clasificar_riesgo(edad, fumador, siniestros_previos):\n    if edad >= 65 or siniestros_previos >= 3:\n        return \"Riesgo alto\"\n    elif fumador and edad >= 45:\n        return \"Riesgo medio\"\n    else:\n        return \"Riesgo estándar\""
+ },
+ {
+  "id": "CTL-12",
+  "tema": "CTL",
+  "subtema": "Tarifación",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Cuánto devuelve prima_anual(60_000_000, 40)?",
+  "codigo": "def prima_anual(suma_asegurada, edad, fumador=False, tasa_base=0.0025):\n    prima = suma_asegurada * tasa_base\n    if edad >= 60:\n        prima = prima * 1.50\n    elif edad >= 40:\n        prima = prima * 1.20\n    if fumador:\n        prima = prima * 1.35\n    if suma_asegurada > 50_000_000:\n        prima = prima * 0.95\n    return round(prima, 2)",
+  "opciones": [
+   "150000.0",
+   "180000.0",
+   "171000.0",
+   "142500.0"
+  ],
+  "correcta": 2,
+  "explicacion": "Base: 60.000.000 × 0,0025 = 150.000. Por edad 40 a 59: × 1,20 = 180.000. No fuma. Suma > 50 M: × 0,95 = 171.000.",
+  "por_que_no": [
+   "Falta aplicar el recargo por edad y el descuento por volumen.",
+   "Falta aplicar el descuento por volumen (suma > 50 M).",
+   "",
+   "Aplica el descuento pero omite el recargo por edad (edad ≥ 40)."
+  ],
+  "referencia": "Clase 10, «Ejemplo actuarial: tarifación con recargos»"
+ },
+ {
+  "id": "CTL-13",
+  "tema": "CTL",
+  "subtema": "Tarifación",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿Cuánto devuelve prima_anual(10_000_000, 65, True)?",
+  "opciones": [
+   "25000.0",
+   "37500.0",
+   "50625.0",
+   "48093.75"
+  ],
+  "correcta": 2,
+  "explicacion": "Base: 10.000.000 × 0,0025 = 25.000. Edad ≥ 60: × 1,5 = 37.500. Fumador: × 1,35 = 50.625. La suma no supera 50 M, así que no hay descuento.",
+  "por_que_no": [
+   "Es solo la prima base.",
+   "Falta el recargo por fumador.",
+   "",
+   "Aplica un descuento por volumen que no corresponde (10 M no supera 50 M)."
+  ],
+  "referencia": "Clase 10, «Ejemplo actuarial: tarifación con recargos»",
+  "codigo": "def prima_anual(suma_asegurada, edad, fumador=False, tasa_base=0.0025):\n    prima = suma_asegurada * tasa_base\n    if edad >= 60:\n        prima = prima * 1.50\n    elif edad >= 40:\n        prima = prima * 1.20\n    if fumador:\n        prima = prima * 1.35\n    if suma_asegurada > 50_000_000:\n        prima = prima * 0.95\n    return round(prima, 2)"
+ },
+ {
+  "id": "CTL-14",
+  "tema": "CTL",
+  "subtema": "Tarifación",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Por qué en prima_anual los recargos por edad usan if/elif y los de hábito (fumador) y volumen usan if independientes?",
+  "opciones": [
+   "Por estilo; da lo mismo",
+   "Porque las franjas de edad son excluyentes (corresponde un solo recargo), mientras que fumar y tener suma alta son condiciones que pueden acumularse",
+   "Porque elif es más rápido",
+   "Porque Python no admite más de un elif"
+  ],
+  "correcta": 1,
+  "explicacion": "Las categorías de edad deben ser mutuamente excluyentes: con if independientes, alguien de 65 recibiría ambos recargos (1,5 × 1,2). El hábito y el volumen son independientes y pueden aplicarse a la vez.",
+  "por_que_no": [
+   "Cambia el resultado, no solo el estilo.",
+   "",
+   "La elección es lógica, no de rendimiento.",
+   "Python admite múltiples elif."
+  ],
+  "referencia": "Clase 10, «Tarifación con recargos – Para discutir»; Guía, Actividad 4"
+ },
+ {
+  "id": "CTL-15",
+  "tema": "CTL",
+  "subtema": "Tarifación",
+  "dificultad": "dificil",
+  "tipo": "error",
+  "enunciado": "Un analista escribe los recargos por edad con dos if independientes. ¿Qué factor total por edad recibe una persona de 65 años?",
+  "codigo": "if edad >= 60:\n    prima = prima * 1.50\nif edad >= 40:\n    prima = prima * 1.20",
+  "opciones": [
+   "1,50",
+   "1,20",
+   "1,80",
+   "2,70"
+  ],
+  "correcta": 2,
+  "explicacion": "Con if independientes se evalúan ambas condiciones. A los 65 se cumplen las dos: 1,50 × 1,20 = 1,80. Es el error de «escribir varios if independientes cuando las categorías deberían ser excluyentes».",
+  "por_que_no": [
+   "Sería el resultado correcto con elif.",
+   "Solo aplicaría si fallara la primera condición.",
+   "",
+   "Los factores se multiplican, no se suman (1,5 + 1,2 = 2,7)."
+  ],
+  "referencia": "Clase 10, «Errores frecuentes con condicionales»"
+ },
+ {
+  "id": "CTL-16",
+  "tema": "CTL",
+  "subtema": "Clasificación",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "monto = 145_000\nprima = 180_000\nratio = monto / prima\nif ratio < 0.5:\n    resultado = \"favorable\"\nelif ratio <= 1:\n    resultado = \"ajustado\"\nelse:\n    resultado = \"desfavorable\"\nprint(resultado)",
+  "opciones": [
+   "favorable",
+   "ajustado",
+   "desfavorable",
+   "0.806"
+  ],
+  "correcta": 1,
+  "explicacion": "ratio = 145.000 / 180.000 ≈ 0,806. No es < 0,5, pero sí ≤ 1: «ajustado».",
+  "por_que_no": [
+   "0,806 no es menor que 0,5.",
+   "",
+   "Solo sería desfavorable si el ratio superara 1.",
+   "Se imprime la clasificación, no el número."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 2"
+ },
+ {
+  "id": "CTL-17",
+  "tema": "CTL",
+  "subtema": "Franquicia",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "La indemnización es I(X) = min(max(X − d, 0), M). Con deducible d = 10.000 y tope M = 500.000, ¿cuánto paga la compañía por siniestros de 5.000, 80.000 y 900.000?",
+  "opciones": [
+   "0; 70.000; 500.000",
+   "5.000; 80.000; 900.000",
+   "0; 80.000; 890.000",
+   "−5.000; 70.000; 890.000"
+  ],
+  "correcta": 0,
+  "explicacion": "5.000 ≤ deducible: paga 0. 80.000 − 10.000 = 70.000, que no supera el tope. 900.000 − 10.000 = 890.000 supera el tope: paga 500.000.",
+  "por_que_no": [
+   "",
+   "No descuenta el deducible ni aplica el tope.",
+   "No aplica el tope y no descuenta el deducible en 80.000.",
+   "El max(…, 0) impide pagos negativos y el tope limita el pago."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 5"
+ },
+ {
+  "id": "CTL-18",
+  "tema": "CTL",
+  "subtema": "Franquicia",
+  "dificultad": "dificil",
+  "tipo": "comprension",
+  "enunciado": "¿Qué rol cumple max(X − d, 0) en la fórmula I(X) = min(max(X − d, 0), M)?",
+  "opciones": [
+   "Asegura que la compañía nunca pague más que el tope",
+   "Asegura que, si el siniestro no supera el deducible, el pago sea 0 y no un valor negativo",
+   "Suma el deducible al siniestro",
+   "Convierte el resultado en entero"
+  ],
+  "correcta": 1,
+  "explicacion": "Si X ≤ d, X − d es negativo o cero y max devuelve 0. Equivale a la rama «if siniestro <= deducible: return 0». El tope lo controla min(…, M).",
+  "por_que_no": [
+   "Eso lo hace min(…, M).",
+   "",
+   "Lo resta, no lo suma.",
+   "No modifica el tipo."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 5"
+ },
+ {
+  "id": "CTL-19",
+  "tema": "CTL",
+  "subtema": "Errores frecuentes",
+  "dificultad": "facil",
+  "tipo": "error",
+  "enunciado": "¿Qué produce el siguiente código?",
+  "codigo": "edad = 40\nif edad = 40:\n    print(\"Cuarenta\")",
+  "opciones": [
+   "Imprime «Cuarenta»",
+   "No imprime nada",
+   "SyntaxError, porque dentro de la condición se usa = (asignación) en lugar de == (comparación)",
+   "IndentationError"
+  ],
+  "correcta": 2,
+  "explicacion": "Usar = en lugar de == en una condición produce un SyntaxError. Consejo de la guía: leer la condición en voz alta («es igual a»).",
+  "por_que_no": [
+   "El código no llega a ejecutarse.",
+   "No se ejecuta: el error es de sintaxis.",
+   "",
+   "La indentación es correcta."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 27 (a) y «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-20",
+  "tema": "CTL",
+  "subtema": "Errores frecuentes",
+  "dificultad": "facil",
+  "tipo": "error",
+  "enunciado": "¿Qué error se produce si se olvidan los dos puntos al final de if edad >= 18?",
+  "opciones": [
+   "SyntaxError",
+   "TypeError",
+   "ValueError",
+   "No hay error"
+  ],
+  "correcta": 0,
+  "explicacion": "Toda línea de encabezado (if, elif, else, for, while, def) debe terminar en «:». Si falta, Python informa un SyntaxError.",
+  "por_que_no": [
+   "",
+   "TypeError aparece al operar tipos incompatibles.",
+   "ValueError aparece con valores inválidos para una operación.",
+   "Es obligatorio terminar el encabezado con «:»."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-21",
+  "tema": "CTL",
+  "subtema": "for vs while",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Cuál es la regla práctica para elegir entre for y while?",
+  "opciones": [
+   "for para textos, while para números",
+   "Si puedo responder «¿cuántas veces?» antes de empezar, uso for; si la respuesta es «hasta que pase tal cosa», uso while",
+   "while siempre es más rápido",
+   "for solo sirve con range"
+  ],
+  "correcta": 1,
+  "explicacion": "for repite una cantidad determinada de veces o recorre una secuencia. while repite mientras se cumpla una condición, cuando no se sabe de antemano cuántas iteraciones harán falta.",
+  "por_que_no": [
+   "Ambos sirven para cualquier tipo de dato.",
+   "",
+   "La elección no depende de la velocidad.",
+   "for recorre cualquier secuencia: listas, cadenas, enumerate, zip."
+  ],
+  "referencia": "Clase 10, «Estructuras de repetición»"
+ },
+ {
+  "id": "CTL-22",
+  "tema": "CTL",
+  "subtema": "for vs while",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "¿Qué estructura conviene para «iterar hasta que una tasa converja»?",
+  "opciones": [
+   "for",
+   "while",
+   "for + break obligatoriamente",
+   "if"
+  ],
+  "correcta": 1,
+  "explicacion": "No se sabe de antemano cuántas iteraciones harán falta para converger: es el caso de uso de while, como en la TIR por bisección.",
+  "por_que_no": [
+   "for requiere conocer la cantidad de iteraciones o la secuencia a recorrer.",
+   "",
+   "for + break se recomienda para «buscar el primer año con déficit».",
+   "if no repite."
+  ],
+  "referencia": "Clase 10, «for vs while: cómo elegir»"
+ },
+ {
+  "id": "CTL-23",
+  "tema": "CTL",
+  "subtema": "for vs while",
+  "dificultad": "media",
+  "tipo": "aplicacion",
+  "enunciado": "Según la tabla de la clase, ¿qué estructura se usa para «buscar el primer año con déficit»?",
+  "opciones": [
+   "while sin condición de salida",
+   "for + break",
+   "Solo if",
+   "pass"
+  ],
+  "correcta": 1,
+  "explicacion": "Se recorren los años con for y se interrumpe con break en cuanto aparece el primer déficit.",
+  "por_que_no": [
+   "Un while sin salida es un bucle infinito.",
+   "",
+   "if no recorre los años.",
+   "pass no hace nada."
+  ],
+  "referencia": "Clase 10, «for vs while: cómo elegir»"
+ },
+ {
+  "id": "CTL-24",
+  "tema": "CTL",
+  "subtema": "for vs while",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Qué afirma la clase sobre la relación entre for y while?",
+  "opciones": [
+   "Son intercambiables en todos los casos sin ninguna ventaja",
+   "Todo for puede escribirse como while, pero el for es más legible y no corre riesgo de quedar en un ciclo infinito",
+   "while es siempre más legible",
+   "for no puede recorrer listas"
+  ],
+  "correcta": 1,
+  "explicacion": "La equivalencia existe, pero for avanza automáticamente sobre la secuencia: es más legible y no puede quedar en un ciclo infinito por olvidar actualizar la variable.",
+  "por_que_no": [
+   "for tiene ventajas de legibilidad y seguridad.",
+   "",
+   "La clase dice lo contrario.",
+   "for recorre directamente los elementos de una lista."
+  ],
+  "referencia": "Clase 10, «for vs while: cómo elegir»"
+ },
+ {
+  "id": "CTL-25",
+  "tema": "CTL",
+  "subtema": "while",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código y cuánto vale count al terminar?",
+  "codigo": "count = 0\nwhile count < 5:\n    print(count)\n    count += 1",
+  "opciones": [
+   "Imprime 0 a 4; count termina en 5",
+   "Imprime 0 a 5; count termina en 5",
+   "Imprime 1 a 5; count termina en 5",
+   "Imprime 0 a 4; count termina en 4"
+  ],
+  "correcta": 0,
+  "explicacion": "La condición se evalúa antes de cada iteración. Se imprime 0, 1, 2, 3, 4; cuando count vale 5 la condición es falsa y el ciclo termina.",
+  "por_que_no": [
+   "",
+   "Con count = 5 no se entra al cuerpo.",
+   "Se imprime antes de incrementar, así que empieza en 0.",
+   "Después de imprimir 4 se incrementa a 5."
+  ],
+  "referencia": "Clase 10, «while: ejemplo introductorio»"
+ },
+ {
+  "id": "CTL-27",
+  "tema": "CTL",
+  "subtema": "while",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Un capital de 100.000 se capitaliza al 7 % anual. ¿Qué imprime el código?",
+  "codigo": "capital = 100_000\nobjetivo = 200_000\ni = 0.07\nt = 0\nwhile capital < objetivo:\n    capital = capital * (1 + i)\n    t += 1\nprint(\"Años necesarios:\", t)",
+  "opciones": [
+   "Años necesarios: 10",
+   "Años necesarios: 11",
+   "Años necesarios: 14",
+   "Años necesarios: 7"
+  ],
+  "correcta": 1,
+  "explicacion": "Analíticamente t = ln(2) / ln(1,07) ≈ 10,24. Como se cuentan años completos, el capital supera los 200.000 recién en el año 11 (≈ 210.485).",
+  "por_que_no": [
+   "Al cabo de 10 años el capital todavía es menor que 200.000.",
+   "",
+   "Sobrestima: 1,07^11 ya supera 2.",
+   "Subestima mucho."
+  ],
+  "referencia": "Clase 10, «while: ¿en cuántos años duplico el capital?»"
+ },
+ {
+  "id": "CTL-28",
+  "tema": "CTL",
+  "subtema": "while",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "Un fondo de 1.000.000 se capitaliza al 5 % y se retiran 120.000 al final de cada año. ¿En qué año se agota?",
+  "codigo": "fondo = 1_000_000\nanio = 0\nwhile fondo > 0:\n    fondo = fondo * 1.05 - 120_000\n    anio += 1\n    if anio > 100:\n        break\nprint(anio)",
+  "opciones": [
+   "8",
+   "10",
+   "12",
+   "Nunca se agota"
+  ],
+  "correcta": 2,
+  "explicacion": "El código de la clase informa que el fondo se agota en el año 12. El interés del primer año (50.000) es menor que el retiro, así que el saldo cae año tras año hasta volverse negativo.",
+  "por_que_no": [
+   "El fondo dura más de 8 años.",
+   "El fondo dura más de 10 años.",
+   "",
+   "El retiro supera al interés, así que el fondo decrece y se agota."
+  ],
+  "referencia": "Clase 10, «while: agotamiento de un fondo de retiro»"
+ },
+ {
+  "id": "CTL-29",
+  "tema": "CTL",
+  "subtema": "Bucles infinitos",
+  "dificultad": "media",
+  "tipo": "caso",
+  "enunciado": "Un fondo de 1.000.000 se capitaliza al 5 % anual y se retiran 40.000 al final de cada año. Sin ninguna red de seguridad, ¿qué ocurre con el ciclo?",
+  "opciones": [
+   "El fondo se agota en unos 30 años",
+   "El ciclo nunca termina: el interés (50.000 el primer año) supera al retiro, el fondo crece y la condición nunca se vuelve falsa",
+   "Python detiene el ciclo automáticamente a las 100 iteraciones",
+   "Da error de sintaxis"
+  ],
+  "correcta": 1,
+  "explicacion": "Con un retiro menor que el interés, el fondo crece todos los años: es un bucle infinito. Las defensas son verificar que la variable de control avance hacia la salida, poner un contador máximo con break o interrumpir con Ctrl + C o deteniendo el kernel.",
+  "por_que_no": [
+   "El fondo crece; nunca se agota.",
+   "",
+   "Python no impone un límite: el límite de 100 en el código de clase es una red de seguridad agregada a mano.",
+   "La sintaxis es válida; el problema es lógico."
+  ],
+  "referencia": "Clase 10, «Cuidado con los bucles infinitos»; Guía, Actividad 13",
+  "codigo": "fondo = 1_000_000\nwhile fondo > 0:\n    fondo = fondo * 1.05 - 40_000"
+ },
+ {
+  "id": "CTL-30",
+  "tema": "CTL",
+  "subtema": "Bucles infinitos",
+  "dificultad": "facil",
+  "tipo": "error",
+  "enunciado": "¿Qué produce este código?",
+  "codigo": "t = 0\nwhile t < 10:\n    print(t)",
+  "opciones": [
+   "Imprime 0 a 9",
+   "Imprime 0 una sola vez",
+   "Un ciclo infinito que imprime 0 sin parar, porque la variable de control nunca se actualiza",
+   "SyntaxError"
+  ],
+  "correcta": 2,
+  "explicacion": "Falta t += 1. Si la variable de control nunca se actualiza, la condición sigue siendo verdadera y el bucle no termina.",
+  "por_que_no": [
+   "Para eso falta incrementar t.",
+   "La condición sigue siendo verdadera en cada vuelta.",
+   "",
+   "La sintaxis es correcta."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 27 (b)"
+ },
+ {
+  "id": "CTL-31",
+  "tema": "CTL",
+  "subtema": "break, continue, pass",
+  "dificultad": "facil",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál es la diferencia entre break y continue?",
+  "opciones": [
+   "Son equivalentes",
+   "break interrumpe el ciclo por completo; continue abandona la iteración actual y pasa a la siguiente",
+   "continue interrumpe el ciclo; break salta una iteración",
+   "break sale de la función y continue del programa"
+  ],
+  "correcta": 1,
+  "explicacion": "break sale del ciclo y sigue con la línea posterior al bucle. continue salta al comienzo de la siguiente iteración.",
+  "por_que_no": [
+   "Tienen efectos distintos.",
+   "",
+   "Los roles están invertidos.",
+   "Para salir de una función se usa return."
+  ],
+  "referencia": "Clase 10, «break, continue y pass»"
+ },
+ {
+  "id": "CTL-32",
+  "tema": "CTL",
+  "subtema": "break, continue, pass",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Para qué sirve pass?",
+  "opciones": [
+   "Para interrumpir el ciclo",
+   "Para saltear la iteración",
+   "No hace nada: es un marcador de lugar donde la sintaxis exige un bloque",
+   "Para devolver un valor"
+  ],
+  "correcta": 2,
+  "explicacion": "pass no ejecuta ninguna acción. Se usa cuando la sintaxis requiere un bloque que todavía no se escribió.",
+  "por_que_no": [
+   "Eso lo hace break.",
+   "Eso lo hace continue.",
+   "",
+   "Eso lo hace return."
+  ],
+  "referencia": "Clase 10, «break, continue y pass»"
+ },
+ {
+  "id": "CTL-33",
+  "tema": "CTL",
+  "subtema": "break, continue, pass",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime la revisión de cartera?",
+  "codigo": "cartera = [\n  {\"id\": 1, \"estado\": \"vigente\", \"siniestro\": 120_000},\n  {\"id\": 2, \"estado\": \"anulada\", \"siniestro\": 980_000},\n  {\"id\": 3, \"estado\": \"vigente\", \"siniestro\": 60_000},\n  {\"id\": 4, \"estado\": \"vigente\", \"siniestro\": 1_500_000},\n  {\"id\": 5, \"estado\": \"vigente\", \"siniestro\": 300_000},\n]\nfor p in cartera:\n    if p[\"estado\"] == \"anulada\":\n        continue\n    if p[\"siniestro\"] > 1_000_000:\n        print(\"Caso para reaseguro:\", p[\"id\"])\n        break\n    print(\"Revisada la póliza\", p[\"id\"])",
+  "opciones": [
+   "Revisada 1, Revisada 2, Revisada 3, Caso para reaseguro: 4",
+   "Revisada 1, Revisada 3, Caso para reaseguro: 4",
+   "Revisada 1, Revisada 3, Caso para reaseguro: 4, Revisada 5",
+   "Caso para reaseguro: 2"
+  ],
+  "correcta": 1,
+  "explicacion": "La póliza 2 está anulada y continue la saltea. La 4 supera el tope catastrófico: se imprime el caso y break detiene la revisión, por lo que la 5 nunca se revisa.",
+  "por_que_no": [
+   "La póliza 2 se saltea con continue.",
+   "",
+   "break corta el ciclo antes de llegar a la 5.",
+   "La anulada se saltea antes de evaluar el monto."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Revisión de una cartera»; Clase 10"
+ },
+ {
+  "id": "CTL-34",
+  "tema": "CTL",
+  "subtema": "break, continue, pass",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "En la revisión de cartera de la clase se reemplazó el break por continue. ¿Qué se imprime ahora?",
+  "opciones": [
+   "Revisada 1, Revisada 3, Caso para reaseguro: 4",
+   "Revisada 1, Revisada 3, Caso para reaseguro: 4, Revisada 5",
+   "Revisada 1, Revisada 3, Caso para reaseguro: 4, Revisada la póliza 4, Revisada 5",
+   "Revisada 1, Revisada 2, Revisada 3, Revisada 4, Revisada 5"
+  ],
+  "correcta": 1,
+  "explicacion": "Con continue, tras imprimir el caso de la póliza 4 se saltea el resto de esa iteración (no se imprime «Revisada la póliza 4») y el ciclo sigue con la 5.",
+  "por_que_no": [
+   "Sin break el ciclo no se detiene y la póliza 5 se revisa.",
+   "",
+   "continue impide imprimir «Revisada» para la póliza 4.",
+   "La póliza 2 sigue salteándose y la 4 sigue marcándose para reaseguro."
+  ],
+  "referencia": "Clase 10, «break, continue y pass»",
+  "codigo": "cartera = [\n  {\"id\": 1, \"estado\": \"vigente\", \"siniestro\": 120_000},\n  {\"id\": 2, \"estado\": \"anulada\", \"siniestro\": 980_000},\n  {\"id\": 3, \"estado\": \"vigente\", \"siniestro\": 60_000},\n  {\"id\": 4, \"estado\": \"vigente\", \"siniestro\": 1_500_000},\n  {\"id\": 5, \"estado\": \"vigente\", \"siniestro\": 300_000},\n]\nfor p in cartera:\n    if p[\"estado\"] == \"anulada\":\n        continue\n    if p[\"siniestro\"] > 1_000_000:\n        print(\"Caso para reaseguro:\", p[\"id\"])\n        continue          # antes era break\n    print(\"Revisada la póliza\", p[\"id\"])"
+ },
+ {
+  "id": "CTL-35",
+  "tema": "CTL",
+  "subtema": "break, continue, pass",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "for i in range(5):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(i, end=\" \")",
+  "opciones": [
+   "0 1 2 3",
+   "0 1 3",
+   "0 1 3 4",
+   "0 1"
+  ],
+  "correcta": 1,
+  "explicacion": "i = 0 y 1 se imprimen. En i = 2, continue saltea la impresión. En i = 3 se imprime. En i = 4, break corta antes de imprimir.",
+  "por_que_no": [
+   "El 2 se saltea.",
+   "",
+   "El ciclo se corta antes de imprimir el 4.",
+   "El 3 sí se imprime."
+  ],
+  "referencia": "Clase 10, «break, continue y pass»"
+ },
+ {
+  "id": "CTL-36",
+  "tema": "CTL",
+  "subtema": "while True",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "n = 0\nwhile True:\n    n += 3\n    if n > 10:\n        break\nprint(n)",
+  "opciones": [
+   "9",
+   "10",
+   "12",
+   "Nunca termina"
+  ],
+  "correcta": 2,
+  "explicacion": "n toma los valores 3, 6, 9 y 12. Con 12 > 10, break corta el ciclo «infinito controlado». Se imprime 12.",
+  "por_que_no": [
+   "Con 9 la condición n > 10 todavía es falsa.",
+   "n nunca vale 10: avanza de 3 en 3.",
+   "",
+   "break lo detiene."
+  ],
+  "referencia": "Clase 10, «Ejemplo: tiempo hasta el primer siniestro» (patrón while True + break)"
+ },
+ {
+  "id": "CTL-37",
+  "tema": "CTL",
+  "subtema": "while True",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "En la simulación del «tiempo hasta el primer siniestro» (probabilidad anual 8 %) se usa while True con break. ¿Qué valor esperado tiene el año del primer siniestro?",
+  "opciones": [
+   "8 años",
+   "12,5 años",
+   "1 año",
+   "0,08 años"
+  ],
+  "correcta": 1,
+  "explicacion": "Cada corrida es una realización de una variable geométrica con E[T] = 1/p = 1/0,08 = 12,5. Repetida 10.000 veces, la guía obtiene un promedio de 12,40, cercano al teórico.",
+  "por_que_no": [
+   "Confunde el porcentaje con la cantidad de años.",
+   "",
+   "Sería el caso si p = 1.",
+   "Es la probabilidad, no el tiempo esperado."
+  ],
+  "referencia": "Clase 10, «Tiempo hasta el primer siniestro»; Guía, Actividades 14 y 15"
+ },
+ {
+  "id": "CTL-38",
+  "tema": "CTL",
+  "subtema": "range",
+  "dificultad": "facil",
+  "tipo": "examen",
+  "enunciado": "¿Qué produce range(2, 6)?",
+  "opciones": [
+   "[2, 3, 4, 5, 6]",
+   "[2, 3, 4, 5]",
+   "[1, 2, 3, 4]",
+   "Error"
+  ],
+  "correcta": 1,
+  "explicacion": "range(inicio, fin) incluye el inicio y excluye el fin: 2, 3, 4, 5.",
+  "por_que_no": [
+   "El extremo superior no se incluye.",
+   "",
+   "Empieza en 2, no en 1.",
+   "Es una llamada válida."
+  ],
+  "referencia": "1er Parcial 1C 2026, pregunta 15; Clase 10, «El bucle for y la función range()»"
+ },
+ {
+  "id": "CTL-39",
+  "tema": "CTL",
+  "subtema": "range",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué valores recorre for t in range(0, 21, 5)?",
+  "opciones": [
+   "0, 5, 10, 15",
+   "0, 5, 10, 15, 20",
+   "5, 10, 15, 20",
+   "0, 21, 5"
+  ],
+  "correcta": 1,
+  "explicacion": "El tercer argumento es el paso. Se generan 0, 5, 10, 15, 20; el 21 (fin) se excluye, pero el 20 es menor que 21 y se incluye.",
+  "por_que_no": [
+   "20 < 21, así que se incluye.",
+   "",
+   "Empieza en 0.",
+   "Los argumentos son inicio, fin y paso; no se listan así."
+  ],
+  "referencia": "Clase 10, «El bucle for y la función range()»"
+ },
+ {
+  "id": "CTL-40",
+  "tema": "CTL",
+  "subtema": "range",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "Alguien escribe for t in range(1, 5): esperando 5 iteraciones. ¿Qué ocurre?",
+  "opciones": [
+   "Se ejecutan 5 iteraciones (1 a 5)",
+   "Se ejecutan 4 iteraciones (1 a 4), porque el extremo superior no se incluye",
+   "Se ejecutan 6 iteraciones",
+   "Da error porque range necesita empezar en 0"
+  ],
+  "correcta": 1,
+  "explicacion": "range(1, 5) genera 1, 2, 3 y 4. Para 5 iteraciones de 1 a 5 hay que escribir range(1, 6). La guía plantea esta pregunta conceptual.",
+  "por_que_no": [
+   "El 5 no se incluye.",
+   "",
+   "Genera 4 valores.",
+   "range puede empezar en cualquier entero."
+  ],
+  "referencia": "Guía – Estructuras de Control, «for y range() – Pregunta conceptual»"
+ },
+ {
+  "id": "CTL-41",
+  "tema": "CTL",
+  "subtema": "enumerate y zip",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "ramos = [\"Vida\", \"Automotores\", \"Riesgos del Trabajo\"]\nfor j, ramo in enumerate(ramos):\n    print(j, ramo)",
+  "opciones": [
+   "1 Vida / 2 Automotores / 3 Riesgos del Trabajo",
+   "0 Vida / 1 Automotores / 2 Riesgos del Trabajo",
+   "Vida 0 / Automotores 1 / Riesgos del Trabajo 2",
+   "Solo los nombres de los ramos"
+  ],
+  "correcta": 1,
+  "explicacion": "enumerate devuelve pares (índice, valor) y el índice empieza en 0.",
+  "por_que_no": [
+   "Por defecto enumerate empieza en 0.",
+   "",
+   "El orden del par es (índice, valor) y así se imprime.",
+   "También imprime el índice j."
+  ],
+  "referencia": "Clase 10, «for: recorrer secuencias»"
+ },
+ {
+  "id": "CTL-42",
+  "tema": "CTL",
+  "subtema": "enumerate y zip",
+  "dificultad": "media",
+  "tipo": "codigo",
+  "enunciado": "¿Cuántos ramos tienen un ratio observado mayor a 1?",
+  "codigo": "ramos = [\"Vida\", \"Automotores\", \"Riesgos del Trabajo\"]\nprimas = [120_000, 450_000, 890_000]\nsiniestros = [40_000, 520_000, 610_000]\ncont = 0\nfor ramo, p, s in zip(ramos, primas, siniestros):\n    if s / p > 1:\n        cont += 1\nprint(cont)",
+  "opciones": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ],
+  "correcta": 1,
+  "explicacion": "Los ratios son Vida 0,333, Automotores 1,156 y Riesgos del Trabajo 0,685. Solo Automotores supera 1. zip recorre las tres listas en paralelo.",
+  "por_que_no": [
+   "Automotores supera 1.",
+   "",
+   "Riesgos del Trabajo tiene 0,685.",
+   "Vida tiene 0,333."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 8"
+ },
+ {
+  "id": "CTL-43",
+  "tema": "CTL",
+  "subtema": "Patrón acumulador",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "suma = 0\nfor i in range(1, 10, 2):\n    suma += i\nprint(suma)",
+  "opciones": [
+   "45",
+   "25",
+   "20",
+   "9"
+  ],
+  "correcta": 1,
+  "explicacion": "range(1, 10, 2) genera 1, 3, 5, 7 y 9. La suma acumulada es 25. Es el patrón acumulador: inicializar en cero y sumar en cada iteración.",
+  "por_que_no": [
+   "Sería la suma de 1 a 9 (paso 1).",
+   "",
+   "No corresponde a ninguna suma de esos valores.",
+   "9 es el último valor, no la suma."
+  ],
+  "referencia": "Clase 10, «El patrón acumulador»"
+ },
+ {
+  "id": "CTL-44",
+  "tema": "CTL",
+  "subtema": "Patrón acumulador",
+  "dificultad": "media",
+  "tipo": "error",
+  "enunciado": "¿Cuál es el error de esta función que debería calcular la probabilidad de supervivencia npx?",
+  "codigo": "def prob_acum(x, n):\n    p = 0\n    for k in range(n):\n        p *= (1 - qx(x + k))\n    return p",
+  "opciones": [
+   "range debería empezar en 1",
+   "El acumulador multiplicativo debe inicializarse en 1; con p = 0 el resultado es siempre 0",
+   "Debería usarse += en lugar de *=",
+   "Falta un break"
+  ],
+  "correcta": 1,
+  "explicacion": "En un producto acumulado el valor neutro es 1. Multiplicar cualquier cosa por 0 da 0, así que la función siempre devolvería 0. Además, con 1 se cumple que 0px = 1.",
+  "por_que_no": [
+   "k debe empezar en 0 para incluir qx(x).",
+   "",
+   "npx es un producto, no una suma.",
+   "No hace falta interrumpir el ciclo."
+  ],
+  "referencia": "Guía – Estructuras de Control, Actividad 27 (c)"
+ },
+ {
+  "id": "CTL-45",
+  "tema": "CTL",
+  "subtema": "Bucles anidados",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Cuántas veces se ejecuta print(i, j)?",
+  "codigo": "for i in range(3):\n    for j in range(4):\n        print(i, j)",
+  "opciones": [
+   "7",
+   "12",
+   "3",
+   "4"
+  ],
+  "correcta": 1,
+  "explicacion": "El bucle interno completa sus 4 iteraciones por cada una de las 3 del externo: 3 × 4 = 12.",
+  "por_que_no": [
+   "Suma las iteraciones en lugar de multiplicarlas.",
+   "",
+   "Solo cuenta el externo.",
+   "Solo cuenta el interno."
+  ],
+  "referencia": "Clase 10, «Bucles anidados»"
+ },
+ {
+  "id": "CTL-46",
+  "tema": "CTL",
+  "subtema": "Bucles anidados",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Si cada uno de dos bucles anidados tiene n iteraciones, ¿cuántas operaciones realiza el conjunto? ¿Y con tres niveles?",
+  "opciones": [
+   "2n y 3n",
+   "n² y n³",
+   "n y n",
+   "n² y 2n²"
+  ],
+  "correcta": 1,
+  "explicacion": "El costo se multiplica: n × n = n² con dos niveles y n³ con tres. Conviene tenerlo presente antes de simular, por ejemplo con triángulos mensuales de varios años.",
+  "por_que_no": [
+   "Los costos se multiplican, no se suman.",
+   "",
+   "Subestima el costo.",
+   "Con tres niveles el costo es n³."
+  ],
+  "referencia": "Clase 10, «Bucles anidados»"
+ },
+ {
+  "id": "CTL-47",
+  "tema": "CTL",
+  "subtema": "Bucles anidados",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "cnt = 0\nfor i in range(3):\n    for j in range(i, 3):\n        cnt += 1\nprint(cnt)",
+  "opciones": [
+   "9",
+   "6",
+   "3",
+   "5"
+  ],
+  "correcta": 1,
+  "explicacion": "Con i = 0, j recorre 0, 1, 2 (3 veces); con i = 1, j recorre 1, 2 (2); con i = 2, j recorre 2 (1). Total: 3 + 2 + 1 = 6. El interno depende del externo, como al recorrer un triángulo.",
+  "por_que_no": [
+   "Sería así si el interno fuera range(3) siempre.",
+   "",
+   "Solo cuenta el bucle externo.",
+   "No coincide con la suma 3 + 2 + 1."
+  ],
+  "referencia": "Clase 10, «Bucles anidados» y «Triángulo run-off»"
+ },
+ {
+  "id": "CTL-48",
+  "tema": "CTL",
+  "subtema": "Comprensión de listas",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "primas = [12000, 8000, 25000, 4000, 31000]\ngrandes = [p for p in primas if p > 10000]\nprint(grandes)",
+  "opciones": [
+   "[12000, 25000, 31000]",
+   "[8000, 4000]",
+   "[True, False, True, False, True]",
+   "3"
+  ],
+  "correcta": 0,
+  "explicacion": "La comprensión con condición filtra: se conservan solo las primas mayores a 10.000.",
+  "por_que_no": [
+   "",
+   "Esas son las que no cumplen la condición.",
+   "Se devuelven los valores, no booleanos.",
+   "Se devuelve la lista, no su largo."
+  ],
+  "referencia": "Clase 10, «Alternativa pythónica: comprensión de listas»"
+ },
+ {
+  "id": "CTL-49",
+  "tema": "CTL",
+  "subtema": "Comprensión de listas",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "¿Cuál de las siguientes expresiones produce la misma lista que este bucle?",
+  "codigo": "recargadas = []\nfor p in primas:\n    recargadas.append(p * 1.1)",
+  "opciones": [
+   "recargadas = [p * 1.1 for p in primas]",
+   "recargadas = [p for p in primas if p * 1.1]",
+   "recargadas = primas * 1.1",
+   "recargadas = [primas * 1.1]"
+  ],
+  "correcta": 0,
+  "explicacion": "La comprensión [expresión for elemento in secuencia] equivale al bucle con acumulación por append.",
+  "por_que_no": [
+   "",
+   "Usa p * 1.1 como condición: copia los valores sin recargar.",
+   "Multiplicar una lista por un decimal da error; con numpy sí funcionaría.",
+   "Crea una lista con un único elemento (y además daría error)."
+  ],
+  "referencia": "Clase 10 y Guía – Estructuras de Control, «Comprensiones de listas»"
+ },
+ {
+  "id": "CTL-50",
+  "tema": "CTL",
+  "subtema": "Comprensión de listas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la guía, ¿cuándo una comprensión de listas deja de ser más legible que un bucle explícito?",
+  "opciones": [
+   "Nunca: siempre es más legible",
+   "Cuando la lógica se complica, por ejemplo con una regla de tarifación de cinco condiciones",
+   "Cuando la lista tiene más de 10 elementos",
+   "Cuando se usan números decimales"
+  ],
+  "correcta": 1,
+  "explicacion": "La comprensión es ideal para transformaciones y filtros simples. Con reglas de varias condiciones, el bucle explícito suele leerse mejor.",
+  "por_que_no": [
+   "La guía plantea justamente el límite de su legibilidad.",
+   "",
+   "La legibilidad no depende del tamaño de la lista.",
+   "El tipo de dato no tiene relación con la legibilidad."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Comprensiones de listas – Pregunta conceptual»"
+ },
+ {
+  "id": "CTL-51",
+  "tema": "CTL",
+  "subtema": "while",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "Un fondo empieza en 0 y recibe aportes mensuales de 50.000 (sin intereses). ¿En qué mes alcanza el objetivo de 300.000?",
+  "codigo": "fondo = 0\nmes = 0\nwhile fondo < 300000:\n    fondo += 50000\n    mes += 1\nprint(mes)",
+  "opciones": [
+   "5",
+   "6",
+   "7",
+   "300000"
+  ],
+  "correcta": 1,
+  "explicacion": "Tras 6 aportes el fondo llega a 300.000. Entonces fondo < 300000 es falso y el ciclo termina con mes = 6.",
+  "por_que_no": [
+   "Con 5 aportes el fondo es 250.000.",
+   "",
+   "Con 300.000 el ciclo ya terminó.",
+   "Se imprime el mes, no el fondo."
+  ],
+  "referencia": "Guía práctica Python, «Bucle while – acumulación de un fondo ficticio»"
+ },
+ {
+  "id": "CTL-52",
+  "tema": "CTL",
+  "subtema": "while",
+  "dificultad": "dificil",
+  "tipo": "codigo",
+  "enunciado": "Un fondo empieza en 0, recibe aportes mensuales de 50.000 y se capitaliza al 0,5 % mensual antes de cada aporte. ¿En qué mes se alcanza el objetivo de 300.000?",
+  "opciones": [
+   "5",
+   "6",
+   "7",
+   "Nunca"
+  ],
+  "correcta": 1,
+  "explicacion": "Los intereses son pequeños: tras 5 meses el fondo ronda 252.500 y tras 6 meses ≈ 303.775. Se alcanza igual en el mes 6, con un fondo final algo mayor.",
+  "por_que_no": [
+   "Tras 5 meses todavía no llega a 300.000.",
+   "",
+   "El interés no alcanza a demorar un mes completo.",
+   "El fondo crece en cada mes."
+  ],
+  "referencia": "Guía práctica Python, Actividad 8",
+  "codigo": "fondo = 0\nmes = 0\nwhile fondo < 300000:\n    fondo = fondo * (1 + 0.005) + 50000\n    mes += 1\nprint(mes)"
+ },
+ {
+  "id": "CTL-53",
+  "tema": "CTL",
+  "subtema": "Conteo",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué imprime el código?",
+  "codigo": "conteos = [0, 1, 0, 2, 0, 1, 0]\ncon_siniestro = 0\nfor n in conteos:\n    if n > 0:\n        con_siniestro += 1\nprint(con_siniestro)",
+  "opciones": [
+   "4",
+   "3",
+   "7",
+   "2"
+  ],
+  "correcta": 1,
+  "explicacion": "Cuenta las pólizas con al menos un siniestro (1, 2 y 1): son 3. No suma los siniestros (que serían 4).",
+  "por_que_no": [
+   "4 es la cantidad total de siniestros, no de pólizas con siniestro.",
+   "",
+   "7 es la cantidad de pólizas.",
+   "Hay tres valores positivos."
+  ],
+  "referencia": "Guía práctica Python, Actividad 6"
+ },
+ {
+  "id": "CTL-54",
+  "tema": "CTL",
+  "subtema": "if/elif/else",
+  "dificultad": "facil",
+  "tipo": "codigo",
+  "enunciado": "¿Qué estado se asigna si n = 2?",
+  "codigo": "if n == 0:\n    estado = \"sin siniestros\"\nelif n == 1:\n    estado = \"un siniestro\"\nelse:\n    estado = \"múltiples siniestros\"",
+  "opciones": [
+   "sin siniestros",
+   "un siniestro",
+   "múltiples siniestros",
+   "Ninguno"
+  ],
+  "correcta": 2,
+  "explicacion": "n == 0 y n == 1 son falsas, así que se ejecuta el else: «múltiples siniestros».",
+  "por_que_no": [
+   "n no es 0.",
+   "n no es 1.",
+   "",
+   "El else garantiza que siempre se asigne un estado."
+  ],
+  "referencia": "Guía práctica Python, Actividad 5"
+ },
+ {
+  "id": "CTL-55",
+  "tema": "CTL",
+  "subtema": "if/elif/else",
+  "dificultad": "media",
+  "tipo": "diferencia",
+  "enunciado": "Con x = 15, ¿qué diferencia hay entre los dos fragmentos?",
+  "codigo": "# Fragmento A\nif x > 10:\n    print(\"A\")\nelif x > 5:\n    print(\"B\")\n\n# Fragmento B\nif x > 10:\n    print(\"A\")\nif x > 5:\n    print(\"B\")",
+  "opciones": [
+   "Ambos imprimen solo A",
+   "A imprime solo «A»; B imprime «A» y «B», porque los if independientes se evalúan todos",
+   "A imprime «B» y B imprime «A»",
+   "Ambos imprimen A y B"
+  ],
+  "correcta": 1,
+  "explicacion": "En if/elif la primera condición verdadera corta la cadena. Con dos if independientes se evalúan ambas condiciones y las dos se cumplen.",
+  "por_que_no": [
+   "El fragmento B evalúa ambos if.",
+   "",
+   "Los dos fragmentos imprimen «A» primero.",
+   "El fragmento A corta tras el primer verdadero."
+  ],
+  "referencia": "Clase 10, «if / elif / else» y «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-56",
+  "tema": "CTL",
+  "subtema": "Modificar listas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "Según la tabla de errores frecuentes, ¿qué conviene hacer si se necesita modificar una lista mientras se la recorre?",
+  "opciones": [
+   "Usar while True",
+   "Iterar sobre una copia de la lista",
+   "Usar pass",
+   "Convertirla en tupla"
+  ],
+  "correcta": 1,
+  "explicacion": "Modificar una lista mientras se la recorre produce resultados inesperados. La recomendación es iterar sobre una copia.",
+  "por_que_no": [
+   "while True no resuelve el problema.",
+   "",
+   "pass no hace nada.",
+   "Una tupla no puede modificarse."
+  ],
+  "referencia": "Guía – Estructuras de Control, «Errores frecuentes»"
+ },
+ {
+  "id": "CTL-57",
+  "tema": "CTL",
+  "subtema": "Funciones",
+  "dificultad": "facil",
+  "tipo": "concepto",
+  "enunciado": "¿Qué hace la instrucción return dentro de una función?",
+  "opciones": [
+   "Repite la función",
+   "Sale de la función y devuelve un valor al punto donde fue llamada",
+   "Imprime el resultado en pantalla",
+   "Interrumpe solo el ciclo más cercano"
+  ],
+  "correcta": 1,
+  "explicacion": "return sale de la función y entrega un valor. En categoria_poliza, cada rama termina con return.",
+  "por_que_no": [
+   "No repite nada.",
+   "",
+   "Imprimir es tarea de print.",
+   "Eso es break."
+  ],
+  "referencia": "Clase 10, «Operadores estructurales: panorama»"
+ },
+ {
+  "id": "CTL-58",
+  "tema": "CTL",
+  "subtema": "Buenas prácticas",
+  "dificultad": "media",
+  "tipo": "comprension",
+  "enunciado": "¿Cuál de las siguientes NO figura entre las buenas prácticas de la clase de estructuras de control?",
+  "opciones": [
+   "Escribir primero el algoritmo en palabras y después traducirlo a código",
+   "Probar con un caso chico verificable a mano",
+   "Fijar la semilla para que la simulación sea reproducible",
+   "Comentar qué hace cada línea en lugar de por qué"
+  ],
+  "correcta": 3,
+  "explicacion": "La clase recomienda comentar el porqué, no el qué. También pide nombrar variables por su significado, encapsular en funciones y contrastar con soluciones analíticas.",
+  "por_que_no": [
+   "Es una buena práctica de la lista.",
+   "Es una buena práctica de la lista.",
+   "Es una buena práctica de la lista.",
+   ""
+  ],
+  "referencia": "Clase 10, «Buenas prácticas»"
+ },
+ {
+  "id": "CTL-59",
+  "tema": "CTL",
+  "subtema": "Fibonacci",
+  "dificultad": "media",
+  "tipo": "examen",
+  "enunciado": "Para mostrar los primeros 10 números de Fibonacci (0, 1, 1, 2, 3, …) sin bibliotecas, se imprimen n1 = 0 y n2 = 1 y luego se usa un for que calcula n3 = n1 + n2. ¿Cuántas iteraciones necesita el for y cuál es el último número impreso?",
+  "opciones": [
+   "10 iteraciones; último 55",
+   "8 iteraciones; último 34",
+   "9 iteraciones; último 34",
+   "8 iteraciones; último 21"
+  ],
+  "correcta": 1,
+  "explicacion": "Ya se imprimieron 2 números, así que faltan 8: for i in range(8). La secuencia es 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 y el décimo es 34.",
+  "por_que_no": [
+   "Imprimiría 12 números.",
+   "",
+   "Imprimiría 11 números.",
+   "21 es el noveno número."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 3a (alternativa 1)"
+ },
+ {
+  "id": "CTL-60",
+  "tema": "CTL",
+  "subtema": "Fibonacci",
+  "dificultad": "dificil",
+  "tipo": "examen",
+  "enunciado": "¿Qué imprime la siguiente alternativa del parcial?",
+  "codigo": "n = 10\nfibonacci_list = [0, 1]\nwhile len(fibonacci_list) < n:\n    siguiente = fibonacci_list[-1] + fibonacci_list[-2]\n    fibonacci_list.append(siguiente)\nprint(fibonacci_list)",
+  "opciones": [
+   "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+   "[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]",
+   "[0, 1, 1, 2, 3, 5, 8, 13, 21]",
+   "Un ciclo infinito"
+  ],
+  "correcta": 0,
+  "explicacion": "El while agrega la suma de los dos últimos elementos (índices −1 y −2) hasta que la lista tiene 10 elementos.",
+  "por_que_no": [
+   "",
+   "La lista empieza en [0, 1].",
+   "La condición sigue hasta tener 10 elementos.",
+   "len crece en cada iteración, así que el ciclo termina."
+  ],
+  "referencia": "1er Parcial 1C 2025, ejercicio 3a (alternativa 2)"
+ }
+]
